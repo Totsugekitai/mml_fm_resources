@@ -1,0 +1,474 @@
+#title "Hit the Passion (GM音源)   もんでん"
+#copyright "(c)Akito Monden  2000.2.15"
+#timebase 48
+
+$t _-3           ; transpose
+$i E127 BS64     ; init expression & pitch bend ; BR3
+
+$j k100 J37		; stick
+$k k100 J35		; kick
+$s k100 J40		; snare
+$n k90  J39		; Hand Clap
+$u k80  J63		; Conga high
+$r k100 J62		; Mute Conga
+$h k80  J44		; pedal hihat
+$o k110 J74		; open hihat
+$v k60  J46		; open hihat
+$w k100 J71		; whistle
+$f k100 J72		; whistle
+$c k90  J49		; cymbal 1 (right)
+$p k80  J54		; tambourine
+
+Z C2 BT4,4 t104
+Z EXx7e,x7f,x09,x01,xf7               r32 ; GM SYSTEM ON
+Z EXx41,x10,x42,x12,{x40,0,x7f,0},xf7 r32^1-16 ; GS-RESET
+
+;  Ch.    Bank  Prog.   Vol. Vel. gt.oct.ln. pan.
+B  C11 r8      @39  r8 v110 k110 q2  o2 l16 p64 $t $i  ; bass
+C  C13 r8      @25  r8 v80  k90  q1  o4 l16 p34 $t $i  ; guitar
+1C C13 r8           r8      k90  q1  o4 l16     $t     ; 
+2C C13 r8           r8      k90  q1  o4 l16     $t     ; 
+3C C13 r8           r8      k90  q1  o3 l16     $t     ; 
+D  C1  r8 H0,1 @66  r8 v125 k122 q7  o4 l16 p64 $t $i  ; melody
+1D C1  r8           r8      k122 q7  o4 l16     $t     ; 
+E  C9  r8 H0,1 @58  r8 v100 k100 q1  o4 l16 p94 $t $i  ; brass
+1E C9  r8           r8      k100 q1  o4 l16     $t     ; 
+J  C10 r8      @0   r8 v120 k100 RT  o3 l16      $i    ; drum
+K  C10 r8           r8      k100 RT  o4 l16            ; 
+1K C10 r8           r8      k100 RT  o4 l16            ; 
+2K C10 r8           r8      k100 RT  o4 l16            ; 
+3K C10 r8           r8      k100 RT  o4 l16            ; 
+4K C10 r8           r8      k100 RT  o4 l16            ; 
+5K C10 r8           r8      k100 RT  o4 l16            ; 
+6K C10 r8           r8      k100 RT  o4 l16            ; 
+L  C2  r8      @48  r8 v120 k105 q2  o6 l16  p34 $t$i  ; strings
+1L C2  r8           r8      k125 q2  o4 l16      $t    ; 
+
+J N24,40,68    ; snareのピッチを上げる
+J N24,39,62    ; snareのピッチを上げる
+J TC70 TR80    ; drumをハイファイに
+B TC67 TR66
+CDE TC80 TR80
+
+BCDEJKL r8
+
+E y73,0 ; attack = fast
+
+B y91,0   y93,0   ; bass
+C y91,0   y93,100
+D y91,120 y93,40
+E y91,40  y93,70
+J y91,90  y93,45 ; drum
+L y91,20 y93,100
+
+E N1,x63,40          ; attack = 40
+
+BCDEJKL r8
+
+D FV2,0,16,-15,4.,15 ; エンベロープ
+D IB8,1,48,14
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; イントロ
+
+BCDEL r1
+J $uc8$rc,-30$uc8$rcrc$uc$rcrc[c48]3ccc
+K r1
+6K r2 r4$fc8$wc8
+B l16
+B f8.a-8.>c8<ff8fa-8>c8<
+B c8.e8.g8cc8ce8g8
+B c8.g8.b-8cc8cg8b-8
+B f8.a-8.>c8<ff8fa-8>c8<
+C  r8a-8ra-4a-4ra-8
+1C r8f8rf4f4rff
+2C r8c8rc4c4rc8
+3C <f0>f8r<f0>f^8r<f0>f8r8<f0>f8r8
+C  r8g8rg4g4rg8
+1C r8e8re4e4ree
+2C r8c8rc4c4rc8
+3C <c0>c8r<c0>c^8r<c0>c8r8<c0>c8r8
+C  r8b-8rb-4b-4rb-8
+1C r8g8rg4g4rg8
+2C r8e8re4e4ree
+3C <c0>c8r<c0>c^8r<c0>c8r8<c0>c8r8
+C  r8a-8ra-4a-4ra-8
+1C r8f8rf4f4rff
+2C r8c8rc4c4rc8
+3C <f0>f8r<f0>f^8r<f0>f8r8<f0>f8r8
+D1D [r1]4
+E  rra-rra-rr a-gra-gra-g
+1E rrfrrfrr   fe-rfe-rfe-
+E  rrb-rrb-rr >c<b-r>c<b-r>c<b-
+1E rrgrrgrr   gergerge
+E  rrgrrgrr   b-grb-grb-g
+1E rrerrerr   gergerge
+E  rra-rra-rr b-a-rb-a-rb-a-
+1E rrfrrfrr   ffrffrff
+L [r1]4
+J  [ $kc8c8$sc8^12$kc24^8c8:$sc8^12$kc24 ]4 $kc8c16c16
+K  [ $hc12c24,25 r8 $h[c12c24,25]3 $oc8  $hc12c24,25c12c24,25 ]4
+1K [ $p[c12c24,-45]8 ]4
+2K $n [r4c4r4c4]4
+3K $u [r8rcc8rc : r8c8r8c8]4 )20 r[c48]3cccrrr (20
+4K $r l8 [rcrrrrr:r]4 c16c16
+5K $v [r8c8r8r8r8c8r8r8]4
+6K r1r1r1 r2.$fc8 $wc8
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Ａメロ
+
+B [
+B f8.a-8.>c8<ff8fa-8>c8<
+B c8.e8.g8cc8ce8g8
+B c8.g8.b-8cc8cg8b-8
+B f8.a-8.>c8<ff8fa-8>c8<
+B ]2
+C1C2C3C [
+C  r8a-8ra-4a-4ra-8
+1C r8f8rf4f4rff
+2C r8c8rc4c4rc8
+3C <f0>f8r<f0>f^8r<f0>f8r8<f0>f8r8
+C  r8g8rg4g4rg8
+1C r8e8re4e4ree
+2C r8c8rc4c4rc8
+3C <c0>c8r<c0>c^8r<c0>c8r8<c0>c8r8
+C  r8b-8rb-4b-4rb-8
+1C r8g8rg4g4rg8
+2C r8e8re4e4ree
+3C <c0>c8r<c0>c^8r<c0>c8r8<c0>c8r8
+C  r8a-8ra-4a-4ra-8
+1C r8f8rf4f4rff
+2C r8c8rc4c4rc8
+3C <f0>f8r<f0>f^8r<f0>f8r8<f0>f8r8
+C1C2C3C ]2
+D  f8>cr r4rcrcrcd-c<
+1D c8a-r r4ra-ra-ra-a-a-
+D e8b-r r4r2
+1D c8gr r4r2
+D e8b-r r4rb-rb-rb->c<b-
+1D c8gr r4rgrgrggg
+D f8a-r r4 >f8a-<rr4
+1D c8fr r4 >c8f<rr4
+D c8a-rr4 ra-ra-ra-b-a-
+1D <a-8>frr4 rfrfrfff
+D  e8b-rr4 r2
+1D c8grr4 r2
+D  g8>d-<rr4 r>ererefe<
+1D e8b-rr4 r>crcrccc<
+D  >f8frr4 q2 rfefga-b->c<< q7
+1D c8crr4  q2 rc<b>ce-ega- q7
+E1E [
+E  rra-rra-rr a-gra-gra-g
+1E rrfrrfrr   fe-rfe-rfe-
+E  rrb-rrb-rr >c<b-r>c<b-r>c<b-
+1E rrgrrgrr   gergerge
+E  rrgrrgrr   b-grb-grb-g
+1E rrerrerr   gergerge
+E  rra-rra-rr b-a-rb-a-rb-a-
+1E rrfrrfrr   ffrffrff
+E1E ]2
+L l16 @18 v75 o5 k100
+1L l16 o5 k100
+L r2r16f8.g8f8e1-16  
+1L r2r16c8.c8c8c1-16 
+L  r48b48,-10,0>c48,-10,0 d-2rd-rd-c8<b-8 >c2f4.r8<
+1L r48f48,-10,0g-48,-10,0 g2rb-rb-g8g8 g2>c4.r8<
+L  a-2.r4g2e2
+1L f2.r4e2c2 
+L  >e2reref8e8      f8fr r4 r8 f4.<
+1L >d-2rd-rd-d-8d-8 c8fr r4 r8 c4.<
+JK1K2K3K4K5K6K [
+J  [ $kc8c8$sc8^12$kc24^8c8$sc8^12$kc24 ]3 $kc8c8$sc8c12$kc24^8$sc8$sc8^12$kc24
+K  [ $hc12c24,25 r8 $h[c12c24,25]3 $oc8  $hc12c24,25c12c24,25 ]4
+1K [ $p[c12c24,-45]8 ]3 $p[c12c24,-45]4 )20 rccc[c48]3ccc (20
+2K $n [r4c4r4c4]4
+3K $u [r8rcc8rc : r8c8r8c8]4 )20 r[c48]3cccrrr (20
+4K $r l8 [rcrrrrrr]4
+5K $v [r8c8r8r8 : r8c8r8r8]4 )20 rccc[c48]3ccc (20
+6K r1r1r1 r2.$fc8 $wc8
+JK1K2K3K4K5K6K ]2
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Ｂメロ
+
+B <b-8.>d-8.f8 c8.e8.g8
+B f8.a-8.>c8<  f8.a-8.>c8<
+B c8.e8.g8     c8.e8.g8
+B f8.a-8.>c8<  f8.a-8.>c8<
+C  @0 v+10
+C  f8>d-<f8>d-8<f8 >c8<ee8>c8<
+1C r8b-r8b-8r8g8rr8g8
+C  f8>c<f8>c8< f8r8ff8>c8<
+1C r8a-r8a-8   r8r8rr8a-8
+C  e8>c<e8>c8< e8rere8>c8<
+1C r8gr8g8     r8r8rr8g8
+C  f8>c<f8>c8<f8>c8<ff8>c8<
+1C r8a-r8a-8r8a-8rr8a-8
+E  @106 v-20
+E  r8b-b-rb-rr rrre,-30r8rb-
+1E r8ffrfrr    rrrc,-30r8re
+E  r8a-a-ra-rr rrrf,-30r8a-r
+1E r8ffrfrr    rrrc,-30r8fr
+E  r8gggrrr    rrre,-30r8rg
+1E r8eeerrr    rrrc,-30r8re
+E  r8a-a-a-rrr rra-f,-30r8a-r
+1E r8fffrrr    rrfc,-30r8frr
+D @58 q5
+D >d-8c<b-8.^8 rrab->cfe-d-<
+D >c8<b-a-8.^8 rr<ffa-8f8
+D efga-b-4^ 8b-a-ga-b->d-<
+D >cd-c<b>c4^4r4
+L  @18 b-2g2a-1g1f2a-2
+1L     f2 e2f1 e1c2f2
+J  [ $kc8r8$sc8^12$kc24^8:c8$sc8^12r24 ]4 $sc16c16c8c8
+K  [ $hc12c24,25 r8 $h[c12c24,25]3 $oc8  $hc12c24,25c12c24,25 ]4
+1K [ $p[c12c24,-45]8 ]4
+2K $n [r4c4r4c4]4
+3K $u [r8rcc8rc : r8c8r8c8]4 )20 r[c48]3cccrrr (20
+4K $r l8 [rcrrrrr:r]4 c16c16
+5K $v [r8c8r8r8r8c8r8r8]4
+6K r1r1r1r1
+
+;;;;;;;;;;
+
+B <b-8.>d-8.f8 c8.e8.g8
+B f8.a-8.>c8< f8.a-8.>c8<
+B c8.e8.g8 c8.e8.g8
+B f8.a-8.>c8< ffrf8.rr
+C  f8>d-<f8>d-8<f8 >c8<ee8>c8<
+1C r8b-r8b-8r8g8rr8g8
+C  f8>c<f8>c8< f8>c8.<f8>c8<
+1C r8a-r8a-8   r8a-8rr8a-8
+C  e8>c<e8>c8< e8r>c<re8>c8<
+1C r8gr8g8     r8rgrr8g8
+C  f8>c<f8>c8< rfr8fr8r8
+1C r8a-r8a-8   rcr8cr8r8
+E  r8b-b-b-rrr rb-re,-30r8rb-
+1E r8fffrrr    rerc,-30r8re
+E  r8a-a-a-rrr ra-rf,-30r8a-r
+1E r8fffrrr    rfrc,-30r8fr
+E  r8gggrrr rgre,-30r8rg
+1E r8eeerrr rerc,-30r8re
+E  r8a-a-ra-rr a-a-rf,-30rrrr
+1E r8ffrfrr    ffrc,-30rrrr
+D rr>d-e-d-4 rd-e-d-b-a-ge
+D rrc<b-a-8.f8.f8g8a-8
+D gfefg4 b-a-gec8e8
+D f2 ffrf8.rr
+D q7
+L  b-2g2a-1g1f2>ccrc8.<rr
+1L f2 e2f1 e1c2a-a-ra-8.rr
+J  [ $kc8r8$sc8^12$kc24^8c8$sc8^12r24 ]3 $kc8$scc$kc8$sc8 ccrc8.rr;
+K  [ $hc12c24,25 r8 $h[c12c24,25]3 $oc8  $hc12c24,25c12c24,25 ]4
+1K [ $p[c12c24,-45]8 ]3 $p[c12c24,-45]4 c16c16rc8.r8
+2K $n [r4c4:r4c4]4 c16c16r16c8.r8
+3K $u [r8rcc8rc : r8c8r8c8]4 )20 ccrc8.rr (20
+4K $r l8 [rcrrrrr:r]4 c16c16
+5K $v [r8c8r8r8r8c8r8:r8]4 cc
+6K r1r1r1r1
+
+;;;;;;;;
+; ２周め
+
+B l16
+B f8.a-8.>c8<ff8fa-8>c8<
+B c8.e8.g8cc8ce8g8
+B c8.g8.b-8cc8cg8b-8
+B f8.a-8.>c8<ff8fa-8>c8<
+C v-10 @25
+C  r8a-8ra-4a-4ra-8
+1C r8f8rf4f4rff
+2C r8c8rc4c4rc8
+3C <f0>f8r<f0>f^8r<f0>f8r8<f0>f8r8
+C  r8g8rg4g4rg8
+1C r8e8re4e4ree
+2C r8c8rc4c4rc8
+3C <c0>c8r<c0>c^8r<c0>c8r8<c0>c8r8
+C  r8b-8rb-4b-4rb-8
+1C r8g8rg4g4rg8
+2C r8e8re4e4ree
+3C <c0>c8r<c0>c^8r<c0>c8r8<c0>c8r8
+C  r8a-8ra-4a-4ra-8
+1C r8f8rf4f4rff
+2C r8c8rc4c4rc8
+3C <f0>f8r<f0>f^8r<f0>f8r8<f0>f8r8
+D @66
+D1D [r1]4
+E v+20
+E @58
+E  rra-rra-rr a-gra-gra-g
+1E rrfrrfrr   fe-rfe-rfe-
+E  rrb-rrb-rr >c<b-r>c<b-r>c<b-
+1E rrgrrgrr   gergerge
+E  rrgrrgrr   b-grb-grb-g
+1E rrerrerr   gergerge
+E  rra-rra-rr b-a-rb-a-rb-a-
+1E rrfrrfrr   ffrffrff
+L @48 [r1]4
+J  [ $kc8c8$sc8^12$kc24^8c8:$sc8^12$kc24 ]4 $kc8c16c16
+K  [ $hc12c24,25 r8 $h[c12c24,25]3 $oc8  $hc12c24,25c12c24,25 ]4
+1K [ $p[c12c24,-45]8 ]4
+2K $n [r4c4r4c4]4
+3K $u [r8rcc8rc : r8c8r8c8]4 )20 r[c48]3cccrrr (20
+4K $r l8 [rcrrrrr:r]4 c16c16
+5K $v [r8c8r8r8r8c8r8r8]4
+6K r1r1r1 r2.$fc8 $wc8
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Ａメロ
+
+B [
+B f8.a-8.>c8<ff8fa-8>c8<
+B c8.e8.g8cc8ce8g8
+B c8.g8.b-8cc8cg8b-8
+B f8.a-8.>c8<ff8fa-8>c8<
+B ]2
+C1C2C3C [
+C  r8a-8ra-4a-4ra-8
+1C r8f8rf4f4rff
+2C r8c8rc4c4rc8
+3C <f0>f8r<f0>f^8r<f0>f8r8<f0>f8r8
+C  r8g8rg4g4rg8
+1C r8e8re4e4ree
+2C r8c8rc4c4rc8
+3C <c0>c8r<c0>c^8r<c0>c8r8<c0>c8r8
+C  r8b-8rb-4b-4rb-8
+1C r8g8rg4g4rg8
+2C r8e8re4e4ree
+3C <c0>c8r<c0>c^8r<c0>c8r8<c0>c8r8
+C  r8a-8ra-4a-4ra-8
+1C r8f8rf4f4rff
+2C r8c8rc4c4rc8
+3C <f0>f8r<f0>f^8r<f0>f8r8<f0>f8r8
+C1C2C3C ]2
+D  f8>cr r4rcrcrcd-c<
+1D c8a-r r4ra-ra-ra-a-a-
+D e8b-r r4r2
+1D c8gr r4r2
+D e8b-r r4rb-rb-rb->c<b-
+1D c8gr r4rgrgrggg
+D f8a-r r4 >f8a-<rr4
+1D c8fr r4 >c8f<rr4
+D c8a-rr4 ra-ra-ra-b-a-
+1D <a-8>frr4 rfrfrfff
+D  e8b-rr4 r2
+1D c8grr4 r2
+D  g8>d-<rr4 r>ererefe<
+1D e8b-rr4 r>crcrccc<
+D  >f8frr4 q2 rfefga-b->c<< q7
+1D c8crr4  q2 rc<b>ce-ega- q7
+E1E [
+E  rra-rra-rr a-gra-gra-g
+1E rrfrrfrr   fe-rfe-rfe-
+E  rrb-rrb-rr >c<b-r>c<b-r>c<b-
+1E rrgrrgrr   gergerge
+E  rrgrrgrr   b-grb-grb-g
+1E rrerrerr   gergerge
+E  rra-rra-rr b-a-rb-a-rb-a-
+1E rrfrrfrr   ffrffrff
+E1E ]2
+L l16 @18 v75 o5 k100
+1L l16 o5 k100
+L r2r16f8.g8f8e1-16  
+1L r2r16c8.c8c8c1-16 
+L  r48b48,-10,0>c48,-10,0 d-2rd-rd-c8<b-8 >c2f4.r8<
+1L r48f48,-10,0g-48,-10,0 g2rb-rb-g8g8 g2>c4.r8<
+L  a-2.r4g2e2
+1L f2.r4e2c2 
+L  >e2reref8e8      f8fr r4 r8 f4.<
+1L >d-2rd-rd-d-8d-8 c8fr r4 r8 c4.<
+JK1K2K3K4K5K6K [
+J  [ $kc8c8$sc8^12$kc24^8c8$sc8^12$kc24 ]3 $kc8c8$sc8c12$kc24^8$sc8$sc8^12$kc24
+K  [ $hc12c24,25 r8 $h[c12c24,25]3 $oc8  $hc12c24,25c12c24,25 ]4
+1K [ $p[c12c24,-45]8 ]3 $p[c12c24,-45]4 )20 rccc[c48]3ccc (20
+2K $n [r4c4r4c4]4
+3K $u [r8rcc8rc : r8c8r8c8]4 )20 r[c48]3cccrrr (20
+4K $r l8 [rcrrrrrr]4
+5K $v [r8c8r8r8 : r8c8r8r8]4 )20 rccc[c48]3ccc (20
+6K r1r1r1 r2.$fc8 $wc8
+JK1K2K3K4K5K6K ]2
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Ｂメロ
+
+B <b-8.>d-8.f8 c8.e8.g8
+B f8.a-8.>c8<  f8.a-8.>c8<
+B c8.e8.g8     c8.e8.g8
+B f8.a-8.>c8<  f8.a-8.>c8<
+C  @0 v+10
+C  f8>d-<f8>d-8<f8 >c8<ee8>c8<
+1C r8b-r8b-8r8g8rr8g8
+C  f8>c<f8>c8< f8r8ff8>c8<
+1C r8a-r8a-8   r8r8rr8a-8
+C  e8>c<e8>c8< e8rere8>c8<
+1C r8gr8g8     r8r8rr8g8
+C  f8>c<f8>c8<f8>c8<ff8>c8<
+1C r8a-r8a-8r8a-8rr8a-8
+E  @106 v-20
+E  r8b-b-rb-rr rrre,-30r8rb-
+1E r8ffrfrr    rrrc,-30r8re
+E  r8a-a-ra-rr rrrf,-30r8a-r
+1E r8ffrfrr    rrrc,-30r8fr
+E  r8gggrrr    rrre,-30r8rg
+1E r8eeerrr    rrrc,-30r8re
+E  r8a-a-a-rrr rra-f,-30r8a-r
+1E r8fffrrr    rrfc,-30r8frr
+D @58 q5
+D >d-8c<b-8.^8 rrab->cfe-d-<
+D >c8<b-a-8.^8 rr<ffa-8f8
+D efga-b-4^ 8b-a-ga-b->d-<
+D >cd-c<b>c4^4r4
+L  @18 b-2g2a-1g1f2a-2
+1L     f2 e2f1 e1c2f2
+J  [ $kc8r8$sc8^12$kc24^8:c8$sc8^12r24 ]4 $sc16c16c8c8
+K  [ $hc12c24,25 r8 $h[c12c24,25]3 $oc8  $hc12c24,25c12c24,25 ]4
+1K [ $p[c12c24,-45]8 ]4
+2K $n [r4c4r4c4]4
+3K $u [r8rcc8rc : r8c8r8c8]4 )20 r[c48]3cccrrr (20
+4K $r l8 [rcrrrrr:r]4 c16c16
+5K $v [r8c8r8r8r8c8r8r8]4
+6K r1r1r1r1
+
+;;;;;;;;
+
+B <b-8.>d-8.f8 c8.e8.g8
+B f8.a-8.>c8< f8.a-8.>c8<
+B c8.e8.g8 c8.e8.g8
+B f8.a-8.>c8< ffrf8.rr
+C  f8>d-<f8>d-8<f8 >c8<ee8>c8<
+1C r8b-r8b-8r8g8rr8g8
+C  f8>c<f8>c8< f8>c8.<f8>c8<
+1C r8a-r8a-8   r8a-8rr8a-8
+C  e8>c<e8>c8< e8r>c<re8>c8<
+1C r8gr8g8     r8rgrr8g8
+C  f8>c<f8>c8< rfr8fr8r8
+1C r8a-r8a-8   rcr8cr8r8
+E  r8b-b-b-rrr rb-re,-30r8rb-
+1E r8fffrrr    rerc,-30r8re
+E  r8a-a-a-rrr ra-rf,-30r8a-r
+1E r8fffrrr    rfrc,-30r8fr
+E  r8gggrrr rgre,-30r8rg
+1E r8eeerrr rerc,-30r8re
+E  r8a-a-ra-rr a-a-rf,-30rrrr
+1E r8ffrfrr    ffrc,-30rrrr
+D rr>d-e-d-4 rd-e-d-b-a-ge
+D rrc<b-a-8.f8.f8g8a-8
+D gfefg4 b-a-gec8e8
+D f2 ffrf8.rr
+D q7
+L  b-2g2a-1g1f2>ccrc8.<rr
+1L f2 e2f1 e1c2a-a-ra-8.rr
+J  [ $kc8r8$sc8^12$kc24^8c8$sc8^12r24 ]3 $kc8$scc$kc8$sc8 ccrc8.rr;
+K  [ $hc12c24,25 r8 $h[c12c24,25]3 $oc8  $hc12c24,25c12c24,25 ]4
+1K [ $p[c12c24,-45]8 ]3 $p[c12c24,-45]4 c16c16rc8.r8
+2K $n [r4c4:r4c4]4 c16c16r16c8.r8
+3K $u [r8rcc8rc : r8c8r8c8]4 )20 ccrc8.rr (20
+4K $r l8 [rcrrrrr:r]4 c16c16
+5K $v [r8c8r8r8r8c8r8:r8]4 cc
+6K r1r1r1r1
+
+;
+
+B @0
+

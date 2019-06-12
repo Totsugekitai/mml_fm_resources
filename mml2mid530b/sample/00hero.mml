@@ -1,0 +1,271 @@
+#title "Battle Hero (GM音源)     もんでん"
+#copyright "(c) Akito Monden"
+#timebase 48
+
+; マクロの設定
+
+$t _-3			; transpose
+$i E127 BR2 BS64	; init expression & pitch bend
+$k k110 J36		; kick
+$s k110 J40		; snare 1
+$h k80  J42		; closed hihat
+$r k100 J49		; cymbal 1 (right)
+$l k105 J57		; cymbal 2 (left)
+
+; チャンネル番号とトラック名の指定
+
+A  C1  "Bass"
+B  C10 "Kick/Snare"
+1B C10 "HiHat"
+2B C10 "Cymbal"
+C  C2  "Synth. Str"
+1C C2  "Synth. Str"
+E  C4  "O-Hit"
+F  C5  "Melody"
+1F C5  "Melody"
+G  C6  "Timpani"
+H  C7  "Brass"
+1H C7  "Brass"
+2H C7  "Brass"
+I  C8  "Wind"
+Z  C9  "Exclusive"
+
+; 拍子、テンポ、エクスクルーシブ
+
+Z BT4,4 t180
+Z EXx7e,x7f,x09,x01,xf7               r32 ; GM SYSTEM ON
+Z EXx41,x10,x42,x12,{x40,0,x7f,0},xf7 r32^1-16 ; GS-RESET
+;Z EXx7f,x7f,4,1,0,127,xf7 r4 ;Master Vol. 127
+
+; 初期設定
+
+;      Bank Prog    Vol  Vel  gt oct ln  pan
+A  r16      @36  r8 v110 k120 q2  o2 l8 p64 $t $i  ; bass
+B  r16      @0   r8 v120      RT     l8        $i  ; kick/snare
+1B r16           r8           RT     l8            ; hihat
+2B r16           r8           RT     l8            ; cymbal
+C  r16      @48  r8 v75  k110 q2  o5 l8 p34 $t $i  ; str.
+1C                       k110 q2  o5 l8     $t     ; 
+E  r16      @29  r8 v125 k120 q0  o4 l8 p84 $t $i  ; ohit
+F  r16      @69  r8 v125 k125 q4  o4 l8 p54 $t $i  ; melody
+1F r16           r8      k110 q4  o4 l8     $t     ; 
+G  r16      @47  r8 v100 k110 q6  o3 l8 p64 $t $i  ; Timpani
+H  r16 H0,1 @58  r8 v90  k110 q7  o4 l8 p74 $t $i  ; brass
+1H r16           r8      k110 q7  o4 l8     $t     ; 
+2H r16           r8      k110 q7  o4 l8     $t     ; 
+I  r16      @52  r8 v90  k110 q7  o4 l8 p94 $t $i  ; wind
+
+ABCEFGHI r32  ; delay
+
+B BR12 BS70  ; ドラムピッチ上げる
+
+; エフェクトの設定
+
+A y91,20  y93,25 
+B y91,90  y93,45 
+C y91,30  y93,100
+E y91,10  y93,90 BS-4
+F y91,110 y93,40 BS+1
+G y91,40  y93,95 
+H y91,50  y93,95 
+I y91,70  y93,115
+
+ABCEFGHI r32  ; delay
+
+; その他の初期設定
+
+C FV2,0,16,-10,4.,10  ; エンベロープ
+F FV2,0,16,-10,4.,10  ; エンベロープ
+F IB10,1,48,10        ; ビブラート
+
+; イントロ
+
+A [f4rf4.ce-]4
+B [$kc4$sc$kc4:c$sc4]4$scc4
+1B $h [cccccccc]4
+2B $r c1r1c1r2rc4.
+C [f1  f4rf4.^4]2
+1C [c1  c4rc4.^4]2
+H [rra-rrb-rr:>c<rrb-4rrr]2a-rrg4rrr
+1H >[rrfrrgrr:a-rrg4rrr]2   frre-4rrr<
+2H [rrcrrcrr:frrc4rrr]2     crrc4rrr
+G [f1 p40 f4. p80 f4. p64 f4]2
+F [r1]4
+I [r1]4
+
+; １周め
+
+A [f4rf4.ce-]2e-4re-4.<b->e- f4rf4.ce-
+A [f4rf4.ce-]2e-4re-b-4.a-^4ra-4.ce-
+B [$kc4$sc$kc4c$sc4]6 $kc4$sc$kc$sc4c$kc4.$sc$kc4c$sc4
+1B $h [cccccccc]8
+2B $r [c1r1:c1r1]2c2$lc4.$rc^1
+C f1 f4rf4.^4 g1 f4rf4.^4
+C f1 f4rf4.^4 g2f4. e-^4re-4.^4
+G f1p40f4.p80f4.p64f4 e-1p40f4.p80f4.p64f4
+G f1p40f4.p80f4.p64f4 e-2<b-4.>p40<a-^4.p80a-4.p64a-4>
+H [[rra-a-rge-4]2 rrb-b-:rge-4   rra-a-rge-4]2 rb-fa-   rrra-r>c<a-4
+1H [[rrffre-c4]2   rrgg:re-<b-4>  rrffre-c4  ]2 rfd-e-   rrre-ra-e-4
+2H [[rrccrc<a-4>]2 rre-e-:r<ge-4> rrccrc<a-4>]2 rd-<b->c rrrcre-c4
+F f4ffre-e-e-fa-4>c^2< b-b-b-b-a-,,0grf^2r2
+F r4f4f4.c,-10fa-4>c^2e-e-e-e-d-<b->rc^2.<  @48 o4 b->c<
+I f1c1<b-2>e-4.f^4. ra-f4. f1c1<b-2>d-4.e-^4)2a-4b->c4.<(2
+
+F  o4 >d-4.d-4.c4<b-2.r4>c4c4g<b-4a-^2.fg
+1F o5 >d-4.d-4.c4<b-2.r4>c4c4g<b-4a-^2.fg
+I <b-1>e-4gra-b-4. e-1c4frgf4.
+A b-4rb-4.fa- e-4re-4.re- c4rc4.rc f4rf4.ce-
+C f1g1g1f1
+1C b-4.b-4.<f4>g4gra-b-4. g4g4>e-<g4f^4frgf4.
+B [$kc4$sc$kc4c$sc4]4
+1B $h [cccccccc]4
+2B $r c1r1c1r1
+G <b-1>p40e-4.p80e-4.p64e-4 c1p40f4.p80f4.p64f4
+H rrb-b-rfd-4    rrb-b-rge-4   rr>cc<rge-4   rrra-r>c<a-4
+1H rrffrd-<b-4>   rrggre-<b-4>  rrggre-<b-4>  rrre-ra-e-4 
+2H rrd-d-r<b-f4>  rre-e-r<ge-4> rre-e-r<ge-4> rrrcre-c4   
+
+F1F a-2.fga-2.b-a- g4.a4.b4 >c4<c>d4<d>e4<
+I f4d-4e-f4.f4d4ef4.d2<g2>c4.d4.e4
+A d-4rd-4.rd- d4rd4.rd g4rg4.rg c4rc4.rc
+C d-1<a-1b1>g4.a-4.b-4
+1C f2.d-d-f2.ff d4.d4.g4 gecgecg4
+B [$kc4$sc$kc4c$sc4]3$kc4.$sc4$kc$sc4
+1B $h [cccccccc]4
+2B $r c1r1c1c4.$lc4.$rc4
+G d-1p40d4.p80d4.p64d4 <g1>p40c4.p80c4.p64c4
+H rra-a-rfd-4   rra-a-rfd4   rrbbrgd4   rrrgr>c<g4
+1H rrffrd-<a-4>  rrffrd<a-4>  rrggrd<b4> rrrerge4 
+2H rrd-d-r<a-f4> rrddr<a-d4> rrddr<bg4> rrrcrec4  
+
+F @71 o5 a-a-re-4.^4rrre-c4e-4ffrcf2r1
+I c1^1f1f4 f4g4a-4
+A [a-4ra-4.ra-]2[f4rf4.ce-]2
+C a-1 a-4ra-4.^4 f1 f4rf4.^4
+1C > e-e-rc4.^4rrrc<a-4>c4ccr<a->c2r1
+B [$kc4$sc$kc4c$sc4]4
+1B $h [cccccccc]4
+2B $r c1r1c1r1
+G <a-1p40a-4.p80a-4.p64a-4> f1p40f4.p80f4.p64f4
+H [rra-a-ra-rr]2[rra-a-ra-rr]2
+1H [rre-e-re-rr]2[rrffrfrr]2
+2H [rrccrcrr]2   [rrccrcrr]2
+
+F a-a-rd-4.^4rrrd-e-4f4ga-rb-^2r1
+I f1^1g1g4 g4a-4b-4
+A [d-4rd-4.rd-]2[e-4re-4.re-]2
+C d-1 d-4rd-4.^4 e-1 e-4re-4.^4
+1C ffr<a-4.^4rrra-a-4>d-4e-frg^2r1
+G d-1p40d-4.p80d-4.p64d-4 e-1p40e-4.p80e-4.p64e-4
+B [$kc4$sc$kc4c$sc4]4
+1B $h [cccccccc]4
+2B $r c1r1c1r1
+H [rra-a-ra-rr]2[rrb-b-rb-rr]2
+1H [rrffrfrr]2   [rrggrgrr]2
+2H [rrd-d-rd-rr]2[rre-e-re-rr]2
+
+; イントロに戻る
+
+A [f4rf4.ce-]4
+B [$kc4$sc$kc4:c$sc4]4$scc4
+1B $h [cccccccc]4
+2B $r c1r1c1r2rc4.
+C o5 [f1  f4rf4.^4]2
+1C o5 [c1  c4rc4.^4]2
+H o4 [rra-rrb-rr:>c<rrb-4rrr]2 a-rrg4rrr
+1H o4 >[rrfrrgrr:a-rrg4rrr]2   frre-4rrr<
+2H o4 [rrcrrcrr:frrc4rrr]2     crrc4rrr
+G [f1 p40 f4. p80 f4. p64 f4]2
+F r1r1 @69 o4 r1r1
+I [r1]4 o4
+
+; ２周め
+
+A [f4rf4.ce-]2e-4re-4.<b->e- f4rf4.ce-
+A [f4rf4.ce-]2e-4re-b-4.a-^4ra-4.ce-
+B [$kc4$sc$kc4c$sc4]6 $kc4$sc$kc$sc4c$kc4.$sc$kc4c$sc4
+1B $h [cccccccc]8
+2B $r [c1r1:c1r1]2c2$lc4.$rc^1
+C f1 f4rf4.^4 g1 f4rf4.^4
+C f1 f4rf4.^4 g2f4. e-^4re-4.^4
+G f1p40f4.p80f4.p64f4 e-1p40f4.p80f4.p64f4
+G f1p40f4.p80f4.p64f4 e-2<b-4.>p40<a-^4.p80a-4.p64a-4>
+H [[rra-a-rge-4]2 rrb-b-:rge-4   rra-a-rge-4]2 rb-fa-   rrra-r>c<a-4
+1H [[rrffre-c4]2   rrgg:re-<b-4>  rrffre-c4  ]2 rfd-e-   rrre-ra-e-4
+2H [[rrccrc<a-4>]2 rre-e-:r<ge-4> rrccrc<a-4>]2 rd-<b->c rrrcre-c4
+F r4f4f2e-,-10,0f4>c4c,,0<b-,-10,0>c,,0< b-,-5,0>c,-15,0<b-,,0a-,,0ge-rf^2r2
+F r4f4f4.c,-10fa-4>c^2e-e-e-e-d-<b->rc^2.<  @48 o4 b->c<
+I r4r2.c1<b-2>e-4.f^4. ra-f4. f1c1<b-2>d-4.e-^4)2a-4b->c4.<(2
+
+F  o4 >d-4.d-4.c4<b-2.r4>c4c4g<b-4a-^2.fg
+1F o5 >d-4.d-4.c4<b-2.r4>c4c4g<b-4a-^2.fg
+I <b-1>e-4gra-b-4. e-1c4frgf4.
+A b-4rb-4.fa- e-4re-4.re- c4rc4.rc f4rf4.ce-
+C f1g1g1f1
+1C b-4.b-4.<f4>g4gra-b-4. g4g4>e-<g4f^4frgf4.
+B [$kc4$sc$kc4c$sc4]4
+1B $h [cccccccc]4
+2B $r c1r1c1r1
+G <b-1>p40e-4.p80e-4.p64e-4 c1p40f4.p80f4.p64f4
+H rrb-b-rfd-4    rrb-b-rge-4   rr>cc<rge-4   rrra-r>c<a-4
+1H rrffrd-<b-4>   rrggre-<b-4>  rrggre-<b-4>  rrre-ra-e-4 
+2H rrd-d-r<b-f4>  rre-e-r<ge-4> rre-e-r<ge-4> rrrcre-c4   
+
+F1F a-2.fga-2.b-a- g4.a4.b4 >c4<c>d4<d>e4<
+I f4d-4e-f4.f4d4ef4.d2<g2>c4.d4.e4
+A d-4rd-4.rd- d4rd4.rd g4rg4.rg c4rc4.rc
+C d-1<a-1b1>g4.a-4.b-4
+1C f2.d-d-f2.ff d4.d4.g4 gecgecg4
+B [$kc4$sc$kc4c$sc4]3$kc4.$sc4$kc$sc4
+1B $h [cccccccc]4
+2B $r c1r1c1c4.$lc4.$rc4
+G d-1p40d4.p80d4.p64d4 <g1>p40c4.p80c4.p64c4
+H rra-a-rfd-4   rra-a-rfd4   rrbbrgd4   rrrgr>c<g4
+1H rrffrd-<a-4>  rrffrd<a-4>  rrggrd<b4> rrrerge4 
+2H rrd-d-r<a-f4> rrddr<a-d4> rrddr<bg4> rrrcrec4  
+
+F @71 o5 a-a-re-4.^4rrre-c4e-4ffrcf2r1
+I c1^1f1f4 f4g4a-4
+A [a-4ra-4.ra-]2[f4rf4.ce-]2
+C a-1 a-4ra-4.^4 f1 f4rf4.^4
+1C > e-e-rc4.^4rrrc<a-4>c4ccr<a->c2r1
+B [$kc4$sc$kc4c$sc4]4
+1B $h [cccccccc]4
+2B $r c1r1c1r1
+G <a-1p40a-4.p80a-4.p64a-4> f1p40f4.p80f4.p64f4
+H [rra-a-ra-rr]2[rra-a-ra-rr]2
+1H [rre-e-re-rr]2[rrffrfrr]2
+2H [rrccrcrr]2   [rrccrcrr]2
+
+F a-a-rd-4.^4rrrd-e-4f4ga-rb-^2r1
+I f1^1g1g4 g4a-4b-4
+A [d-4rd-4.rd-]2[e-4re-4.re-]2
+C d-1 d-4rd-4.^4 e-1 e-4re-4.^4
+1C ffr<a-4.^4rrra-a-4>d-4e-frg^2r1
+G d-1p40d-4.p80d-4.p64d-4 e-1p40e-4.p80e-4.p64e-4
+B [$kc4$sc$kc4c$sc4]4
+1B $h [cccccccc]4
+2B $r c1r1c1r1
+H [rra-a-ra-rr]2[rrb-b-rb-rr]2
+1H [rrffrfrr]2   [rrggrgrr]2
+2H [rrd-d-rd-rr]2[rre-e-re-rr]2
+
+; イントロに戻る
+
+A [f4rf4.ce-]4
+B [$kc4$sc$kc4:c$sc4]4$scc4
+1B $h [cccccccc]4
+2B $r c1r1c1r2rc4.
+C o5 [f1  f4rf4.^4]2
+1C o5 [c1  c4rc4.^4]2
+H o4 [rra-rrb-rr:>c<rrb-4rrr]2 a-rrg4rrr
+1H o4 >[rrfrrgrr:a-rrg4rrr]2   frre-4rrr<
+2H o4 [rrcrrcrr:frrc4rrr]2     crrc4rrr
+G [f1 p40 f4. p80 f4. p64 f4]2
+F r1r1 @69 o4 r1r1
+I [r1]4 o4
+
+;
+
+I @0
+

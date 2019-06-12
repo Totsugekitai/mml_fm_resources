@@ -1,0 +1,244 @@
+;=============================================
+#title "[ K+A+T drove away !! ]   by º´Çì½ÓÆ»"
+#copyright "º´Çì½ÓÆ»"
+#timebase 48
+;=============================================
+
+$a E127 BR12 BS64 q0 p64  ;Init
+$k k127  o2 _0            ;Kick
+$s k115  o2 _2            ;Snare
+$h k110  o2 _6            ;Hi-Close
+$o k100  o2 _10           ;Hi-Open
+$c k120  o3 _1            ;Crash
+$x k100  o3 _0            ;Hi  Tom
+$y k100  o2 _9            ;Mid Tom
+$z k100  o2 _5            ;Low Tom
+$l k110  o2 _3            ;Hand Clap
+
+;---------------------------------------------
+
+T C1 BT4,4 t150
+T EX x7e,x7f,x09,x01,xf7                 r16 ; GM SYSTEM ON
+T EX x41,x10,x42,x12,x40,x00,x7f,x00,x41,xf7 ; GS-RESET
+
+A C10 r8 H0,0 @8 r8 v120 RT    r8 yx5b,30  yx5d,16  r8^2
+B C10 r8         r8      RT    r8                   r8^2
+C C10 r8         r8      RT    r8                   r8^2
+D C1  r8         r8         $a r8 yx5b,30  yx5d,50  r8^2
+E C2  r8         r8         $a r8 yx5b,40  yx5d,22  r8^2
+F C3  r8         r8         $a r8 yx5b,40  yx5d,22  r8^2
+G C4  r8         r8         $a r8 yx5b,80  yx5d,10  r8^2
+H C5  r8         r8         $a r8 yx5b,80  yx5d,10  r8^2
+I C6  r8         r8         $a r8 yx5b,40  yx5d,22  r8^2
+
+;=============================================
+
+;---------------- Intro ----------------------
+
+ABCDEFGHI [
+
+A l16$oc4c4c4$hc$oc8.
+B $cc0$kc4c4c4c4
+CGH r1
+D q2@34v120k127o1a8r8r2r16g8.
+E @55k120k127o4p64a0e0<a16>r8.r2r16g0d0<g16>r8
+F q3@27v95k110p20o5l32
+I q3@27v95k110p120o6l32
+FI [c0<a0e16a0era0erb0g0e16g0erg0er>]c0<a0e16a0erb0g0e16g0er
+
+A c4$hc$oc8.c4c8cc
+B c4l16c$cc0$sc0$xc8c0$yc$kc$yc0$zc$sc8$kc0$sc24c24c24cc
+CGH r1
+D f2l16g8rg8rg8
+E >f0c0<f16r8.r4>g0d0<g16r8>g0d0<g16r8>g0d0<g16r16
+FI [>c0<a0f16a0fra0frb0a0f16a0fra0fr]>c0<a0f16a0fr>d0<a0f16a0fr
+
+A $oc4c4c4c4
+B $cc0$kc4c4c4c$sc$xc0$ycc0$zc
+C $lr4c4r8.c8c8.
+D a8>a32r32<g8r8.r4r16e8.
+E >a0e0<a16r8>g0d0<g16r4r4r16e0<b0e16r8
+G @48v85k110p0o5FV1,-45,2,45,2,-45a0d1
+H @48v85k110p127o5FV1,-45,2,45,2,-45<a0>e1
+FI >[c0<a0e16a0era0erb0g0e16g0erg0er>]c0<a0e16a0erb0g0e16g0er
+
+A $oc4c8$hcc$oc12c12c12c12c12c12
+B $cc0$kc8c$cc0$sc8c[$yc0$zc]$sc0$xc12c0$yc12c0$zc12c0$kc12$sc12c12
+C r4l16c8ccl12cccccc
+D >f8.<f8>f8<f>l12gcf<b->e-<a-
+E >f0c0<f16r8>f0c0<f16r8.f16l12g0>gc0>c<f0>f<b-0>b-e-0>e-<a-0>a-
+G FV1,-45,2,60,2,-15FB1,0,2,0,2,64a0c1FB0FV0
+H FV1,-45,2,60,2,-15FB1,0,2,0,2,64f1FB0FV0
+FI [>c0<a0f16a0fra0frb0a0f16a0fra0fr]l12<b-0f0d>e-0<b-0g>a-0e-0c
+
+;---------------- A-Part ---------------------
+
+A [$hcc$oc8c$hcc$oc8$hc$oc8$hcc$oc$hc]
+B $cc0$kc8c8$sc8$kc$sc$kc8c8$sc$kc8cc8c8$sc8$kc$sc$kccc8$sc8cc
+C l16$lr4c4r4c4r4c4r4c8cc
+D o1l16ara8>ga<a32r32a8>a32r32<a8grgar>a32r32<a8gara8>a32r32gadega
+E r1r1
+G @49o5v85k110a0d1b0d1
+H @49o5v85k110e0<a1>f+0<a1
+FI l32>[c0<a0e16a0era0erb0g0e16g0erg0er>]c0<a0e16a0erb0g0e16g0er>[c0<a0e16a0era0erb0g0e16g0erg0er>]c0<a0e16a0er>d0<b0g16b0gr
+
+A [$hcc$oc8c$hcc$oc8$hc$oc8$hcc$oc$hc]
+B $cc0$kc8c8$sc8$kc$sc$kc8c8$sc$kc8cc8c8$sc8$kc$sc$kcc$sc24c24c24c8cc
+C $lr4c4r4c4r4c4r4c8cc
+D <a>a32r32<a8>g<g8a8>a32r32<ga>dc8<a8>a32r32<ga>a32r32dea32r32ga<a>a32r32dega
+E r1r1
+G >c0<d1>d0<f+1
+H >g0<a1>a0d1
+FI >[c0<g0e16g0erg0erb0g0e16g0erg0er>]c0<g0e16g0erb0g0e16g0er>[c0<a0f+16a0f+ra0f+rb0f+0d16f+0drf+0dr>]c0<f+0d16f+0dr>d0<a0f+16a0f+r
+
+A [$hcc$oc8c$hcc$oc8$hc$oc8$hcc$oc$hc]
+B $cc0$kc8c8$sc8$kc$sc$kc8c8$sc$kc8cc8c8$sc8$kc$sc$kccc8$sc8cc
+C r4c4r4c4r4c4r4c8cc
+D o1ara8>ga<a32r32a8>a32r32<a8grgar>a32r32<a8gara8>a32r32gadega
+E r1r1
+G >e0<a1>d0<g1
+H b0e1b0e1
+FI >[c0<a0e16a0era0erb0g0e16g0erg0er>]c0<a0e16a0erb0g0e16g0er>[c0<a0e16a0era0erb0g0e16g0erg0er>]c0<a0e16a0er>d0<b0g16b0gr
+
+A [$hcc$oc8c$hcc$oc8$hc$oc8$hcc$oc$hc]
+B $cc0$kc8c8$sc8$kc$sc$kc8c8$sc$kc8cc8c8$sc8$kc$sc$kc$scc24c24c24c8cc
+C $lr4c4r4c4r4c4r4c8cc
+D <a>a32r32<a8>g<g8a8>a32r32<ga>dc8<a8>a32r32<ga>a32r32dea32r32ga<a>a32r32ga>cd
+E r1r1
+G >e0<g1>f+0<a2>d0<f+2
+H >c0<e1>d0<f+2a0d2
+FI >[c0<g0e16g0erg0erb0g0e16g0erg0er>]c0<g0e16g0erb0g0e16g0er>[c0<a0f+16a0f+ra0f+rb0f+0d16f+0drf+0dr>]c0<f+0d16f+0dr>d0<a0f+16a0f+r
+
+;---------------- A-Part2 --------------------
+
+A [$hcc$oc8c$hcc$oc8$hc$oc8$hcc$oc$hc]
+B $cc0$kc8c8$sc8$kc$sc$kc8c8$sc$kc8cc8c8$sc8$kc$sc$kccc8$sc8cc
+C l16$lr4c4r4c4r4c4r4c8cc
+D o1l16ara8>ga<a32r32a8>a32r32<a8grgar>a32r32<a8gara8>a32r32gadega
+E @24p90,10,1o4l16r4r16v105k110l16e0ag0>cd0g<b0>d+c0f+e0ag0>c<b0>d+<f+0ba0>dd+0g
+E c+0f+d0gc+0f+<g+0>c+<e0a>c0f<g0>c<d+0g+a+0>d+<g0>c<c+0ga0>d<g+0>c<a0>d+<g+0>d<f+0b
+G @49o5v85k110a0d1b0d1
+H @49o5v85k110e0<a1>f+0<a1
+FI >l32[c0<a0e16a0era0erb0g0e16g0erg0er>]c0<a0e16a0erb0g0e16g0er>[c0<a0e16a0era0erb0g0e16g0erg0er>]c0<a0e16a0er>d0<b0g16b0gr
+
+A [$hcc$oc8c$hcc$oc8$hc$oc8$hcc$oc$hc]
+B $cc0$kc8c8$sc8$kc$sc$kc8c8$sc$kc8cc8c8$sc8$kc$sc$kcc$sc24c24c24c8cc
+C $lr4c4r4c4r4c4r4c8cc
+D <a>a32r32<a8>g<g8a8>a32r32<ga>dc8<a8>a32r32<ga>a32r32dea32r32ga<a>a32r32dega
+E d0gg0>cc0f<d+0g+g+0>c+c+0f+<e0aa0>dd0g<f0a+a+0>d+d+0g+<f+0bb0>ee0a<g0>cc0ff0b-<g+0>c+c+0f+f+0b<a0>dd0f+a0>d8d0e<a0>d<g0>c<a0>d<a0>c<f+0ad0g
+G >c0<d1>d0<f+1
+H >g0<a1>a0d1
+FI >[c0<g0e16g0erg0erb0g0e16g0erg0er>]c0<g0e16g0erb0g0e16g0er>[c0<a0f+16a0f+ra0f+rb0f+0d16f+0drf+0dr>]c0<f+0d16f+0dr>d0<a0f+16a0f+r
+
+A [$hcc$oc8c$hcc$oc8$hc$oc8$hcc$oc$hc]
+B $cc0$kc8c8$sc8$kc$sc$kc8c8$sc$kc8cc8c8$sc8$kc$sc$kccc8$sc8cc
+C r4c4r4c4r4c4r4c8cc
+D o1ara8>ga<a32r32a8>a32r32<a8grgar>a32r32<a8gara8>a32r32gadega
+E e0a4d0ge0ae0ad0ge0ae0ad0ge0ae0ad0ge0ae0ad0ge0ag0>c<a0>dr<a0>d8<g0>c<a0>d8<g0>c<a0>d8<g0>c<a0>d<g0>c
+G a0d1b0d1
+H e0<a1>f+0<a1
+FI >[c0<a0e16a0era0erb0g0e16g0erg0er>]c0<a0e16a0erb0g0e16g0er>[c0<a0e16a0era0erb0g0e16g0erg0er>]c0<a0e16a0er>d0<b0g16b0gr
+
+A [$hcc$oc8c$hcc$oc8$hc$oc8$hcc$oc$hc]
+B $cc0$kc8c8$sc8$kc$sc$kc8c8$sc$kc8cc8c8$sc8$kc$sc$kc$scc24c24c24c8cc
+C $lr4c4r4c4r4c4r4c8cc
+D <a>a32r32<a8>g<g8a8>a32r32<ga>dc8<a8>a32r32<ga>a32r32dea32r32ga<a>a32r32ga>cd
+E <b0>e<a0>d<g0>c<d0ar8b0>e<a0>d<g0>c<d0ar8b0>e<a0>d<g0>c<d0a>d0f+<a0>e<a0>d<f+0ae0gd0f+<a0>e<a0>d>f+0ad0f+<a0>e<a0>d<f+0ad0f+f+0aa0>d
+G >c0<d1>d0<f+1
+H >g0<a1>a0d1
+FI >[c0<g0e16g0erg0erb0g0e16g0erg0er>]c0<g0e16g0erb0g0e16g0er>[c0<a0f+16a0f+ra0f+rb0f+0d16f+0drf+0dr>]c0<f+0d16f+0dr>d0<a0f+16a0f+r
+
+;---------------- B-Part ---------------------
+
+A [$hcc$oc8]8
+B $cc0$kc8c8$sc8.$kc8c8c$sc4$kc8c8$sc8.$kc8cc8$sc8$kc8
+C r4c4r4c4r4c4r4c8c8
+D o1l16frf8>c8<f>frf<f8>c8<f8frf8g8>cfrfc8<f8g8
+G @48v100k120o5e0<a2>e0<a8.>f0<a8.>g0<a8>d0<g2>c0<g4>d0<g4
+H @48v100k120o5c0<f2>c0<f8.>d0<f8.>e0<f8b0f2b0f4b0f4
+E r1r1
+FI >c0<a0f16a0fra0fra0fr>c0<a0f16.ra0fr>c0<a0f16a0fra0fr>c0<a0f16a0fra0fr>c0<a0f16.ra0fr
+FI >c0<g0f16g0frg0frg0fr>c0<g0f16.rg0fr>c0<g0f16g0frg0fr>c0<g0f16g0frg0fr>c0<g0f16.rg0fr
+
+A [$hcc$oc8]8
+B $cc0$kc8c8$sc8.$kc8c8c$sc4$kc8c8$sc8.$kc8cc8$sc$xc0$yc$kc$sc
+C r4c4r4c4r4c4r4c8.c16
+D ere8b8e>ere<e8b8e>e<a8>a32r32<ab>a8c+8a32r32<a8>dega
+G >d0<g2>d0<g8.>e0<g8.>g0d8b0d4.a0c+4.g0c4
+H b0e2b0e8.b0e8.>e0<b8>e0<a4.>e0<a4.>e0<a4
+E r1r1
+FI b0g0e16g0erg0erg0erb0g0e16.rg0erb0g0e16g0erg0erb0g0e16g0erg0erb0g0e16.rg0er
+FI b0a0e16a0era0era0erb0a0e16.ra0er>c+0<a0e16a0era0er>c+0<a0e16a0erg0er>c0<g0e16.rg0er
+
+A [$hcc$oc8]8
+B $cc0$kc8c8$sc8.$kc8c8c$sc4$kc8c8$sc8.$kc8cc8$sc8$kc8
+C r4c4r4c4r4c4r4c8c8
+D <frf8>c8<f>frf<f8>c8<f8f+rf+8>cd32r32<f+>f+rf+32r32cdf+<f+>cd
+G a0c2>e0<a8.>d0<f8.>c0<f8>d0<f+4.a0d4>c0<f+4>d0<f+8
+H >f0<a2>>c0<f8.b0c8.a0c8a0d4.f+0<a4>a0d4a0d8
+E r1r1
+FI >c0<a0f16a0fra0fra0fr>c0<a0f16.ra0fr>c0<a0f16a0fra0fr>c0<a0f16a0fra0fr>c0<a0f16.ra0fr
+FI >c0<a0f+16a0f+ra0f+ra0f+r>c0<a0f+16.ra0f+r>c0<a0f+16a0f+ra0f+r>c0<a0f+16a0f+ra0f+r>c0<a0f+16.ra0f+r
+
+A [$hcc$oc8]8
+B $cc0$kc8c8$sc8.$kc8c8c$sc4$kc8c8$sc8.$kc[$sc0$xc24]4r24r24[$yc0$zc24]4r24r24
+C r4c4r4c4r4c4ccc8ccc8
+D <ere8b8e>ere<e8>de32r32<e8ara8>e8<agrg>d8g32r32g<g8
+G >e0<g+2>d0<g+2>c0<e4>d0<e4b0d8.>c0<d8.>d0<g8
+H b0f2b0e2a0c4>c0<a4g0<b8.>b0g8.b0d8
+E r1r1
+FI b0g+0e16g+0erg+0erg+0erb0g+0e16.rg+0erb0g+0e16g+0erg+0erb0g+0e16g+0erg+0erb0g+0e16.rg+0er
+FI >c0<a0e16a0era0era0er>c0<a0e16.ra0er>c0<a0e16g0drg0drg0drb0g0d16g0drb0g0d16.rg0dr
+
+;---------------- B-Part2 --------------------
+
+A [$hcc$oc8]8
+B $cc0$kc8c8$sc8.$kc8c8c$sc4$kc8c8$sc8.$kc8cc8$sc8$kc8
+C r4c4r4c4r4c4r4c8c8
+D o1l16frf8>c8<f>frf<f8>c8<f8frf8g8>cfrfc8<f8g8
+G o5e0<a2>e0<a8.>f0<a8.>g0<a8>d0<g2>c0<g4>d0<g4
+H o5c0<f2>c0<f8.>d0<f8.>e0<f8b0f2b0f4b0f4
+E o5@79l16v110k110efa>cec<afefa>cec<affgb>dgd<bgfgb>dgd<bg 
+FI >c0<a0f16a0fra0fra0fr>c0<a0f16.ra0fr>c0<a0f16a0fra0fr>c0<a0f16a0fra0fr>c0<a0f16.ra0fr
+FI >c0<g0f16g0frg0frg0fr>c0<g0f16.rg0fr>c0<g0f16g0frg0fr>c0<g0f16g0frg0fr>c0<g0f16.rg0fr
+
+A [$hcc$oc8]8
+B $cc0$kc8c8$sc8.$kc8c8c$sc4$kc8c8$sc8.$kc8cc8$sc$xc0$yc$kc$sc
+C r4c4r4c4r4c4r4c8.c16
+D ere8b8e>ere<e8b8e>e<a8>a32r32<ab>a8c+8a32r32<a8>dega
+G >d0<g2>d0<g8.>e0<g8.>g0d8b0d4.a0c+4.g0c4
+H b0e2b0e8.b0e8.>e0<b8>e0<a4.>e0<a4.>e0<a4
+E egb>dgd<bgegb>dgd<bgab>c+eaec+<bab>c+eae<bg
+FI b0g0e16g0erg0erg0erb0g0e16.rg0erb0g0e16g0erg0erb0g0e16g0erg0erb0g0e16.rg0er
+FI b0a0e16a0era0era0erb0a0e16.ra0er>c+0<a0e16a0era0er>c+0<a0e16a0erg0er>c0<g0e16.rg0er
+
+A [$hcc$oc8]8
+B $cc0$kc8c8$sc8.$kc8c8c$sc4$kc8c8$sc8.$kc8cc8$sc8$kc8
+C r4c4r4c4r4c4r4c8c8
+D <frf8>c8<f>frf<f8>c8<f8f+rf+8>cd32r32<f+>f+rf+32r32cdf+<f+>cd
+G a0c2>e0<a8.>d0<f8.>c0<f8>d0<f+4.a0d4>c0<f+4>d0<f+8
+H >f0<a2>>c0<f8.b0c8.a0c8a0d4.f+0<a4>a0d4a0d8
+E fga>cfc<agfga>cfc<aff+ga>df+d<agf+ga>df+d<af+
+FI >c0<a0f16a0fra0fra0fr>c0<a0f16.ra0fr>c0<a0f16a0fra0fr>c0<a0f16a0fra0fr>c0<a0f16.ra0fr
+FI >c0<a0f+16a0f+ra0f+ra0f+r>c0<a0f+16.ra0f+r>c0<a0f+16a0f+ra0f+r>c0<a0f+16a0f+ra0f+r>c0<a0f+16.ra0f+r
+
+A [$hcc$oc8]8
+B $cc0$kc8c8$sc8.$kc8c8c$sc4$kc8c8$sc8.$kc[$sc0$xc24]4r24r24[$yc0$zc24]4r24r24
+C r4c4r4c4r4c4ccc8ccc8
+D <b-rb-8>f8<b->b-rb-32r32<b-8>f32r32f<b-8>ere8<e8b>ere32r32<ab>e<eb>e
+G >e0<b-2.>d0<f4b0e2>e0<g+4>g+0d4
+H >d0<f2.b-0d4g+0d2b0e4>e0<b4
+E fb->cdfdc<b-fb->cdfdc<b-g+b>ef+g+e<bag+b>ef+g+eg+b
+FI >d0<b-0f16b-0frb-0frb-0fr>d0<b-0f16.rb-0fr>d0<b-0f16b-0frb-0fr>d0<b-0f16b-0frb-0fr>d0<b-0f16.rb-0fr
+FI b0g+0e16g+0erg+0erg+0erb0g+0e16.rg+0erb0g+0e16g+0erg+0erb0g+0e16g+0er[b0g+0e24]3b0g+0e8
+
+;--------------- Loop x 4 -----------------
+
+A r2.r$oc8.
+B r2.r$sc8$kc
+C [r4c4]
+D o2r2.de32r32ga32r32
+EHG r1
+FI g0erg0erb0g0e16>c0<a0e16a0er>c0<a0e16a0era0erb0g0e16>c0<a0e16>c0<a0e16>c0<a0e16.ra0era0era0er
+
+ABCDEFGHI ]4

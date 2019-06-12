@@ -1,0 +1,204 @@
+#title "傷心旅行　−The 電車(上級ステージ) MML2MID ver.,for GML1"
+#copyright "Composed by Combat Ogose,Micon control club"
+#timebase 72
+
+;--- 音源イニシャライズ
+
+A EX x7e,x7f,x09,x01,xf7                      ; GM SYSTEM ON,By COOLGS.TXT
+
+
+;--- 調整
+
+A	t100 BT3,4
+ABCDEFR	r4
+
+;--- 初期設定
+
+A	C2  $1a
+1A	C2
+B	C3  H0,2 @88 v105 k64 o3 l2 y91,110 E96 p89
+1B	C3  k64 l2
+2B	C3  k64 l2
+C	C4  H0,2 @56 o4 v105 k112 y91,127 E101 p74
+D	C5  H0,2 @26 v105 k88 o3 y91,105 E80 p34
+1D	C5  k88 o4
+2D	C5  k88 o4
+E	C6  H0,2 @11 v105 k104 o5 y91,90 E110 p54
+1E	C6
+F	C7  H0,2 @98 v105 k88 o5 y91,110 E90  p19
+R	C10 H0,2 @32 y91,110 E100 p84 
+1R	C10
+2R	C10
+3R	C10
+
+;--- ドラム用マクロ設定
+
+$b	k104  o2 _0  ;kick
+$s	k96   o2 _2  ;snare
+$h	k88   o2 _6  ;hihat
+$c	k104  o3 _1  ;cym.1
+$2c	k104  o3 _4  ;cym.2
+$d	k96   o2 _10  ;hihat2
+$m	k88   o2 _4  ;snare 2
+$1m	k104  o3 _0  ;tom h
+$2m	k104  o2 _7  ;tom l
+
+;--- エンベロープマクロ設定
+
+$1f	E20 FE2,1,2,+107,2.,-37,4,-50
+;_ESET(1,"e127=96 e90=144 e40=48")
+
+;--- マクロ設定
+
+$1a	H0,2 @26  v105 k104 o2 l12 y91,96  E110 p34
+$2a	H0,2 @32  v105 k112 o1 l12 y91,108 E120 p34
+
+;--- 調整
+
+ABCDEFR	r2
+
+;90 T0="t100$k[b-e-a-d-]
+;91 T1="r2.r2.r2.r2.":T2="r2.r2.r2.r2.t60r2.":T3="t132"
+
+;--- ベースギター & アコベース
+
+A	$1a- b-2.b-2.b-2.b-2.
+A	b-2.b-2.b-2.b-2.^2.
+1A	r2.r2.r2.r2.t60r2. t132
+A	$1a b-2.>e-2^6<a-b-2.>e-2<a-4
+A	[b-2.>e-2^6<a-b-2.>e-2<a-4
+A	b-2.>e-2^6c<a-2.a-4>c6<b-12a-4]2
+A	$2a b-2.>e-4^6c12<a-4b-2.>e-4a-4g6f12<
+A	b-2.>e-4c6<b-12a-6f12b-4>d-4e-4f4a-4<a-4
+
+A	$1a[b-2.>e-2^6<a-b-2.>e-2<a-4
+A	b-2.>e-2^6c<a-2.a-4>c6<b-12a-4]2
+A	$2a b-2.>e-4c6<b-12a-6f12b-4>d-4e-4f4a-4<a-4
+
+A	$1a b-2.>e-2^6<a-b-2.>e-2<a-4
+1A	Z{z0=105} [Z{z0=z0-3} vz0 r16]35 r16r2.
+
+
+B	o3 r4 b- r4 b- r4 b- r4 b-
+1B	o4 r4 d- r4 e- r4 f r4 e-
+2B	o4 r4 f r4 g r4 a- r4 g
+B	r4 b- r4 b- r4 b- k104 $1f b-.^2. FE0 k64 E96
+1B	r4 d- r4 e- r4 f k104 e-.^2. k64
+2B	r4 f r4 g r4 a- k104 g.^2. k64
+B	[r2.r2.r2.r2.]3
+B	r4 b-48&>d-48&f2-24< r4 b-48&>e-48&g2-24< r4 b-48&>f48&a-2-24< r4 b-48&>e-48&g2-24<
+B	r4 b-48&>d-48&f2-24< r4 b-48&>e-48&g2-24< r4 a-48&>d-48&f2-24< r4 a-48&>c48&f2-24<
+B	[r2.r2.r2.r2.]4
+B	r4 b-48&>d-48&f2-24< r4 b-48&>e-48&g2-24< r4 b-48&>f48&a-2-24< r4 b-48&>e-48&g2-24<
+B	r4 b-48&>d-48&f2-24< r4 b-48&>e-48&g2-24< r4 a-48&>d-48&f2-24< r4 a-48&>c48&f2-24<
+B	r2.r2.r2.r2.
+B	r2.r2.r2.r2.
+
+C	r2.r2.r2.r2.
+C	r2.r2.r2.r2.r2.
+C	[r2.r2.r2.r2.]2
+C	r2.r2.r2.r2 a-4
+C	l12 Q8 a-36 y5,36 y65,127 b-18 y65,0 a-fb-a-fb-a-f a-36 y5,36 y65,127 b-18 y65,0 a-fb-a-fb-a-b-> Q7 c32 y5,64 y65,127 d-8.. y65,0 e-4d-4 Q8<a-32 y5,64 y65,127 b-8..^12 y65,0 a-b-a-8.y5,32 y65,127 f16 y65,0
+C	Q8 a-36 y5,36 y65,127 b-18 y65,0 a-fb-a-fb-a-b- >c36 y5,36 y65,127 d-18 y65,0 <b-a->d-<b-a->d-<b-a-> d-36 y5,36 y65,127 e-18 y65,0 d-<b->e-d-<b->e-d-<b-> Q7 e-32 y5,24 y65,127 f8.. y65,0 Q8 fe-fa-4
+C	b-6 y5,24 y65,127 <b-12 y65,0 r2r2.r2.r2.
+C	[r2.r2.r2.r2.]2
+C	r2.r2.r2.r2 l12 Q8 e-fa-
+C	Q8 a-36 y5,36 y65,127 b-18 y65,0 a-fb-a-fb-a-f a-36 y5,36 y65,127 b-18 y65,0 a-fb-a-fb-a-b->Q7 c32 y5,64 y65,127 d-8.. y65,0 e-4d-4 Q8d-36 y5,36 y65,127 e-18 y65,0 d-<b->d-<b-a- e-fa- 
+C	Q8 a-36 y5,32 y65,127 b-18 y65,0 a-fb-a-fb-a-b- >c36 y5,36 y65,127 d-18 y65,0 <b-a->d-<b-a->d-<b->d- d-36 y5,36 y65,127 e-18 y65,0 d-<b->e-d-<b->e-d-e- Q7 e-32 y5,64 y65,127 f8.. y65,0 a-4a4 Q8
+C	b-6 y5,24 y65,127 <b-12 y65,0 r2r2.r2.r2.
+C	r2.r2.r2.r2.
+
+D	l2 r4 b-36&>d-36&f2-18< r4 b-36&>e-36&g2-18< r4 b-36&>f36&a-2-18< r4 b-36&>e-36&g2-18<
+D	r4 b-36&>d-36&f2-18< r4 b-36&>e-36&g2-18< r4 b-36&>f36&a-2-18< b-36&>e-36&g2.^2.-18<
+D	r4 b-48&>d-48&f2-24< r4 b-48&>e-48&g2-24< r4 b-48&>f48&a-2-24< r4 b-48&>e-48&g2-24<
+D	r4 b-48&>d-48&f2-24< r4 b-48&>e-48&g2-24< r4 b-48&>f48&a-2-24< r4 b-48&>e-48&g2-24<
+D	r4 b-48&>d-48&f2-24< r4 b-48&>e-48&g2-24< r4 a-48&>d-48&f2-24< r4 a-48&>c48&f2-24<
+D	r4 b-48&>d-48&f2-24< r4 b-48&>e-48&g2-24< r4 b-48&>f48&a-2-24< r4 b-48&>e-48&g2-24<
+D	r4 b-48&>d-48&f2-24< r4 b-48&>e-48&g2-24< r4 a-48&>d-48&f2-24< r4 a-48&>c48&f2-24<
+D	[r2.r2.r2.r2.]2
+D	[r4 b-48&>d-48&f2-24< r4 b-48&>e-48&g4-24< r6 b-12 r4 b-48&>f48&a-2-24< r4 b-48&>e-48&g4-24< r6 b-12
+1D	[r2.r2^6 e-12 r2.r2^6 e-12
+2D	[r2.r2^6 g12 r2.r2^6 g12
+D	r4 b-48&>d-48&f2-24< r4 b-48&>e-48&g4-24< r6 b-12 r4 a-48&>d-48&f4-24< r6 a-12 >c48&e-48&a-4-24 c48&e-48&g4-24 <a-48&>c48&e-4-24< ]2
+1D	r2.r2^6 e-12 r2^6 d-12 r2.]2
+2D	r2.r2^6 g12 r2^6 f12 r2.]2
+D	r2.r2.r2.r2.
+D	r4 b-48&>d-48&f2-24< r4 b-48&>e-48&g2-24< r4 b-48&>f48&a-2-24< r4 b-48&>e-48&g2-24<
+1D	Z{z0=105} [Z{z0=z0-3} vz0 r16]35 r16r2.
+
+
+E	[r2.r2.r2.r2.]2 r2.
+E	b-2.a-2.g2.e-2. l12
+E	<b-a-b- a-32b-8..a-6fb-a-b-a-4f4b-a-b- a-32b-8.. a-6fb-a-b->d-4c6<b-
+E	b-a-b- a-32b-8..a-6fb-a-b-a-4f6a-b-a-b->c32d-8..e-6ffe-d-e-d-<b->d-<b-a->
+E	E70 b-4^6a-b-4b-2a-4b-4^6a-b-4a-4^6b-a-4
+E	b-4^6a-b-4b-4a-4b-6b-a-4^6b-a-4>e-4c4<a-4
+E	b-2.^2.^2.^2. r2.r2.r2.r2.
+E	E120 <<a-32b-8..>d-4<b-6a-r6b-r6>d-<b-6>d-fe-d-fe-d-fe-d-e-d-<b-a-6b->d-6e-
+E	<a-32b-8..>d-4<b-6a-r6b-r6>d-<b-6a-b-4>d-4e-4fe-d-e-d-<b-a-b->d-
+E	E70 >a-32b-8..^6a-b-4r6b-r6a-b-4b-4^6a-b-4r6a-r6b-a-6f
+E	a-32b-8..^6a-r6b-r6b-a-6b-a-6b-a-4>c4e-4a-6e-c6<b-a-4 E110
+E	b-2.^2.^2.^2.
+E	b-2.a-2.g2.e-2.
+1E	Z{z0=105} [Z{z0=z0-3} vz0 r16]35 r16r2.
+
+F	l12 k88 E90 fb->d-f2<fb->e-g2<fb->fa-2<fb->d-g2<
+F	fb->d-f2<fb->e-g2<fb->fa-2<b->e-gb-2^2. >k64
+F	[r2.r2.r2.r2.]3
+F	o6 b-a-b- a-32b-8..a-6fb-a-b-a-4f4b-a-b- a-32b-8.. a-6fb-a-b->d-4c6<b-
+F	b-a-b- a-32b-8..a-6fb-a-b-a-4f6a-b-a-b->c32d-8..e-6ffe-d-e-d-<b->d-<b-a-
+F	b-2.^2.^2.^2.
+F	[r2.r2.r2.r2.]3
+F	o6 b-a-b- a-32b-8..a-6fb-a-b-a-4f4b-a-b- a-32b-8.. a-6fb-a-b->d-4c6<b-
+F	b-a-b- a-32b-8..a-6fb-a-b-a-4f6a-b-a-b->c32d-8..e-6ffe-d-e-d-<b->d-<b-a-
+F	b-2.^2.^2.^2.
+F	r2.r2.r2.r2.
+
+R	[r2.r2.r2.r2.]2 r2.
+
+R	l4 $c c $h c c6 c12 c c c6 $d c12 $h c c c6 c12 c6 c12 $d c $h c
+1R	l4 $b c2 c6 c12 c2 c6 c12 c2 c6 c12 c c2
+2R	l4 $s r4 c4 r6 $m c12 r4 $s c4 r6 c12 r4 c r6 $m c12 r6 $s c12 r4 c
+R	c c c6 c12 c c c6 $d c12 $h c c c6 c12 $d c6 $h c12 c c
+1R	c2 c6 c12 c2 c c2 c6 c12 c c2
+2R	r4 c4 r6 $m c12 r4 $s c4 r6 c12 r4 c r6 $m c12 r6 $s c12 r4 c
+R	c c c6 c12 c c c6 $d c12 $h c c c6 c12 c6 c12 $d c $h c6 $d c12
+1R	c2 c6 c12 c2 c6 c12 c2 c6 c12 c c2
+2R	r4 c4 r6 $m c12 r4 $s c4 r6 c12 r4 c r6 $m c12 r6 $s c12 r4 c6 $m c12
+R	$c c $h c c6 c12 c c c6 $d c12 $h c c c6 c12 c6 c12 $d c $h c6 $d c12
+1R	c2 c6 c12 c2 c c2 c6 c12 c c2
+2R	$s r4 c4 r6 $m c12 r4 $s c4 r6 c12 r4 c r6 $m c12 r6 $s c12 r4 c
+R	$h c c c6 c12 c c c6 $d c12 $h c c c6 c12 c c c6 $d c12
+1R	$b c2 c6 c12 c2 c c2 c6 c12 c2 c6 c12
+2R	r4 c4 r6 $m c12 r4 $s c4 r6 c12 r4 c r6 $m c12 $s c12c12c12c12c12c12 $1m c12c12 $2m c12
+
+R	$c c $h cc6 $d c12 $h c $d c $h c6 $d c12 $h ccc6 $d c12 $h c6c12cc6 $d c12
+1R	$b c2c6c12c6c12 r4 c6c12 c2c6c12 c4c2
+2R	$h c4 $s c4 r6 $m c12 r4 $s c4 r6 $m c12 r4 $s c4 r6 $m c12 r6 $s c12 r4 c6 $m c12
+R	$c c $h cc6 $d c12c6 $h c12 $d c6 $h c12 $d c6 $h c12 $d ccc6 $h c12 $c c $2c c $d c6c12
+1R	$b c2c6c12cccc2c6c12ccc6c12
+2R	$h c4 $s c4 r6 $m c12 r6 $s c12 r6 c12 r6 $m c12 r4 $s c4 r6 $m c12 $s c12c12c12c12c12c12 $1m c12c12 $2m c12
+
+R	l4 $c c $h c c6 c12 c c c6 $d c12 $h c c c6 c12 c6 c12 $d c $h c
+1R	l4 $b c2 c6 c12 c2 c6 c12 c2 c6 c12 c c2
+2R	l4 $s r4 c4 r6 $m c12 r4 $s c4 r6 c12 r4 c r6 $m c12 r6 $s c12 r4 c
+R	c c c6 c12 c c c6 $d c12 $h c c c6 c12 c6 c12 $d c $h c6 $d c12
+1R	c2 c6 c12 c2 c6 c12 c2 c6 c12 c c2
+2R	r4 c4 r6 $m c12 r4 $s c4 r6 c12 r4 c r6 $m c12 r6 $s c12 r4 c6 $m c12
+R	$c c $h c c6 c12 c c c6 $d c12 $h c c c6 c12 c6 c12 $d c $h c6 $d c12
+1R	c2 c6 c12 c2 c c2 c6 c12 c c2
+2R	$s r4 c4 r6 $m c12 r4 $s c4 r6 c12 r4 c r6 $m c12 r6 $s c12 r4 c
+R	$h c c c6 c12 c c c6 $d c12 $h c c c6 c12 c c c6 $d c12
+1R	$b c2 c6 c12 c2 c c2 c6 c12 c2 c6 c12
+2R	r4 c4 r6 $m c12 r4 $s c4 r6 c12 r4 c r6 $m c12 $s c12c12c12c12c12c12 $1m c12c12 $2m c12
+R	$c c $h cc6 $d c12c6 $h c12 $d c6 $h c12 $d c6 $h c12 $d ccc6 $h c12 $c c $2c c $d c6c12
+1R	$b c2c6c12cccc2c6c12ccc6c12
+2R	$h c4 $s c4 r6 $m c12 r6 $s c12 r6 c12 r6 $m c12 r4 $s c4 r6 $m c12 $s c12c12c12c12c12c12 $1m c12c12 $2m c12
+
+R	l4 $c c $h c c6 c12 c c c6 $d c12 $h c c c6 c12 c6 c12 $d c $h c
+1R	l4 $b c2 c6 c12 c2 c6 c12 c2 c6 c12 c c2
+2R	l4 $s r4 c4 r6 $m c12 r4 $s c4 r6 c12 r4 c r6 $m c12 r6 $s c12 r4 c
+3R	Z{z0=100} [Z{z0=z0-3} vz0 r16]33 r8.r2.
+
+
+;[End of MML]

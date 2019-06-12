@@ -1,0 +1,303 @@
+#title "〜 でかいまち 〜 (SC-88)   じゅ"
+#copyright "(c) じゅ"
+#timebase 48
+
+/*
+
+     Use MML2MID version 5.20 (or newer) to compile this file.
+    ５５で聴くのはかなり危険みたい。
+
+*/
+
+$i _1            ; transpose
+
+T C12 BT4,4 t132     ;テンポ設定
+T EXx7e,x7f,x09,x01,xf7                r16   ; GM SYSTEM ON
+T EX x41,x10,x42,x12,{x40,0,x7f,0},xf7 r48   ; GS-RESET
+T EX x41,x10,x42,x12,{x40,1,x39,3},xf7 r48   ; GS-Chorus #3
+T EX x41,x10,x42,x12,{x40,1,x30,5},xf7 r48^2 ; GS-Reverb #2
+
+
+;T EX x41,x10,x42,x12,{0,0,x7f,x00},xf7     ; Mode2
+;T EX x41,x10,x42,x12,{x40,x1a,x15,x02},xf7     ; drum11on
+
+;---EQ HIGH GAIN---
+;T  EXx41,x10,x42,x12,{x40,x02,x03,74},xf7 
+
+
+;  Ch.   bank Prog.   Vol. Vel. gt.oct.ln.  pan.
+A  C1  r4  v125 BR24 r8 ~64  E127 $i  
+B  C2  r4  v125 BR24 r8 ~64  E127 $i  
+C  C3  r4  v127 BR24 r8 ~64  E127 $i  
+D  C10 r4  v125 BR4  r8 ~64  E127 
+E  C10 r4  v125 BR4  r8 ~64  E127 $i  
+F  C4  r4  v105 BR4  r8 ~64  E127 $i  
+G  C5  r4  v105 BR4  r8 ~64  E127 $i  
+H  C6  r4  v105 BR4  r8 ~64  E127 $i  
+I  C10 r4  v125 BR4  r8 ~64  E127     
+J  C11 r4  v115 BR4  r8 ~64  E127 $i  
+
+
+
+$a      H0,2 @00  p64 q0  o2  l16
+$b k100 H0,2 @06  p104q4  o6  l16 
+$c k115 H0,2 @34 p64 q4  o2  l16
+$k k105  H1,2 @80  p64 q-1  o5  l16
+$1k y65,127y5,3y126,1
+$j k120 H0,2 @65  p24 q5  o5  l16
+$l k120  H0,2 @16  p64 q4  o5  l16
+$1l y126,1 N1,x63,64 N1,x64,40 N1,x66,64
+
+
+$9z EXx41,x10,x42,x12,{x40,x00,x04,
+
+
+
+
+;---FILTER---[[N1,] x20:Filter, x21:Resonance]
+;ABCD N1,x20,100N1,x21,80
+
+
+;---アタック---[N1,x63,n][EXx41,x10,x42,x12,{x40,x1x,x34,n},xf7 ]
+$4b EXx41,x10,x42,x12,{x40,x1
+$5b ,x34,70},xf7 
+
+;---減衰防止---[N1,x64,127]
+;ABCDI N1,x64,127
+G N1,x64,66
+;B N1,x64,34
+
+;H   N1,x64,70
+;---リリース---[N1,x66,n]
+;ABCDI  N1,x66,10
+
+;---Vibrate---[[N1,] 8:Rate, 9:Depth, 10:Delay]
+$2k N1,8,64 N1,9,90 N1,10,40
+
+;---BEND---[[FB4, Def.+-n, l, +-n, ...]
+;---EXPR.---[[FE4, Def.+-n, l, +-n, ...]
+;---Volume---[[FV4, Def.+-n, l, +-n, ...]
+;$a FB2,-16,32,-16,32,32
+;$b FE12,0,1,-40
+;$c FE4,0,4.,0,4.,-60
+;$d FE4,0,1,-50,1,-50
+;A  FE4,0,32,-10,1,-3,1,-3
+
+;$z FB0
+;---Portamento---
+;E y5,10
+;E y84,79y5,20
+
+
+;---VIB2---[[IBn, 2, Delay, %l, Delay_l]
+$1a IB1,2,50,20,30
+$1b IB1,2,0,10,12
+$1z IB0
+
+;---Drum_Pan---[Nx1c, notenumber,1~127(0:Rnd.)]
+$2a Nx1c,83,14  
+;B Nx1c,38,1  
+
+
+;---Drum_Pitch---[Nx18, notenumber, <64<],[c>d:63>65]
+$1y Nx18,38,67 Nx1c,38,54  
+
+;E $3a
+;---EFFECT---[[y] 91:Reverb, 93:Chorus, 94:Delay]
+A  $l     y94,30y91,120r2
+B  $l     y94,30y91,120r2
+C  $c     y94,00y91,00r2
+D  $a     y94,00y91,120r2
+E  $a     y94,00y91,120r2
+F  $j     y94,10y91,120r2
+G  $j     y94,10y91,120r2
+H  $b     y94,40y91,120r2
+I  $a     y94,00y91,120r2
+J  $k$1k$2k  y93,60y91,120r2
+
+$w k100_6
+$v k100_10
+$x k110_-1c
+$y k100_2c
+$z k120_13
+
+;=1
+
+A $irrq2cdq4
+B $irrq2<ga>q4
+C $crrrr
+D $arr$yc
+E $a$wc,-30c$vc$wc
+FGHIJ r4
+
+
+? [
+
+A e^^f^^>c2^1^^
+B c-^^c^^g2^1^^
+C $cdd^^dd^d^d<a^>c^<a^>dd^^dd^d^df^g^a^
+D [$x^^^$y^^$x^cc^$y^$x^]2
+E $w[[cc,-20cc,-30]2[c,-15c$vc$wc]2]2
+F $j[ccrrddrc^ccrddrr]2
+G $j<[aarraara^aarbbrr]2
+H $b[[ef>c<ef>d<]2ef>c<f]2
+I $a$zc1^1
+J r1r1
+
+A <b^^g^^a2^1^^
+B e^^c^^d2^1^^
+C dd^^dd^d^d<a^>c^<a^>dd^^dd^d^d<a^>c^e^
+D [$x^^^$y^^$x^cc^:$y^$x^]2$y^cc
+E [[cc,-20cc,-30]2[c,-15c$vc$wc]2]2
+F [c-c-rrccrc-^c-c-rccrr]2
+G [ggrraarg^ggraarr]2
+H [[debde>c<]2debf]2
+I r1^1
+J r1r1
+
+
+A e^^f^^>c^^2^2.<b^>c^
+B c-^^c^^g^^2^2.d^e^
+C dd^^dd^d^d<a^>c^<a^>dd^^dd^d^df^g^a^
+D [$x^^^$y^^$x^cc^$y^$x^]2
+E [[cc,-20cc,-30]2[c,-15c$vc$wc]2]2
+F [ccrrddrc^ccrddrr]2
+G [aarraara^aarbbrr]2
+H [[ef>c<ef>d<]2ef>c<f]2
+I r1r1
+J r1r1
+
+A d^^<a^^a^^2^1
+B g^^d^^d^^2^1
+C dd^^dd^d^d<a^>c^<a^>dd^^dd^d^d<a^>c^e^
+D [$x^^^$y^^$x^cc^:$y^$x^]2$y^cc
+E [[cc,-20cc,-30]2[c,-15c$vc$wc]2]2
+F [c-c-rrccrc-^c-c-rccrr]2
+G [ggrraarg^ggraarr]2
+H [[debde>c<]2debf]2
+I r1r1
+J r1r2.$krrcd
+
+A e^^f^^>c2^1^^
+B c-^^c^^g2^1^^
+C dd^^dd^d^d<a^>c^<a^>dd^^dd^d^df^g^a^
+D [$x^^^$y^^$x^cc^$y^$x^]2
+E [[cc,-20cc,-30]2[c,-15c$vc$wc]2]2
+F [ccrrddrc^ccrddrr]2
+G [aarraara^aarbbrr]2
+H [[ef>c<ef>d<]2ef>c<f]2
+I c1^1
+J e^^f^^>c2^1^^
+
+AJ <b^^g^^a2^1^^
+B e^^c^^d2^1^^
+C dd^^dd^d^d<a^>c^<a^>dd^^dd^d^d<a^>c^e^
+D [$x^^^$y^^$x^cc^:$y^$x^]2$y^cc
+E [[cc,-20cc,-30]2[c,-15c$vc$wc]2]2
+F [c-c-rrccrc-^c-c-rccrr]2
+G [ggrraarg^ggraarr]2
+H [[debde>c<]2debf]2
+I r1^1
+
+
+AJ e^^f^^>c^^2^2.<b^>c^
+B c-^^c^^g^^2^2.d^e^
+C dd^^dd^d^d<a^>c^<a^>dd^^dd^d^df^g^a^
+D [$x^^^$y^^$x^cc^$y^$x^]2
+E [[cc,-20cc,-30]2[c,-15c$vc$wc]2]2
+F [ccrrddrc^ccrddrr]2
+G [aarraara^aarbbrr]2
+H [[ef>c<ef>d<]2ef>c<f]2
+I r1r1
+
+AJ d^^<a^^a^^2^1
+B g^^d^^d^^2^1
+C dd^^dd^d^d<a^>c^<a^>dd^^dd^d^d<a^>c^<a^>
+D [$x^^^$y^^$x^cc^:$y^$x^]2$y$x$yc
+E [[cc,-20cc,-30]2[c,-15c$vc$wc]2]2
+F [c-c-rrccrc-^c-c-rccrr]2
+G [ggrraarg^ggraarr]2
+H [[debde>c<]2debf]2
+I r1r1
+
+
+
+AJ a^^d^^a^^^d^a^d^g^^e^^c^^^c^e^c^
+B f^^<b-^^>f^^^<b-^>f^<b-^>e^^c^^<g^^^g^>c^<g^
+C <b-b-^^b-b-^b-^b->d^f^d^cc^^cc^c^ce^g^c^
+D [$x^^^$y^^$x^cc^:$y^$x^]2$y^cc
+E [[cc,-20cc,-30]2[c,-15c$vc$wc]2]2
+I c1c1
+F <b-b-rr>cc<rb-^b-b-rb-b->rrccrrddrc^ccrccrr
+G ffrrffrf^ffrggrrggrrggrg^ggraarr
+H [dfadf>c<]2dfaf[cegce>c<]2cege
+
+AJ d1.d^e^f^g^
+B a1.a^>c^d^e^
+C dd^^dd^d^d<a^>c^<a^>dd^^dd^d^df^g^a^
+D [$x^^^$y^^$x^cc^$y^$x^]2
+E [[cc,-20cc,-30]2[c,-15c$vc$wc]2]2
+F [ccrrddrc^ccrddrr]2
+G [aarraara^aarbbrr]2
+H [[ef>c<ef>d<]2ef>c<f]2
+I c1^1
+
+
+AJ a^^d^^a^^^d^a^d^g^^e^^c^^^c^e^c^
+B f^^<b-^^>f^^^<b-^>f^<b-^>e^^c^^<g^^^g^>c^<g^
+C <b-b-^^b-b-^b-^b->d^f^d^cc^^cc^c^ce^g^c^
+D [$x^^^$y^^$x^cc^:$y^$x^]2$y^cc
+E [[cc,-20cc,-30]2[c,-15c$vc$wc]2]2
+I c1c1
+F <b-b-rr>cc<rb-^b-b-rb-b->rrccrrddrc^ccrccrr
+G ffrrffrf^ffrggrrggrrggrg^ggraarr
+H [dfadf>c<]2dfaf[cegce>c<]2cege
+
+
+AJ d1^1
+B a1^1
+C dd^^dd^d^d<a^>c^<a^>dd^^dd^d^df^g^a^
+D [$x^^^$y^^$x^cc^$y^$x^]2
+E [[cc,-20cc,-30]2[c,-15c$vc$wc]2]2
+F [ccrrddrc^ccrddrr]2
+G [aarraara^aarbbrr]2
+H [[ef>c<ef>d<]2ef>c<f]2
+I c1^1
+
+A r1r2.$lrrcd
+B r1r2.$lrr<ga>
+C dd^^dd^d^d<a^>c^<a^>dd^^dd^d^df^g^a^
+D [$x^^^$y^^$x^cc^$y^$x^]2
+E [[cc,-20cc,-30]2[c,-15c$vc$wc]2]2
+F [ccrrddrc^ccrddrr]2
+G [aarraara^aarbbrr]2
+H [[ef>c<ef>d<]2ef>c<f]2
+I c1^1
+J r1r1
+
+? ]2
+
+A e^^f^^>c2^1^^
+B c-^^c^^g2^1^^
+C $cdd^^dd^d^d<a^>c^<a^>dd^^dd^d^df^g^a^
+D [$x^^^$y^^$x^cc^$y^$x^]2
+E $w[[cc,-20cc,-30]2[c,-15c$vc$wc]2]2
+F $j[ccrrddrc^ccrddrr]2
+G $j<[aarraara^aarbbrr]2
+H $b[[ef>c<ef>d<]2ef>c<f]2
+I $a$zc1^1
+
+A <b^^g^^a2^1^^
+B e^^c^^d2^1^^
+C dd^^dd^d^d<a^>c^<a^>dd^^dd^d^d<a^>c^e^
+D [$x^^^$y^^$x^cc^:$y^$x^]2$y^cc
+E [[cc,-20cc,-30]2[c,-15c$vc$wc]2]2
+F [c-c-rrccrc-^c-c-rccrr]2
+G [ggrraarg^ggraarr]2
+H [[debde>c<]2debf]2
+I r1^1
+
+$m EXx41,x10,x42,x12,{x40,x00,x04,
+
+J   $m127},xf7 r8 $m124},xf7 r8 $m120},xf7 r8 $m116},xf7 r8                         $m112},xf7 r8 $m108},xf7 r8 $m104},xf7 r8 $m100},xf7 r8                         $m096},xf7 r8 $m092},xf7 r8 $m088},xf7 r8 $m084},xf7 r8                         $m080},xf7 r8 $m076},xf7 r8 $m072},xf7 r8 $m068},xf7 r8                         $m064},xf7 r8 $m060},xf7 r8 $m056},xf7 r8 $m052},xf7 r8                         $m048},xf7 r8 $m044},xf7 r8 $m040},xf7 r8 $m036},xf7 r8                         $m032},xf7 r8 $m028},xf7 r8 $m024},xf7 r8 $m020},xf7 r8                         $m016},xf7 r8 $m012},xf7 r8 $m008},xf7 r8 $m000},xf7 r8                         r4 $m127},xf7 r8
+

@@ -1,0 +1,254 @@
+#title"〜 White Town 〜 (SC-88) SNB"
+#copyright "(c) SNB"
+#timebase 48
+
+ABC1CDEFGHIJKL @-1 V20
+
+;////[ＧＳ音源初期化(Ch.16)]///////////////////////////////////////////////////
+T C16 t100 BT4,4
+T EX x7e,x7f,x09,x01,xf7                   r16 ; GM SYSTEM ON
+T EXx41,x10,x42,x12,{x00,x00,x7F,x00},xf7  r16 ; SC-88 Single Module Mode
+;T EXx41,x10,x42,x12,{x40,x00,x7f,x00},xf7 r48 ; GS-RESET
+T EXx41,x10,x42,x12,{x40,1,x38,2},xf7      r48 ; GS-Chorus #6
+T EXx41,x10,x42,x12,{x40,1,x30,3},xf7      r48 ; GS-Reverb #4
+T EXx41,x10,x42,x12,{x40,1,x33,74},xf7     r48 ; GS-Reverb Level 64
+;T EXx41,x10,x42,x12,{x40,x1a,x15,2},xF7 r48  ; Ch.11 = RHYTHM 2
+T r1
+
+;////[各トラックの初期化]//////////////////////////////////////////////////////
+; Ch.    Bank Prog.  Vol.    Vel. gt. on ln Pan        Bend   Reverb  Inst.
+A C1  r4 H0,0 @34 r8 v120 r8 k110 q2  o2 l4 p64 BR2 r8 ~64 r4 y91,50  ;
+B C2  r4 H0,0 @25 r8 v110 r8 k110 q2  o3 l4 p94 BR2 r8 ~64 r4 y91,50  ;
+C C3  r4 H0,0 @75 r8 v120 r8 k110 q3  o5 l4 p64 BR2 r8 ~64 r4 y91,100 ;
+1C C3 r4          r8      r8 k105 q3  o5 l4         r8     r4         ;
+D C4  r4 H0,0 @05 r8 v110 r8 k110 q2  o4 l4 p34 BR2 r8 ~64 r4 y91,50  ;
+E C5  r4 H0,0 @50 r8 v75  r8 k070 q2  o5 l4 p64 BR2 r8 ~64 r4 y91,50  ;
+F C6  r4 H0,0 @01 r8 v110 r8 k110 q2  o4 l4 p64 BR2 r8 ~64 r4 y91,50  ;
+G C7  r4 H0,0 @01 r8 v110 r8 k110 q2  o4 l4 p64 BR2 r8 ~64 r4 y91,70  ;
+H C8  r4 H0,0 @01 r8 v110 r8 k110 q2  o5 l4 p64 BR2 r8 ~64 r4 y91,50  ;
+I C9  r4 H0,0 @01 r8 v110 r8 k110 q2  o4 l4 p64 BR2 r8 ~64 r4 y91,50  ;
+J C10 r4 H0,0 @09 r8 v110 r8 k110 RT  o4 l4     BR2 r8 ~64 r4 y91,90  ;
+K C10 r4          r8      r8 k110 RT  o4 l4         r8     r4         ;
+L C10 r4          r8      r8 k110 RT  o4 l4         r8     r4         ;
+
+ABCDEFGHIJ E127
+ABCDFHI y93,20
+E y93,110
+G y93,50
+J y93,0
+
+;////[マクロ]//////////////////////////////////////////////////////////////////
+$m EXx41,x10,x42,x12,{x40,x00,x04,	;マスターボリューム [例] $m100},xf7
+;$y N1,x21,				;レゾナンス       [例] $y64
+;$z N1,x20,				;カットオフ周波数 [例] $z64
+$s k80 _0 J38
+$c k80 _0 J75
+$t k80 _0 J54
+$k k95 _0 J36
+$g k65 _0 J69
+E N1,x20,84
+K Nx1D,54,127
+
+B y94,8 y64,127
+C FE2,0,16,-10,4.,10
+C IB5,1,48,12
+
+ABCDEFGHIJKL r8
+
+;////[曲本体]//////////////////////////////////////////////////////////////////
+A [f1f1]2
+B l8 [rc(b-)a^^(8f^)8 rc(b-)a^^^^]2
+C1C r1r1r1r1
+D q-48 c0e1 (c0e4.)f4(e4f8) c0a0e4.<a4.^4> c0e4.(f4 c0a4.)
+E e0a1^1^1^1
+F r1r1-24 o5(e48f48)a1^1
+GHI r1r1r1r1
+J $c l8 [r1r2.c4]2
+K $k c1c1c1c1
+L r1r1r1r1
+
+
+ABC1CDEFGHIJKL [
+A f1f1 g1 >c2<e2
+B rc(b-)a^^(8f^)8 rc(b-)a^^^^  rd>(c)<b-^^(a^) r(e)b-(g^eb-^)
+C y94,4 r4.a16r16 a8.b-8.a16r16 a4g4f4 d4>c4.c16r16c8.<b-8.a16r16a4.g16f16g2
+D c0e1 (c0e4.)f4(e4f8) d0g4.(g4f4g8) c0e2(<b-0>g2)
+E f0a1 e0a1 d0g2.f4 c0e2<b-0>c2
+FGHI r1r1r1r1
+J $cl8 [r1r2.c4]2
+K [$kc2$tc4.$k(c8) c1]2
+L r1r1r1r1
+
+A f1f1 g1 >c2<e2
+B rc(b-)a^^(8f^)8 rc(b-)a^^^^  rd>(c)<b-^^(a^) r(e)b-(g^eb-^)
+C r4.a16r16 a8.b-8.a16r16 a4g4f4 d4 b-4.b-16r16 >c4d16r16d4c16r16 c4^4^4
+D q0 c0e1 (c0e4.)f4(e4f8) d0g4.(g4f4g8) c0e2(<b-0>g2)
+E f0a1 e0a1 d0g2.f4 c0e2<b-0>c2
+FGHI r1r1r1r1
+J $cl8 [r1r2.c4]2
+K [$kc2$tc4.$k(c8) : c1]2 c4.(c8)c4 $s c4
+L r1r1r1r1
+
+A [b-4.b-8 b-2]2 [f4.f8 : f2]2 f4a4
+B V8 (8 [f0b-0>d4< (f8 f0b-0>d4< f8) f0b-0>d8< (f8)]2
+B [f0a0>c4< (f8 f0a0>c4< f8) f0a0>c8< (f8)]2
+C r4.d16r16 d8.c8.<b-16r16 b-4.g4a8b-16r16 >c4<a16r16a2.^2r4g8a8
+D d0f1 d0f1 c0f1 c0f1
+E f0b-1^1 e0a1 f0a2&>c2<
+FGHI r1r1r1r1
+J $t [c8(c8)]16
+K [$k c4 $s c4 $k c8(c8) $s c4]4
+L r1r1r1r1
+
+A g4.g8g2 c4.c8c4e4 f4.f8f2 f4.f8f4a4
+B d0f0b-4 (d8 d0f0b-4 d8) d0f0b-8 (d8) 
+B e0g0>c4< (e8 e0g0>c4< e8) e0g0>c8< (e8)
+B e0a0>c4< (e8 e0a0>c4< e8) e0a0>c8< (e8)
+B f0a0>c4< (f8 f0a0>c4< f8) f0a0>c8< (f8)
+C b-4.b-16r16 b-8.>c8.d16r16 d4.e16r16 c4.<b-16r16 b-4.a16g16 a2^2.r4
+D d0f1 e0g1  e0a1 e0a1
+E g0b-2.d0a4 c0g2.f8g8 e0a1e0g2f0a2
+FGHI r1r1r1r1
+J $t [c8(c8)]16
+K [$k c4 $s c4 $k c8(c8) $s c4]4
+L r1r1r1r1
+
+A [b-4.b-8 b-2]2 [f4.f8 : f2]2 f4e-4
+B [f0b-0>d4< (f8 f0b-0>d4< f8) f0b-0>d8< (f8)]2
+B [f0a0>c4< (f8 f0a0>c4< f8) : f0a0>c8< (f8)]2 e-0a0>c8< (e-8)
+C r4.>d16r16 d8.c8.<b-16r16 b-4.g4a8b-16r16 >c4<a16r16a2.^2r4 r4
+1C r4.b-16r16 b-8.f8.d16r16 d4. d4d8d16r16 f4c16r16c2.^2 r4  r4
+D d0f1 d0f1 c0f1 c0f2.c0e-4
+E f0b-1^1 e0a1 f0a2&>c2<
+FGHI r1r1r1r1
+J $t [c8(c8)]16
+K [$k c4 $s c4 $k c8(c8) $s c4]4
+L r1r1r1r1
+
+A [d4.d8d2]2  c4.c8c2 c4.c8c2
+B [f0b-0>d4< (f8 f0b-0>d4< f8) f0b-0>d8< (f8)]2
+B e0g0>c4< (e8 e0g0>c4< e8) e0g0>c8< (e8)
+B c0e0g0b-8 c8&e8&g0b-8&>c2< )8
+C  r4.g16r16 g8.a8.b-16r16 b-2> c4d4c1^2.^4<
+1C r4.<b-16r16b-8.> d8.f16r16 f2 f4f4 g2.f4e2.^4
+D [d0f1]2 c0e1 c0e0g1
+E f0b-1 d0b-1 e0>c1< e0b-1
+FGHI r1r1r1r1
+J $t [c8(c8)]14 c8r8r8r8
+K [$k c4 $s c4 : $k c8(c8) $s c4]4 $k c4r4
+L r1r1r1r1
+
+A f1 f1 f1f4.f8f2
+B l8 [rc(b-)a^^(8f^)8 rc(b-)a^^^^]2>
+C r1r1r1r1
+D q-48 c0e1 (c0e4.)f4(e4f8) c0a0e4.<a4.^4> c0e4.(f4 c0a4.)
+E e0a1^1^1^1
+F r1r1-24 o5(e48f48)a1^1
+HI r1r1r1r1
+G r1r1r1r2. a8b-8
+J $c l8 [r1r2.c4]2
+K $k c1c1c1c1
+L r1r1r1r1
+
+;-------------------------------------
+A f4.f8f2 f4.f8f4e4 d4.d8d2 d4.d8d2
+B V20 < rc(b-)a^^(8f^)8 rc(b-)a^^^^
+B rd(b-)a^^(8f^)8 rd(b-)a^^^^
+C v0 r4.a16r16a8.b-8.a16r16 a4g4f4e4 f4.d16r16 FE2,0,2,0,2,-80 d2^2r2 FE0
+D c0e0a1 c0e4.f4e4f8 f0a1 d0f2&e2
+E c0f0a1^1 d0f0a1^1
+FHI r1r1r1r1
+G e0a0>c4.< e0a8 a0>c0e2^2 <f0a0>d4<f0a0>e4 <f0a0>e4.<f0a0>d8 <a0>d0f2^1<
+J $c l8 [r1r2.c4]2
+K [$kc4.$k(c8) $tc4.$k(c8)]4
+L $g [c8((c8))]16
+
+A g4.g8g2 g4.g8g4d4 c4.c8c2 c4.c8c2
+B rd>(c)<b-^^^^ rd>(c)<b-^^(a^) rc(b-)g^^(e^) rc(b-)g^^(e^)
+C r4.b-16r16b-8.>c8.<b-16r16 b-4a4g4f4 a4.g16r16 FE2,0,2,0,2,-80 g2^2 r2 FE0
+D <b-0>d0f1 d0e4.f4e4f8 c0e0a4.c0e0g4.^4 <b-0>e1
+E d0g0b-1^1 c0e0a1 c0e0g1
+FHI r1r1r1r1
+G d0f0b-4.d0g8 g0b-0>d2^2< d0g0>c4<g0>d4< g0b-0>e4. <e0g0>c8<e0g0>c2^2.<
+G (c0e0)a8b-8>
+J $c l8 [r1r2.c4]2
+K [$kc4.(c8) $tc4.$k(c8)]4
+L $g [c8((c8))]16
+
+A f4.f8f2 f4.f8f4e4 d4.d8d2 d4.d8d2
+B V20 rc(b-)a^^(8f^)8 rc(b-)a^^^^
+B rd(b-)a^^(8f^)8 rd(b-)a^^^^
+C v120 r4.a16r16a8.b-8.a16r16 a4g4f4e4 f4.d16r16 FE2,0,2,0,2,-80 d2^2r2 FE0
+D c0e0a1 c0e4.f4e4f8 f0a1 d0f2&e2
+E c0f0a1^1 d0f0a1^1
+FHI r1r1r1r1
+G <e0a0>c4.< e0a8 a0>c0e2^2 <f0a0>d4<f0a0>e4 <f0a0>e4.<f0a0>d8 <a0>d0f2^1<
+J $c l8 [r1r2.c4]2
+K [$kc4.(c8) $tc4.$k(c8)]4
+L $g [c8((c8))]16
+
+A g4.g8g2 g4.g8g4d4 c4.c8c2 c4.c8c4<b-4
+B rd>(c)<b-^^^^ rd>(c)<b-^^(a^) rc(b-)g^^(e^) rc(b-)g^^(e^)
+C r4.b-16r16b-8.>c8.<b-16r16 b-4a4g4f4 a4.g16r16 FE2,0,2,0,2,-80 g2^2 r2 FE0
+D <b-0>d0f1 d0e4.f4e4f8 c0e0a4.c0e0g4.^4 <b-0>e1
+E d0g0b-1^1 c0e0a1 c0e0g1
+FHI r1r1r1r1
+G d0f0b-4.d0g8 g0b-0>d2^2< d0g0>c4<g0>d4< g0b-0>e4. <e0g0>c8<e0g0>c2^1
+J $c l8 [r1r2.c4]2
+K [$kc4.$k(c8) $tc4.$k(c8)]4
+L $g [c8((c8))]16
+
+A a4.a8a2 a4.a8a4>c+4 d4.d8d2 d4.d8d4c4
+B rc+(b-)a^^(e^) rc+(b-)a^(g^a) rdb-a^^f^ rdb-a^^f^ 
+C r4.a16r16a8.b-8.a16r16 a4g4f4g4 a4.f16r16 FE2,0,2,0,2,-80 f2^2 r2 FE0
+D c+0e1 e0g4.f4e4f8 d0e0a1 d0f1
+E c+0e0a1^1 d0f0a1^1
+FHI r1r1r1r1
+G <a0>c+0e4.<a0>c+8 c+0e0a2^2 c+0e0ab- d0f0a4.d0f8d0f2^1
+J $c l8 [r1r2.c4]2
+K [$kc4.$k(c8) $tc4.$k(c8)]4
+L $g [c8((c8))]16
+
+A <b-4.b-8b-2 b-4.b-8b-2> c4.c8c2 c1
+B rd(b-)g^^^^ rd(b-)g^(f^g) rc(b-)g^^^^ t96 rc&e&g& t98 b-^^^ t100
+C r4.g16r16g8.a8.b-16r16 b-2a4b-4 a1 g1
+D d0g1 d0f4.g4f4g8 c0e1 c0e0g1
+E d0f0b-1^1 c0e0a1 c0e0g1
+FHI r1r1r1r1
+G <b-0>d0g4. <b-0>d8 <b-0>d0g8. d0a8.d0g0b-8 d0g0b-2a4g4 c0e0b-1c0e0g1<
+J $c l8 r1r2.c4 r1r1
+K [$kc4.$k(c8) $tc4.$k(c8)]3 $k c2 $t c2
+L $g [c8((c8))]12 r1
+
+A [f1f1]2
+B l8 [rc(b-)a^^(8f^)8 rc(b-)a^^^^]2
+C r1r1 v120 r1r1
+D q-48 c0e1 (c0e4.)f4(e4f8) c0a0e4.<a4.^4> c0e4.(f4 c0a4.)
+E e0a1^1^1^1
+F r1r1-24 o5(e48f48)a1^1
+GHI r1r1r1r1
+J $c l8 [r1r2.c4]2
+K $k c1c1c1c1
+L r1r1r1r1
+
+ABC1CDEFGHIJKL ]2
+
+;-------------------- fade out
+A f1f1 g1 >c2<e2
+B rc(b-)a^^(8f^)8 rc(b-)a^^^^  rd>(c)<b-^^(a^) r(e)b-(g^eb-^)
+C y94,4 r4.a16r16 a8.b-8.a16r16 a4g4f4 d4>c4.c16r16c8.<b-8.a16r16a4.g16f16g4c4
+1C r1r1r1r1
+D c0e1 (c0e4.)f4(e4f8) d0g4.(g4f4g8) c0e2(<b-0>g2)
+E f0a1 e0a1 d0g2.f4 c0e2<b-0>c2
+FGHI r1r1r1r1
+J $cl8 [r1r2.c4]2
+K [$kc2$tc4.$k(c8) c1]2
+L  $m127},xf7 r8 $m123},xf7 r8 $m119},xf7 r8 $m115},xf7 r8                          $m111},xf7 r8 $m107},xf7 r8 $m103},xf7 r8 $m099},xf7 r8                          $m095},xf7 r8 $m091},xf7 r8 $m087},xf7 r8 $m083},xf7 r8                          $m079},xf7 r8 $m075},xf7 r8 $m071},xf7 r8 $m067},xf7 r8                          $m063},xf7 r8 $m059},xf7 r8 $m055},xf7 r8 $m051},xf7 r8                          $m047},xf7 r8 $m043},xf7 r8 $m039},xf7 r8 $m035},xf7 r8                          $m031},xf7 r8 $m027},xf7 r8 $m023},xf7 r8 $m019},xf7 r8                          $m013},xf7 r8 $m008},xf7 r8 $m004},xf7 r8 $m001},xf7 r8                          $m000},xf7 r1 $m127},xf7 r8
+
+
+/*
+1997 12/23,24 Ver1.00
+1998 02/20    Ver1.50
+*/
+
+

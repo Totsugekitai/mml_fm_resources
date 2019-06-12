@@ -1,0 +1,772 @@
+#title "エンドマーク (SC-88)   Unira"
+#copyright "(c) Unira"
+#timebase 48
+
+;  Composed   Unira
+;  Programmed Unira
+;  Arranged   Unira
+
+$t  _4			; transpose
+$i k127 E90  BR3 BS64	; expression & pitch bend
+$j k127 E127 BR3 BS64	; expression & pitch bend
+
+$b   k115 J36	; kick
+$s   k115 J38	; snare
+$1t  k110 J48	; tom-H
+$2t  k110 J45	; tom-M
+$3t  k110 J41	; tom-L
+$h   k80  J42	; HiHat close
+$1h  k95  J44	; HiHat Pedal
+$2h  k90  J46	; HiHat open
+$c   k90  J49	; cymbal (right)
+$q   k100 J39	; handclap
+$n   k110 J75	; Clavas
+$m   k100 J63	; High Conga
+$1m  k100 J64 	; Low  Conga
+
+T  C11 BT8,8 t134 $i
+T   EX x7e,x7f,x09,x01,xf7                r96 ; GM SYSTEM ON
+T   EX x41,x10,x42,x12,{x40,0,x7f,0},xf7  r96 ; GS-RESET
+
+T   EX x41,x10,x42,x12,{x40,1,x30, 3},xf7 r96 ; REVERB MACRO
+T   EX x41,x10,x42,x12,{x40,1,x31, 4},xf7     ; REVERB CHARACTER
+T   EX x41,x10,x42,x12,{x40,1,x32, 0},xf7 r96 ; REVERB PRE-LPF
+T   EX x41,x10,x42,x12,{x40,1,x33,96},xf7     ; REVERB LEVEL
+T   EX x41,x10,x42,x12,{x40,1,x34,18},xf7 r96 ; REVERB TIME
+T   EX x41,x10,x42,x12,{x40,1,x35,10},xf7     ; REVERB DELAY FEEDBACK
+
+T   EX x41,x10,x42,x12,{x40,1,x38, 3},xf7 r96 ; CHORUS MACRO
+T   EX x41,x10,x42,x12,{x40,1,x39, 1},xf7     ; CHORUS PRE-LPF
+T   EX x41,x10,x42,x12,{x40,1,x3a,96},xf7 r96 ; CHORUS LEVEL
+T   EX x41,x10,x42,x12,{x40,1,x3b,15},xf7     ; CHORUS FEEDBACK
+T   EX x41,x10,x42,x12,{x40,1,x3c, 0},xf7     ; CHORUS DELAY
+T   EX x41,x10,x42,x12,{x40,1,x3d, 6},xf7 r96 ; CHORUS RATE
+T   EX x41,x10,x42,x12,{x40,1,x3e,19},xf7     ; CHORUS DEPTH
+T   EX x41,x10,x42,x12,{x40,1,x3f,10},xf7     ; CHORUS SEND LEVEL TO REVERB
+
+T r1-16 [r1]166
+
+A   C1  r4 H8,0  @66  r4 v90  q6 o5 l8  p64 $t $i	; Melody(Vocal)
+B   C6  r4 H8,0  @17  r4 v120 q5 o4 l16 p64 $t $i	; E.Piano
+1B  C6                        q5 o4 l16     $t $i	;
+2B  C6                        q5 o5 l16     $t $i	;
+3B  C6                        q5 o5 l16     $t $i	;
+G   C9  r4 H8,0  @55  r4 v95  q5 o5 l8  p64 $t $i	; O.Hit
+1G  C9                        q5 o4 l8      $t $i	;
+M   C13 r4 H3,0  @122 r4 v125 q1 o6 l8  p64 $t $i	; Effect
+1M  C13                       q1 o5 l8      $t $i	;
+2M  C13                       q1 o4 l8      $t $i	;
+C   C3  r4 H17,0 @39  r4 v115 q5 o2 l8  p64 $t $i	; Bass
+D   C4  r4 H8,0  @3   r4 v105 q5 o4 l8  p40 $t $i	; Piano
+1D  C4                        q5 o3 l8      $t $i	;
+2D  C4                        q5 o4 l8      $t $i	;
+3D  C4                        q5 o4 l8      $t $i	;
+4D  C4                        q5 o4 l8      $t $i	;
+F   C7  r4 H8,0  @28  r4 v80  q4 o3 l16 p84 $t $i     	; A.Guitar(H)
+N   C8  r4 H8,0  @28  r4 v60  q8 o2 l16 p84 $t $i     	; A.Guitar(L)
+1N  C8                        q8 o2 l16     $t $i   	;
+H   C2  r4 H0,0  @61  r4 v95  q5 o4 l8  p64 $t $i	; Brass
+1H  C2                        q5 o4 l8      $t $i	;
+2H  C2                        q5 o5 l8      $t $i	;
+3H  C2                        q5 o5 l8      $t $i	;
+E   C5  r4 H0,0  @50  r4 v65  q4 o3 l8  p64 $t $i	; Strings
+1E  C5                        q4 o3 l8      $t $i	;
+2E  C5                        q4 o4 l8      $t $i	;
+3E  C5                        q4 o4 l8      $t $i	;
+I   C12 r4 H0,0  @53  r4 v80  q5 o4 l8  p64 $t $i	; Chorus
+1I  C12                       q5 o4 l8      $t $i	;
+2I  C12                       q5 o3 l8      $t $i	;
+3I  C12                       q5 o4 l8      $t $i	;
+4I  C12                       q5 o4 l8      $t $i	;
+5I  C12                       q5 o4 l8      $t $i	;
+J   C10 r4 H0,0  @1   r4 v120       l8 	    $j    	; Kick & Snare
+P   C10 r4            r4            l8      $j   	; Tom
+K   C10 r4            r4            l16     $j $h	; hi-hat close
+R   C10 r4            r4            l16     $j $h	; hi-hat open
+L   C10 r4            r4            l1      $j $c	; cymbal
+Q   C10 r4            r4            l8      $j $q	; handclap
+O   C10 r4            r4            l16     $j $q	; 
+
+ABCDEFNGMHIJKRLPQO r4
+
+;    REVERB   CHORUS
+A    y91,96   y93,96
+C    y91,0    y93,32
+DBH  y91,64   y93,64
+FN   y91,32   y93,32
+EI   y91,96   y93,96
+GM   y91,120  y93,120
+J    y91,64   y91,32
+
+ABCDEFNGMHIJKRLPQO r4
+
+;  ###Drums###
+;	[S]
+J  [r1]3 r2$sg16g16$bg $sgg16g16
+KRLO  [r1]4
+
+JKRLO  [
+
+J  [ [$bg4$sg4$bgg$sg $bg4.$sg$bggg$sg4]2
+J  $bg4$sg4$bgg$sg$bg g4$sg$bggg$sg $bg4.$sg4$bgg$sg $bg4.$sg$bggg:$sg4]2 $sg
+J  $bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg4
+K  $h  [[g k-14 g k-14 g k+14 g k+14]4]18
+R  [r1 $2h r8g8r4 r4 $1hgg$2hg8]8 [$1hg8$2hg8]7 $1hgg$2hg8
+L  g [r]7 g [r]7 rr
+O  [$nrg8 $mg8. $1mgg8 $mgg4 $1mg8]18
+
+JKRLO  :
+
+;	[A]
+J  [ [$bg4$sg4$bgg$sg $bg4.$sg$bggg$sg4]2
+J  $bg4$sg4$bgg$sg$bg g4$sg$bggg$sg $bg4.$sg4$bgg$sg $bg4.$sg$bggg:$sg4]2 $sg
+K  $h  [[g k-14 g k-14g k+14 g k+14]4]16
+R  [r1 $2h r8g8r4r4 $1hgg$2hg8]8
+L  g [r]7 g [r]6r2..
+O  [$nrg8 $mg8. $1mgg8 $mgg4 $1mg8]16
+
+;	[B]
+J  [$bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg]2
+J  [$bg4$sg$bg]4
+J  $bg4.$sg4$bgg$sg$bg g4$sg$bggg$sg $bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg
+K  $h  [[g k-14 g k-14g k+14 g k+14]4]10
+R  [r1 $2h r8g8r4r4 $1hgg$2hg8]5
+L  grrr [g2]4 grrr
+O  [$nrg8 $mg8. $1mgg8 $mgg4 $1mg8]10
+
+;	[C]
+J  [ [$bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg]2
+J  $bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg4 $bg4$sg4$bgg$sg:$bg g4$sg$bggg$sg ]2
+J  $bg4.$sg$bggg$sg $bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg4
+K  $h  [[g k-14 g k-14g k+14 g k+14]4]18
+R  [r1 $2h r8g8r4 r4 $1hgg$2hg8]8 [$1hg8$2hg8]7 $1hgg$2hg8
+L  [grgr rrrr]2 rr r8
+O  [$nrg8 $mg8. $1mgg8 $mgg4 $1mg8]18
+
+JKRLO  ]2
+
+;	- #2 -
+
+;	[A]
+J  [$bg4$sg4$bgg$sg $bg4.$sg$bggg$sg4]2
+J  $bg4$sg4$bgg$sg$bg g4$sg$bggg$sg $bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg
+K  $h  [[g k-14 g k-14g k+14 g k+14]4]8
+R  [r1 $2h r8g8r4r4 $1hgg$2hg8]4
+L  g [r]6r2..
+O  [$nrg8 $mg8. $1mgg8 $mgg4 $1mg8]8
+
+;	[B]
+J  [$bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg]2
+J  [$bg4$sg$bg]4
+J  $bg4.$sg4$bgg$sg$bg g4$sg$bggg$sg $bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg
+K  $h  [[g k-14 g k-14g k+14 g k+14]4]10
+R  [r1 $2h r8g8r4r4 $1hgg$2hg8]5
+L  grrr [g2]4 grrr
+O  [$nrg8 $mg8. $1mgg8 $mgg4 $1mg8]10
+
+;	[C]
+J  [ [$bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg]2
+J  $bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg4 $bg4$sg4$bgg$sg:$bg g4$sg$bggg$sg ]2
+J  $bg4.$sg$bggg$sg $bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg4
+K  $h  [[g k-14 g k-14g k+14 g k+14]4]18
+R  [r1 $2h r8g8r4 r4 $1hgg$2hg8]8 [$1hg8$2hg8]7 $1hgg$2hg8
+L  [grgr rrrr]2 rr r8
+O  [$nrg8 $mg8. $1mgg8 $mgg4 $1mg8]18
+
+;	[K]
+J  [ [$bg4$sg4$bgg$sg $bg4.$sg$bggg$sg4]2
+J  $bg4$sg4$bgg$sg$bg g4$sg$bggg$sg $bg4.$sg4$bgg$sg $bg4.$sg$bggg:$sg4]2 $sg
+K  $h  [[g k-14 g k-14g k+14 g k+14]4]16
+R  [r1 $2h r8g8r4r4 $1hgg$2hg8]8
+L  g [r]7 g [r]6r2..
+O  [$nrg8 $mg8. $1mgg8 $mgg4 $1mg8]16
+
+;	[K']
+J  [$bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg]2
+J  [$bg4$sg$bg]4
+J  $bg4.$sg4$bgg$sg$bg g4$sg$bggg$sg $bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg
+K  $h  [[g k-14 g k-14g k+14 g k+14]4]10
+R  [r1 $2h r8g8r4r4 $1hgg$2hg8]5
+L  grrr [g2]4 grrr
+O  [$nrg8 $mg8. $1mgg8 $mgg4 $1mg8]10
+
+;	[C](Repeat)
+J  [ [$bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg]2
+J  $bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg4 $bg4$sg4$bgg$sg:$bg g4$sg$bggg$sg ]2
+J  $bg4.$sg$bggg$sg $bg4.$sg4$bgg$sg $bg4.$sg$bggg$sg4
+K  $h  [[g k-14 g k-14g k+14 g k+14]4]18
+R  [r1 $2h r8g8r4 r4 $1hgg$2hg8]8 [$1hg8$2hg8]7 $1hgg$2hg8
+L  [grgr rrrr]2 rr r8
+O  [$nrg8 $mg8. $1mgg8 $mgg4 $1mg8]18
+
+;	[E]
+J  [ [$bg4$sg4$bgg$sg $bg4.$sg$bggg$sg4]2
+J  $bg4$sg4$bgg$sg$bg g4$sg$bggg$sg $bg4.$sg4$bgg$sg $bg4.$sg$bggg:$sg4]2 $sg
+K  $h  [[g k-14 g k-14g k+14 g k+14]4]16
+R  [r1 $2h r8g8r4r4 $1hgg$2hg8]8
+L  g [r]7 g [r]6 r2..
+O  [$nrg8 $mg8. $1mgg8 $mgg4 $1mg8]16
+
+;---
+
+;	[S]
+A  [r1]4
+B  E0g4& [E+2r8:&]30 E90
+1B E0a4& [E+2r8:&]30 E90
+2B E0e4& [E+2r8:&]30 E90
+3B E0c4& [E+2r8:&]30 E90
+G1G  [r1]4
+C    [r1]4
+M1M2M  r1r1. E0g16& [E+6r16&]15 r2
+D1D2D3D4D   [r1]4
+FN1N        [r1]4
+H1H2H3H     [r1]4
+E1E2E3E     [r1]4
+I1I2I3I4I5I [r1]4
+
+AB1B2B3BG1GCD1D2D3D4DFN1N  [
+H1H2H3HE1E2E3EI1I2I3I4I5I  [
+
+A  [r1]17 r2reeg
+B1B2B3B  [r1]18
+G1G  [a4r2.r2..g a4r2.r1 r1r2..r1:r1g]2 r1 r^1r1
+C  [[aaa.e16cea g4ee.b16egbg]2 fff.c16fa4c ccc.g16ceg d4dd.a16dfa e4be.<b16>e:g+bg+]2bg+ a4aa.e16cae a4aa.e16ceac
+D  [ [r1]6r2..                                  : r^1        ]2
+1D [ [g4g4rg4 d2drd4.]2 r1       r2..    c2crc4 : d2drd4.    ]2
+2D [ [a4a4ra4 b2brb4.]2 a4a4ra4. g4.grg4 a2ara4 : b2brb4.    ]2
+3D [ [e4e4re4 g2grg4.]2 f4f4rf4. e4.ere4 f2frf4 : g+2g+rg+4. ]2
+4D [ [c4c4rc4 e2ere4.]2 c4c4rc4. c4.crc4 d2drd4 : e2ere4.    ]2
+D  r1        r4cec>aec< r4cea r2
+1D d2drd4    g4r2.      g4r4. rgg4
+2D b2brb4    a4r2.      a4r4. raa4
+3D g+2g+rg+4 e4r2.      e4r4. ree4
+4D e2ere4    c4r2.      c4r4. rcc4
+F  [ [rrrr a>e<rr rrrr a>e< rrrrrr a>e< rrrrrr a>e<rr]2
+N  [ [arrr r r ar rarr r r  aararr r r  arrara r r aa]2
+1N [ [errr r r er rerr r r  eererr r r  errere r r ee]2
+F  rrrr f>c< rr rrrr f>c< rr rgrr g>c< rr gr g>c< rr
+N  frrr r r  fr rfrr r r  ff rgrr r r  gr gr r r  gg
+1N crrr r r  cr rcrr r r  cc rcrr r r  cr cr r r  cc
+F  rrrr a>d< rr rrrr a>d< rr r r rr rr g+>e< r rrr  :rr  g+>e< r r  ]2 a>e< r r
+N  arrr r r  rr rarr r r  aa g+g+rg+rr r  r  g+rrg+ :rg+ r  r  g+g+ ]2 r r  g+g+
+1N drrr r r  rr rdrr r r  dd e e re rr r  r  e rre  :re  r  r  e e  ]2 r r  e e
+F  rrrr a>e< rr rrrr a>e< rr aararr a>e< rr a>e< rrrrrr
+N  arrr r r  ar rarr r r  aa aararr r r  ar r r  >>a32 [BS-6E-8a32]11 BS64E90<<
+1N errr r r  er rerr r r  ee eererr r r  er r r  >>e32 [BS-6E-8a32]11 BS64E90<<
+H  [ [r1]4 r4r2. r2..c4r2. : r^1 ]2 r1 r^1r1
+1H [ [r1]4 a4r2. r2..a4r2. : r^1 ]2 r1 r^1r1
+2H [ [r1]4 f4r2. r2..f4r2. : r^1 ]2 r1 r^1r1
+3H [ [r1]4 c4r2. r2..d4r2. : r^1 ]2 r1 r^1r1
+E  [ [g2..d^1]2 r1r2..c1:d^1  ]2 d1 g^1^1
+1E [ [a2..b^1]2 a1g2..a1:b^1  ]2 b1 a^1^1
+2E [ [e2..g^1]2 f1e2..f1:g+^1 ]2 g+1e^1^1
+3E [ [c2..e^1]2 c1c2..d1:e^1  ]2 e1 c^1^1
+I1I2I3I4I5I  [r1]18
+
+AB1B2B3BG1GCD1D2D3D4DFN1N  :
+H1H2H3HE1E2E3EI1I2I3I4I5I  :
+
+;	[A][A']
+A  aga4.eag^ 2reeg agaa4eag^ 2rede dcc4.aaa g4ee4.rd4 eded<a>c<b^ 2 >reeg
+A  agaa4eag^ 2reeg a4.gaeag^ 2rede dcc4.aaa g4ee4.rd4 eded4fe^ 2rc<ba4.
+B1B2B3B  [r1]15 r2..
+G1G  [r1]15 r2..
+C  [[aaa.e16cea g4ee.b16egbg]2 fff.c16fa4c ccc.g16ce16g16c d4dd.a16dfa e4be.<b16>e:g+bg+]2bg+
+D  [ r2.. r2e4b4g r2.. r2e4g4b r1 r4.eg>c4< r1:r2e4b4. ]2 r2e4b4
+1D [ g2.. d2rr2   g2.. d2rr2   r1 r4.r2     c1:d2rr2   ]2 d2r2
+2D [ a2.. b2rr2   a2.. b2rr2   a1 g4.r2     a1:b2rr2   ]2 b2r2
+3D [ e2.. g2rr2   e2.. g2rr2   f1 e4.r2     f1:g+2rr2  ]2 g+2r2
+4D [ c2.. e2rr2   c2.. e2rr2   c1 c4.r2     c1:e2rr2   ]2 e2r2
+FN1N [r1]15 r2..
+H1H2H3H   [r1]15 r2..
+E  [ g2..d^1g2..d^1 r1r2..c1:d^1  ]2 d1
+1E [ a2..b^1a2..b^1 a1g2..a1:b^1  ]2 b1
+2E [ e2..g^1e2..g^1 f1e2..f1:g+^1 ]2 g+1
+3E [ c2..e^1c2..e^1 c1c2..d1:e^1  ]2 e1
+I1I2I3I4I5I  [r1]15 r2..
+
+;	[B]
+A  ab4>c4 <b4.b>c4d4e4. ee4de d4cc4.c<b a4b>c <b4>cd c4de d4ef e4e4.^2.r4d4ce ^2.r4 r2..
+B1B2B3B  [r1]10
+G  [r1]10
+C  f4ff.c16fac g4gg.d16gbd e4ee.b16egb a4aa.e16ce16a16c f4ac g4bd a4ec d4fa e4be.<b16>egbg d4f16a16d df+a e4be.<b16>ebg+ e4be.<b16>ebg+
+D  r1r1     r1     r4cearr4 [r1]6
+1D r1r^2rr4 d^2rd4 g4rrrrg4 r2r2g2c2 d2.rd4 c2 rc4  d^2 rd4  d2 rdd4
+2D a1b^2rb4 b^2rb4 a4rrrra4 a2b2a2a2 b2.rb4 a2 ra4  b^2 rb4  b2 rbb4
+3D f1g^2rg4 g^2rg4 e4rrrre4 f2g2e2f2 g2.rg4 f+2rf+4 g+^2rg+4 g+2rg+g+4
+4D c1d^2rd4 e^2re4 c4rrrrc4 c2d2c2d2 e2.re4 d2 rd4  e^2 re4  e2 ree4
+F  rrrr f>c< rr rrrr f>c< rr rrrr g>d< rr rrrr g>d< rr
+N  frrr r r  fr rfrr r r  ff ggrg r r  gr grrg r r  gg
+1N crrr r r  cr rcrr r r  cc ddrd r r  dr drrd r r  dd
+F  rrrr a>e< rr rrrr a>e< rr rrrr a>e< rr rrrr a>e< rr
+N  arrr r r  ar rarr r r  aa aara r r  ar arra r r  aa
+1N errr r r  er rerr r r  ee eere r r  er erre r r  ee
+F  rrrr f>c< rr rrrr g>d< rr rrrr e>a< rr rrrr a>d< rr
+N  frrr r r  ff grrr r r  gg arrr r r  aa arrr r r  aa
+1N crrr r r  cc drrr r r  dd errr r r  ee drrr r r  dd
+F  rrrr a>e< rr rrrrrr a>e< rr rrrrrr a>e<  rr a>e< rr
+N  brrr r r  br brrbrr r r  bb aararr r r   ar r r  aa
+1N errr r r  er errerr r r  ee ddrdrr r r   dr r r  dd
+F  r rrr g+>d<r r rr rr g+>d< r r  r r rr rr g+>d< r rrr  g+>d< r r
+N  g+rrr r  r g+r rg+rr r  r  g+g+ g+g+rg+rr r  r  g+rrg+ r  r  g+g+
+1N e rrr r  r e r re rr r  r  e e  e e re rr r  r  e rre  r  r  e e
+H1H2H3H  [r1]10
+E  r1r1d1g1 r2r2g2c2 d^1c2.. d1^1
+1E a1b1b1a1 a2b2a2a2 b^1a2.. b1^1
+2E f1g1g1e1 f2g2e2f2 g^1f+2..g+1^1
+3E c1d1e1c1 c2d2c2d2 e^1d2.. e1^1
+I  r^2>fa4< r1r^2>gb4< r1 r2r2r2r2 r^1r2>f+a4<  r1^1
+1I r^2>cf4< r1r^2>eg4< r1 r2r2r2r2 r^1r2>d f+4< r1^1
+2I r^2 rr4  r1d^2 rr4  g1 r2r2r2r2 r^1c2 r r4   d1^1
+3I a^2 rr4  b1b^2 rr4  a1 r2r2r2r2 r^1a2 r r4   b1^1
+4I f^2 rr4  g1g^2 rr4  e1 r2r2r2r2 r^1f+2r r4   g+1^1
+5I c^2 rr4  d1e^2 rr4  c1 r2r2r2r2 r^1d2 r r4   e1^1
+
+;	[C]
+A  e4.ab4>c4<e^ 2rcde4. ab4>c4<d^ 2raga4 gf4.bab4 ag4a4g4 >c2<rab>c dc4<b4.r
+A  e4.ab4>c4<e^ 2rcde4. ab4>c4d^ 2<raga4 gf4.bab4 ag2. >r4c4<b>c4d4. c4<bg4a^1 r1
+B1B2B3B [r1]18 r8
+G1G [ a4r2.r1 a4r2.r1 r1r^1:r1 r2..]2 r2.. r1 r^1^1
+C  [a4aa.e16cea g4gg.d16gbd f4ff.c16fac e4ee.b16eg16b16e f4ff.c16fac e4ee.b16gb4e: ddd.a16df+ad eee.<b16>ebg+]2  ddd.a16df+16a16d e4ebe4gb a4aa.e16cae a4aa.e16ceac
+D  [r1]14r
+1D [g4.g4rg4 r1     r1       d2drd4    r1       d2drd4. :c4.crc4.    d4.drd4    ]2
+2D [a4.a4ra4 b2brb4 a4.a4ra4 b2brb4    a4.a4ra4 b2brb4. :a4.ara4.    b4.brb4    ]2
+3D [e4.e4re4 g2grg4 f4.f4rf4 g+2g+rg+4 f4.f4rf4 g2grg4. :f+4.f+rf+4. g+4.g+rg+4 ]2
+4D [c4.c4rc4 d2drd4 c4.c4rc4 e2ere4    c4.c4rc4 e2ere4. :d4.drd4.    e4.ere4    ]2
+D  r2..       r1        r4cec>aec< r4cea r2
+1D c4.crc4    d2drd4    g4r2.      g4r4. rgg4
+2D a4.ara4    b2brb4    a4r2.      a4r4. raa4
+3D f+4.f+rf+4 g+2g+rg4  e4r2.      e4r4. ree4
+4D d4.drd4    e2ere4    c4r2.      c4r4. rcc4
+F  [ rrrr a>e< rr rrrr a>e< rr rrrr g>d< rr rrrr g>d< rr
+N  [ arrr r r  ar rarr r r  aa ggrg r r  gg grrg r r  gg
+1N [ errr r r  er rerr r r  ee ddrd r r  dd drrd r r  dd
+F  rrrr f>c< rr rrrr f>c< rr r r rr  g+>d< r r  r rrr  g+>d< r r
+N  frrr r r  fr rfrr r r  ff g+g+rg+ r  r  g+g+ g+rrg+ r  r  g+g+
+1N crrr r r  cr rcrr r r  cc e e re  r  r  e e  e rre  r  r  e e
+F  rrrr f>c< rr rrrrrr f>c<  rrrrrr a>e< rrrrrr a>e< rr
+N  frrr r r  fr frrfrr r r   aararr r r  arrara r r  aa
+1N crrr r r  cr crrcrr r r   eererr r r  errere r r  ee
+F  :r rrr a>d< r r rr rr a>d< rr   r r rr rr g+>d<  r r g+>d< r r  ]2
+N  :a rrr r r  a r ra rr r r  aa   g+g+rg+rr r  r   g+r r  r  g+g+ ]2
+1N :f+rrr r r  f+r rf+rr r r  f+f+ e e re rr r  r   e r r  r  e e  ]2
+F  rrrr a>d< rr rr a>d< rr r r rr rr g+>d<  rrrr g>d< rr
+N  arrr r r  ar ar r r  aa g+g+rg+rr r  r   grrg r r  gg
+1N drrr r r  dr dr r r  dd e e re rr r  r   erre r r  ee
+F  rrrr a>e< rr rrrr a>e< rr rrrrrr a>e<  rr a>e< rrrrrr
+N  arrr r r  ar rarr r r  aa aararr r r   ar r r  >>a32 [BS-6E-8a32]11 BS64E90<<
+1N errr r r  er rerr r r  ee eererr r r   er r r  >>e32 [BS-6E-8a32]11 BS64E90<<
+H  [ [r1]4 r4r2. d4r2.. : c4r2.  r2.. ]2 c4r^2  r1 r^1^1
+1H [ [r1]4 a4r2. b4r2.. : a4r2.  r2.. ]2 a4r^2  r1 r^1^1
+2H [ [r1]4 f4r2. g4r2.. : f+4r2. r2.. ]2 f+4r^2 r1 r^1^1
+3H [ [r1]4 c4r2. e4r2.. : d4r2.  r2.. ]2 d4r^2  r1 r^1^1
+E  [g1r1r1d1  r1d^1:c1 d2.. ]2 c2.. d1     g^1^1
+1E [a1b1a1b1  a1b^1:a1 b2.. ]2 a2.. b1     a^1^1
+2E [e1g1f1g+1 f1g^1:f+1g+2..]2 f+2..g+^2g4.e^1^1
+3E [c1d1c1e1  c1e^1:d1 e2.. ]2 d2.. e1     c^1^1
+I  e4.ab4>c4<e^2 rcd e4.ab4>c4<d^2r4.
+1I c4.eg4 a4 c^2 rrr c4.eg4 a4<a^2r4.>
+2I3I4I5I  [r1]4
+I1I2I3I4I5I [r1]4
+I  e4.ab4>c4<e^2 rcd e4.ab4>c4d^2r4.<
+1I c4.eg4 a4 c^2 rrr c4.eg4 a4a^2r4.
+2I3I4I5I  [r1]4
+I1I2I3I4I5I [r1]6 r
+
+AB1B2B3BG1GCD1D2D3D4DFN1N  ]2
+H1H2H3HE1E2E3EI1I2I3I4I5I  ]2
+
+;	- #2 -
+
+;	[A][A']
+A  aga4.eag^ 2reeg aga4.eag^ 2rede dc2aaa ggee4.rd4 eded4fe ^2rc<ba4.
+B1B2B3B  [r1]7 r2..
+G1G  [r1]7 r2..
+C  [aaa.e16cea g4ee.b16egbg]2 fff.c16fa4c ccc.g16ce16g16c d4dd.a16dfa e4be.<b16>ebg+
+D  r2.. r2e4b4g r2.. r2e4g4b r1 r4.eg>c4< r1 r2e4b4
+1D g2.. d2rr2   g2.. d2rr2   r1 r4.r2     c1 d2r2
+2D a2.. b2rr2   a2.. b2rr2   a1 g4.r2     a1 b2r2
+3D e2.. g2rr2   e2.. g2rr2   f1 e4.r2     f1 g+2r2
+4D c2.. e2rr2   c2.. e2rr2   c1 c4.r2     c1 e2r2
+FN1N [r1]7 r2..
+H1H2H3H  [r1]7 r2..
+E  g2..d^1g2..d^1 r1r2..c1 d1
+1E a2..b^1a2..b^1 a1g2..a1 b1
+2E e2..g^1e2..g^1 f1e2..f1 g+1
+3E c2..e^1c2..e^1 c1c2..d1 e1
+I1I2I3I4I5I  [r1]7 r2..
+
+;	[B]
+A  ab4>c4 <b4.b>c4dde4. ee4dde dc4c4c<b a4b>c <b4>cd c4de d4ef e4e4.^2.r4d4ce ^2.r4 r2..
+B1B2B3B  [r1]10
+G  [r1]10
+C  f4ff.c16fac g4gg.d16gbd e4ee.b16egb a4aa.e16ce16a16c f4ac g4bd a4ec d4fa e4be.<b16>egbg d4f16a16d df+a e4be.<b16>ebg+ e4be.<b16>ebg+
+D  r1r1     r1     r4cearr4 [r1]6
+1D r1r^2rr4 d^2rd4 g4rrrrg4 r2r2g2c2 d2.rd4 c2 rc4  d^2 rd4  d2 rdd4
+2D a1b^2rb4 b^2rb4 a4rrrra4 a2b2a2a2 b2.rb4 a2 ra4  b^2 rb4  b2 rbb4
+3D f1g^2rg4 g^2rg4 e4rrrre4 f2g2e2f2 g2.rg4 f+2rf+4 g+^2rg+4 g+2rg+g+4
+4D c1d^2rd4 e^2re4 c4rrrrc4 c2d2c2d2 e2.re4 d2 rd4  e^2 re4  e2 ree4
+F  rrrr f>c< rr rrrr f>c< rr rrrr g>d< rr rrrr g>d< rr
+N  frrr r r  fr rfrr r r  ff ggrg r r  gr grrg r r  gg
+1N crrr r r  cr rcrr r r  cc ddrd r r  dr drrd r r  dd
+F  rrrr a>e< rr rrrr a>e< rr rrrr a>e< rr rrrr a>e< rr
+N  arrr r r  ar rarr r r  aa aara r r  ar arra r r  aa
+1N errr r r  er rerr r r  ee eere r r  er erre r r  ee
+F  rrrr f>c< rr rrrr g>d< rr rrrr e>a< rr rrrr a>d< rr
+N  frrr r r  ff grrr r r  gg arrr r r  aa arrr r r  aa
+1N crrr r r  cc drrr r r  dd errr r r  ee drrr r r  dd
+F  rrrr a>e< rr rrrrrr a>e< rr rrrrrr a>e<  rr a>e< rr
+N  brrr r r  br brrbrr r r  bb aararr r r   ar r r  aa
+1N errr r r  er errerr r r  ee ddrdrr r r   dr r r  dd
+F  r rrr g+>d< r r rr rr g+>d< r r  r r rr rr g+>d< r rrr  g+>d< r r
+N  g+rrr r  r  g+r rg+rr r  r  g+g+ g+g+rg+rr r  r  g+rrg+ r  r  g+g+
+1N e rrr r  r  e r re rr r  r  e e  e e re rr r  r  e rre  r  r  e e
+H1H2H3H  [r1]10
+E  r1r1d1g1 r2r2g2c2 d^1c2.. d1^1
+1E a1b1b1a1 a2b2a2a2 b^1a2.. b1^1
+2E f1g1g1e1 f2g2e2f2 g^1f+2..g+1^1
+3E c1d1e1c1 c2d2c2d2 e^1d2.. e1^1
+I  r^2>fa4< r1r^2>gb4< r1 r2r2r2r2 r^1r2 >f+a4<  r1^1
+1I r^2>cf4< r1r^2>eg4< r1 r2r2r2r2 r^1r2 >d f+4< r1^1
+2I r^2 rr4  r1d^2 rr4  g1 r2r2r2c2 r^1c2  r r4   d1^1
+3I a^2 rr4  b1b^2 rr4  a1 r2r2r2r2 r^1a2  r r4   b1^1
+4I f^2 rr4  g1g^2 rr4  e1 r2r2r2r2 r^1f+2 r r4   g+1^1
+5I c^2 rr4  d1e^2 rr4  c1 r2r2r2r2 r^1d2  r r4   e1^1
+
+;	[C]
+A  e4.ab4>c4<e^ 2rcde4. ab4>c4<d^ 2raga4 gf4.bab4 ag4a4g4 >c2<rab>c dc4<b4.r
+A  e4.ab4>c4<e^ 2rcde4e ab4>ccd^ 2<raga4 gf4.bab4 ag2. >rccc<b>c4d4. c4<bg4a^1 r1
+B1B2B3B [r1]18 r8
+G1G [ a4r2.r1 a4r2.r1 r1r^1:r1 r2.. ]2 r2.. r1 r^1^1
+C  [a4aa.e16cea g4gg.d16gbd f4ff.c16fac e4ee.b16eg16b16e f4ff.c16fac e4ee.b16gb4e: ddd.a16df+ad eee.<b16>ebg+]2  ddd.a16df+16a16d e4ebe4gb a4aa.e16cae a4aa.e16ceac
+D  [r1]14r
+1D [ g4.g4rg4 r1     r1       d2drd4    r1       d2drd4. : c4.crc4.    d4.drd4    ]2
+2D [ a4.a4ra4 b2brb4 a4.a4ra4 b2brb4    a4.a4ra4 b2brb4. : a4.ara4.    b4.brb4    ]2
+3D [ e4.e4re4 g2grg4 f4.f4rf4 g+2g+rg+4 f4.f4rf4 g2grg4. : f+4.f+rf+4. g+4.g+rg+4 ]2
+4D [ c4.c4rc4 d2drd4 c4.c4rc4 e2ere4    c4.c4rc4 e2ere4. : d4.drd4.    e4.ere4    ]2
+D  r2..       r1        r4cec>aec< r4cea r2
+1D c4.crc4    d2drd4    g4r2.      g4r4. rgg4
+2D a4.ara4    b2brb4    a4r2.      a4r4. raa4
+3D f+4.f+rf+4 g+2g+rg4  e4r2.      e4r4. ree4
+4D d4.drd4    e2ere4    c4r2.      c4r4. rcc4
+F  [ rrrr a>e< rr rrrr a>e< rr rrrr g>d< rr rrrr g>d< rr
+N  [ arrr r r  ar rarr r r  aa ggrg r r  gg grrg r r  gg
+1N [ errr r r  er rerr r r  ee ddrd r r  dd drrd r r  dd
+F  rrrr f>c< rr rrrr f>c< rr r r rr  g+>d< r r  r rrr  g+>d< r r
+N  frrr r r  fr rfrr r r  ff g+g+rg+ r  r  g+g+ g+rrg+ r  r  g+g+
+1N crrr r r  cr rcrr r r  cc e e re  r  r  e e  e rre  r  r  e e
+F  rrrr f>c< rr rrrrrr f>c<  rrrrrr a>e< rrrrrr a>e< rr
+N  frrr r r  fr frrfrr r r   aararr r r  arrara r r  aa
+1N crrr r r  cr crrcrr r r   eererr r r  errere r r  ee
+F  :r rrr a>d< r r rr rr a>d< rr   r r rr rr g+>d<  r r g+>d< r r  ]2
+N  :a rrr r r  a r ra rr r r  aa   g+g+rg+rr r  r   g+r r  r  g+g+ ]2
+1N :f+rrr r r  f+r rf+rr r r  f+f+ e e re rr r  r   e r r  r  e e  ]2
+F  rrrr a>d< rr rr a>d< rr r r rr rr g+>d<  rrrr g>d< rr
+N  arrr r r  ar ar r r  aa g+g+rg+rr r  r   grrg r r  gg
+1N drrr r r  dr dr r r  dd e e re rr r  r   erre r r  ee
+F  rrrr a>e< rr rrrr a>e< rr rrrrrr a>e<  rr a>e< rrrrrr
+N  arrr r r  ar rarr r r  aa aararr r r   ar r r  >>a32 [BS-6E-8a32]11 BS64E90<<
+1N errr r r  er rerr r r  ee eererr r r   er r r  >>e32 [BS-6E-8a32]11 BS64E90<<
+H  [ [r1]4 r4r2. d4r2.. : c4r2.  r2.. ]2 c4r^2  r1 r^1^1
+1H [ [r1]4 a4r2. b4r2.. : a4r2.  r2.. ]2 a4r^2  r1 r^1^1
+2H [ [r1]4 f4r2. g4r2.. : f+4r2. r2.. ]2 f+4r^2 r1 r^1^1
+3H [ [r1]4 c4r2. e4r2.. : d4r2.  r2.. ]2 d4r^2  r1 r^1^1
+E  [ g1r1r1d1  r1d^1 : c1 d2..  ]2 c2.. d1      g^1^1
+1E [ a1b1a1b1  a1b^1 : a1 b2..  ]2 a2.. b1      a^1^1
+2E [ e1g1f1g+1 f1g^1 : f+1g+2.. ]2 f+2..g+^2g4. e^1^1
+3E [ c1d1c1e1  c1e^1 : d1 e2..  ]2 d2.. e1      c^1^1
+I  e4.ab4>c4<e^2 rcd e4.ab4>c4<d^2r4.
+1I c4.eg4 a4 c^2 rrr c4.eg4 a4<a^2r4.>
+2I3I4I5I  [r1]4
+I1I2I3I4I5I [r1]4
+I  e4.ab4>c4<e^2 rcd e4.ab4>c4d^2r4.<
+1I c4.eg4 a4 c^2 rrr c4.eg4 a4a^2r4.
+2I3I4I5I  [r1]4
+I1I2I3I4I5I [r1]6 r
+
+;	[K]
+A  [r1]15 r2..
+B [r1]7 r2.. q0>e24f24g24
+1B2B3B  [r1]8 >
+B  l16a1^1^1^4. q5 gege8d8cde f4.>c<b>c8.<b8.a8   q0g4.f32e32d32c32q5 cd8e8g q0f2q5>c<b>c8<b8a8 q0 b2.a32g+32f32e32d32c32<b32a32>q5
+1B2B3B  [r1]7 r2..
+G1G  [a4r2.r2..g a4r2.r1 r1r2..r1:r1g]2 r1
+C  [[aaa.e16cea g4ee.b16egbg]2 fff.c16fa4c ccc.g16ceg d4dd.a16dfa e4be.<b16>e:g+bg+]2bg+
+D  [ [r1]6r2..                                  : r^1        ]2  r1
+1D [ [g4g4rg4 d2drd4.]2 r1       r2..    c2crc4 : d2drd4.    ]2  d2drd4
+2D [ [a4a4ra4 b2brb4.]2 a4a4ra4. g4.grg4 a2ara4 : b2brb4.    ]2  b2brb4
+3D [ [e4e4re4 g2grg4.]2 f4f4rf4. e4.ere4 f2frf4 : g+2g+rg+4. ]2  g+2g+rg+4
+4D [ [c4c4rc4 e2ere4.]2 c4c4rc4. c4.crc4 d2drd4 : e2ere4.    ]2  e2ere4
+F  [ [rrrr a>e<rr rrrr a>e< rrrrrr a>e< rrrrrr a>e<rr]2
+N  [ [arrr r r ar rarr r r  aararr r r  arrara r r aa]2
+1N [ [errr r r er rerr r r  eererr r r  errere r r ee]2
+F  rrrr f>c< rr rrrr f>c< rr rgrr g>c< rr gr g>c< rr
+N  frrr r r  fr rfrr r r  ff rgrr r r  gr gr r r  gg
+1N crrr r r  cr rcrr r r  cc rcrr r r  cr cr r r  cc
+F  rrrr a>d< rr rrrr a>d< rr r r rr rr g+>e< r rrr  :rr  g+>e< r r  ]2 a>e< r r
+N  arrr r r  rr rarr r r  aa g+g+rg+rr r  r  g+rrg+ :rg+ r  r  g+g+ ]2 r r  g+g+
+1N drrr r r  rr rdrr r r  dd e e re rr r  r  e rre  :re  r  r  e e  ]2 r r  e e
+H  [ [r1]4 r4r2. r2..c4r2. : r^1 ]2 r1
+1H [ [r1]4 a4r2. r2..a4r2. : r^1 ]2 r1
+2H [ [r1]4 f4r2. r2..f4r2. : r^1 ]2 r1
+3H [ [r1]4 c4r2. r2..d4r2. : r^1 ]2 r1
+E  [ [g2..d^1]2 r1r2..c1:d^1  ]2 d1 
+1E [ [a2..b^1]2 a1g2..a1:b^1  ]2 b1 
+2E [ [e2..g^1]2 f1e2..f1:g+^1 ]2 g+1
+3E [ [c2..e^1]2 c1c2..d1:e^1  ]2 e1 
+I1I2I3I4I5I  [r1]15 r2..
+
+;	[K']
+A  [r1]10
+B  f4f8ef8.r8>c8<a8 b4>c8d4.<b4 g4g8eg^4>d8<b8 >c4<b8a4.>c4
+1B c4c8rc8.r8 f8 f8 g4 a8b4. g4 e4e8re^4 b8 g8  a4 g8e4. a4
+2B3B [r1]4
+B  <f4fcf8 g4gdg8 a4aea8 >c4<ab>c8 <b4 q0[e24:g24b24>d24<]6 [d24:f+24a24>c24<]6 q5>e2d16c16  q0d32e16.d32e8..^2.  d32c32<b32a32g+32f32e32d32 q5
+1B  c4rrc8 d4rrd8 e4rre8  a4 fg a8  g4 r2.. r2.. r1^1
+2B3B  [r1]6
+G  [r1]10
+C  f4ff.c16fac g4gg.d16gbd e4ee.b16egb a4aa.e16ce16a16c f4ac g4bd a4ec d4fa e4be.<b16>egbg d4f16a16d df+a e4be.<b16>ebg+ e4be.<b16>ebg+
+D  r1r1     r1     r4cearr4 [r1]6
+1D r1r^2rr4 d^2rd4 g4rrrrg4 r2r2g2c2 d2.rd4 c2 rc4  d^2 rd4  d2 rdd4
+2D a1b^2rb4 b^2rb4 a4rrrra4 a2b2a2a2 b2.rb4 a2 ra4  b^2 rb4  b2 rbb4
+3D f1g^2rg4 g^2rg4 e4rrrre4 f2g2e2f2 g2.rg4 f+2rf+4 g+^2rg+4 g+2rg+g+4
+4D c1d^2rd4 e^2re4 c4rrrrc4 c2d2c2d2 e2.re4 d2 rd4  e^2 re4  e2 ree4
+F  rrrr f>c< rr rrrr f>c< rr rrrr g>d< rr rrrr g>d< rr
+N  frrr r r  fr rfrr r r  ff ggrg r r  gr grrg r r  gg
+1N crrr r r  cr rcrr r r  cc ddrd r r  dr drrd r r  dd
+F  rrrr a>e< rr rrrr a>e< rr rrrr a>e< rr rrrr a>e< rr
+N  arrr r r  ar rarr r r  aa aara r r  ar arra r r  aa
+1N errr r r  er rerr r r  ee eere r r  er erre r r  ee
+F  rrrr f>c< rr rrrr g>d< rr rrrr e>a< rr rrrr a>d< rr
+N  frrr r r  ff grrr r r  gg arrr r r  aa arrr r r  aa
+1N crrr r r  cc drrr r r  dd errr r r  ee drrr r r  dd
+F  rrrr a>e< rr rrrrrr a>e< rr rrrrrr a>e<  rr a>e< rr
+N  brrr r r  br brrbrr r r  bb aararr r r   ar r r  aa
+1N errr r r  er errerr r r  ee ddrdrr r r   dr r r  dd
+F  r rrr g+>d<r r rr rr g+>d< r r  r r rr rr g+>d< r rrr  g+>d< r r
+N  g+rrr r  r g+r rg+rr r  r  g+g+ g+g+rg+rr r  r  g+rrg+ r  r  g+g+
+1N e rrr r  r e r re rr r  r  e e  e e re rr r  r  e rre  r  r  e e
+H1H2H3H  [r1]10
+E  r1r1d1g1 r2r2g2c2 d^1c2.. d1^1
+1E a1b1b1a1 a2b2a2a2 b^1a2.. b1^1
+2E f1g1g1e1 f2g2e2f2 g^1f+2..g+1^1
+3E c1d1e1c1 c2d2c2d2 e^1d2.. e1^1
+I  r^2>fa4< r1r^2>gb4< r1 r2r2r2r2 r^1r2>f+a4<  r1^1
+1I r^2>cf4< r1r^2>eg4< r1 r2r2r2r2 r^1r2>d f+4< r1^1
+2I r^2 rr4  r1d^2 rr4  g1 r2r2r2r2 r^1c2 r r4   d1^1
+3I a^2 rr4  b1b^2 rr4  a1 r2r2r2r2 r^1a2 r r4   b1^1
+4I f^2 rr4  g1g^2 rr4  e1 r2r2r2r2 r^1f+2r r4   g+1^1
+5I c^2 rr4  d1e^2 rr4  c1 r2r2r2r2 r^1d2 r r4   e1^1
+
+;	[C](Repeat)
+
+A  e4.ab4>c4<e^ 2rcde4. ab4>c4<d^ 2raga4 gf4.bab4 ag4a4g4 >c2<rab>c dc4<b4.r
+A  e4.ab4>c4<e^ 2rcde4. ab4>c4d^ 2<raga4 gf4.bab4 ag2. >r4c4<b>c4d4. c4<bg4a^1 r1
+B1B2B3B [r1]18
+B       q0e24f24g24
+1B2B3B  r8
+G1G [ a4r2.r1 a4r2.r1 r1r^1:r1 r2..]2 r2.. r1 r^1^1
+C  [a4aa.e16cea g4gg.d16gbd f4ff.c16fac e4ee.b16eg16b16e f4ff.c16fac e4ee.b16gb4e: ddd.a16df+ad eee.<b16>ebg+]2  ddd.a16df+16a16d e4ebe4gb a4aa.e16cae a4aa.e16ceac
+D  [r1]14r
+1D [g4.g4rg4 r1     r1       d2drd4    r1       d2drd4. :c4.crc4.    d4.drd4    ]2
+2D [a4.a4ra4 b2brb4 a4.a4ra4 b2brb4    a4.a4ra4 b2brb4. :a4.ara4.    b4.brb4    ]2
+3D [e4.e4re4 g2grg4 f4.f4rf4 g+2g+rg+4 f4.f4rf4 g2grg4. :f+4.f+rf+4. g+4.g+rg+4 ]2
+4D [c4.c4rc4 d2drd4 c4.c4rc4 e2ere4    c4.c4rc4 e2ere4. :d4.drd4.    e4.ere4    ]2
+D  r2..       r1        r4cec>aec< r4cea r2
+1D c4.crc4    d2drd4    g4r2.      g4r4. rgg4
+2D a4.ara4    b2brb4    a4r2.      a4r4. raa4
+3D f+4.f+rf+4 g+2g+rg4  e4r2.      e4r4. ree4
+4D d4.drd4    e2ere4    c4r2.      c4r4. rcc4
+F  [ rrrr a>e< rr rrrr a>e< rr rrrr g>d< rr rrrr g>d< rr
+N  [ arrr r r  ar rarr r r  aa ggrg r r  gg grrg r r  gg
+1N [ errr r r  er rerr r r  ee ddrd r r  dd drrd r r  dd
+F  rrrr f>c< rr rrrr f>c< rr r r rr  g+>d< r r  r rrr  g+>d< r r
+N  frrr r r  fr rfrr r r  ff g+g+rg+ r  r  g+g+ g+rrg+ r  r  g+g+
+1N crrr r r  cr rcrr r r  cc e e re  r  r  e e  e rre  r  r  e e
+F  rrrr f>c< rr rrrrrr f>c<  rrrrrr a>e< rrrrrr a>e< rr
+N  frrr r r  fr frrfrr r r   aararr r r  arrara r r  aa
+1N crrr r r  cr crrcrr r r   eererr r r  errere r r  ee
+F  :r rrr a>d< r r rr rr a>d< rr   r r rr rr g+>d<  r r g+>d< r r  ]2
+N  :a rrr r r  a r ra rr r r  aa   g+g+rg+rr r  r   g+r r  r  g+g+ ]2
+1N :f+rrr r r  f+r rf+rr r r  f+f+ e e re rr r  r   e r r  r  e e  ]2
+F  rrrr a>d< rr rr a>d< rr r r rr rr g+>d<  rrrr g>d< rr
+N  arrr r r  ar ar r r  aa g+g+rg+rr r  r   grrg r r  gg
+1N drrr r r  dr dr r r  dd e e re rr r  r   erre r r  ee
+F  rrrr a>e< rr rrrr a>e< rr rrrrrr a>e<  rr a>e< rrrrrr
+N  arrr r r  ar rarr r r  aa aararr r r   ar r r  >>a32 [BS-6E-8a32]11 BS64E90<<
+1N errr r r  er rerr r r  ee eererr r r   er r r  >>e32 [BS-6E-8a32]11 BS64E90<<
+H  [ [r1]4 r4r2. d4r2.. : c4r2.  r2.. ]2 c4r^2  r1 r^1^1
+1H [ [r1]4 a4r2. b4r2.. : a4r2.  r2.. ]2 a4r^2  r1 r^1^1
+2H [ [r1]4 f4r2. g4r2.. : f+4r2. r2.. ]2 f+4r^2 r1 r^1^1
+3H [ [r1]4 c4r2. e4r2.. : d4r2.  r2.. ]2 d4r^2  r1 r^1^1
+E  [g1r1r1d1  r1d^1:c1 d2.. ]2 c2.. d1     g^1^1
+1E [a1b1a1b1  a1b^1:a1 b2.. ]2 a2.. b1     a^1^1
+2E [e1g1f1g+1 f1g^1:f+1g+2..]2 f+2..g+^2g4.e^1^1
+3E [c1d1c1e1  c1e^1:d1 e2.. ]2 d2.. e1     c^1^1
+I  e4.ab4>c4<e^2 rcd e4.ab4>c4<d^2r4.
+1I c4.eg4 a4 c^2 rrr c4.eg4 a4<a^2r4.>
+2I3I4I5I  [r1]4
+I1I2I3I4I5I [r1]4
+I  e4.ab4>c4<e^2 rcd e4.ab4>c4d^2r4.<
+1I c4.eg4 a4 c^2 rrr c4.eg4 a4a^2r4.
+2I3I4I5I  [r1]4
+I1I2I3I4I5I [r1]6 r
+
+;	[E]
+A  [r1]15 r2..
+B  [l16a1^1^1^4. q5 gege8d8cde f4.>c<b>c8.<b8.a8   q0g4.f32e32d32c32q5 cd8e8g q0f2q5>c<b>c8<b8a8 q0 b2.a32g+32f32e32d32c32<b32a32> :e24f24g24]2
+1B2B3B  [r1]15 r2..
+G1G  [a4r2.r2..g a4r2.r1 r1r2..r1:r1g]2 r1
+C  [[aaa.e16cea g4ee.b16egbg]2 fff.c16fa4c ccc.g16ceg d4dd.a16dfa e4be.<b16>e:g+bg+]2bg+
+D  [ [r1]6r2..                                  : r^1        ]2  r1
+1D [ [g4g4rg4 d2drd4.]2 r1       r2..    c2crc4 : d2drd4.    ]2  d2drd4
+2D [ [a4a4ra4 b2brb4.]2 a4a4ra4. g4.grg4 a2ara4 : b2brb4.    ]2  b2brb4
+3D [ [e4e4re4 g2grg4.]2 f4f4rf4. e4.ere4 f2frf4 : g+2g+rg+4. ]2  g+2g+rg+4
+4D [ [c4c4rc4 e2ere4.]2 c4c4rc4. c4.crc4 d2drd4 : e2ere4.    ]2  e2ere4
+F  [ [rrrr a>e<rr rrrr a>e< rrrrrr a>e< rrrrrr a>e<rr]2
+N  [ [arrr r r ar rarr r r  aararr r r  arrara r r aa]2
+1N [ [errr r r er rerr r r  eererr r r  errere r r ee]2
+F  rrrr f>c< rr rrrr f>c< rr rgrr g>c< rr gr g>c< rr
+N  frrr r r  fr rfrr r r  ff rgrr r r  gr gr r r  gg
+1N crrr r r  cr rcrr r r  cc rcrr r r  cr cr r r  cc
+F  rrrr a>d< rr rrrr a>d< rr r r rr rr g+>e< r rrr  :rr  g+>e< r r  ]2 a>e< r r
+N  arrr r r  rr rarr r r  aa g+g+rg+rr r  r  g+rrg+ :rg+ r  r  g+g+ ]2 r r  g+g+
+1N drrr r r  rr rdrr r r  dd e e re rr r  r  e rre  :re  r  r  e e  ]2 r r  e e
+H  [ [r1]4 r4r2. r2..c4r2. : r^1 ]2 r1
+1H [ [r1]4 a4r2. r2..a4r2. : r^1 ]2 r1
+2H [ [r1]4 f4r2. r2..f4r2. : r^1 ]2 r1
+3H [ [r1]4 c4r2. r2..d4r2. : r^1 ]2 r1
+E  [ [g2..d^1]2 r1r2..c1:d^1  ]2 d1 
+1E [ [a2..b^1]2 a1g2..a1:b^1  ]2 b1 
+2E [ [e2..g^1]2 f1e2..f1:g+^1 ]2 g+1
+3E [ [c2..e^1]2 c1c2..d1:e^1  ]2 e1 
+I1I2I3I4I5I  [r1]15 r2..
+
+T  EXx41,x10,x42,x12,x40,x00,x04,126, 62,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,125, 63,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,124, 64,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,123, 65,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,122, 66,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,121, 67,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,120, 68,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,119, 69,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,118, 70,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,117, 71,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,116, 72,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,115, 73,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,114, 74,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,113, 75,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,112, 76,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,111, 77,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,110, 78,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,109, 79,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,108, 80,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,107, 81,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,106, 82,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,105, 83,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,104, 84,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,103, 85,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,102, 86,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,101, 87,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,100, 88,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 99, 89,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 98, 90,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 97, 91,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 96, 92,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 95, 93,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 94, 94,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 93, 95,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 92, 96,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 91, 97,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 90, 98,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 89, 99,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 88,100,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 87,101,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 86,102,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 85,103,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 84,104,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 83,105,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 82,106,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 81,107,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 80,108,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 79,109,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 78,110,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 77,111,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 76,112,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 75,113,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 74,114,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 73,115,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 72,116,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 71,117,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 70,118,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 69,119,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 68,120,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 67,121,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 66,122,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 65,123,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 64,124,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 63,125,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 62,126,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 61,127,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 60,  0,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 59,  1,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 58,  2,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 57,  3,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 56,  4,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 55,  5,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 54,  6,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 53,  7,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 52,  8,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 51,  9,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 50, 10,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 49, 11,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 48, 12,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 47, 13,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 46, 14,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 45, 15,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 44, 16,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 43, 17,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 42, 18,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 41, 19,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 40, 20,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 39, 21,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 38, 22,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 37, 23,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 36, 24,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 35, 25,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 34, 26,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 33, 27,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 32, 28,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 31, 29,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 30, 30,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 29, 31,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 28, 32,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 27, 33,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 26, 34,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 25, 35,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 24, 36,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 23, 37,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 22, 38,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 21, 39,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 20, 40,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 19, 41,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 18, 42,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 17, 43,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 16, 44,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 15, 45,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 14, 46,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 13, 47,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 12, 48,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 11, 49,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04, 10, 50,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,  9, 51,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,  8, 52,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,  7, 53,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,  6, 54,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,  5, 55,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,  4, 56,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,  3, 57,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,  2, 58,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,  1, 59,xf7 r10
+T  EXx41,x10,x42,x12,x40,x00,x04,  0, 60,xf7 r10
+

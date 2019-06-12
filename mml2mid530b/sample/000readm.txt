@@ -1,0 +1,41 @@
+
+mml2midサンプル曲リスト
+
+多くのコンポーザの方々にご協力いただきました．
+ありがとうございます．
+
+   ファイル名     音源      作曲者    曲名
+ 1) 00EMERGN.MML  GM/GS     もんでん  Emergency
+ 2) 00HERO.MML    GM/GS     もんでん  Battle Hero
+ 3) 00MASTER.MML  GM/GS     もんでん  Master of battle
+ 4) 00NANIWA.MML  GM/GS     もんでん  マンボ イン 浪花シティ
+ 5) 00PASSIO.MML  GM/GS     もんでん  Hit the Passion
+ 6) 00TIMETO.MML  GM/GS     もんでん  It's time to battle!
+ 7) 01HOP2GS.MML  SC-88Pro  ＭＫＲ    熱狂バーニングロード
+ 8) 01MKR29.MML   XG        ＭＫＲ    予期した哀しみ
+ 9) 01MKR39.MML   XG(32パート) ＭＫＲ 時の監視人
+10) 01MKR40.MML   XG        ＭＫＲ    目覚まし時計de大パニック！
+11) 02NM11.MML    GS        ＮＹＡ    ゆっくりしていってね
+12) 02NM58A.MML   SC-88     ＮＹＡ    Ｃosmic Ｂlue
+13) 02NM63.MML    SC-88     ＮＹＡ    Ｓilent Ｐulse
+14) 03BW_8P.MML   SC-88pro  まっくす  Blue Wind
+15) 04A_MATI.MML  GS        じゅ      あかいまち
+16) 04D_MATI.MML  SC-88     じゅ      でかいまち
+17) 04JOKYOKU.MML SC-88     じゅ      じょきょく
+18) 05S_MATI.MML  SC-88     ＳＮＢ    White Town
+19) 06UNI44.MML   SC-88     うにら    My Little Boy
+20) 06UNI45.MML   SC-88     うにら    終わりそうな予感
+21) 06UNI47.MML   SC-88     うにら    エンドマーク
+22) 06UNI48.MML   SC-88     うにら    Digital Love
+23) 07KM100A.MML  GS        くろてぃあん  自己紹介！
+24) 08GUITAR.MML  GS        74HC04    傷心旅行
+25) 08ITSUKA.MML  SC-88     74HC04    いつか歩いた道 (ADC0804.MMLを#includeしています)
+26) 08SADO_SG.MML XG+PLG100-SG  74HC04  佐渡おけさ
+27) 09USAGI3.MML  SC-88     OF        空とぶうさぎさん
+28) 10KAZEIR MML  SC-88Pro  DDSS      風色
+29) 11FLUSHI MML  GM(SC-88) 佐伯俊道  flush in the eye
+30) 11KATDRO MML  GM(SC-88) 佐伯俊道  K+A+T drove away !!
+31) 11RAZOR  MML  GM(SC-88) 佐伯俊道  On the Razor's Edge
+32) 11READYF MML  GM(SC-88) 佐伯俊道  Ready for Flying out
+
+

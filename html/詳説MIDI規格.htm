@@ -1,0 +1,192 @@
+
+<!-- saved from url=(0082)http://www.geocities.co.jp/Technopolis/1808/study/pakurimedia/AboutSMF_Inside.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+	<title>詳説MIDI規格</title>
+</head>
+
+
+<body bgcolor="WHITE"><!-- geoguide start --><div align="center"><script language="javascript">var jps=382116062;var jpt=1550083018</script><script language="javascript" src="./詳説MIDI規格_files/gg.js"></script><div id="y_gc_div_adcntr" class="y_gcss_ovrtr_au" style="visibility: visible; position: relative; z-index: 2147483647;"><iframe src="./詳説MIDI規格_files/gg.html" width="740" height="103" border="0" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no">no iframe</iframe></div></div><!-- geoguide end --><div align="CENTER"><!--#geoguide--></div><center>
+<table><tbody><tr>
+<td valign="TOP">
+</td>
+
+
+<td valign="TOP">
+<basefont size="2"><br>
+	<br>
+	<table>
+	<tbody><tr>
+	<td width="65%">
+		<font size="3">
+		<strong>ＳＭＦ内部構造</strong>
+		</font>
+	</td>
+	<td>
+	</td>
+	</tr>
+	</tbody></table><br>
+	<br>
+
+	<strong>全体構造</strong><br>
+	<br>
+	ＳＭＦの内部はチャンクと呼ばれるブロックに分割されています。これはWindowsのＲＩＦＦファイルなどの一般的なマルチメディアファイルと同様の構造になっています。
+	チャンクはファイルの先頭にあってＳＭＦ全体の情報を格納しているヘッダチャンクと、トラックごとの情報を格納しているトラックチャンクに分類されます。
+	トラックチャンクには実際の演奏データとそれに付随する情報が格納されます。<br>
+	<br>
+	<img src="./詳説MIDI規格_files/IL_SMFAll.gif"><br>
+	<br>
+	ＳＭＦファイルはチャンク構造の違いで３つのフォーマットに分類されます。
+	ヘッダチャンクとトラックチャンク一つで構成されるフォーマット０、複数トラックを持つフォーマット２、
+	マルチシーケンスでシーケンスパターンを指定するフォーマット２の３種類です。
+	ＳＭＦをサポートするシーケンサはフォーマット０か１、またはその両方に対応していなければいけません。
+	フォーマットタイプはヘッダチャンクに記述されます。<br>
+	それでは、各チャンクについて説明します。<br>
+	<br>
+	<br>
+
+	<strong>ヘッダチャンク</strong><br>
+	<br>
+	ヘッダチャンクにはそのファイルの基本的な情報が格納され、ファイルの先頭１４バイトに記述されます。
+	<br>
+	<img src="./詳説MIDI規格_files/IL_SMFHdrChunk.gif"><br>
+	<br>
+	それぞれのデータは次のようになります。
+
+	<table border="1">
+	<tbody><tr>
+	<td><font size="2">チャンクタイプ</font></td>	<td><font size="2">4byte</font></td>	<td><font size="2">MThd</font></td>	<td><font size="2">常にアスキー文字列"MThd"４文字</font></td>
+	</tr>
+	
+	<tr>
+	<td><font size="2">データ長</font></td>		<td><font size="2">4byte</font></td>	<td><font size="2">6</font></td>		<td><font size="2">常にフォーマット、トラック数、時間単位のデータ長の合計６</font></td>
+	</tr>
+
+	<tr>
+	<td><font size="2">フォーマット</font></td>	<td><font size="2">2byte</font></td>	<td><font size="2">0,1,2</font></td>	<td><font size="2">SMFのフォーマットタイプ</font></td>
+	</tr>
+
+	<tr>
+	<td><font size="2">トラック数</font></td>		<td><font size="2">2byte</font></td>	<td><font size="2">0...n</font></td>	<td><font size="2">トラックチャンクの数</font></td>
+	</tr>
+
+	<tr>
+	<td><font size="2">時間単位</font></td>		<td><font size="2">2byte</font></td>	<td><font size="2">Time</font></td>	<td><font size="2">４分音符分のデルタタイム或いはタイムコードに基づいた１秒の分数</font></td>
+	</tr>
+	
+	</tbody></table>
+	<br>
+	チャンクタイプとデータ長は不変です。フォーマット０の場合、トラック数は１になります。
+	フォーマットが１、２の場合はトラック数は１以上の任意の値になります。時間単位は通常、
+	４分音符分の長さのデルタタイムを表します。多くのシーケンサでは３８４（１８０ｈ）、
+	４８０（１Ｅ０ｈ）、９６０（３Ｃ０ｈ）などの値が使われます。<br>
+	<br><br>
+
+	<strong>トラックチャンク</strong><br>
+	<br>
+	ヘッダチャンクは常に１４バイトで構成されますが、トラックチャンクは実際の演奏データが格納がされるのでデータ長は可変になります。<br>
+	<br>
+	<img src="./詳説MIDI規格_files/IL_SMFTrkChunk.gif"><br>
+	<br>
+	トラックチャンクの構造は、フォーマット０、１、２すべてで共通で、トラックチャンクを表すチャンクタイプ、データ長のあとに実際の演奏情報が続いていきます。
+	実際の演奏情報データはトラックイベントと呼ばれ、MIDIイベント、SyeExイベント、メタイベントがあります。
+	それぞれのイベントには時間を示すデルタタイムが付随しています。<br>
+	デルタタイムは、ヘッダチャンクの時間単位情報にしたがって可変長数値（後述）で表され、直前のイベントタイムからの差分が示されます。
+	デルタタイムを省略することはできず、曲先頭のイベントはデルタタイム０になります。<br>
+	したがってトラックイベントはすべて”[Delta Time] + [トラックイベント]”の形で格納されることになります。<br>
+	次にデルタタイムと各イベントについて説明します。<br>
+	<br>
+	<br>
+
+	<strong>デルタタイムについて</strong><br>
+	<br>
+	デルタタイムは各イベントのSMF内での相対的位置を表すため使われます。
+	ヘッダチャンクの時間単位で示した値が４分音符分の長さとして扱われます。
+	例えば、その値が４８０で、あるイベントのデルタタイムが２４０であった場合直前のイベントから４分音符の半分の８分音符分後にそのイベントが譜面上位置することを意味します。
+	デルタタイムは曲の先頭からの絶対位置ではなく、直前のイベントからの相対位置です。二つのイベントが同じ位置に存在する場合、
+	後に記述するイベントのデルタタイムは０になります。<br>
+	<br>
+	<br>
+
+	<strong>MIDIイベント</strong><br>
+	<br>
+	MIDIチャンネルメッセージを表すイベントで、ランニングステータスも扱うことができます。<br>
+	<br>
+	<img src="./詳説MIDI規格_files/IL_SMFMidiEvt.gif"><br>
+	<br>
+	デルタタイムに続いて、MIDIチャンネルメッセージがそのまま記述されます。<br>
+	<br>
+	<br>
+
+	<strong>SysExイベント</strong><br>
+	<br>
+	システム エクスクルーシブ メッセージを格納するイベントで、２種類あります。
+	<br>
+	<img src="./詳説MIDI規格_files/IL_SMFSysExEvt.gif"><br>
+	<br>
+	最初のSysExイベントは、MIDIエクスクルーシブメッセージにデータ長を付け加えた形になっていて、エクスクルーシブメッセージをそのまま使います。<br>
+	次のイベントは、エクスクルーシブメッセージの他に、リアルタイムメッセージやコモンメッセージなどに使われます。<br>
+	それぞれのデータ長は可変長数値で記述されます。また、SysExイベントはランニングステータスを無効にします。<br>
+	<br>
+	<br>
+
+	<strong>メタイベント</strong><br>
+	<br>
+	メタイベントはMIDIメッセージ以外の情報を格納するに使われます。
+	<br>
+	<img src="./詳説MIDI規格_files/IL_SMFMetaEvt.gif"><br>
+	<br>
+	メタイベントは”ＦＦｈ”に続く、１バイトのイベントタイプ、可変長数値で表されるデータ長、
+	イベントデータから構成されます。メタイベントはMIDI演奏情報ではないので無視することができますが、その場合でも適切なバイト数を算出して読み飛ばさなくてはいけません。
+	メタイベントはランニングステータスを無効にします。<br>
+	<br>
+	<br>
+	<br>
+
+	<strong>可変長数値について</strong><br>
+	<br>
+	SMFにおいて、デルタタイムやデータ長などを表す数値は可変長数値で表現されます。
+	これは、表現できる数値を制限せずに、効率よくデータを保持するためです。<br>
+	例えばSMFで３バイトの可変長数値は２１ビットの数値を表します。<br>
+	<br>
+	<img src="./詳説MIDI規格_files/IL_SMFVariableNum.gif"><br>
+	<br>
+	可変長数値を表す各バイトのビット７はフラグとして使われ、０の場合はそのバイトが
+	数値を構成する最後のバイトとみなされます。<br>
+	例えばSMF内に”９４１Ｄｈ（＝３７９１７）”という２バイトの可変長数値が格納されていると
+	します。これを実際のデータに変換してみましょう。<br>
+	まず、これを２進数で表すと次のようになります。<br>
+	１バイト目：<u>１</u>００１０１００（ビット７は１）<br>
+	２バイト目：<u>０</u>００１１１０１（ビット７は０）<br>
+	１バイト目のビット７は１です。つまりこのバイトは数値を表す最初か中程に位置するバイトです。<br>
+	２バイト目のビット７は０です。つまりこのバイトは数値を表す最後のバイトです。<br>
+	<br>
+	次にそれぞれのバイトのビット７を取り去り、１バイト目のビット０からビット６と
+	２バイト目のビット０からビット６をつなぎあわせます。<br>
+	１バイト目：００１０１００<br>
+	２バイト目：００１１１０１<br>
+	つなぎあわせると：００１０１００ ００１１１０１<br>
+	<br>
+	この値が可変長数値で表されていた実際の数値です。つまり”Ａ１Ｄｈ（＝２５８９）という
+	値になります。逆に数値データを可変長数値でSMF内に格納するには今の逆の計算をします。<br>
+	<br>
+	ところで、たかだか２、３バイトの数値を格納するのになんでこんなに面倒なことをするのかと疑問に思う方もいると思います。
+	しかし、可変長数値で表現されるデルタタイムはすべてのイベントに付随しています。
+	これを４バイトなどの固定長で表現してしまうとかなりの無駄なスペースを占有してしまうことは明らかです。
+	可変長数値で表現すれば大概のデルタタイムは１、２バイトで済みます。
+	（例えばＳＭＦに含まれるすべてのイベントが３バイトのMIDIイベントであったと仮定した場合、
+	デルタタイムを４バイト固定で表現すると、一つのイベントに７バイトを使いますが、
+	デルタタイムを可変長数値で平均２バイトで表現できたとすると一つのイベントにつき５バイトです。
+	つまり各イベントにつき２バイトの節約で全体では３０％近くファイルが小さくなる計算になります。）<br>
+
+	<br>
+	<br>
+
+
+</td>
+</tr></tbody></table>
+
+</center>
+
+
+
+<!-- text below generated by geocities.jp --><script language="javascript" src="./詳説MIDI規格_files/geov2.js"></script><script language="javascript">geovisit();</script><div id="ydn-double-md-rec-wrapper" style="text-align: center; width: 100%; left: 0px;"><div id="y_gc_div_uad_wrapper"><div id="y_gc_div_uadcntr" style="visibility: visible; position: relative; z-index: 2147483647; clear: both;"><center><iframe style="border:none;" src="./詳説MIDI規格_files/uad.html" width="615" height="480" border="0" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" allowtransparency="true"></iframe></center></div></div></div></body></html>

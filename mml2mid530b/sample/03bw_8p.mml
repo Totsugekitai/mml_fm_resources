@@ -1,0 +1,2272 @@
+#title"Blue Wind (SC-88Pro)   まっくす"
+#copyright "(c) MAX"
+#timebase 96
+
+;GM System On------------------------------------------------------------------
+A EXx7e,x7f,x09,x01,xf7 r8
+
+;GS Reset----------------------------------------------------------------------
+A $z x12,x40,x00,x7f,x00,x41,xf7 r8
+
+;Voice Reserve-----------------------------------------------------------------
+;A $z x12,{x40,x01,x10,4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},xf7 r8
+
+;Tempo-------------------------------------------------------------------------
+A BT4,4 t190 r8
+
+;Displayed Data----------------------------------------------------------------
+A $y x12,{x10,x00,x00,x42,x6c,x75,x65,x20,x57,x69,x6e,x64,x20,x43,x6f,x6d,x70,x6f,x73,x65,x64,x20,x62,x79,x20,x4d,x41,x58},xf7 r4
+;Displayed Letter ( Blue Wind Composed by MAX )
+
+;Use for Rhythm Part-----------------------------------------------------------
+A $z x12,{x40,x1a,x15,x02},xf7 r8	;Part 11
+
+;Insertion Effect--------------------------------------------------------------
+A $z x12,{x40,x42,x22,x01},xf7     r%2	;Part EFX Assign ( EFX:Part 2 )
+A $z x12,{x40,x43,x22,x01},xf7     r%2	;       "        ( EFX:Part 3 )
+A $z x12,{x40,x45,x22,x01},xf7     r%2	;       "        ( EFX:Part 5 )
+A $z x12,{x40,x03,x00,x11,x04},xf7 r%2	;EFX Type   ( OD / Rotary )
+A $z x12,{x40,x03,x03,    x00},xf7 r%2	;OD Sel     ( Overdrive   )
+A $z x12,{x40,x03,x04,     25},xf7 r%2	;+OD Drive  ( 25          )
+A $z x12,{x40,x03,x05,    x01},xf7 r%2	;OD Amp     ( Bltin       )
+A $z x12,{x40,x03,x06,    x01},xf7 r%2	;OD Amp Sw  ( On          )
+A $z x12,{x40,x03,x12,      8},xf7 r%2	;OD Pan     ( L56         )
+A $z x12,{x40,x03,x13,     70},xf7 r%2	;OD Level   ( 70          )
+A $z x12,{x40,x03,x08,      6},xf7 r%2	;RT L Slow  ( 0.35        )
+A $z x12,{x40,x03,x09,    114},xf7 r%2	;RT L Fast  ( 6.50        )
+A $z x12,{x40,x03,x0a,     28},xf7 r%2	;RT Lo Accl ( 3           )
+A $z x12,{x40,x03,x0b,    127},xf7 r%2	;RT Lo Lev  ( 127         )
+A $z x12,{x40,x03,x0c,     20},xf7 r%2	;RT H Slow  ( 1.05        )
+A $z x12,{x40,x03,x0d,    120},xf7 r%2	;RT H Fast  ( 7.50        )
+A $z x12,{x40,x03,x0e,     88},xf7 r%2	;Rt Hi Accl ( 11          )
+A $z x12,{x40,x03,x0f,    100},xf7 r%2	;RT Hi Lev  (  85         )
+A $z x12,{x40,x03,x10,     96},xf7 r%2	;RT Sept    (  96         )
+A $z x12,{x40,x03,x11,      0},xf7 r%2	;#RT Speed  ( Slow        )
+A $z x12,{x40,x03,x14,    120},xf7 r%2	;RT Pan     ( R56         )
+A $z x12,{x40,x03,x15,     75},xf7 r%2	;RT Level   ( 90          )
+A $z x12,{x40,x03,x16,    115},xf7 r%2	;Level      ( 110         )
+
+;System Effect-----------------------------------------------------------------
+A $z x12,{x40,x01,x30,x02},xf7 r%2	;Reverb Macro          ( Room 3 )
+A $z x12,{x40,x01,x31,x02},xf7 r%2	;Reverb Character      ( 2      )
+A $z x12,{x40,x01,x32,x02},xf7 r%2	;Reverb Pre-Lpf        ( 2      )
+A $z x12,{x40,x01,x33,110},xf7 r%2	;Reverb Level          ( 110    )
+A $z x12,{x40,x01,x34, 55},xf7 r%2	;Reverb Time           ( 55     )
+A $z x12,{x40,x01,x37, 60},xf7 r%2	;Reverb Predelay Time  ( 60  ms )
+A $z x12,{x40,x01,x38,x00},xf7 r%2	;Chorus Macro          ( Chorus 1 )
+A $z x12,{x40,x01,x39,x02},xf7 r%2	;Chorus Pre-Lpf        (  2       )
+A $z x12,{x40,x01,x3a, 50},xf7 r%2	;Chorus Level          ( 50       )
+A $z x12,{x40,x01,x3b, 50},xf7 r%2	;Chorus Feedback       ( 50       )
+A $z x12,{x40,x01,x3c, 60},xf7 r%2	;Chorus Delay          ( 60       )
+A $z x12,{x40,x01,x3d,  3},xf7 r%2	;Chorus Rate           (  3       )
+A $z x12,{x40,x01,x3e, 19},xf7 r%2	;Chorus Depth          ( 19       )
+A $z x12,{x40,x01,x3f, 32},xf7 r%2	;Chorus Send Level To Reverb ( 32 )
+A $z x12,{x40,x01,x40, 20},xf7 r%2	;Chorus Send Level To Delay  ( 20 )
+A $z x12,{x40,x01,x50,x03},xf7 r%2	;Delay Macro            ( Delay 4 )
+A $z x12,{x40,x01,x51,x04},xf7 r%2	;Delay Pre-Lpf          ( 4       )
+A $z x12,{x40,x01,x52, 83},xf7 r%2	;Delay Time Center      ( 130 ms  )
+A $z x12,{x40,x01,x53, 24},xf7 r%2	;Delay Time Ratio Left  ( 100  %  )
+A $z x12,{x40,x01,x54, 24},xf7 r%2	;Delay Time Ratio Right ( 100  %  )
+A $z x12,{x40,x01,x55, 90},xf7 r%2	;Delay Level Center     ( 100     )
+A $z x12,{x40,x01,x56, 70},xf7 r%2	;Delay Level Left       (  65     )
+A $z x12,{x40,x01,x57, 70},xf7 r%2	;Delay Level Right      (  65     )
+A $z x12,{x40,x01,x58, 80},xf7 r%2	;Delay Level            (  80     )
+A $z x12,{x40,x01,x59, 82},xf7 r%2	;Delay Feedback         ( +18     )
+A $z x12,{x40,x01,x5a, 10},xf7 r%2	;Delay Send To Leverb   (  10     )
+A $z x12,{x40,x02,x00,x01},xf7 r%2	;EQ Low Freq        ( 200Hz       )
+A $z x12,{x40,x02,x01, 73},xf7 r%2	;EQ Low Gain        (  +9dB       )
+A $z x12,{x40,x02,x02,x00},xf7 r%2	;EQ High Freq       (  3kHz       )
+A $z x12,{x40,x02,x03, 64},xf7 r%2	;EQ High Gain       ( +-0dB       )
+A $z x12,{x40,x41,x20,x00},xf7 r%2	;EQ                 ( Part  1:Off )
+A $z x12,{x40,x44,x20,x01},xf7 r%2	;EQ                 ( Part  4:On  )
+A $z x12,{x40,x46,x20,x00},xf7 r%2	;EQ                 ( Part  6:Off )
+A $z x12,{x40,x47,x20,x00},xf7 r%2	;EQ                 ( Part  7:Off )
+A $z x12,{x40,x49,x20,x00},xf7 r%2	;EQ                 ( Part  9:Off )
+A $z x12,{x40,x40,x20,x00},xf7 r%2	;EQ                 ( Part 10:Off )
+A $z x12,{x40,x4a,x20,x00},xf7 r%2	;EQ                 ( Part 11:Off )
+A $z x12,{x40,x4b,x20,x00},xf7 r%2	;EQ                 ( Part 12:Off )
+A $z x12,{x40,x4c,x20,x00},xf7 r%2	;EQ                 ( Part 13:Off )
+
+;Exclusive Setting-------------------------------------------------------------
+A $z x12,{x40,x03,x17, 50},xf7   r%2	;EFX Send Level To Reverb ( 50 )       
+A $z x12,{x40,x03,x18, 20},xf7   r%2	;EFX Send Level To Chorus ( 20 )       
+A $z x12,{x40,x03,x19,  0},xf7   r%2	;EFX Send Level To Delay  (  0 )       
+A $z x12,{x40,x03,x1f,x00},xf7   r%2	;EFX Send EQ Switch ( Off )            
+A $z x12,x40,x03,x1b,x10,x12,xf7 r%2	;Effect Control Source 1               
+A $z x12,x40,x03,x1c,x7f,x22,xf7 r%2	;Effect Control Depth  1               
+A $z x12,x40,x03,x1d,x11,x0f,xf7 r%2	;Effect Control Source 2               
+A $z x12,x40,x03,x1e,x7f,x20,xf7 r%2	;Effect Control Depth  2               
+
+;Part stoping for Exclusive setting--------------------------------------------
+BCDEFGHJKMOVW [r8]9 [r%2]23 [r%2]8 [r%2]6 [r%2]9 [r%2]10 [r%2]15               
+
+;Track Setting-----------------------------------------------------------------
+A      r8            r8                         	;System Track     
+B  C1  r8 H28,3 @81  r8 l8  o4 v122 k110 q8  p64	;Melody           
+C  C2  r8 H1,3  @29  r8 l8  o4 v109 k90  q13 p8 	;Odrv.Gt ( Pick ) 
+1C C2  r8            r8 l8  o3      k90  q13     	;    "            
+2C C2  r8            r8 l8  o3      k90  q13     	;    "            
+3C C2  r8            r8 l8  o3      k90  q13     	;    "            
+D  C3  r8 H25,3 @30  r8 l8  o2 v116 k93  q20 p8    	;Rock Rhythm      
+1D C3  r8            r8 l8  o2      k93  q20    	;     "           
+E  C4  r8 H1,3  @34  r8 l8  o2 v110 k110 q5  p64	;Picked Bass      
+F  C5  r8 H18,3 @18  r8 l8  o5 v125 k115 q16 p120	;Rock Organ       
+1F C5  r8            r8 l8  o4      k115 q16      	;     "           
+2F C5  r8            r8 l8  o4      k115 q16      	;     "           
+3F C5  r8            r8 l8  o4      k115 q16      	;     "           
+G  C6  r8 H1,3  @81  r8 l8  o4 v127 k110 q8  p88	;Melody ( Chorus )
+H  C7  r8 H1,3  @81  r8 l8  o4 v127 k110 q8  p40	;        "        
+J  C9  r8 H0,3  @119 r8 l8  o4 v100 k100 q3  p64	;Rev.Snare&Cymbal 
+K  C8  r8 H16,3 @4   r8 l8  o6 v82  k82  q6  p76	;E.Piano          
+1K C8  r8            r8 l8  o5      k72  q6     	;   "             
+2K C8  r8            r8 l8  o4      k72  q6     	;   "             
+O  C12 r8            r8 l4  o4 v80  k100 q3  p15	;Wind             
+M  C13 r8 H16,3 @4   r8 l8  o6 v82  k82  q6  p52	;E.Piano          
+1M C13 r8            r8 l8  o5      k72  q6     	;   "             
+2M C13 r8            r8 l8  o4      k72  q6     	;   "             
+
+;Drums MAP 1 ( Room )
+V  C10 r8 H0,3  @8   r8 l8  o1 v127 k105 q3  p64 	;BD          
+1V C10 r8            r8 l8  o2      k100 q3      _-2	;SD          
+2V C10 r8            r8 l8  o2      k100 q8        	;Tom & Cymbal
+3V C10 r8            r8 l8  o2      k90  q8     	;Hi-hat      
+
+;Drums MAP 2 ( Rhythm FX 1 )
+W  C11 r8 H0,3  @57  r8 l8  o4 v127 k100 q3  p64	;
+
+A  r8      r8      r8                               
+B  r8 BR12 r8 BS64 r8 E118 yx5b,50  yx5d,20  yx5e,40
+C  r8 BR12 r8 BS64 r8 E100                          
+D  r8 BR12 r8 BS64 r8 E100                          
+E  r8 BR12 r8 BS64 r8 E100 yx5b,60  yx5d,15         
+F  r8 BR12 r8 BS64 r8 E100                          
+G  r8 BR12 r8 BS64 r8 E110 yx5b,80  yx5d,40  yx5e,30
+H  r8 BR12 r8 BS64 r8 E110 yx5b,80  yx5d,40  yx5e,30
+J  r8 BR12 r8 BS64 r8 E100 yx5b,120 yx5d,120        
+K  r8 BR12 r8 BS64 r8 E100 yx5b,100 yx5d,60  yx5e,20
+M  r8 BR12 r8 BS64 r8 E100 yx5b,100 yx5d,60  yx5e,20
+O  r8 BR12 r8 BS64 r8 E100 yx5b,127 yx5d,50         
+V  r8 BR12 r8 BS64 r8 E100 yx5b,127 yx5d,20         
+W  r8 BR12 r8 BS64 r8 E100 yx5b,100 yx5d,20         
+
+BGH M96,70
+G D1      
+M D6 r%1  
+;RPN---------------------------------------------------------------------------
+;NRPN--------------------------------------------------------------------------
+
+;; Tone
+
+;Cutoff                      
+D N1 ,32,70	;MuteDist  Gt
+C N1 ,32,70	;Overdrive Gt
+E N1 ,32,72	;Pick Bass   
+F N1 ,32,72	;Perc Organ  
+B N1 ,32,60	;Melody      
+KM N1 ,32,49	;Bell        
+GH N1 ,32,52	;SubMelo     
+;Resonance                   
+C N1 ,33,70	;Overdrive Gt
+B N1 ,33,72	;Melody      
+;Attack  Time                
+F N1 ,99,60	;Rock Organ  
+C N1 ,99,63	;Overdrive Gt
+E N1 ,99,63	;Pick Bass   
+KM N1 ,99,66	;Bell        
+;Release Time                
+D N1,102,66	;Rock Rhythm 
+C N1,102,70	;Overdrive Gt
+
+;; Drums
+
+;Pitch Cource               
+V N24,35,63	;BD         
+V N24,38,63	;SD         
+V N24,40,86	;SD 2       
+V N24,71,62	;           
+V N24,51,65	;R C 1      
+;TVA Level                  
+V N26,35,100	;BD         
+V N26,38,120	;SD         
+V N26,40,120	;SD 2       
+V N26,42,100 	;CHH        
+V N26,46,95	;OHH        
+V N26,49,95	;CrC 1      
+V N26,57,100	;CrC 2      
+V N26,51,120	;R C 1      
+V N26,52,100	;ChC        
+V N26,53,80	;
+V N26,54,80	;
+V N26,55,80	;S C        
+V N26,50,108	;H Tom      
+V N26,47,108	;M Tom      
+V N26,43,108	;L Tom 1    
+V N26,41,108	;L Tom 2    
+V N26,85,110	;Castanet   
+W N26,71,60	;           
+W N26,75,35	;
+W N26,78,50	;
+;Panpot                     
+V N28,52,64	;ChC        
+V N28,85,100	;Castanet   
+V N28,54,76	;
+W N28,75,64	;
+W N28,78,64	;
+;Reverb Send Level          
+V N29,35,10	;BD         
+V N29,38,80 	;SD         
+V N29,40,120	;SD 2       
+V N29,42,30 	;CHH        
+V N29,46,30 	;OHH        
+V N29,49,110	;CrC 1      
+V N29,57,110	;CrC 2      
+V N29,50,60 	;H Tom      
+V N29,51,70	;R C 1      
+V N29,52,120	;ChC        
+V N29,53,90	;
+V N29,54,100	;
+V N29,55,90	;S C        
+V N29,47,60 	;M Tom      
+V N29,43,60 	;L Tom 1    
+V N29,41,60 	;L Tom 2    
+V N29,85,80	;Castanet   
+W N29,71,110	;
+W N29,75,110	;
+W N29,78,110	;
+;Chorus Send Level          
+V N30,35,10 	;BD         
+V N30,38,40 	;SD         
+V N30,40,100	;SD 2       
+V N30,42,20 	;CHH        
+V N30,46,20 	;OHH        
+V N30,49,100	;CrC 1      
+V N30,57,100	;CrC 2      
+V N30,50,15 	;H Tom      
+V N30,51,50	;R C 1      
+V N30,52,110	;ChC        
+V N30,53,40	;
+V N30,54,80	;
+V N30,55,90	;S C        
+V N30,47,15 	;M Tom      
+V N30,43,15 	;L Tom 1    
+V N30,41,15 	;L Tom 2    
+V N30,85,60	;Castanet   
+W N30,71,80	;
+W N30,75,80	;
+W N30,78,100	;
+
+;Part Stoping for NRPN setting-------------------------------------------------
+ABCDEFGHIJKMOVW [r%2]46
+
+;Track check-------------------------------------------------------------------
+B  	;Melody           
+C  	;Odrv.Gt ( Pick ) 
+1C 	;    "            
+2C 	;    "            
+3C 	;    "            
+D  	;Rock Rhythm      
+1D 	;     "           
+E  	;Picked Bass      
+F  	;Perc Organ       
+1F 	;     "           
+2F 	;     "           
+3F 	;     "           
+G  	;Melody ( Chorus )
+H  	;       "         
+J  	;Rev.Snare&Cymbal 
+K  !	;E.Piano          
+1K !	;   "             
+2K !	;   "             
+M  !	;   "             
+1M !	;   "             
+2M !	;   "             
+O  	;Wind             
+V  	;BD               
+1V 	;SD               
+2V 	;Tom & Cymbal     
+3V 	;Hi-hat           
+W  	;Rhythm FX 1      
+
+;Macro-------------------------------------------------------------------------
+$c EXx41,x10,x42,x12,{x40,x03,x11,  0},xf7	;#RT Speed ( Slow )
+$d EXx41,x10,x42,x12,{x40,x03,x11,127},xf7	;    "     ( Fast )
+$e EXx41,x10,x42,x12,{x40,x03,x18, 80},xf7	;EFX Chorus
+$f EXx41,x10,x42,x12,{x40,x03,x18, 50},xf7	;    "     
+$g EXx41,x10,x42,x12,{x40,x03,x10,        	;RT Separation
+$h FB1,0,16,0,%1,28
+$i FB1,0,16,0,%1,42
+$j FB1,0,16,0,%1,16
+$k EXx41,x10,x42,x12,{x40,x41,x20,x01},xf7	;EQ On  ( Melody )
+$l EXx41,x10,x42,x12,{x40,x41,x20,x00},xf7	;EQ Off     "     
+
+$y EXx41,x10,x45,	;Exclusive Header (Model ID=45H)                       
+$z EXx41,x10,x42,	;Exclusive Header (Model ID=42H)                       
+
+;----------------------------------NOTE DATA-----------------------------------
+;G Major Scale
+;SE----------------------------------------------------------------------------
+O H6,3 @122 c1^1^1^1&
+O p15 c0&[p+1r%16&]96
+O [E-1 : r%16&]96r%16
+O [ r1 ]4
+
+O [ r1 ]8
+
+; A Melo 1th
+
+O E127
+O [ r1 ]8
+O [ r1 ]6
+O p15 c0&[p+1r%16&]96
+O [E-1 : r%16&]96r%16
+
+;; A Melo 2th
+O [ r1 ]8
+O [ r1 ]8
+
+;; B Melo
+O [ r1 ]8
+O [ r1 ]8
+
+O [ r1 ]2
+
+;; Chorus
+O [ r1 ]8
+O [ r1 ]8
+
+;; Gt.Solo & Ref
+O [ r1 ]8
+O [ r1 ]8
+O [ r1 ]2
+
+O [ r1 ]8
+O [ r1 ]8
+
+O [ r1 ]8
+O [ r1 ]8
+
+O [ r1 ]8
+O [ r1 ]8
+O [ r1 ]6
+
+O [ r1 ]8
+O [ r1 ]8
+
+O E120
+O [ r1 ]8
+O [ r1 ]6
+
+O p15 c0&[p+1r%16&]96
+O [E-1 : r%16&]96r%16
+
+O [ r1 ]8
+O [ r1 ]4
+O [ r1 ]6
+O [ r1 ]6
+O H10,3 @55 N1,32,46 N1,33,92 p64 E+10 yx5d,120 >e,100< N1,32,64 N1,33,64      
+;E.Piano-----------------------------------------------------------------------
+
+;; Intro
+KM [ r1 ]8
+KM [ r1 ]8
+KM [ r1 ]8
+
+;; A Melo 1th
+KM [ r1 ]8
+KM [ r1 ]8
+
+KM [ r1 ]6
+
+;; A Melo 2th
+KM [ r1 ]8
+KM [ r1 ]8
+
+;; B Melo
+KM [ r1 ]8
+KM [ r1 ]8
+
+KM [ r1 ]2
+
+;; Chorus
+KM [ r1 ]8
+KM [ r1 ]8
+
+KM [ r1 ]8
+KM [ r1 ]8
+KM [ r1 ]2
+
+KM [ r1 ]8
+KM [ r1 ]8
+
+KM [ r1 ]8
+KM [ r1 ]8
+
+KM [ r1 ]8
+KM [ r1 ]8
+KM [ r1 ]6
+
+KM [ r1 ]8
+KM [ r1 ]8
+
+KM [ r1 ]8
+KM [ r1 ]6
+
+KM   [
+1K1M [
+2K2M [
+KM     e<b>d<b>e<b>f+<b>
+1K1M   r1               
+2K2M   r1               
+KM     d<a>c<a>d<a> e<a>
+1K1M   r1               
+2K2M   r1               
+KM   :
+1K1M :
+2K2M :
+KM     c<g b g>c<g> d<g>
+1K1M   r1               
+2K2M   r1               
+KM     d<a>d<a>d<b> c d 
+1K1M   r1               
+2K2M   r1               
+KM   ]2
+1K1M ]2
+2K2M ]2
+KM c<g>d<g>e<ab>c | d<a>e<a>f+<b>cd
+
+KM   [
+1K1M [
+2K2M   [
+KM     e <b>f+<b>gf+ed | e <b>e<a>e<gab>
+1K1M   e2..          e | ^1             
+2K2M   b2..          b | ^1             
+KM     d<a> e<a>f+edc  | <b>agf+ed<ab>  
+1K1M   d2..         d  | ^1             
+2K2M   a2..         a  | ^1             
+KM   :
+1K1M :
+2K2M :
+KM     c<g>d<g>edc<b  | gdef+gab>c     
+1K1M   c2..        c  | ^1             
+2K2M   g2..        g  | ^1             
+KM     d<a> e<a>f+edc | d<a>d<g>d<f+a>c
+1K1M   d2..         d | ^1             
+2K2M   a2..         a | ^1             
+KM   ]2
+1K1M ]2
+2K2M   ]2
+KM   c<g>c<g>c<g>c d  | ^<a>d<a> d<a>d<b>
+1K1M c2..          d  | ^1               
+2K2M g2..          a  | ^1               
+KM   c<g>c<g>c<g>c d  | ^<a>e<a>f+<a>e d 
+1K1M c2..          d  | ^1               
+2K2M g2..          a  | ^1               
+KM    e<b>e<b>e<b>ef+ | ^ecdef+g4        
+1K1M  e2..         f+ | ^1               
+2K2M  b2..         >c | ^1<              
+KM   N1,100,70  b1 | a1 | g+1 | ^1
+1K1M N1,100,70 >e1 | ^1 |  ^1 | ^1
+2K2M N1,100,70 >b1 | a1 | g+1 | ^1
+;Melody------------------------------------------------------------------------
+
+;; Intro
+BGH [ r1 ]8
+BGH [ r1 ]8
+BGH [ r1 ]8
+
+;; A Melo 1th
+B [
+G [
+H [
+B   bbag^2                     | ^4.a4.b4           
+B   FB1,0,2,0,4,-16 a2. FB0 g4 | f+1                
+GH  [ r1 ]4
+B :
+G :
+H :
+B   ggf+e^2                    | ^4.f+4.g4          
+B   f+1                        | FB1,-21,8,21 b1 FB0
+GH  [ r1 ]4
+B ]2
+G ]2
+H ]2
+B  ggf+e^2              | aagf+4d4.
+B  FE1,0,1^1,-70 e1     | ^1 FE0   
+GH [ r1 ]4
+
+BGH [ r1 ]6
+
+;; A Melo 2th
+B [
+G [
+H [
+B   bbag^2                     | ^4.a4.b4           
+B   FB1,0,2,0,4,-16 a2. FB0 g4 | f+1                
+GH  [ r1 ]4
+B :
+G :
+H :
+B   ggf+e^2                    | ^4.f+4.g4          
+B   f+1                        | FB1,-21,8,21 b1 FB0
+GH  [ r1 ]4
+B ]2
+G ]2
+H ]2
+B ggf+erbr a | ^2d2
+G ee dcrgrf+ | ^2a2
+H ee dcrgrf+ | ^2a2
+B FE1,0,1,0,2,-60 e1 | ^2 FE0 d2
+G FE1,0,1,0,2,-60 b1 | ^2 FE0 r2
+H FE1,0,1,0,2,-60 b1 | ^2 FE0 r2
+
+;; B Melo
+B [
+G [
+H [
+B   e2.f+4                          | FB1,-6,8.,6 g2 FB0 b2       
+B   FB1,0,2^16,0,8.,-13 a2. FB0 f+d | ^2e4f+4                     
+GH  [ r1 ]4
+B :
+G :
+H :
+B   g2.ar                           | b4f+ FB1,-10,8,10 a4 FB0 aer
+B   f+1                             | r1                          
+GH  [ r1 ]4
+B ]2
+G ]2
+H ]2
+B  g4.e4.d4   | e4f+4g4a4
+B  b4.b4.>c<b | FE1,0,1,0,1,-60 a+1
+GH [ r1 ]4
+
+B  ^1 | FE0 r2.f+4
+GH r1 | r1        
+
+;; Chorus
+B r4rrr r4.                       | g4.  a4b4>c<
+G g4abr e4.                       | e4. f+4g4.  
+H g4abr<b4.                       | b4.>f+4g4.  
+B >d<f+rf+rf+ef+                  | ^1          
+G r1                              | r1          
+H r1                              | r1          
+B e4.f+4.ge                       | ^f+ga>c<baf+
+G r1                              | r1          
+H r1                              | r1          
+B g2^<b>de                        | f+1         
+G r1                              | r1          
+H r1                              | r1          
+
+B r4rrr r4.                       | g4.  a4b4>c<
+G g4abr e4.                       | e4. f+4g4.  
+H g4abr<b4.                       | b4.>f+4g4.  
+B >d<f+rf+rf+ef+                  | ^1          
+G r1                              |  a2b2       
+H r1                              |  a2b2       
+B >c4.< FB1,0,4,0,8,-5 b4. FB0 a4 | b%64 a%64g%64 a%64g%64 b%64
+G  a4. g4.f+4                     | g%64f+%64e%64f+%64e%64f+%64
+H  a4. g4.f+4                     | g%64f+%64e%64f+%64e%64f+%64
+B >e1                             | r1<      
+G  b1                             | r1       
+H  b1                             | r1       
+
+;; Guitar Solo & Ref
+B H3,3 @29 k-10 E+5 MOF yx5d,40
+
+B r FB1,-10,8,10 >e2.. | ^ FB0 dc<b>d16& BS-10 r16& BS-6 r16 BS+16 <a16g4
+B IB3,1,96,36,24 a2.. IB0 FB1,-5,8,5    a | ^ FB0 IB5,1,96,48,24 a2.. IB0
+B l16 q1 [ b< $h b^ FB0 $i b^ FB0 b^8>]3
+B [ b $j e^ FB0 e ]2 l8 q8              
+B >c2.<b4 | FB1,-10,8,10 a2.& FB0 e4,90 
+GH [ r1 ]8
+
+B FB1,-10,8,10 f2. FB0 g4
+B FB1,-10,8,10 a2 FB0 FB1,0,4.,0,8,-11 >d2< FB0
+B FB1,-6,8.,5 b4.b4. FB0 a4 | FB1,0,4,0, [ 16,-11,16,11,8,0, ]2 4,0 e1 FB0
+B l16 q1
+B >c<ba>c<gf+eg
+B >d<cb>d<gf+eg
+B [ >c<f+,105& BS+5  r& BS+11 r BS-16 ]2
+B [ >d< a,105& BS+11 r& BS+5  r BS-16 ]2
+B l8 q8
+B >FB1,-10,8,10 e2^ FB1,-10,16,10 eee yx5e,55 yx5d,75 E-5
+B  FB1,-10,8,10 e2^ FB1,-10,16,10 eee yx5e,70 yx5d,80 E-5
+B  FB1,-10,8,10 e2^ FB1,-10,16,10 eee yx5e,85 yx5d,85 E-5
+B  FE1,0,1,-60 FB1,-10,8,10,2^8.,0, [ %1,-5,%11, : 0, ]6 0 e1 FB0 FE0<
+B yx5e,40 yx5d,10 k+10
+GH [ r1 ]8
+GH [ r1 ]2
+
+BGH [ r1 ]8
+BGH [ r1 ]8
+
+B E+5
+B FB1,0,2,0,8,-11 g2^ FB0 <b>f+&b | FB1,-11,8.,11 a2^ FB0 gf+e             
+B d2.<b4>                         | e2 FB1,0,4,0,%3,6,%3,5 k+5 e4^4 k-5 FB0
+B FB1,0,2,0,8,-11 g2^ FB0 <b>f+&b | FB1,-11,8.,11 a2^ FB0 gf+e             
+B d2f+4d4
+B q1 >c<b& BS-11 r BS+11 gf+& BS-11 r BS+11 q8 <b>d
+GH [ r1 ]8
+
+B FB1,0,2,0,8,-11 g2^ FB0 <b>f+&b | FB1,-11,8.,11 a2^ FB0 gf+e             
+B d2.<b4>                         | e2 FB1,0,4,0,%3,6,%3,5 k+5 e4^4 k-5 FB0
+B FB1,0,2,0,8,-11 g2^ FB0 <b>f+&b | FB1,-11,8.,11 a2^ FB0 gf+e             
+B d2f+4a4                         | FE1,0,1^1,-80 b2& yx5e,50 r2&          
+B yx5e,70 r2& yx5e,90 r2 yx5e,40 FE0
+GH  [ r1 ]9
+B E-10
+B yx5d,20
+
+BGH [ r1 ]7
+
+BGH [ r1 ]8
+
+B H28,3 @81 M96,70 E+6
+
+BGH [ r1 ]6
+
+BGH [ r1 ]8
+BGH [ r1 ]8
+
+;; A Melo ED 1
+B [
+G [
+H [
+B   bbag^2                     | ^4.a4.b4           
+B   FB1,0,2,0,4,-16 a2. FB0 g4 | f+1                
+GH  [ r1 ]4
+B :
+G :
+H :
+B   ggf+e^2                    | ^4.f+4.g4          
+B   f+1                        | FB1,-21,8,21 b1 FB0
+GH  [ r1 ]4
+B ]2
+G ]2
+H ]2
+B  ggf+e^2              | aagf+4d4.
+B  FE1,0,1^1,-70 e1     | ^1 FE0   
+GH [ r1 ]4
+
+BGH [ r1 ]6
+
+;; A Melo ED 2
+B [
+G [
+H [
+B   bbag^2                     | ^4.a4.b4           
+B   FB1,0,2,0,4,-16 a2. FB0 g4 | f+1                
+GH  [ r1 ]4
+B :
+G :
+H :
+B   ggf+e^2                    | ^4.f+4.g4          
+B   f+1                        | FB1,-21,8,21 b1 FB0
+GH  [ r1 ]4
+B ]2
+G ]2
+H ]2
+B ggf+e2^        | aagf+4d4.
+G rr rr2^        | rrr r4r4.
+H rr rr2^        | rrr r4r4.
+B rr rr2^        | rrr r4r4.
+G E+5 ggf+e2^    | aagf+4d4. E-5
+H E+5 ggf+e2^    | aagf+4d4. E-5
+B     ggf+erbr a | ^2>d2
+G     ee dcrgrf+ | ^2 a2
+H     ee dcrgrf+ | ^2 a2
+BGH FE1,0,1,-3,1,-3,1,-3,1,-3,1,-3,1,-85
+B yx5e,50 k-5 e1& | yx5e,60 r1&
+G yx5e,40 k-5 b1& | yx5e,50 r1&
+H yx5e,40 k-5 b1& | yx5e,50 r1&
+B yx5e,70 r1&     | yx5e,80 r1&
+G yx5e,60 r1&     | yx5e,70 r1&
+H yx5e,60 r1&     | yx5e,70 r1&
+B yx5e,90 r1&     | yx5e,100 r1<r8 FE0
+G yx5e,80 r1&     | yx5e,90  r1 r8 FE0
+H yx5e,80 r1&     | yx5e,90  r1 r8 FE0
+;Odrv.Gt-----------------------------------------------------------------------
+
+;; Intro
+CD [ r1 ]8
+CD [ r1 ]8
+C  [
+1C [
+2C [
+3C [
+D  [
+1D [
+C    [ rr    ]3 e4 | [ rr    ]3 d4
+1C   [ rr    ]3 b4 | [ rr    ]3 a4
+2C   r1            | r1           
+3C   r1            | r1           
+D    [ bb,80 ]3 r4 | [ aa,80 ]3 r4
+1D   r1            | r1           
+C    [ rr    ]3 c4 | [ r : r    ]2 d4c4d
+1C   [ rr    ]3 g4 | [ r : r    ]2 a4g4a
+2C   r1            | r1                 
+3C   r1            | r1                 
+D    [ gg,80 ]3 r4 | [ a : a,80 ]2 r4r4r
+1D   r1            | r1                 
+C  ]2
+1C ]2
+2C ]2
+3C ]2
+D  ]2
+1D ]2
+
+;; A Melo 1th
+C  [
+1C [
+2C [
+3C [
+D  [
+1D [
+C    rr e^ r e^ e | ^ rr e^ rrr
+1C   rr b^ r b^ b | ^ rr b^ rrr
+2C   rr e^ r e^ e | ^ rr e^ rrr
+3C   r1           | r1         
+D    bb r^ b r^ r | ^ bb r^ bbb
+1D   r1           | r1         
+
+C    rr d^ r d^ d | ^ rr d^ rrr
+1C   rr a^ r a^ a | ^ rr a^ rrr
+2C   rr d^ r d^ d | ^ rr d^ rrr
+3C   r1           | r1         
+D    aa r^ a r^ r | ^ aa r^ aaa
+1D   r1           | r1         
+
+C  :
+1C :
+2C :
+3C :
+D  :
+1D :
+
+C    rr c^ r c^ c | ^ rr c^ rrr
+1C   rr g^ r g^ g | ^ rr g^ rrr
+2C   rr c^ r c^ c | ^ rr c^ rrr
+3C   r1           | r1         
+D    gg r^ g r^ r | ^ gg r^ ggg
+1D   r1           | r1         
+
+C    <b1,,10>     | e2d2       
+1C   f+1,,10      | b2a2       
+2C   <b1,,10>     | e2d2       
+3C   r1           | r1         
+D    H0,3 @120 E+5 r2r4...>>g32<< | E-5 H25,3 @30 r1
+1D                 r2r4...  r32   |               r1
+C  ]2
+1C ]2
+2C ]2
+3C ]2
+D  ]2
+1D ]2
+C  rr c^ r c^ d | ^ rr d^ rrr
+1C rr g^ r g^ a | ^ rr a^ rrr
+2C rr c^ r c^ d | ^ rr d^ rrr
+D  gg r^ g r^ r | ^ aa r^ aaa
+
+C  [
+1C [
+2C [
+3C [
+D  [
+1D [
+C    [ rr    ]3 e4 | [ rr    ]3 d4
+1C   [ rr    ]3 b4 | [ rr    ]3 a4
+2C   r1            | r1           
+3C   r1            | r1           
+D    [ bb,80 ]3 r4 | [ aa,80 ]3 r4
+1D   r1            | r1           
+C    [ rr    ]3 c4 | [ r : r    ]2 d4c4d
+1C   [ rr    ]3 g4 | [ r : r    ]2 a4g4a
+2C   r1            | r1                 
+3C   r1            | r1                 
+D    [ gg,80 ]3 r4 | [ a : a,80 ]2 r4r4r
+1D   r1            | r1                 
+C  ]2
+1C ]2
+2C ]2
+3C ]2
+D  ]2
+1D ]2
+
+;; A Melo 2th
+C  [
+1C [
+2C [
+3C [
+D  [
+1D [
+C    rr e^ r e^ e | ^ rr e^ rrr
+1C   rr b^ r b^ b | ^ rr b^ rrr
+2C   rr e^ r e^ e | ^ rr e^ rrr
+3C   r1           | r1         
+D    bb r^ b r^ r | ^ bb r^ bbb
+1D   r1           | r1         
+
+C    rr d^ r d^ d | ^ rr d^ rrr
+1C   rr a^ r a^ a | ^ rr a^ rrr
+2C   rr d^ r d^ d | ^ rr d^ rrr
+3C   r1           | r1         
+D    aa r^ a r^ r | ^ aa r^ aaa
+1D   r1           | r1         
+
+C  :
+1C :
+2C :
+3C :
+D  :
+1D :
+
+C    rr c^ r c^ c | ^ rr c^ rrr
+1C   rr g^ r g^ g | ^ rr g^ rrr
+2C   rr c^ r c^ c | ^ rr c^ rrr
+3C   r1           | r1         
+D    gg r^ g r^ r | ^ gg r^ ggg
+1D   r1           | r1         
+
+C    <b1,,10>     | e2d2       
+1C   f+1,,10      | b2a2       
+2C   <b1,,10>     | e2d2       
+3C   r1           | r1         
+D    H0,3 @120 E+5 r2r4...>>g32<< | E-5 H25,3 @30 r1
+1D                 r2r4...  r32   |               r1
+C  ]2
+1C ]2
+2C ]2
+3C ]2
+D  ]2
+1D ]2
+C  rr c^ r c^ d | ^ rr d^ rrr
+1C rr g^ r g^ a | ^ rr a^ rrr
+2C rr c^ r c^ d | ^ rr d^ rrr
+D  gg r^ g r^ r | ^ aa r^ aaa
+1D r1           | r1         
+
+C  e2..       c | ^2d2       
+1C b2..       g | ^2a2       
+2C e2..       c | ^2d2       
+D  r2..       r | ^2r2       
+1D r1           | r1         
+
+;; B Melo
+C  [
+1C [
+2C [
+3C [
+D  [
+1D [
+C    r1 | r1    |  r1 | ^1   
+1C   b1 | ^1,85 |  b1 | ^1,85
+2C   e1 | ^1,85 | f+1 | ^1,85
+3C   r1 | r1    |  r1 | r1   
+D    r1 | ^1    |  r1 | ^1   
+1D   r1 | r1    |  r1 | r1   
+C  :
+1C :
+2C :
+3C :
+D  :
+1D :
+C   r1 | ^1     | r1    | r4    r     d4,95 r      r4   
+1C  g1 | ^1,85  | a1,85 | a4,95 r     a4,95 r     a+4,95
+2C  c1 | ^1,85  | d1,85 | d4,95<a,105>r4   <a,105>d+4,95
+3C  r1 | r1     | r1    | r1                            
+D   r1 | ^1     | r1    | r4    r     r4    r      r4   
+1D  r1 | r1     | r1    | r1                            
+C  ]2
+1C ]2
+2C ]2
+3C ]2
+D  ]2
+1D ]2
+C  r1    |     r2r2
+1C g1,85 | k+5 g2a2
+2C c1,85 | k+5 c2d2
+3C r1    |     r2r2
+D  r1    |     r2r2
+1D r1    |     r1  
+C  r1    |  r1      | E105 [E-1r%8]48 E100 r1
+1C b1    | a+1      | ^1 | a+,30a+,40a+,50a+,60a+,70a+,80a+4,90 k-5
+2C e1    | d+1      | ^1 | d+,30d+,40d+,50d+,60d+,70d+,80d+4,90 k-5
+3C r1    |  r1      | ^1 | r1
+D  r1    |  r1      | ^1 | r1
+1D r1    |  r1      | r1 | r1
+
+C  r%2 q16
+1C     q16
+
+;; Chorus
+C  [
+1C [
+2C [
+3C [
+D  [
+1D [
+C    <g4.g4,110 q24 g,80g q16 b  | ^4.g4.b4> 
+1C    c4.c4,110 q24 c,80c q16 e  | ^4.c4.e4  
+2C    r1                         | r4.r4.r4  
+3C    r1                         | r4.r4.r4  
+D     r1                         | r4.r4.r4  
+1D    r1                         | r4.r4.r4  
+C    <a4.a4,110 q24 a,80a q16  b | ^           ^4       ^4      a4.>
+1C    d4.d4,110 q24 d,80d q16 f+ | ^           r4       r4      d4. 
+2C    r2..                     r | ^           ^4       ^4      r4. 
+3C    r2..                     r | ^           ^4       ^4      r4. 
+D     r2..                     r | ^ H1,3 @29 >f4& BS-6 r4 BS+6<r4. H25,3 @30
+1D    r2..                     r | ^           ^4       ^4      r4. 
+C  :
+1C :
+2C :
+3C :
+D  :
+1D :
+C    <e4. e4,110 q24 e,80e  q16 f+ | ^4g4a4f+4
+1C   <b4. b4,110 q24 b,80b> q16  c | ^4d4e4 c4
+2C    r2..                       r | ^4r4r4 r4
+3C    r2..                       r | ^4r4r4 r4
+D     r2..                       r | ^4r4r4 r4
+1D    r2..                       r | ^4r4r4 r4
+C     g4f+,90e4e4e      |  b4.c4d+e& BS+11 r BS-11>
+1C   <b4a+,90a4a4a>     | f+4.r4r r        r       
+2C     r1               | r1
+3C     r1               | r1
+D      r1               | r1
+1D     r1               | r1
+C  ]2
+1C ]2
+2C ]2
+3C ]2
+D  ]2
+1D ]2
+;  アーミング・ビブラート
+C FB1,0,4,0, [ 16,-11,16,11,8,0, ]2 4,0 <a1,110 FB0 | b%64a%64g%64a%64g%64f+%64
+1C                                       d1         | e%64d%64c%64d%64c%64d+%64
+2C                                       r1         | r%64r%64r%64r%64r%64 r%64
+3C                                       r1         | r%64r%64r%64r%64r%64 r%64
+D                                        r1         | r%64r%64r%64r%64r%64 r%64
+1D                                       r1         | r%64r%64r%64r%64r%64 r%64
+C  FE1,0,1,0,1,-60 e1  | ^%382> FE0
+1C                <b1  | ^1>       
+2C                 r1  | r1        
+3C                 r1  | r1        
+D                  r1  | r1        
+1D                 r1  | r1        
+
+;; Guitar Solo & Ref
+C [ r1 ]7
+D [ r1 ]8
+C q1 l16 ge& BS+37 r BS-37 e& BS+43 r BS-43 e& BS+16 r BS-16 e&
+C            BS+64 r BS-64 e& BS+53 r BS-53 e& BS+43 r BS-43 e 
+C  FB1,0, [ %1,-6,%7,0,]5 %1,-6,%7,0  b8  FB0 l8 q13 BS+1
+1C                                   >g8<                
+C  [ <a4,95a,,30>d4<a4a,,30> ]2
+1C [  d4,95d,,30 a4 d4d,,30  ]2
+C  [ <g4,95g,,30 b : ^ g4g,,30> ]2 >dc& BS-6 r BS+6 <a
+1C [ <b4,95b,,30>e : ^<b4b,,30> ]2  rr       r       r
+C    g1 | a1
+1C   c1 | d1
+C    b1 | ^1 | ^1> | E-10 FB1,-10,8,10 e1 FB0 E+10
+1C   e1 | ^1 | ^1  |                   r1         
+D  [ r1 ]8
+D  H0,3 @31    r1  | E-10 FB1,-10,8,10 >b1< H25,3 @30 FB0 E+10
+
+CD [ r1 ]8
+C  q13
+1C q13
+
+C  [
+1C [
+2C [
+3C [
+C  r%1  g1 | a1 
+1C     >d1 | e1<
+2C      r1 | r1 
+3C      r1 | r1 
+C       d1 | e2 FB1,0,4,0,%3,11 e4^%95 FB0
+1C      a1 | b2                 b4^4      
+2C      r1 | r1                           
+3C      r1 | r1                           
+C  ]2
+1C ]2
+2C ]2
+3C ]2
+D  [ r1 ]8
+
+C  [
+1C [
+2C [
+3C [
+C  r%1   g1 | a1 
+1C      >d1 | e1<
+2C       r1 | r1 
+3C       r1 | r1 
+C        d1 | e2 FB1,0,4,0,%3,11 e4^%95 FB0
+1C       a1 | b2                 b4^4      
+2C       r1 | r1                           
+3C       r1 | r1                           
+C  ]2
+1C ]2
+2C ]2
+3C ]2
+D  [ r1 ]8
+
+C  [
+1C [
+2C [
+3C [
+C    g4 r g4 r g r |  a4 r a4 r a r
+1C  >d4<b>d4<b>d<b | >e4<a>e4<a>e<a
+2C   r1            |  r1           
+3C   r1            |  r1           
+C  :
+1C :
+2C :
+3C :
+C    d4 rd4 rd r | e2e4 f+4 
+1C   a4f+a4f+af+ | b2b4>c+4<
+2C   r1          | r1       
+3C   r1          | r1       
+C  ]2
+1C ]2
+2C ]2
+3C ]2
+C  d2< b4>d4 | FB1,0,2.,0, [ %1,-6,%23,0, ]3 %1,-6,%23,0 e1 FB0
+1C a2 f+4 a4 |                                           b1    
+2C r2  r4 r4 |                                           r1    
+3C r2  r4 r4 |                                           r1    
+D  [ r1 ]8
+
+CD [ r1 ]8
+CD [ r1 ]8
+
+CD [ r1 ]6
+
+CD [ r1 ]8
+C  [
+1C [
+2C [
+3C [
+D  [
+1D [
+C    [ rr    ]3 e4 | [ rr    ]3 d4
+1C   [ rr    ]3 b4 | [ rr    ]3 a4
+2C   r1            | r1           
+3C   r1            | r1           
+D    [ bb,80 ]3 r4 | [ aa,80 ]3 r4
+1D   r1            | r1           
+C    [ rr    ]3 c4 | [ r : r    ]2 d4c4d
+1C   [ rr    ]3 g4 | [ r : r    ]2 a4g4a
+2C   r1            | r1                 
+3C   r1            | r1                 
+D    [ gg,80 ]3 r4 | [ a : a,80 ]2 r4r4r
+1D   r1            | r1                 
+C  ]2
+1C ]2
+2C ]2
+3C ]2
+D  ]2
+1D ]2
+
+;; A Melo ED 1
+C  [
+1C [
+2C [
+3C [
+D  [
+1D [
+C    rr e^ r e^ e | ^ rr e^ rrr
+1C   rr b^ r b^ b | ^ rr b^ rrr
+2C   rr e^ r e^ e | ^ rr e^ rrr
+3C   r1           | r1         
+D    bb r^ b r^ r | ^ bb r^ bbb
+1D   r1           | r1         
+
+C    rr d^ r d^ d | ^ rr d^ rrr
+1C   rr a^ r a^ a | ^ rr a^ rrr
+2C   rr d^ r d^ d | ^ rr d^ rrr
+3C   r1           | r1         
+D    aa r^ a r^ r | ^ aa r^ aaa
+1D   r1           | r1         
+
+C  :
+1C :
+2C :
+3C :
+D  :
+1D :
+
+C    rr c^ r c^ c | ^ rr c^ rrr
+1C   rr g^ r g^ g | ^ rr g^ rrr
+2C   rr c^ r c^ c | ^ rr c^ rrr
+3C   r1           | r1         
+D    gg r^ g r^ r | ^ gg r^ ggg
+1D   r1           | r1         
+
+C    <b1,,10>     | e2d2       
+1C   f+1,,10      | b2a2       
+2C   <b1,,10>     | e2d2       
+3C   r1           | r1         
+D    r1           | r2r2       
+1D   r1           | r1         
+C  ]2
+1C ]2
+2C ]2
+3C ]2
+D  ]2
+1D ]2
+C  rr c^ r c^ d | ^ rr d^ rrr
+1C rr g^ r g^ a | ^ rr a^ rrr
+2C rr c^ r c^ d | ^ rr d^ rrr
+D  gg r^ g r^ r | ^ aa r^ aaa
+
+C  [
+1C [
+2C [
+3C [
+D  [
+1D [
+C    [ rr    ]3 e4 | [ rr    ]3 d4
+1C   [ rr    ]3 b4 | [ rr    ]3 a4
+2C   r1            | r1           
+3C   r1            | r1           
+D    [ bb,80 ]3 r4 | [ aa,80 ]3 r4
+1D   r1            | r1           
+C    [ rr    ]3 c4 | [ r : r    ]2 d4c4d
+1C   [ rr    ]3 g4 | [ r : r    ]2 a4g4a
+2C   r1            | r1                 
+3C   r1            | r1                 
+D    [ gg,80 ]3 r4 | [ a : a,80 ]2 r4r4r
+1D   r1            | r1                 
+C  ]2
+1C ]2
+2C ]2
+3C ]2
+D  ]2
+1D ]2
+
+;; A Melo ED 2
+C  [
+1C [
+2C [
+3C [
+D  [
+1D [
+C    rr e^ r e^ e | ^ rr e^ rrr
+1C   rr b^ r b^ b | ^ rr b^ rrr
+2C   rr e^ r e^ e | ^ rr e^ rrr
+3C   r1           | r1         
+D    bb r^ b r^ r | ^ bb r^ bbb
+1D   r1           | r1         
+
+C    rr d^ r d^ d | ^ rr d^ rrr
+1C   rr a^ r a^ a | ^ rr a^ rrr
+2C   rr d^ r d^ d | ^ rr d^ rrr
+3C   r1           | r1         
+D    aa r^ a r^ r | ^ aa r^ aaa
+1D   r1           | r1         
+
+C  :
+1C :
+2C :
+3C :
+D  :
+1D :
+
+C    rr c^ r c^ c | ^ rr c^ rrr
+1C   rr g^ r g^ g | ^ rr g^ rrr
+2C   rr c^ r c^ c | ^ rr c^ rrr
+3C   r1           | r1         
+D    gg r^ g r^ r | ^ gg r^ ggg
+1D   r1           | r1         
+
+C    <b1,,10>     | e2d2       
+1C   f+1,,10      | b2a2       
+2C   <b1,,10>     | e2d2       
+3C   r1           | r1         
+D    H0,3 @120 E+5 r2r4...>>g32<< | E-5 H25,3 @30 r1
+1D                 r2r4...  r32   |               r1
+C  ]2
+1C ]2
+2C ]2
+3C ]2
+D  ]2
+1D ]2
+C  rr c^ r c^ d   | ^
+1C rr g^ r g^ a   | ^
+2C rr c^ r c^ d   | ^
+3C r1             | r
+C  q4 E+10 <ab& BS+6 r BS-6>dc& BS-6 r BS+6 <a> E-10
+1C r2..
+2C r2..
+3C r2..
+D  gg r^ g r^ r   | ^ r2..
+1D r1             | r1
+C  rr c^ r c^ d   | ^2^c^d
+1C rr g^ r g^ a   | ^2^g^a
+2C rr c^ r c^ d   | ^2^c^d
+3C rr             | r1    
+D  gg r^ g r^ r   | r1    
+1D r1             | r1    
+C  rr e^ r e^  f+ | ^  E+10 q4 cdef+^d^ q8 E-10
+1C rr b^ r b^ > d | ^<      q4 rrr ra^a q8     
+2C rr e^ r e^  f+ | ^  r2..
+3C r1             | r1
+D  bb r^ b r^ > r | ^  r2..
+1D r1             | r1
+C $z x12,{x40,x03,x18,60},xf7
+C q8
+C   e1 | E+20 k100 g+^4b4 
+1C <b1 |           r ^4r4>
+2C  e1 |           r ^4r4 
+3C  r1 |           r ^4r4 
+
+C  l16 <b& BS+6 r& BS+10 r BS-16 >e& BS+11 r& BS+5 r BS-16 l8
+C  >FB1,-11,16,11 d2^ FB0 c<ba | ^4.g8. l16 q1 <b>b<b>>c<<b>
+C  FB1,0, [ %1,-6,%7,0, ]5 %1,-6,%7,0 b8 FB0 l8 q13
+C <ab>c&d^ef+&g | f+d>c<dbdf+4
+D [ r1 ]6
+
+C  FB1,0,8,0, [ %1,-5,%5,0, ]7 %1,-5,%5,0  e4,100 
+1C                                        <b4,100>
+2C                                         e4,100 
+3C                                         r4     
+D                                          r4     
+1D                                         r4     
+;Picked Bass-------------------------------------------------------------------
+E r%2	;もたり
+
+;; Intro
+E [ r1 ]8
+
+E [
+E   e4.e,90e4,100 e,90 e,100
+E   d4.d,90d4,100<a,90>d,100
+E   c4.c,90c4,100 c,90 c,100
+E   d4.d,90d4,100<a,90>d,100
+E ]2
+
+E [
+E   e4e,100e4e,100b,120e,100
+E   d4d,100d4d,100a,120d,100
+E   c4c,100c4c,100<b,120>c,100
+E   d4d,100d4,120c4,120d      
+E ]2
+
+;; A Melo 1th
+E [
+E    [ e,,2 : e,100 ]4 FB1,-8,8.,8 e | ^,120 FB0 [ e,100 : e,,2 ]4 
+E   <[ b,,2 : b,100 ]4 FB1,-8,8.,8 b | ^,120 FB0 [ b,100 : b,,2 ]4>
+E :
+E    [ c,,2 : c,100 ]4 FB1,-8,8.,8 c | ^,120 FB0 [ c,100 : c,,2 ]4 
+E    [ d,,2   d,100 ]4 k-10 e,110<eg& BS+10 r BS-10 >d,110<daf+> k+10
+E ]2
+E [ c,,2 : c,100 ]4 FB1,-5,8.,5 d | ^ FB0 ddd4dd4
+
+E [
+E   e4e,100e4e,100b,120e,100
+E   d4d,100d4d,100a,120d,100
+E   c4c,100c4c,100<b,120>c,100
+E   d4d,100d4,120c4,120d      
+E ]2
+
+;; A Melo 2th
+E [
+E    [ e,,2 : e,100 ]4 FB1,-8,8.,8 e | ^,120 FB0 [ e,100 : e,,2 ]4 
+E   <[ b,,2 : b,100 ]4 FB1,-8,8.,8 b | ^,120 FB0 [ b,100 : b,,2 ]4>
+E :
+E    [ c,,2 : c,100 ]4 FB1,-8,8.,8 c | ^,120 FB0 [ c,100 : c,,2 ]4 
+E    [ d,,2   d,100 ]4 k-10 e,110<eg& BS+10 r BS-10 >d,110<daf+> k+10
+E ]2
+E [ c,,2 : c,100 ]4 FB1,-5,8.,5 d | ^,120 FB0 [ d,,2 : d,100 ]4
+E [ e,,2 : e,100 ]4             c | ^,120 c,100c4 d,100d4.     
+
+;; B Melo
+E [
+E   e4re,100d,90e4,100r   | d,100e r4.d,100<b,100 a,90>  
+E   d4rd,100c,90d4,100r   | r2^d4.,100                   
+E :
+E   c4rc,100<b,90>c4,100r | <b,100>cr4.<b,100 g,100f+,90>
+E   d4rd,100 c,90 d4,100r | r2^d+4.,100                  
+E ]2
+E e4re4.d4 | e2f+2
+E g4rg4.g4 | f+1  
+
+E $e
+E yx5d,100 FE1,0,1,-48,2.,68 f+1 | ^2.,120 FE0 yx5d,15 $f r4
+
+;; Chorus
+E [
+E   e4  d,90 e4,100  d4,90 e | ^e4,100e4,100< a,100>d,100 e,90
+E   d4<f+,90>d4,100<f+4,90>d | ^d4,100d4,100<f+,100 a,100>d,90
+E :
+E   e4<b,90>e4,100<b4,90>f+      | ^4d4e4f+4,100               
+E   g4 d,90 g4,100 d4,90< b,100> | d+4.d+4,100d+,100d+,100d+,90
+E ]2
+E <b4b,90b4,100>e4,90 g | ^%64 f+%64e%64f+%64e%64d%64
+E e1                    | ^4.<b-4.,90b-4,100>        
+
+;; Guitar Solo & Ref
+E  e4.e,100e4e,90e,100 | e4.e,100e4e4 
+E <a4.a,100a4a,90a,100 | a4.a,100a4a4 
+E  b4.b,100b4b,90b,100 | b4.b,100b4b4>
+E  c4.c,100c4c,90c,100 | c4cc,100c4c4 
+
+E  d4.d,100d4d,90d,100 |  d4.d,100d4d4 
+E  e4.e,100e4e,90e,100 | <b4.b,100b4b4>
+E  c4.c,100c4c,90c,100 |  d4.d,100d4d4 
+E  e4.e,100e4e,90e,100 |  e4.e,100e4e4 
+E  e4.e,100e4e,90e,100 |  e1           
+
+E [
+E   e4<b>e4,100e,90e4,100 |  c4<a>c4,100c,90c4,100 
+E   d4<f>d4,100d,90d4,100 : <b4 e b4,100b,90b4,100>
+E ]4
+E e4<b>e4,100e,90e4,100
+
+E [
+E   ee,100<b>e4,100e,90<a,100b> | cc,100<a>c4,100c,90<b,100>c
+E :
+E   dd,100<f>d4,100d,90<a,100a  | bb,100e,100b,100>c4d4      
+E ]4
+E dd,100<f>d4,100d,90<a,100a>   | t185 e t180 e,100 t175 e t170 e,100 yx5d,25
+E t165 e t160 g,100 t150 >e< t140 e,100 yx5d,35
+E l16 E+10 yx5e,20
+
+E [
+E    e8e,,19e^>e,120,1r<e,100e8e,80,19e^>d,120& BS+11 r< BS-11e,100 
+E    e8e,,19e^>e,120,1d<e,100e8e,80,19eb,115a,105b,115g,105
+E    c8c,,19c^>c,120,1r<c,100c8c,80,19c^>c,120,1     <b       c,100 
+E    c8c,,19c^>c,120,1<bc,100c8c,80,19cc<ab& BS+5 r BS-5>
+E    d8d,,19d^>d,120,1r<d,100d8d,80,19d^>c,120& BS+11 r< BS-11d,100 
+E    d8d,,19d^>d,120,1c<d,100d8d,80,19ddd,90d,100d,105
+E   <b8b,,19b^>b,120,1r<b,100b8b,80,19b^>a,120,1      b<      b,100>
+E :
+E    k-10 e,110gbd,110f+ac,110eg<b,110>df+e<ab& BS+5 r BS-5> k+10
+E ]2
+E <b8bb,90b8b& BS+6 r BS-6>dd8,100d,90<aa,100a,100a,90>
+E l8 E-10 yx5e,0
+E t145 <rg& t150 rg& t155 rg& t160 rg  yx5d,25
+E t165  rb& t170 rb& t175 rb  t190 bb> yx5d,15
+E c4.c,90c4,100 c,90 c,100
+E d4.d,90d4,100 d,90 d,100
+E c4.c,90c4,100 c,90 c,100
+E d4.d,90d4,100<a,90>d,100
+
+E [
+E   e4.e,90e4,100 e,90 e,100
+E   d4.d,90d4,100<a,90>d,100
+E   c4.c,90c4,100 c,90 c,100
+E   d4.d,90d4,100<a,90>d,100
+E ]2
+
+E [
+E   e4e,100e4e,100b,120e,100
+E   d4d,100d4d,100a,120d,100
+E   c4c,100c4c,100<b,120>c,100
+E   d4d,100d4,120c4,120d      
+E ]2
+
+;; A Melo ED 1
+E [
+E    [ e,,2 : e,100 ]4 FB1,-8,8.,8 e | ^,120 FB0 [ e,100 : e,,2 ]4 
+E   <[ b,,2 : b,100 ]4 FB1,-8,8.,8 b | ^,120 FB0 [ b     : b,,2 ]4>
+E :
+E    [ c,,2 : c,100 ]4 FB1,-8,8.,8 c | ^,120 FB0 [ c,100 : c,,2 ]4 
+E    [ d,,2   d,100 ]4 k-10 e,110<eg& BS+10 r BS-10 >d,110<daf+> k+10
+E ]2
+E [ c,,2 : c,100 ]4 FB1,-5,8.,5 d | ^ FB0 ddd4dd4
+
+E [
+E   e4e,100e4e,100b,120e,100
+E   d4d,100d4d,100a,120d,100
+E   c4c,100c4c,100<b,120>c,100
+E   d4d,100d4,120c4,120d      
+E ]2
+
+;; A Melo ED 2
+E [
+E    [ e,,2 : e,100 ]4 FB1,-8,8.,8 e | ^,120 FB0 [ e,100 : e,,2 ]4 
+E   <[ b,,2 : b,100 ]4 FB1,-8,8.,8 b | ^,120 FB0 [ b,100 : b,,2 ]4>
+E :
+E    [ c,,2 : c,100 ]4 FB1,-8,8.,8 c | ^,120 FB0 [ c,100 : c,,2 ]4 
+E    [ d,,2   d,100 ]4 k-10 e,110<eg& BS+10 r BS-10 >d,110<daf+> k+10
+E ]2
+E  [ c,,2 : c,100 ]4 FB1,-5,8.,5 d | ^,120 FB0 [ d,100d,,2 ]2f+4d
+E  [ c,,2 : c,100 ]4 FB1,-5,8.,5 d 
+E  ^,120 FB0 yx5d,30 k+10 d,100,24e,,2f+ q8 g,,24f+4d16d16,90 q5 yx5d,15 k-10
+E  [ c,,2 : c,100 ]4 FB1,-5,8.,5 d | ^,120 FB0 [ d,100 : d,,2 ]4 
+E   e4^e4,100<b4,100>e | ^e^e4,100<b,100>d,100 e,90 
+E   a4^a4,100 e4,100 a | ^a^a4,100 e,100 c,100<a,90>
+E   d4^d4,100<a4,100>d | ^d^d4,100<f+,100a,100>d,90 
+E   e4
+;Drums-------------------------------------------------------------------------
+
+;; Intro
+V  [ b4r4bb,80r4  : b4rb,80b,90br4            ]4 brb,80b,90rb,70b,80b,90
+1V [ r4e4rr   e4  : r4er   r   re4            ]4 rer   r   er   r   r   
+2V [ r1           : r1                        ]4 r2.>g4<                
+3V [ [ f+f+,80 ]4 : f+f+,80a+f+,80f+f+,80f+f+,80 ]4 f+a+f+f+,80a+f+,80r4
+
+V  [ b4r4bb,80r4 | b4rb,80b,90br4 ]4
+1V [ r4e4rr   e4 | r4er   r   re4 ]4
+2V >a4<r2.[ r1 : r1 ]4
+3V  r4 [ f+f+,80 ]3 | [ [ f+f+,80 ]4 ]6 | [ f+f+,80 ]2a+f+,80a+f+,80
+
+V  [ [ b4r4bb,80r4 : b4rb,80b,90br4 ]2 : b4rb4b4r ]2
+1V [ [ r4e4rr   e4 : r4er   r   re4 ]2 : r4er4r4e ]2
+2V >a4<r2. [ r1 ]2r4.>c+4a4c+8< | >a4<r2. [ r1 ]2
+3V  r4 [ a+4 ]3 | [ [ a+4 ]4 ]2 a+4f+r2^ [ [ a+4 ]4 ]3
+V  b4rb,80rb16b16,70b,80b,90
+1V r4er   er16r16   r   r   
+2V r1                       
+3V [ a+4 ]4                 
+
+JW [ [ r1 ]8 ]3
+
+;; A Melo 1th
+V  b4r4b4rb | ^,110b,90r4bb,80r4  | b4r4b4rb | ^,110br4bb,80rr   
+1V r4e4r4er | ^    r   e4rr   e4  | r4e4r4er | ^    re4rr   ee,80
+2V >a1<     | r1                  | r1       | r1                
+3V r4[a+4]2a+a+^f+[a+4]3 | [a+4]3a+a+^f+[a+4]3
+V  b4r4b4rb | ^,110br4bb,80r4
+1V r4e4r4er | ^    re4rr   e4
+2V r1       | r1      
+3V [a+4]3a+a+^f+[a+4]3
+V  b4rb4b,80rb    | brr   r   rr    r r
+1V r4er4r   er    | ree,90e,80rr    r r
+2V r1             | r2        gg,80>d<g
+3V [a+4]3a+a+^f+a+4      r2
+
+V  b4r4b4rb | ^,110b,90r4bb,80r4 | b4r4b4rb | ^,110b,90r4bb,80rr   
+1V r4e4r4er | ^    r   e4rr   e4 | r4e4r4er | ^    r   e4rr   ee,80
+2V >a4<r2.  | r1                 | r1       | r1                   
+3V r4[a+4]2a+a+^f+[a+4]3 | [a+4]3a+a+^f+[a+4]3
+V  b4r4b4rb | ^,110brb,80br   rr    
+1V r4e4r4er | ^    rer   re,90ee,110
+2V >a4<r2^>c+ | ^<r2..
+3V r4[a+4]2a+r^f+[a+4]3
+
+JW [ r1 ]8 | [ r1 ]6
+
+V  [ [ b4r4bb,80r4 : b4rb,80b,90br4 ]2 : b4rb4b4r ]2
+1V [ [ r4e4rr   e4 : r4er   r   re4 ]2 : r4er4r4e ]2
+2V >a4<r2. [ r1 ]2r4.>c+4a4c+8< | >a4<r2. [ r1 ]2
+3V  r4 [ a+4 ]3 | [ [ a+4 ]4 ]2 a+4f+r2^ [ [ a+4 ]4 ]3
+V  b4rb,80rb16b16,70b,80b,90
+1V r4er   er16r16   r   r   
+2V r1                       
+3V [ a+4 ]4                 
+
+JW [ r1 ]8
+
+;; A Melo 2th
+V  b4r4b4rb | ^,110b,90r4bb,80r4  | b4r4b4rb | ^,110br4bb,80rr   
+1V r4e4r4er | ^    r   e4rr   e4  | r4e4r4er | ^    re4rr   ee,80
+2V >a1<     | r1                  | r1       | r1                
+3V r4[a+4]2a+a+^f+[a+4]3 | [a+4]3a+a+^f+[a+4]3
+V  b4r4b4rb | ^,110br4bb,80r4
+1V r4e4r4er | ^    re4rr   e4
+2V r1       | r1      
+3V [a+4]3a+a+^f+[a+4]3
+V  b4rb4b,80rb    | brr   r   rr    r r
+1V r4er4r   er    | ree,90e,80rr    r r
+2V r1             | r2        gg,80>d<g
+3V [a+4]3a+a+^f+a+4      r2
+
+V  b4r4b4rb | ^,110b,90r4bb,80r4 | b4r4b4rb | ^,110b,90r4bb,80rr   
+1V r4e4r4er | ^    r   e4rr   e4 | r4e4r4er | ^    r   e4rr   ee,80
+2V >a4<r2.  | r1                 | r1       | r1                   
+3V r4[a+4]2a+a+^f+[a+4]3 | [a+4]3a+a+^f+[a+4]3
+V  b4r4b4rb | ^,110br4bb,80r4
+1V r4e4r4er | ^    re4rr   e4
+2V >a4<r2^>c+ | ^<r2..
+3V r4[a+4]2a+r^f+[a+4]3
+V  b4rb4brb | b,110rr   r   r2
+1V r4er4rer | r    ee,80e,90r2
+2V >a4<r2^>c+ | ^r4.dd,80<bg16g16,80
+3V r4[a+4]2a+r^f+a+4        r2
+
+JW [ [ r1 ]8 ]2
+
+;; B Melo
+V  b4.br4b4 | r4.brb,70b,80b,90
+1V r4.re4r4 | r4.rer   r   r   
+2V >a4<r2.  | r1               
+3V r4rf+,80[ f+f+,70rf+,80 ]2f+f+,70a+4
+W  r1       | r1               
+V  b4.br4b4 | r4b4rb,70b,80b,90
+1V r4.re4r4 | r4r4er   r   r   
+2V r1       | r1               
+3V [ f+f+,70rf+,80 ]3f+f+,70>f+4<
+W  r1       | r1               
+V  b4.br4b4 | r4.brb,70b,80b,90
+1V r4.re4r4 | r4.rer   r   r   
+2V r1       | r1               
+3V [ f+f+,70rf+,80 ]3f+f+,70a+4
+W  r1       | r1               
+V  b4.br4b4 | r4bb,80rbb,80r
+1V r4.re4r4 | r4rr   err   e
+2V r1       | r1            
+3V [ f+f+,70rf+,80 ]3f+f+,70>f+4<
+W  r1       | r1                 
+
+J [ r1 ]8
+
+V  b4.br4b4 | r4.brb,70b,80b,90
+1V r4.re4r4 | r4.rer   r   r   
+2V >a4<r2.  | r1               
+3V r4rf+,80[ f+f+,70rf+,80 ]2f+f+,70a+4
+J  r1       | r1              
+V  b4.br4b4 | r4b4rbrr16r16   
+1V r4.re4r4 | r4r4erre16e16,80
+2V r1       | r1              
+3V [ f+f+,70rf+,80 ]3f+f+,70>f+4<
+J  r1       | r1                 
+V  b4br4.r4 | b4br4.rb
+1V r4re4.e4 | r4re4.er
+2V r1       | r1      
+3V >[ [ f+4f+,60 ]2f+f+,60 ]2<
+J  r1       | r1      
+V  b4r4b4r4 | bb,80r4bb,80r4
+1V r4e4r4e4 | rr   e4rr   e4
+2V r1       | r2.>c+4,110<  
+3V >[ f+f+,60 ]7r4<         
+J  H3,3 @122 r1 | <<<<a1    
+
+W  [ r1 ]8
+
+V  [  r4 ]4 | b,60b,70b,80b,90b,100b,110   r4    
+1V [  r4 ]4 | r   r   r   r   r    r      f+4,110
+2V [  r4 ]4 | r   r   r   r   r    r       r4    
+3V [ f+4 ]4 | f+,70f+,80f+,90f+f+,110f+,120r4    
+W  r1       | r2. N1,32,54 N1,33,104 >f+4< N1,32,64 N1,33,64
+J  ^1>>>>   | r1                                 
+
+;; Chorus
+V  bb,80rb,80bb,80rb   | ^,115b,90rb,80bb,80rb
+1V r4   e4   r4   er   | ^    r   e4   r4   e4
+2V >a1<                | r1                   
+3V r4[ a+4 ]3          | [ a+4 ]4             
+V  [
+1V [
+2V [
+3V [
+V    bb,80rb,80bb,80rb | ^,110b,90rb,80bb,80rb
+1V   r4   e4   r4   er | ^    r   e4   r4   e4
+2V    r4 r4 r4 r>c+    | ^r r4 r4 r4<         
+3V   a+4a+4a+4a+ r     | ^ra+4a+4a+4          
+V  ]2
+1V ]2
+2V ]2
+3V ]2
+V  bb,80rb,80bb,80rb,90  | r l16 r   [ r    ]5b,90[ b,80 ]3 l8 rb
+1V r4   e4   r4   er     | e l16 e,90[ e,80 ]5r   [ r    ]3 l8 er
+3V a+4a+4a+4a+4 | r1                                             
+
+V  bb,80rb,80bb,80r    b |  ^,110b,90rb,80bb,80rb
+1V r4   e4   r4   e    r |  ^    r   e4   r4   e4
+2V >a1<                  |      r4 r4 r4 r4      
+3V  r4[ a+4 ]3           |  [ a+4 ]4             
+V  [
+1V [
+2V [
+3V [
+V    bb,80rb,80bb,80rb : ^,110b,90rb,80bb,80rb
+1V   r4   e4   r4   er : ^    r   e4   r4   e4
+2V    r4 r4 r4> rc+<   : rr r4 r4 r4          
+3V   a+4a+4a+4 a+r     : rra+4a+4a+4          
+V  ]2
+1V ]2
+2V ]2
+3V ]2
+V   r%64r%64b%64r%64r%64b%64
+1V  e%64e%64r%64e%64e%64r%64
+2V >r%64r%64r%64a%64r%64r%64
+3V  r%64r%64r%64r%64r%64r%64
+V  [ b4 ]4 | bb,80rb4b16,70b16,80r16r16      r16   r16
+1V [ r4 ]4 | rr   er4r16   r16   e16,70e16,80e16,90e16
+2V a4r2.<      | r1                          
+3V r4f+4f+4f+4 | f+f+,80a+f+f+,60f+,80a+a+,80
+JW [ r1 ]8 [ r1 ]8
+
+;; Guitar Solo & Ref
+V  [ b4r4b4r4 : b4rb,80b,90br4 ]4
+1V [ r4e4r4e4 : r4er   r   re4 ]4
+2V >a4r2.< [ r1 | r1 ]3
+3V r4a+f+,80f+f+,80f+f+,80 [ f+f+,80a+f+,80f+f+,80f+f+,80 ]6
+V  bb,80rbb,80rbr   
+1V rr   err   ere,80
+2V r1               
+3V f+f+,80a+f+,80f+a+f+a+
+
+V  [ b4r4b4r4 | b4rb,80b,90br4 ]3  
+1V [ r4e4r4e4 | r4er   r   re4 ]3  
+2V >a4r2.< [ r1 : r1 ]3      
+3V r4a+f+,80f+f+,80f+f+,80 [ f+f+,80a+f+,80f+f+,80f+f+,80 ]5
+V  b4r4b4r4 | b4rb,80b,90br4
+1V r4e4r4e4 | r4er   r   re4
+2V >a4r2.   | g4r2.<        
+3V r4a+f+,80f+f+,80f+f+,80 | f+f+,80a+f+,80f+f+,80f+f+,80
+V  b4r4b4r4 | brb,80r4   r4.
+1V r4e4r4e4 | rer   e4,90r4.
+2V >c+4r2.< | r2^>d<bg16f16 
+3V r4a+f+,80f+f+,80f+f+,80 | f+a+f+a+r2
+
+JW [ r1 ]8
+JW [ r1 ]8
+JW [ r1 ]2
+
+V  [
+1V [
+2V [
+3V [
+V    b4.b4.r4 | b4.b4b,80r4
+1V   r4.r4.e4 | r4.r4r   e4
+2V   >a4<r2.  | r1         
+3V   r4a+,90a+,50f+a+,70a+,80a+,90 | [ a+,90a+,50 ]2f+a+,70a+,80a+,90
+V    b4.b4.r4 : b4.b4brr   
+1V   r4.r4.e4 : r4.r4ree,80
+2V   r1       : r1         
+3V   [ a+,90a+,50 ]2f+a+,70a+,80a+,90 : [ a+,90a+,50 ]2f+a+,70a+,90a+,80
+V  ]2
+1V ]2
+2V ]2
+3V ]2
+V  b4.r r rrr        
+1V r4.e r rrr        
+2V r4.r>d<bgf        
+3V a+,90a+,50a+4,90r2
+
+JW [ r1 ]8
+
+V  [
+1V [
+2V [
+3V [
+V    b4.b4.r4 | b4.b4b,80r4
+1V   r4.r4.e4 | r4.r4r   e4
+2V   >c+4r2.< | r1         
+3V   >r4[ d+d+,60 ]3 | d+,120d+,90[ d+d+,60 ]3<
+V  :
+1V :
+2V :
+3V :
+V    b4.b4.r4 | b4.b4b,80rr   
+1V   r4.r4.e4 | r4.r4r   ee,80
+2V   r1       | r1            
+3V   >d+,120d+,90[ d+d+,60 ]3 | d+,120d+,90[ d+d+,60 ]3<
+V  ]2
+1V ]2
+2V ]2
+3V ]2
+V  b4rb4b,80rb,80 | brb,80r4 r16r16    r16r16   r16r16   
+1V r4er4r   er    | rer   e4 r16r16    r16r16   r16r16   
+2V r1             | rrr   r4>d16d16,80<b16b16,80g16g16,80
+3V >d+,120d+,110[ d+d+,60 ]3 | d+,120d+,90d+d+,60r2<
+
+JW [ r1 ]8
+
+V  [
+1V [
+2V [
+3V [
+V    b4rb,70b,80b,90r4 | b4rb,70b,80b,90rb,80
+1V   r4er   r   r   e4 | r4er   r   r   er   
+2V   >a4r2.<  | r1      
+3V   r4a+4a+4a+4 | [ a+4 ]4
+V  :
+1V :
+2V :
+3V :
+V    b4rb,70b,80b,90r4 | b4rb,70b,80b,90rb,80
+1V   r4er   r   r   e4 | r4er   r   r   er   
+2V   r1       | r1      
+3V   [ a+4 ]4 | [ a+4 ]4
+V  ]4
+1V ]4
+2V ]4
+3V ]4
+V  rbrbrb,80b,90b | r1
+1V ererer   r   e | r1
+2V r1             | >d<g4b>dd16d16<bg16g16
+3V [ a+4 ]4       | r1
+
+JW [ r1 ]8
+JW [ r1 ]8
+
+V  [ b4r4b4r4 ]6
+1V [ r4r4r4r4 ]6
+2V >c+4<r2. | [ r1 ]5
+3V r4[ >d+,110d+,60< ]3 | [ >d+,110d+,60< ]20
+W  N1,32,31 N1,33,114 [ r1 | r2.>d+4< ]3 N1,32,64 N1,33,64
+
+V  b4b4b4b4       | rr   brrr   r16r16   r16   r16    
+1V r4r4r4r4       | ee,70rere,70e16e16,70e16,80e16,80 
+2V r4r4r4r4       | r2>a4<r4                          
+3V [ >d+,110d+,60< ]4 | >d+,110d+,80<a+>d+<rf+a+f+
+W  r1             | r1                                
+
+V  [ b4..b16,70b4,95r4 ]7 [ bb16,70b16,80 ]4
+1V [ r4e4      r4   e4 ]7 [ rr16   r16    ]4
+2V >c+4<r2.   | [ r1 ]7
+3V r4[ a+4 ]3 | [ [ a+4 ]4 ]7
+V  bb,80bb,80bb,80rb,80 | bb,80bb,80bb,80rb,80
+1V rr   rr   rr   er    | rr   rr   rr   er   
+2V >a4<r2.  | r1                
+3V r4[ f+f+,80 ]3 | [ f+f+,80 ]4
+V  b4r4bb,80r4 | b4rb,80b,90br4
+1V r4e4rr   e4 | r4er   r   re4
+2V >c+4<r2.    | r1            
+3V r4[ f+f+,80 ]3 | [ f+f+,80 ]4
+V  b4r4bb,80r4 | b4rb,80b,90br4
+1V r4e4rr   e4 | r4er   r   re4
+2V >g4<r2.     | r1            
+3V r4[ f+f+,80 ]3 | [ f+f+,80 ]4
+
+J  [ r1 ]8
+JW [ r1 ]8
+
+V  [ b4r4bb,80r4 | b4rb,80b,90br4 ]4
+1V [ r4e4rr   e4 | r4er   r   re4 ]4
+2V >a4<r2.[ r1 : r1 ]4
+3V  r4 [ f+f+,80 ]3 | [ [ f+f+,80 ]4 ]6 | [ f+f+,80 ]2a+f+,80a+f+,80
+
+V  [ [ b4r4bb,80r4 : b4rb,80b,90br4 ]2 : b4rb4b4r ]2
+1V [ [ r4e4rr   e4 : r4er   r   re4 ]2 : r4er4r4e ]2
+2V >a4<r2. [ r1 ]2r4.>c+4a4c+8< | >a4<r2. [ r1 ]2
+3V  r4 [ a+4 ]3 | [ [ a+4 ]4 ]2 a+4f+r2^ [ [ a+4 ]4 ]3
+V  b4rb,80rb16b16,70b,80b,90
+1V r4er   er16r16   r   r   
+2V r1                       
+3V [ a+4 ]4                 
+
+JW [ [ r1 ]8 ]2
+
+;; A Melo ED 1
+V  b4r4b4rb | ^,110b,90r4bb,80r4  | b4r4b4rb | ^,110br4bb,80rr   
+1V r4e4r4er | ^    r   e4rr   e4  | r4e4r4er | ^    re4rr   ee,80
+2V >a1<     | r1                  | r1       | r1                
+3V r4[a+4]2a+a+^f+[a+4]3 | [a+4]3a+a+^f+[a+4]3
+V  b4r4b4rb | ^,110br4bb,80r4
+1V r4e4r4er | ^    re4rr   e4
+2V r1       | r1      
+3V [a+4]3a+a+^f+[a+4]3
+V  b4rb4b,80rb    | brr   r   rr    r r
+1V r4er4r   er    | ree,90e,80rr    r r
+2V r1             | r2        gg,80>d<g
+3V [a+4]3a+a+^f+a+4      r2
+
+V  b4r4b4rb | ^,110b,90r4bb,80r4 | b4r4b4rb | ^,110b,90r4bb,80rr   
+1V r4e4r4er | ^    r   e4rr   e4 | r4e4r4er | ^    r   e4rr   ee,80
+2V >a4<r2.  | r1                 | r1       | r1                   
+3V r4[a+4]2a+a+^f+[a+4]3 | [a+4]3a+a+^f+[a+4]3
+V  b4r4b4rb | ^,110brb,80br   rr    
+1V r4e4r4er | ^    rer   re,90ee,110
+2V >a4<r2^>c+ | ^<r2..
+3V r4[a+4]2a+r^f+[a+4]3
+
+JW [ r1 ]8 | [ r1 ]6
+
+V  [ [ b4r4bb,80r4 : b4rb,80b,90br4 ]2 : b4rb4b4r ]2
+1V [ [ r4e4rr   e4 : r4er   r   re4 ]2 : r4er4r4e ]2
+2V >a4<r2. [ r1 ]2r4.>c+4a4c+8< | >a4<r2. [ r1 ]2
+3V  r4 [ a+4 ]3 | [ [ a+4 ]4 ]2 a+4f+r2^ [ [ a+4 ]4 ]3
+V  b4rb,80rb16b16,70b,80b,90
+1V r4er   er16r16   r   r   
+2V r1                       
+3V [ a+4 ]4                 
+
+JW [ r1 ]8
+
+;; A Melo ED 2
+V  b4r4b4rb | ^,110b,90r4bb,80r4  | b4r4b4rb | ^,110br4bb,80rr   
+1V r4e4r4er | ^    r   e4rr   e4  | r4e4r4er | ^    re4rr   ee,80
+2V >a1<     | r1                  | r1       | r1                
+3V r4[a+4]2a+a+^f+[a+4]3 | [a+4]3a+a+^f+[a+4]3
+V  b4r4b4rb | ^,110br4bb,80r4
+1V r4e4r4er | ^    re4rr   e4
+2V r1       | r1      
+3V [a+4]3a+a+^f+[a+4]3
+V  b4rb4b,80rb    | r2br4.
+1V r4er4r   er    | r2rr4.
+2V r1             | >d<bgfr l16 >dd,80<bb,80gf,80 l8
+3V [a+4]3a+a+     | r1
+
+JW [ r1 ]8
+
+V  b4r4b4rb | ^,110b,90r4bb,80r4 | b4r4b4rb | ^,110b,90r4bb,80rr   
+1V r4e4r4er | ^    r   e4rr   e4 | r4e4r4er | ^    r   e4rr   ee,80
+2V >a4<r2.  | r1                 | r1       | r1                   
+3V r4[a+4]2a+a+^f+[a+4]3 | [a+4]3a+a+^f+[a+4]3
+V  b4r4b4rb   | ^,110br4bb4b
+1V r4e4r4er   | ^    re4rr4r
+2V >a4<r2^>c+ | ^<r4.r>a4c+<
+3V r4[a+4]2a+r^f+a+4a+r4. 
+V  b4r4b4rb   | ^,110brbb,80 l16 r    r   r    r   r    r    l8
+1V r4e4r4er   | ^    rerr    l16 e,110e,90e,110e,90e,110e,90 l8
+2V >a4<r2^>c+ | ^<r2..
+3V r4[a+4]2a+r^f+a+4a+r4.
+V  b4r4b4rb    | ^ l16 r2..          l8       
+1V r4e4r4er    | ^ l16 r2..          l8       
+2V >a4<r2^>c+  | ^ l16 <bb,80g8gg,80 l8 >d<bgf
+3V r4[a+4]2a+r | r r2..
+V  [ bb,80r4bb,80rb : ^b,80rb,80b,90brb,80 ]3 ^brb l16 [ bb,80 ]4
+1V [ r4   e4rr   er : ^r   er   r   rer    ]3 ^rer l16 [ rr    ]4
+2V [ >c+4r2.<     : r1        ]3 r1      
+3V [ r4[a+4]2a+a+ : ^f+[a+4]3 ]3 ^f+a+4r2
+V   b4,120  
+1V  r4      
+2V >c+4,120<
+3V  r4      
+
+
+JW [ r1 ]8
+JW [ r1 ]8
+JW [ r1 ]2
+;Perc Organ--------------------------------------------------------------------
+
+;; Intro
+F [ r1 ]8
+F [ r1 ]6
+
+F $g 36},xf7	;RT Sept 36
+
+F  E-96 [E+1r%8]96  
+1F >c4cc2^ | d4dd2^<
+2F  g4gg2^ | a4aa2^ 
+F  [
+1F [
+2F [
+3F [
+F    eree2^ | drdd2^     
+1F   bebb2^ | adaa2^     
+F    crcc2^ : drdd4 f+4 d
+1F   gcgg2^ : adaa4> d4<a
+F  ]2
+1F ]2
+2F ]2
+3F ]2
+F  drdr
+1F adad
+F  l%8 q-12 <<rrrrrrrr
+F  c%6d%10e%7f%9g%8a%8b%9>c%7d%10e%6f%7g%9a%6b%10>c%9d%7 q16 l8
+
+;; A Melo 1th
+F   e2^ er e    | ^4.r4.e4           
+1F >d2^ dr d    | ^4.r4.r4<          
+2F  r2^ rr r    | ^4.b4.b4           
+3F  g2^ gr g    | ^4.g4.r4           
+
+F   d2^ dr d    | ^4.r4      rrr     
+1F  b2^ br b    | ^4.b4 q-3 f+ab q16 
+2F  r2^ rr r    | ^4.r4      rrr     
+3F f+2^f+rf+    | ^4.r4      rrr     
+
+F   c2^c4.      | c4.c4.c4           
+1F  r2^r4.      | r4.r4.r4           
+2F  g2^g4.      | g4.g4.g4           
+3F  e2^e4.      | e4.e4.e4           
+
+F   d4. d4. d4  |  d4d ^ q-3 drcd q16
+1F  r4. r4. r4  |  r4r ^ q-3 rbrr q16
+2F  a4. a4. a4  |  a4r a     rrrr    
+3F f+4.f+4.f+4  | f+4rf+     rrrr    
+
+F   e2^ er e | ^4.r4.e4              
+1F >d2^ dr d | ^4.r4.r4<             
+2F  r2^ rr r | ^4.b4.b4              
+3F  g2^ gr g | ^4.g4.^4              
+
+F   d2^ dr d | ^4.r4      rrr        
+1F  b2^ br b | ^4.b4 q-3 f+ab q16    
+2F  r2^ rr r | ^4.r4      rrr        
+3F f+2^f+rf+ | ^4.r4      rrr        
+
+F   c2^cr d  | ^4 rd4 r c d          
+1F  r2^rr r  | ^4 rr4 b r r          
+2F  g2^gr a  | ^4 a^4 a a a          
+3F  e2^erf+  | ^4f+^4f+f+f+          
+
+F  [
+1F [
+2F [
+3F [
+F    eree2^ | drdd2^
+1F   bebb2^ | adaa2^
+F  :
+1F :
+F    crcc2^ | drdd4 f+4 d
+1F   gcgg2^ | adaa4> d4<a
+F  ]2
+1F ]2
+2F ]2
+3F ]2
+F  c4cc4c4c | dddd4d4d
+1F g4gg4g4g | aaaa4a4a
+
+F  $g 60},xf7	;RT Sept 60
+
+;; A Melo 2th
+F   e2^ er e    | ^4.r4.e4           
+1F >d2^ dr d    | ^4.r4.r4<          
+2F  r2^ rr r    | ^4.b4.b4           
+3F  g2^ gr g    | ^4.g4.r4           
+
+F   d2^ dr d    | ^4.r4      rrr     
+1F  b2^ br b    | ^4.b4 q-3 f+ab q16 
+2F  r2^ rr r    | ^4.r4      rrr     
+3F f+2^f+rf+    | ^4.r4      rrr     
+
+F   c2^c4.      | c4.c4.c4
+1F  r2^r4.      | r4.r4.r4
+2F  g2^g4.      | g4.g4.g4
+3F  e2^e4.      | e4.e4.e4
+
+F   d4. d4. d4  |  d4d ^ q-3 drcd q16
+1F  r4. r4. r4  |  r4r ^ q-3 rbrr q16
+2F  a4. a4. a4  |  a4r a     rrrr    
+3F f+4.f+4.f+4  | f+4rf+     rrrr    
+
+
+F   e2^ er e | ^4.r4.e4              
+1F >d2^ dr d | ^4.r4.r4<             
+2F  r2^ rr r | ^4.b4.b4              
+3F  g2^ gr g | ^4.g4.^4              
+
+F   d2^ dr d | ^4.r4      rrr        
+1F  b2^ br b | ^4.b4 q-3 f+ab q16    
+2F  r2^ rr r | ^4.r4      rrr        
+3F f+2^f+rf+ | ^4.r4      rrr        
+
+F   c2^cr d  | ^4 rd4. d d          
+1F  r2^rr r  | ^4 rr4. r r          
+2F  g2^gr a  | ^4 a^4. a a          
+3F  e2^erf+  | ^4f+^4.f+f+          
+
+F  $g 96},xf7	;RT Sept 96
+
+F  $d l%8 q-3  e1       | ^2 ^^^^^^ 
+1F    l%8 q-3 >d1       | ^2 ^^^^^^<
+2F    l%8 q-3  b1       | ^2 ^^^^^^ 
+3F    l%8 q-3  g1       | ^2 ^^^^^^ 
+F  rre%7d%9c%10<b%6agf%9e%7d%9c%7<b%6a%10g%7f%9e%10d%6>> l8 q16
+1F rrrrr rrrrrrr rrrrrr                                  l8 q16
+2F rrrrr rrrrrrr rrrrrr                                  l8 q16
+3F rrrrr rrrrrrr rrrrrr                                  l8 q16
+
+;; B Melo
+F  [
+1F [
+2F [
+3F [
+F    r1 | q-3 <b>e g q16   br b4. 
+1F   r1 |      r r r      >gr g4.<
+2F   r1 |      r r r      >er e4.<
+F    r1 | q-3 <a>df+ q16   ar a4. 
+1F   r1 |      r r r     >f+rf+4.<
+2F   r1 |      r r r     > dr d4.<
+F  :
+1F :
+2F :
+3F :
+F     g2^gf+g | ^ q-3 ec<b>e q16 g4. 
+1F   >e2^r rr | ^     rr r r     e4.<
+2F   >c2^^ ^^ | ^     rr r r     c4.<
+F      a1     | ^4.a+2^              
+1F   >f+1     | ^4. g2^<             
+2F   > d1     | ^4.d+2^<             
+F  ]2
+1F ]2
+2F ]2
+3F ]2
+F q-3 [ gec ]4dega
+F     [ bge ]2be   | [ a+f+d+ ]2a+d+
+
+F  [ [ a+f+d+ ]2 : a+d+ ]2r4 q16
+1F E105 [E-1r%16]48 E100
+
+F $g 48},xf7	;RT Sept 48
+
+F $c
+
+;; Chorus
+F  [
+1F [
+2F [
+3F [
+F    r4rrre4 q-6 <g | ^b>d q16 g4rg4 
+1F   g4abrd4      r | rr r    >e4re4<
+2F   r4rrrr4      r | rr r    >d4rd4<
+3F   r4rrrr4      r | rr r     r4rr4 
+F   f+2^e4  d    | ^ r4 r4     rcd    
+1F  >d2^d4< b    | ^a-4 a4 q-3 brr q16
+2F   b2^b4 f+    | ^ f4f+4     rrr    
+3F   r2^r4  r    | ^ d4 ^4     rrr    
+F  :
+1F :
+2F :
+3F :
+F    e2 d4. f+ | ^4g4 a4b4 
+1F  >d2<b4.> r | ^4r4 r4r4 
+2F   g2 g4.  a | ^4b4>c4d4 
+3F   r2 r4.  r | ^4r4 r4r4 
+F   >c4<  b a4 a4 e |  g4.f+2^ 
+1F   g4   r e4 e4 r |  r4. r2^<
+2F   e4  d+c+4c+4<g |  b4.a+2^ 
+3F   r1             | r1       
+F  ]2
+1F ]2
+2F ]2
+3F ]2
+F   f+2^>c<ba |  b%64 a%64 g%64 a%64 g%64f+%64
+1F > d2^ r rr |  g%64f+%64 e%64f+%64 e%64d+%64
+2F   a2^ r rr |  r%64 r%64 r%64 r%64 r%64 r%64
+3F   r2^ r rr |  r%64 r%64 r%64 r%64 r%64 r%64
+F  FE1,0,1,0,1,-60  e1 | ^1 FE0
+1F                 <b1 | ^1    
+2F                  r1 | ^1    
+3F                  r1 | ^1    
+
+;; Guitar Solo & Ref
+F  FE1,-60,1,60  g^2.. FE0 | >rrrr4    rrr
+1F              >rr2..     |  rbrb4 q3 age
+2F              >d^2..     |  rdrd4    rrr
+3F              >rr2..     |  rrrr4    rrr
+F  [ rrrr ]2 | l16 [ rrrr ]2 rrr r8 rrr l8    
+1F [ agec ]2 | l16 [ agec ]2 aec<a8>cea l8 q16
+2F [ rrrr ]2 | l16 [ rrrr ]2 rrr r8 rrr l8    
+3F [ rrrr ]2 | l16 [ rrrr ]2 rrr r8 rrr l8    
+F   r2r r4 r | ^2r4r4
+1F  b2b b4 b | ^2g4b4
+2F f+2rf+4f+ | ^2r4r4
+3F  d2d d4 d | ^2r4r4
+
+F  c4.cc4cc | ^4crrr rr<
+1F g4.rg4rr | r4rbagf+e<
+2F e4.ee4ee | ^4rrrr rr<
+3F r4.rr4rr | r4rrrr rr<
+
+F [ r1 ]8
+F [ r1 ]2
+
+F g2^ <b>f+b | a2^gf+e
+F d2.<b4>    | e2e4f+4
+F g2^ <b>f+b | a2^gf+e
+F d2f+4d4    | $d e1  
+
+1F k-10
+
+F   g2^< b>f+ b | a2^gf+ e 
+1F >d2^<f+  r>r | e2^dc+<b 
+2F  r1          | r1       
+3F  r1          | r1       
+F  d2.< b4>     | e2e4 f+4 
+1F a2. f+4      | b2b4>c+4<
+2F r1           | r1       
+3F r1           | r1       
+
+F   g2^< b>f+ b | a2^gf+ e 
+1F >d2^<f+  r>r | e2^dc+<b 
+2F  r1          | r1       
+3F  r1          | r1       
+F  d2 f+4 d4    | e1       
+1F a2>c+4<a4    | b1       
+2F r1           | r1       
+3F r1           | r1       
+
+1F k+10
+
+F  q-3
+F  [
+1F [
+2F [
+3F [
+F    [ gf+ d  ]2<g b> | [ ag e  ]2<a>c
+1F   r1               | r1            
+2F   r1               | r1            
+3F   r1               | r1            
+F    [ d c<a> ]2<df+> | ed<b>ee4f+4   
+1F   r1               | r1            
+2F   r1               | r1            
+3F   r1               | r1            
+F  ]2
+1F ]2
+2F ]2
+3F ]2
+
+F  [
+1F [
+2F [
+3F [
+F    gf+d<bgb>dg      | agec<a>cae    
+1F   r1               | r1            
+2F   r1               | r1            
+3F   r1               | r1            
+F  :
+1F :
+2F :
+3F :
+F    dc<af+df+a>d     | ed<b>ee4f+4   
+1F   r1               | r1            
+2F   r1               | r1            
+3F   r1               | r1            
+F  ]2
+1F ]2
+2F ]2
+3F ]2
+F  d2<b4>d4 | $c FE1,0,1^1,-80 e1 | ^1
+
+F r1 FE0 [ r1 ]6
+F [ r1 ]8
+
+F [ r1 ]6
+
+F q16
+
+F [ r1 ]6
+
+F $g 36},xf7	;RT Sept 36
+
+F  E-96 [E+1r%8]96  
+1F >c4cc2^ | d4dd2^<
+2F  g4gg2^ | a4aa2^ 
+F  [
+1F [
+2F [
+3F [
+F    eree2^ | drdd2^     
+1F   bebb2^ | adaa2^     
+F    crcc2^ : drdd4 f+4 d
+1F   gcgg2^ : adaa4> d4<a
+F  ]2
+1F ]2
+2F ]2
+3F ]2
+F  drdr
+1F adad
+F  l%8 q-12 <<rrrrrrrr
+F  c%6d%10e%7f%9g%8a%8b%9>c%7d%10e%6f%7g%9a%6b%10>c%9d%7 q16 l8
+
+;; A Melo ED 1
+F   e2^ er e    | ^4.r4.e4           
+1F >d2^ dr d    | ^4.r4.r4<          
+2F  r2^ rr r    | ^4.b4.b4           
+3F  g2^ gr g    | ^4.g4.r4           
+
+F   d2^ dr d    | ^4.r4      rrr     
+1F  b2^ br b    | ^4.b4 q-3 f+ab q16 
+2F  r2^ rr r    | ^4.r4      rrr     
+3F f+2^f+rf+    | ^4.r4      rrr     
+
+F   c2^c4.      | c4.c4.c4           
+1F  r2^r4.      | r4.r4.r4           
+2F  g2^g4.      | g4.g4.g4           
+3F  e2^e4.      | e4.e4.e4           
+
+F   d4. d4. d4  |  d4d ^ q-3 drcd q16
+1F  r4. r4. r4  |  r4r ^ q-3 rbrr q16
+2F  a4. a4. a4  |  a4r a     rrrr    
+3F f+4.f+4.f+4  | f+4rf+     rrrr    
+
+F   e2^ er e | ^4.r4.e4              
+1F >d2^ dr d | ^4.r4.r4<             
+2F  r2^ rr r | ^4.b4.b4              
+3F  g2^ gr g | ^4.g4.^4              
+
+F   d2^ dr d | ^4.r4      rrr        
+1F  b2^ br b | ^4.b4 q-3 f+ab q16    
+2F  r2^ rr r | ^4.r4      rrr        
+3F f+2^f+rf+ | ^4.r4      rrr        
+
+F   c2^cr d  | ^4 rd4 r c d          
+1F  r2^rr r  | ^4 rr4 b r r          
+2F  g2^gr a  | ^4 a^4 a a a          
+3F  e2^erf+  | ^4f+^4f+f+f+          
+
+F  [
+1F [
+2F [
+3F [
+F    eree2^ | drdd2^
+1F   bebb2^ | adaa2^
+F  :
+1F :
+F    crcc2^ | drdd4 f+4 d
+1F   gcgg2^ | adaa4> d4<a
+F  ]2
+1F ]2
+2F ]2
+3F ]2
+F  c4cc4c4c | dddd4d4d
+1F g4gg4g4g | aaaa4a4a
+
+;F  c4.c4c4. | d+4.d+4d+4.
+;1F r4.r4r4. |  r4. r4 r4.
+;2F g4.g4g4. | a+4.a+4a+4.
+;3F e4.e4e4. |  g4. g4 g4.
+
+F  $g 60},xf7	;RT Sept 60
+
+;; A Melo ED 2
+F   e2^ er e    | ^4.r4.e4           
+1F >d2^ dr d    | ^4.r4.r4<          
+2F  r2^ rr r    | ^4.b4.b4           
+3F  g2^ gr g    | ^4.g4.r4           
+
+F   d2^ dr d    | ^4.r4      rrr     
+1F  b2^ br b    | ^4.b4 q-3 f+ab q16 
+2F  r2^ rr r    | ^4.r4      rrr     
+3F f+2^f+rf+    | ^4.r4      rrr     
+
+F   c2^c4.      | c4.c4.c4           
+1F  r2^r4.      | r4.r4.r4           
+2F  g2^g4.      | g4.g4.g4           
+3F  e2^e4.      | e4.e4.e4           
+
+F   d4. d4. d4  |  d4d ^ q-3 drcd q16
+1F  r4. r4. r4  |  r4r ^ q-3 rbrr q16
+2F  a4. a4. a4  |  a4r a     rrrr    
+3F f+4.f+4.f+4  | f+4rf+     rrrr    
+
+
+F   e2^ er e | ^4.r4.e4              
+1F >d2^ dr d | ^4.r4.r4<             
+2F  r2^ rr r | ^4.b4.b4              
+3F  g2^ gr g | ^4.g4.^4              
+
+F   d2^ dr d | ^4.r4      rrr        
+1F  b2^ br b | ^4.b4 q-3 f+ab q16    
+2F  r2^ rr r | ^4.r4      rrr        
+3F f+2^f+rf+ | ^4.r4      rrr        
+
+F  c2^cr d   | ^4 rd4. d d          
+1F r2^rr r   | ^4 rr4. r r          
+2F g2^gr a   | ^4 a^4. a a          
+3F e2^erf+   | ^4f+^4.f+f+          
+
+F  c4.c4cr d | ^2^ d4 r
+1F r4.r4rr r | ^2^ r4 r
+2F g4.g4gr a | ^2^ a4 a
+3F e4.e4erf+ | ^2^f+4f+
+
+F  c4.c4cr d | ^4
+1F r4.r4rr r | ^4
+2F g4.g4gr a | ^4
+3F e4.e4erf+ | ^4
+
+F l%8 q-16 d%9c%7<b%6a%10g%9f%7edc%7<b%9agf%10e%6d%7c%9<ba
+F          ^b%9>c%7d%6e%10f%9g%7ab>c%7d%9efg%10a%6b%7>c%9d l8 q16
+
+F  $g 96},xf7	;RT Sept 96
+
+F  FE1,0,1^1^1^1^1,0,1,-48 $d k+5  e1 | ^1 | ^1 | ^1 ^1^1  FE0
+1F                            k+5 >d1 | ^1 | ^1 | ^1 ^1^1<    
+2F                            k+5  b1 | ^1 | ^1 | ^1 ^1^1     
+3F                            k+5  e1 | ^1 | ^1 | ^1 ^1^1     
+
+F  k+5 e8 l%8 q-6 d%7c%9<b%10a%6g%9f%7e%8d%8>
+1F r8 r8
+2F b8 r8
+3F r8 r8

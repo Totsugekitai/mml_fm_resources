@@ -1,0 +1,135 @@
+;==============================================================================
+#title"風色"
+#copyright"DDSS 1999,07/2000,08"
+#timebase 48
+;for SC-88Pro
+;------------------------------------------------------------------------------
+ABCDEFJ r%48 l%1 s;システムセットアップ中は待つ(下のZトラック)
+;                    PRG_____ Volume_______ Reverb__ Chorus_ Dilay__ Pan
+A  C01"Bass"    r%1  H0,3@33r v110E127k100r y91,040r y93,00r y94,00r p64 r%31
+B  C02"Sax"     r%6  H0,1@65r v120E127k100r y91,120r y93,16r y94,00r p64 r%26
+C  C03"Piano"   r%11 H8,3@01r v115E127k100r y91,096r y93,00r y94,00r p48 r%21
+1C C03"Piano"                         k100
+D  C04"Strings" r%16 H0,3@49r v090E127k100r y91,096r y93,16r y94,00r p80 r%16
+E  C05"Piccolo" r%21 H0,3@72r v100E127k100r y91,096r y93,00r y94,00r p64 r%11
+1E C05"Piccolo"                       k100
+F  C06"E.Piano" r%26 H0,3@88r v100E127k100r y91,096r y93,00r y94,32r p64 r%6
+J  C10"Drum"    r%31 H0,3@32r v115E127k100r y91,127r y93,00r y94,00r p64 r%1
+1J C10"Drum"                          k100
+2J C10"Drum"                          k100
+ABCDEFJ r%107 ;S;１小節に合わせる 192-(48+32+5)=107
+;------------------------------------------------------------------------------
+A t133
+
+;その他のセットアップ
+ABC1CDE1EF l4
+E	Nx01,x08,066 ;Vib_Rate
+E	Nx01,x09,070 ;Vib_Depth
+E	Nx01,x0a,082 ;Vib_Depth
+J1J2J	q200,5 V16 l16
+J	Nx18,54,60 ;Drum_Pitch
+
+;=;イントロ
+A	o2 c1^2<g2  a-1b-2b-2 >c1^2<g2 a-1b-2g2
+B	o4 [r1]7r2c4d4
+C	o4        c0e0g1 ^1        c0e-0g4.<a-0>c0f8^2 d0f2<b-0>d2
+1C	o4 k80 l8 r1     r<g>cde2  r1                  b-4a-4g4f4
+C	o4        c0e0g1 ^1        c0e-0g4.<a-0>c0f8^2 d0f4d0f4<b-0>d4<b-0>d4
+1C	o4 k80 l8 r1     r<g>cde2  k100 r1             b-4a-4g4f4
+D	o5 l4 k85 r1r1r1r1 FE1,-20,1,20 e1^1 FE0 c1d1
+J	$b r1r1r1r1 [c4c4c4c4]3 c8$sc8c4c8c8c8c8
+1J	$h[cr((cc))]15$oc8$h((cc)) [cr((cc))]12 c8c8c8c8r2
+2J	r1r1r1r1 $t[r2.c4]4
+EF	[r1]8
+
+;=;Ａ
+ABC1CDE1EFJ1J2J [
+A	o2 l8 [ccrcrcrc]2 [ddrdrdrd]2< [ffrfrfrf]2 [ggrgrgrg]2
+A	o2 l8 [ccrcrcrc]2 [ddrdrdrd]2< [a-a-ra-ra-ra-]2 [ggrgrgrg]2
+B	o4 l8 e4.<g8 FE1,0,4.,0,8,-16 g2
+B	o4 l8 r4 FE0 c4d4e4 d2^8<aa FE1,0,2,0,8,-16 a8 ^2r FE0 ab4
+B	o4 l8 c4dc4<a4f8 ^4g4a4b4 >c2r<b>cd ^2c4d4
+B	o4 l8 e4.<g8 FE1,0,4.,0,8,-16 g2
+B	o4 l8 r4 FE0 c4d4e4 d2^8c+da8 ^2a4g4
+B	o4 l8 f4.c FE1,0,2,0,4,-12 c2 ^4 FE0q-1 c4d4 q0 e-4
+B	o4 l8 q-1f1 q0 FE1,0,2,0,2,-16 g1
+C	o4 l8 [k100 c0e0g2rc0e0grr c0e0g2.k90c0e0g4
+1C	      [r1r1
+C	o4 l8  k100 d0f0a2rd0f0arr d0f0a2.k90d0f0a4:
+1C	       r1r1:
+C	o4 l8  k100 c0f0a2rc0f0arr c0f0a2.k90c0f0a4
+1C	       r1r1
+C	o4 l8  k100 d0g0b2rd0g0brr d0g0b2k90d0g0brd0g0br]2
+1C	       r1r1]2
+C	o4 l8  k100 c0e-0a-2rc0e-0a-rr c0e-0a-2c0e-0a-2
+1C	       r1r1
+C	o4 l8  k100 c0d0g2rc0d0grr <b0>d0g2<b0>d0gr<b0>d0gr
+1C	       r1r1
+D	o5 k100 e1^1d1^1c1^1d1^1 e1^1d1^1e-1^1f1g1
+J	[[$bc4(c0$sc4$bc4(c0$sc4]7:[$bc4(c0$sc8(c8)]2]2 $bc8$sc8c4c8c8c8c8
+1J	[$cc0$h[[cr((cr))]4]7:[$hcr((cr))$oc4]2]2 $hc8c8c8c8r2
+2J	$t[r2.c4]14[r4c4r4c4]2
+EF	[r1]16
+
+;=;Ｂ
+A	o2 l8[<[ffrfrfrf]2>[ccrcrcrc]2]2
+A	o2 l8 <ffrfrfrf ggrgrgrg aararara  ggrgrgrg
+A	o2 l8 <ffrfrfrf ggrgrgrg aararara  bbrbrbrb
+B	o4 [r1]15r2 :c4d4
+C	k90
+C	o3 l8 [>c0<f0a1>c0<f0a2[f0a0>c4<]2 e0g0>c1<e0g0>c2<[e0g0>c4<]2 ]2
+1C	[r1]8
+C	o3 l8 [>c0<f0a1>d0<g0b2[>d0<g0b4]2 e0a0>c1< >d0<g0b2[>d0<g0b4]2 ]2
+1C	[r1]8
+D	o5 k90 c0f1^1c0e1^1 c0f1^1c0e1^1
+D	o5 k90 c0f1d0g1c0e1d0g2&b2,-10
+D	o5 k90 c0f0a1,-10d0g1c0e1<g0b0>d1
+E	FE1,0,2,0,4.,-12,8,-12
+E	o5 l4 rccc c<b>cd  e1r1
+1E	o4 l4 raaa afab   >c1r1<
+E	o5 l4 rccc c<b>cd  c1r1
+1E	o4 l4 raaa afaa    g1r1
+E	o5 l4 rccc c<b>cd  e1r1
+1E	o4 l4 raaa agab   >c1r1<
+E	o5 l4 rccc c<b>cd  c1r1
+1E	o4 l4 raaa agab    a1r1
+F	FE1,0,2,0,2,-64
+F	o5 l8 r1   r1      r1g2b2
+F	o5 l8 a1   r1      r1r1
+F	o5 l8 r1   r1      >c2<b2a2b2
+F	o5 l8>c1   r1      r1r1
+J	[[$bc4(c0$sc4$bc4(c0$sc4]7:$bc8$s(c8)c4c4c4]2 $bc8$sc8c4c8c8c8c8
+1J	$cc0[[$h[cr((cr))]4]7:[cr((cr))]3$oc4$cc0,-20]2 $cc0$hc8c8c8c8r2
+2J	$t[r4c4r4c4]16
+ABC1CDE1EFJ1J2J ]2
+B r2
+
+;フェードアウト８小節
+B Z{z0=128} [Z{z0=z0-1} $e{x40,x00,x04,z0},xf7 r16]128
+A	o2 l8 [ccrcrcrc]2 [ddrdrdrd]2< [ffrfrfrf]2 [ggrgrgrg]2
+C	o4 l8 k100 c0e0g2rc0e0grr c0e0g2.k90c0e0g4
+C	o4 l8 k100 d0f0a2rd0f0arr d0f0a2.k90d0f0a4
+C	o4 l8 k100 c0f0a2rc0f0arr c0f0a2.k90c0f0a4
+C	o4 l8 k100 d0g0b2rd0g0brr d0g0b2k90d0g0brd0g0br
+D	o5 k100 e1^1d1^1c1^1d1^1
+J	[$bc4(c0$sc4$bc4(c0$sc4]7 [$bc4(c0$sc8(c8)]2
+1J	$cc0$h[[cr((cr))]4]7 [$hcr((cr))$oc4]2
+2J	$t[r2.c4]8
+;------------------------------------------------------------------------------
+Z  C01"System"
+Z  BT4,4 t300
+Z  r%12 EX x7e,x7f,x7f,x09,x01,x7f ;GM_System_ON
+Z  r%12 $e{x40,x00,x7f,x00},xf7    ;GS_RESET
+Z  r%12
+Z  WT"for GS(SC-88Pro)"
+Z  WT"風の色は風を受ける人の色になる。"
+Z  WT"それは、誰も知り得ない。"
+;------------------------------------------------------------------------------
+$t  k060 J54 ;Tambourine
+$b  k090 J35 ;Kick
+$s  k090 J40 ;Snare
+$h  k080 J42 ;Closed Hi-hat
+$o  k080 J46 ;Open Hi-Hat
+$c  k060 J49 ;Crash Cymbal
+$e  EX x41,x10,x42,x12, ;Ex
+;==============================================================================

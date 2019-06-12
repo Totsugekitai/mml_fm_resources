@@ -1,0 +1,323 @@
+#title "空とぶうさぎさん  - Flying hare -    For GS"
+#copyright "2000 Composed by OF"
+
+0A t168
+0A EX x41,x10,x42,x12,{x40,x00,x7f,x00},xf7 r8
+0A Z{z0=110} EX x41,x10,x42,x12,{x40,x01,x33,z0},xf7
+0A Z{z0=80} EX x41,x10,x42,x12,{x40,x01,x3a,z0},xf7
+
+0A r1-8
+BCD r1
+0A C10 v115E127k125p64H0,2@0
+1A C10         k80
+0B C01 v110E127k115p74H0,2@33 q4
+0C C02 v110E127k110p64H0,2@65 q2
+0D C03 v105E127k105p24H0,2@0
+1D C04 v95 E127k110p104H0,2@25 q-1
+2D C05 v90 E127k100p84H0,2@18 q0
+3D C06 v110E127k120p44H0,2@30
+
+; Effect(z0:Reverb  z1:Chorus  z2:Delay)
+0A Z{z0=120,z1=30,z2=0} y91,z0 y93,z1 y94,z2
+0B Z{z0=20,z1=30,z2=0} y91,z0 y93,z1 y94,z2
+0C Z{z0=90,z1=5,z2=0} y91,z0 y93,z1 y94,z2
+0D Z{z0=100,z1=0,z2=0} y91,z0 y93,z1 y94,z2
+1D Z{z0=80,z1=15,z2=0} y91,z0 y93,z1 y94,z2
+2D Z{z0=90,z1=0,z2=0} y91,z0 y93,z1 y94,z2
+3D Z{z0=30,z1=10,z2=0} y91,z0 y93,z1 y94,z2
+
+; NRPN(Drum)
+0A Z{z0=38,z1=+63} Nx1d,z0,64+z1 Z{z0=38,z1=+20} Nx1e,z0,64+z1
+0A Z{z0=36,z1=+10} Nx1e,z0,64+z1
+0A Z{z0=41,z1=+20} Nx1e,z0,64+z1
+0A Z{z0=45,z1=+20} Nx1e,z0,64+z1
+0A Z{z0=38,z1=+20} Nx1e,z0,64+z1
+
+
+;[Intro]
+
+0A o2l8cccccccc | l16>cccc<aaffc8c8dddd
+0B o1l8b-b-b-b-b-b-b-b- | b-b-b-b-b-b-b-b-
+0C r1 | r2.o4l16efgb-
+0D r1 | r2o4l64[cdef:gab>]5
+
+;[A]
+
+0A o2l4cdc8c8d | c8c8d8c4c8d8c8
+1A o2l4a+a+a+a+ | a+a+a+a+
+0B o1l8[b->b-16b-16<]4 | [f>f16f16<]4
+0C o4l8b-4gb-4.b->c | dddf^2
+0D o4l0[[b-df8:.]3] | [[cfa8:.]3]
+1D o3l%1[[<b->dfb->dfr16-%6<r16] <b-&>d&f&b-&>d&f^4-%6<] | [cfa>cfar16-%6<r16]3 c&f&a>c&f&a^4-%6< [cfa>cfar16-%6<r16]2 r8
+2D o5l8[b->df<b-] | [>cfac<]
+
+0A o2l4cdc8c8d | c8c8d8c4c8d8c8
+1A o2l4>c+0<a+a+a+a+ | a+a+a+a+
+0B o1l8[b->b-16b-16<]4 | [f>f16f16<]4
+0C o4l8b-4gb-4.b->c | de-dc^2
+0D o4l0[[b-df8:.]3] | [[cfa8:.]3]
+1D o3l%1[[<b->dfb->dfr16-%6<r16] <b-&>d&f&b-&>d&f^4-%6<] | [cfa>cfa^16-%6<r16]3 c&f&a>c&f&a^4-%6< [cfa>cfar16-%6<r16]2 r8
+2D o5l8[b->df<b-] | [>cfac<]
+
+0A o2l4cdc8c8d | c8c8d8c4c8d8c8
+1A o2l4a+a+a+a+ | a+a+a+a+
+0B o1l8[b->b-16b-16<]4 | [f>f16f16<]4
+0C o4l8b-4gb-4.b->c | dddf^2
+0D o4l0[[b-df8:.]3] | [[cfa8:.]3]
+1D o3l%1[[<b->dfb->dfr16-%6<r16] <b-&>d&f&b-&>d&f^4-%6<] | [cfa>cfa^16-%6<r16]3 c&f&a>c&f&a^4-%6< [cfa>cfar16-%6<r16]2 r8
+2D o5l8[b->df<b-] | [>cfac<]
+
+0A o2l4cdc8c8d | t154c0d6c0d6 c0>c6<c0a6c0a6c0f6
+1A o2l4>c+0<a+a+a+a+ | >[c+6]6
+0B o1l8[b->b-16b-16<]4 | [f6]6
+0C o4l8b-4gb-4.b->c | e-6d6c6<b-6a6>c6
+0D o4l0[[b-df8:.]3] | [cfa>cfa6<]6
+1D o3l%1[[<b->dfb->dfr16-%6<r16] <b-&>d&f&b-&>d&f^4-%6<] | [c&f&a>c&f&a^6-%6<]6
+2D o5l8[b->df<b-] | >e-6d6c6<b-6a6>c6
+
+;[B]
+
+0A t162
+
+0A o2l4cdc8c8d | c8c8d8c4c8l16dddd
+1A o2l4>c+0<a+a+>c+0<a+a+ | >c+0<a+a+>c+0<a+a+
+0B o1l8b-b-b-b-b-b-b-b- | b-b-b-b-b-b-b-b-
+0C o4b-1 | ^2.r4
+0D o4l0[[b-df8:.]3] | [[b-df8:.]3]
+1D o4l%1<b-&>d&f&b-&>d&f^1 | ^2-%6<[<b->dfb->dfr8-%6<]4
+2D o5b-1 | ^2.r4
+
+0A o2l4cdc8c8d | c8c8d8a8l32ddc8.ddc8.
+1A o2l4>c+0<a+a+>c+0<a+a+ | >c+0<a+a+>c+0<a+a+
+0B o1l8b-b-b-b-b-b-b-b- | b-b-b-b-b-b-b-b-
+0C r1 | r1
+0D o4l0[[b-df8:.]3] | o7l64[bagf:edc<]5r2
+
+
+A1ABCD1D2D3D [
+
+;[C]
+
+0A o2l4cd8c4c8d8c8 | c8c8d8c4c8d
+1A o2l4f+f+f+f+ | f+f+f+f+
+0B o1l8b-rfb-r4b-r | b-rfb-r4b-r
+0C o4l8b-4b->d4.cd | <b-4af4fgb-
+0D o4l0b-df2.b-df4 | b-df2.b-df4
+1D o4l%1[<b-&>d&f^8-%3r4]r4 | [<b-&>d&f^8-%3r4]r4
+
+0A o2l4cd8c4c8d8c8 | c8c8d8c4c8d8f8
+1A o2l4f+f+f+f+ | f+f+f+f+
+0B o2l8e-rce-r4e-r | cr<g>cr4cr
+0C o5l8ccccr2  | r1
+0D o4l0e-gb-2.e-gb-4 | ce-g2.ce-g4
+1D o4l%1[<b-&>e-&g^8-%3r4]r4 | [<b-&>e-&g^8-%3r4]r4
+
+0A o2l4cd8c4c8d8c8 | c8c8d8c4c8d
+1A o2l4f+f+f+f+ | f+f+f+f+
+0B o2l8e-rce-r4e-r | <b-rfb-r4b-r
+0C o4l8ggggrgab- | >ccccr<b->rd
+0D o4l0e-gb-2.e-gb-4 | b-df2.b-df4
+1D o4l%1[<b-&>e-&g^8-%3r4]r4 | [<b-&>d&f^8-%3r4]r4
+
+0A o2l4cd8c4c8d8c8 | c8c8d8c4c0d8c0d8c0d8
+1A o2l4f+f+f+f+ | f+f+f+8>c+8c+8c+8
+0B o2l8cr<g>cr4cr | frcfrcfa
+0C r1 | r1
+0D o4l0ce-g2.ce-g4 | cfa2.cfa4
+1D o4l%1[c&e-&g^8-%3r4]r4 | [c&f&a^8-%3r4]r4
+
+;[C']
+
+0A o2l4cd8c4c8d8c8 | c8c8d8c4c8d
+1A o2l4f+f+f+f+ | f+f+f+f+
+0B o1l8b-rfb-r4b-r | b-rfb-r4b-r
+0C o4l8b-4b->d4.cd | <b-4af4fgb-
+0D o4l0b-df2.b-df4 | b-df2.b-df4
+1D o4l%1[<b-&>d&f^8-%3r4]r4 | [<b-&>d&f^8-%3r4]r4
+
+0A o2l4cd8c4c8d8c8 | c8c8d8c4c8d8f8
+1A o2l4f+f+f+f+ | f+f+f+f+
+0B o2l8e-rce-r4e-r | cr<g>cr4cr
+0C o5l8ccccr2  | r1
+0D o4l0e-gb-2.e-gb-4 | ce-g2.ce-g4
+1D o4l%1[<b-&>e-&g^8-%3r4]r4 | [<b-&>e-&g^8-%3r4]r4
+
+0A o2l4cd8c4c8d8c8 | c8c8d8c4c8d
+1A o2l4f+f+f+f+ | f+f+f+f+
+0B o2l8e-rce-r4e-r | <b-rfb-r4b-r
+0C o4l8ggggrgab- | >ccccr<b->cd
+0D o4l0e-gb-2.e-gb-4 | b-df2.b-df4
+1D o4l%1[<b-&>e-&g^8-%3r4]r4 | [<b-&>d&f^8-%3r4]r4
+
+;[D]
+
+0A o2l8[c:d]3 d0>cc0<aa0f | l4cdc8dc0d8
+1A o2l8[f+a+] c+8r4. | [f+a+]4
+0B o2l16[c8cr]4 | [e-8>e-r<]4
+0C o5l8c4r4.<b->cd | e-4.<b-4.>c4
+0D o4l0[ceg8]8 | e-gb-4.e-gb-4.e-gb-4
+1D o3l%1[c&e&g>c&e&g^8-%6<]8 | >[[<b->e-gr8-%3]3:<b-&>e-&g^4-%3]
+
+0A o2l4cdc8dc0d8 | cdc8dc0d8
+1A o2l8[f+a+]4 | [f+a+]4
+0B o2l16[f8>fr<]4 | [e-8>e-r<]4
+0C o4l4fgab- | ab-af
+0D o4l0cfa4.cfa4.cfa4 | e-gb-4.e-gb-4.e-gb-4
+1D o4l%1[[cfar8-%3]3:c&f&a^4-%3] | [[e-gb-r8-%3]3:e-&g&b-^4-%3]
+
+0A o2l4cdc8dc0d8 | cdc8dc0d8
+1A o2l8[f+a+]4 | [f+a+]4
+0B o2l16[c8>cr<]4 | [e-8>e-r<]4
+0C o4l8b-2re-gb- | e-.d.cd.e-.f
+0D o4l0ce-g4.ce-g4.ce-g4 | e-gb-4.e-gb-4.e-gb-4
+1D o4l%1[[ce-gr8-%3]3:c&e-&g^4-%3] | [[e-gb-r8-%3]3:e-&g&b-^4-%3]
+
+0A o2l4cdc8dc0d8 | cdc8dc0d8
+1A o2l8[f+a+]4 | [f+a+]4
+0B o2l16[c8cr]4 | c8cre-8e-rg8gr>c8cr
+0C o4l8g.f.e-f.g.a | b-2.r4
+0D o4l0[[ce-g8:.]3] | o6l32[b-ab-g:agafgfge-fe-fde-de-cdcd<b->c<b->c<a] 
+1D o4l%1[c&e-&g^8-%3]8 | <c&e-&g&>c&e-&g^1-%6
+
+0A o2l4c0dcc8c8l16dddd
+1A o3c+1
+0B r1 
+0C r1
+0D r1
+
+;[2A]
+
+0A t168
+
+0A o2l4cdc8c8d | c8c8d8c4c8d8c8
+1A o2l4a+a+a+a+ | a+a+a+a+
+0B o1l8[b->b-16b-16<]4 | [f>f16f16<]4
+0C o4l8b-4gb-4.b->c | dddf^2
+0D o4l0[[b-df8:.]3] | [[cfa8:.]3]
+1D o3l%1[[<b->dfb->dfr16-%6<r16] <b-&>d&f&b-&>d&f^4-%6<] | [cfa>cfar16-%6<r16]3 c&f&a>c&f&a^4-%6< [cfa>cfar16-%6<r16]2 r8
+2D o5l8[b->df<b-] | [>cfac<]
+
+0A o2l4cdc8c8d | c8c8d8c4c8d8c8
+1A o2l4>c+0<a+a+a+a+ | a+a+a+a+
+0B o1l8[b->b-16b-16<]4 | [f>f16f16<]4
+0C o4l8b-4gb-4.b->c | de-dc^2
+0D o4l0[[b-df8:.]3] | [[cfa8:.]3]
+1D o3l%1[[<b->dfb->dfr16-%6<r16] <b-&>d&f&b-&>d&f^4-%6<] | [cfa>cfa^16-%6<r16]3 c&f&a>c&f&a^4-%6< [cfa>cfar16-%6<r16]2 r8
+2D o5l8[b->df<b-] | [>cfac<]
+
+0A o2l4cdc8c8d | c8c8d8c4c8d8c8
+1A o2l4a+a+a+a+ | a+a+a+a+
+0B o1l8[b->b-16b-16<]4 | [f>f16f16<]4
+0C o4l8b-4gb-4.b->c | dddf^2
+0D o4l0[[b-df8:.]3] | [[cfa8:.]3]
+1D o3l%1[[<b->dfb->dfr16-%6<r16] <b-&>d&f&b-&>d&f^4-%6<] | [cfa>cfa^16-%6<r16]3 c&f&a>c&f&a^4-%6< [cfa>cfar16-%6<r16]2 r8
+2D o5l8[b->df<b-] | [>cfac<]
+
+0A o2l4cdc8c8d | t154c0d6c0d6 c0>c6<c0a6c0a6c0f6
+1A o2l4>c+0<a+a+a+a+ | >[c+6]6
+0B o1l8[b->b-16b-16<]4 | [f6]6
+0C o4l8b-4gb-4.b->c | e-6d6c6<b-6a6>c6
+0D o4l0[[b-df8:.]3] | [cfa>cfa6<]6
+1D o3l%1[[<b->dfb->dfr16-%6<r16] <b-&>d&f&b-&>d&f^4-%6<] | [c&f&a>c&f&a^6-%6<]6
+2D o5l8[b->df<b-] | >e-6d6c6<b-6a6>c6
+
+
+A1ABCD1D2D3D :
+
+
+;[2B]
+
+0A t162
+
+0A o2l4cdc8c8d | c8c8d8c4c8l16dddd
+1A o2l4>c+0<a+a+>c+0<a+a+ | >c+0<a+a+>c+0<a+a+
+0B o1l8b-b-b-b-b-b-b-b- | b-b-b-b-b-b-b-b-
+0C o4b-1 | ^2.r4
+0D o4l0[[b-df8:.]3] | [[b-df8:.]3]
+1D o4l%1<b-&>d&f&b-&>d&f^1 | ^2-%6<[<b->dfb->dfr8-%6<]4
+2D o5b-1 | ^2.r4
+
+0A o2l4cdc8c8d | ccc0d8d8c0[d16]4
+1A o2l4>c+0<a+a+>c+0<a+a+ | >c+<f+f+[f+16]4
+0B o1l8b-b-b-b-b-b-b-b- | [b-b-16r16]4
+0C r1 | r1
+0D o4l0[[b-df8:.]3] | b-df1
+3D r1 | o4BR24BS0FB1,0,1,127c1BS64FB0
+
+;[]
+
+0A o2l4cdc8c8d | cdc8c8d
+1A o2l16[f+f+a+8]4 | [f+f+a+8]4
+0B o2l8[e-.e-16r16c.] | <[b-.b-16r16f.]
+0C r1 | r1
+0D o4l0[e-gb-8]8 | [b-df8]8
+3D o4l0[e-gb-16r16]8 | [b-df16r16]8
+
+0A o2l4cdc8c8d | cdc8c8d
+1A o2l16[f+f+a+8]4 | [f+f+a+8]4
+0B o2l8[e-.e-16r16c.] | <[b-.b-16r16f.]
+0C r1 | r1
+0D o4l0[e-gb-8]8 | [b-df8]8
+3D o4l0[e-gb-16r16]8 | [b-df16r16]8
+
+0A o2l4cdc8c8d | cdc8c8d
+1A o2l16[f+f+a+8]4 | [f+f+a+8]4
+0B o2l8[c.c16r16g.] | [f.f16r16c.]
+0C r1 | r1
+0D o4l0[ce-g8]8 | [cfaf8]8
+3D o4l0[ce-g16r16]8 | [cfa16r16]8
+
+0A o2l4cdc8c8d | cdc8l16ddaaff
+1A o2l16[f+f+a+8]4 | l4>c+c+c+c+
+0B o1l4[b-f] | [b-f]
+0C r1 | r1
+0D o4l0[b-df8]8 | [b-df8]4 o7l64[bagf:edc<]5 
+3D o4l0b-df1 | ^2.r4
+
+
+0A t162
+
+A1ABCD1D2D3D ]2
+
+;[Ending]
+
+0A t90
+
+0A o2l4c0d6c0d6 c0>c6<c0a6c0a6c0f6 | t175r1
+1A o2l4>[c+6]6 | r1
+0B o1l8[f6]6 | ^1
+0C o5l8e-6d6c6<b-6a6>c6 | ^2.r4
+0D o4l0[cfa>cfa6<]6 | r1
+1D o3l%1[c&f&a>c&f&a^6-%6<]6 | r1
+2D o5l8>e-6d6c6<b-6a6>c6 | r1
+3D o4l8c0e-6c0d6<b-0>c6<f0b-6f0a6a0>c6 | ^2.r4
+
+0A o2l1c0d | c0d
+1A o3l1c+ | c+
+0B o2l1f | c
+0C o5l1a | >c
+0D o4l0cfa1 | ce-g1
+1D o3l%1c&f&a&>c&f&a^1-%6< | c&e-&g&>c&e-&g^1-%6
+2D o4l1a | >c
+3D o3l0cfa1 | ce-g1
+
+0A t180
+
+0A o2l4cdcd | cdcd
+1A o3l4[c+a+0c+] | [c+a+0c+]
+0B o1b-4f4b-4f4 | b-4f4b-4f4
+0C o5b-1 | ^2.r4
+0D o4l0[b-df4]4 | [b-df4]4
+1D o3l%1[d&f&b-&>d&f&b-^4-%6<]4 | [d&f&b-&>d&f&b-^4-%6<]4
+2D o4b-4f4b-4f4 | b-4f4b-4f4
+3D o3l0b-df>b-df1 | ^1
+
+0A o2c0d1 | ^4r4[c0d8]4
+1A o3c+1 | ^4r4[a+0c+8]4
+0B o1b-1 | ^4r4[b-8]4
+0C o5b-1 | ^4r4[b-8]4
+0D o4l0b-df1 | ^4r4[b-df8]4
+1D o3l%1d&f&b-&>d&f&b-^1 | ^2-%6<[d&f&b-&>d&f&b-^8-%6<]4
+2D o3b-1 | ^4r4[b-8]4
+3D o3l0b-df>b-df1 | ^4r4[b-df>b-df8<]4
+

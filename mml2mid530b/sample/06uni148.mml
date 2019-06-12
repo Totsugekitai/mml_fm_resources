@@ -1,0 +1,303 @@
+#title "Digital Love (SC-88)   Unira"
+#copyright "(c) Unira"
+#timebase 48
+
+;  Composed   Unira
+;  Programmed Unira
+;  Arranged   Unira
+
+$t  _2			; transpose
+$i k127 E90  BR3 BS64	; expression & pitch bend
+$j k127 E127 BR3 BS64	; expression & pitch bend
+
+$b   k115 J36	; kick
+$s   k115 J38	; snare
+$1t  k110 J48	; tom-H
+$2t  k110 J45	; tom-M
+$3t  k110 J41	; tom-L
+$h   k90  J42	; HiHat close
+$1h  k90  J46	; HiHat open
+$m   k110 J37	; Side Stick
+$n   k100 J64 	; Low  Conga
+$1n  k100 J63	; High Conga
+$c   k60  J49	; cymbal (right)
+
+T   C11 BT8,8 t78
+T   EX x7e,x7f,x09,x01,xf7                r16 ; GM SYSTEM ON
+T   EX x41,x10,x42,x12,{x40,0,x7f,0},xf7  r16 ; GS-RESET
+
+T   EX x41,x10,x42,x12,{x40,1,x30, 3},xf7 r96 ; REVERB MACRO
+T   EX x41,x10,x42,x12,{x40,1,x31, 4},xf7     ; REVERB CHARACTER
+T   EX x41,x10,x42,x12,{x40,1,x32, 0},xf7 r96 ; REVERB PRE-LPF
+T   EX x41,x10,x42,x12,{x40,1,x33,96},xf7     ; REVERB LEVEL
+T   EX x41,x10,x42,x12,{x40,1,x34,18},xf7 r96 ; REVERB TIME
+T   EX x41,x10,x42,x12,{x40,1,x35,10},xf7     ; REVERB DELAY FEEDBACK
+
+T   EX x41,x10,x42,x12,{x40,1,x38, 3},xf7 r96 ; CHORUS MACRO
+T   EX x41,x10,x42,x12,{x40,1,x39, 1},xf7     ; CHORUS PRE-LPF
+T   EX x41,x10,x42,x12,{x40,1,x3a,96},xf7 r96 ; CHORUS LEVEL
+T   EX x41,x10,x42,x12,{x40,1,x3b,15},xf7     ; CHORUS FEEDBACK
+T   EX x41,x10,x42,x12,{x40,1,x3c, 0},xf7 r96 ; CHORUS DELAY
+T   EX x41,x10,x42,x12,{x40,1,x3d, 6},xf7     ; CHORUS RATE
+T   EX x41,x10,x42,x12,{x40,1,x3e,19},xf7 r96 ; CHORUS DEPTH
+T   EX x41,x10,x42,x12,{x40,1,x3f,10},xf7 r1  ; CHORUS SEND LEVEL TO REVERB
+
+A   C1  r4 H0,0  @64  r4 v105 q4 o5 l8  p64 $t $i	; Melody(Vocal)
+1A  C1                        q4 o5 l8      $t $i	;
+B   C8  r4 H1,0  @103 r4 v105 q4 o4 l8  p64 $t $i	; Syn.Pad
+H   C6  r4 H1,0  @48  r4 v80  q3 o5 l8  p64 $t $i	; Strings Solo
+1H  C6                        q3 o4 l8      $t $i	;
+O   C12 r4 H5,0  @124 r4 v55  q2 o6 l8  p64 $t $j	; Wind Chimes
+C   C3  r4 H0,0  @35  r4 v125 q4 o2 l8  p64 $t $i	; Bass
+D   C4  r4 H8,0  @4   r4 v115 q4 o4 l8  p64 $t $i	; E.Piano
+1D  C4                        q4 o4 l8      $t $i	;
+2D  C4                        q4 o4 l8      $t $i	;
+3D  C4                        q4 o4 l8      $t $i	;
+4D  C4                        q4 o4 l8      $t $i	;
+F   C7  r4 H8,0  @4   r4 v115 q4 o5 l8  p64 $t $i	; E.Piano
+G   C2  r4 H0,0  @28  r4 v115 q4 o4 l16 p64 $t $i	; M.Guitar
+1G  C2                        q4 o4 l16     $t $i	;
+2G  C2                        q4 o4 l16     $t $i	;
+3G  C2                        q4 o4 l16     $t $i	;
+4G  C2                        q4 o3 l16     $t $i	;
+E   C5  r4 H0,0  @50  r4 v70  q4 o4 l8  p64 $t $i	; Strings
+1E  C5                        q4 o4 l8      $t $i	;
+2E  C5                        q4 o4 l8      $t $i	;
+3E  C5                        q4 o4 l8      $t $i	;
+I   C9  r4 H0,0  @53  r4 v90  q4 o4 l8  p64 $t $i	; Chorus
+1I  C9                        q4 o4 l8      $t $i	;
+2I  C9                        q4 o4 l8      $t $i	;
+3I  C9                        q4 o4 l8      $t $i	;
+4I  C9                        q4 o4 l8      $t $i	;
+5I  C9                        q4 o4 l8      $t $i	;
+J   C10 r4 H0,0  @1   r4 v125       l8 	    $j    	; Kick & Snare
+P   C10 r4            r4            l8      $j   	; Tom
+K   C10 r4            r4            l8      $j  	; hi-hat
+M   C10 r4            r4            l8      $j $m	; Side Stick
+N   C10 r4            r4            l16     $j 		; Conga
+L   C10 r4            r4            l1      $j $c	; cymbal
+
+ABCDEFGHIOJKLMNP r4
+
+;     REVERB   CHORUS
+A     y91,96   y93,96
+B     y91,32   y93,32
+C     y91,0    y93,32
+DF    y91,64   y93,64
+G     y91,32   y93,0
+EIH   y91,96   y93,96
+O     y91,100  y93,100
+J     y91,64   y91,32
+
+ABCDEFGHIOJKLMNP r4
+
+;  ###Drums###
+
+PKMNL  [
+
+;	[S]
+J  $bg4.  [ g g4r4 [g4.g g4:r4]6 r.g4..gg4r4
+P  [r1]8
+K  [$h[g k-28g16k-28g16k+56]15 g$1hg]2
+M  [r4g4r4g4]8
+N  [r1]8
+L  [r1]8
+
+;	[A]
+J  $b[g4.g g4:r4]7 r.g4..gg4r4 [g4.g g4:r4]7 r.g16^8.g16$sg.$bg16r2
+P  [r1]15 r4..$1tgg16g$2tg16g16$3tg
+K  [$h[g k-28g16k-28g16k+56]15 g$1hg]4
+M  [r4g4r4g4]16
+N  [r1]16
+L  [r1]14 r2...g16^1
+
+;	[C]
+J  [$bg4$sg$bg16g16rg$sg16$bg16r16g16 $bg4$sg$bgg.g16$sg16$bg16r16g16]3  $bg.g16:$sg2^8.$bg4..
+P  [r1]6 r4$1trg16g$2tg16g$3tg.r16
+K  $h[g k-28g16k-28g16k+56]15 g$1hg $h[g k-28g16k-28g16k+56]11 g$1hg
+M  [r4g4r4g4]7
+N  [$nrrrg$1ng4 rg$ngg r4]7
+L  c1[r1]5 r4:g2.
+
+JPKMNL  ]2
+
+;	[C](Repeat)
+J  $sg2^8.$bg16^4 [$sg$bg16g16rg$sg16$bg16r16g16 $bg4$sg$bgg.g16$sg16$bg16r16g16:$bg4]3  $bg.g16$sg2.
+P  [r1]6 r4$1trg16g$2tg16g$3tg.r16
+K  $h[g k-28g16k-28g16k+56]15 g$1hg $h[g k-28g16k-28g16k+56]11 g$1hg
+M  [r4g4r4g4]7
+N  [$nrrrg$1ng4 rg$ngg r4]7
+L  g2^8.g16^1  [r1]5 r4g2^8.g16^1
+
+;	[S]
+A  [r1]7 r2.cd
+1A [r1]8
+FH1H  e^2efg c^2cde f^2fec d2gc+de gf4e16f16edc<b >dcdea4b>c< f^2eec16d16^2r2
+B  [r1]8
+O  [r1]6 g1& [E-3r32:&]32
+C  c4.ce2 a4.aa4e4 d4.dd2 g4.gg4a4 f4.fe2 a4.ad2 f4.ff4f.g16^ 2f4g4
+D  r2 d2 g1    c2.c4 r2r4 g4  e4.ed2 g4.gc2  r24e48^4..^4e.f16^2e4 f4
+1D g2 b2 a1    a2.a4 b2b-4a4  a4.ab2 a4.aa2  r32a4...  ^4a.b16^2a4 b4
+2D e2 g2 e1    f2.f4 g2g4 e4  f4.fg+2e4.ef+2 r48f24^4..^4f.g16^2f4 g4
+3D c2 e2 c1    d2.d4 d2d4 c+4 c4.ce2 c4.cd2     c2.      c.d16^2c4 d4
+4D r2 r2 r2.ce a2.r4 r2r4 r4  r2  r2 r2  r2     r2.r.r16^4.g>c4 d4<
+G1G2G3G4G  [r1]8
+E  r2d2g1 c1r2r4 g4  e2d2 g2c2  e2...f16^2e4f4
+1E g2b2a1 a1b2b-4a4  a2b2 a2a2  a2...b16^2a4b4
+2E e2g2e1 f1g2g4 e4  f2g+2e2f+2 f2...g16^2f4g4
+3E c2e2c1 d1d2d4 c+4 c2e2 c2d2  c2...d16^2c4d4
+I1I2I3I4I5I [r1]8
+
+;  	[A]
+A  eeef16g.egb b>c16c16^4.<rag fffe16f.df>c <ba16g16^2r4  rag+a16b.e4b b>c16c16^4.rr<a> eddc16c.<aa>d16d16^ 2.r4
+1A [r1]8
+;	[A']
+A  <reef16g16^4.b b.>c16^4.<rag fe16f16^4.df>c <ba16g16^2r4  r4a4b4e12g+12b12 >dc16c16^4.rr<a> ed16c16^4r<aa>d16d16^ 2.r4
+1A [r1]8
+B  [r1]16
+H1H  [r1]15 r4.g>c4d4
+O  [r1]15 E127 g1& [E-3r32:&]32
+C  c2e4.e a2.e4 d2..d g2g4a4 f4.fe2 a4.ad2 f4.ff4f.g16^ 2f4f4  c4.ce2 a4.aa4e4 d4.dd2 g4.gg4a4 f4.fe2 a4.ad2 f4.ff4f.g16^ 2f4g4
+D  [r2 d2 g1    c2.c4 r2r4 g4  e4.ed2 g4.gc2  r24e48^4..^4e.f16^2e4:e4 ]2 f4
+1D [g2 b2 a1    a2.a4 b2b-4a4  a4.ab2 a4.aa2  r32a4...  ^4a.b16^2a4:a-4]2 b4
+2D [e2 g2 e1    f2.f4 g2g4 e4  f4.fg+2e4.ef+2 r48f24^4..^4f.g16^2f4:f4 ]2 g4
+3D [c2 e2 c1    d2.d4 d2d4 c+4 c4.ce2 c4.cd2     c2.      c.d16^2c4:c4 ]2 d4
+4D [r2 r2 r2.ce a2.r4 r2r4 r4  r2  r2 r2  r2     r2.r.r16^4.g>c4:<a-4 ]2 d4<
+F [[r1]7:r1]2 r4.g>c4d4
+G1G2G3G4G [r1]8
+1G2G3G    [r1]8
+G4G r4ccgc r2 r4aaea r2 r4ddad r2 r4ggdg r2 r4ff>c<f r2 r4aaea r2 r1r1
+E  [r2d2g1 c1r2r4 g4  e2d2 g2c2  e2...f16^2e4:e4 ]2 f4
+1E [g2b2a1 a1b2b-4a4  a2b2 a2a2  a2...b16^2a4:a-4]2 b4
+2E [e2g2e1 f1g2g4 e4  f2g+2e2f+2 f2...g16^2f4:f4 ]2 g4
+3E [c2e2c1 d1d2d4 c+4 c2e2 c2d2  c2...d16^2c4:c4 ]2 d4
+I1I2I3I4I5I [r1]16
+
+;	[C]
+A  c4<b>c16<g.feg f>c16c16^2r4 <bbb>c16<b.agf+ ag16g16^2 rg  aeea16b16^4ba g+e>d<b16>c4..r <ab>cdc4<b>c16c16^ 2.r4
+1A [r1]7
+B  [r1]7
+H1H  c1<f>c16c16^2<a>c <b^2agf+ ag16g16^2.  a2.ba g+4ab16>c16^2 <a2>c4<r.
+O  [r1]6
+C  c4rc16c16rr.c16r16c16 f4r4.f.f16r16f16 e4re16e16rd.d16r16d16 g4.gdgb4  f4rf16f16rr.g16r16g16 e4.ea4e4 f4.ff4f.c16^4.
+D  r1        r1    d4.dc2 c4.cf2 e4.er2d4.d   g2 r24e48^4..e4 e.  r16^2
+1D g4..g16^2 a1    b4.ba2 a4.ab2 a4.ab2b4.b   a2 r32a4...  a-4a-. g16^2
+2D e4..e16^2 f1    g4.gf+2f4.fg2 f4.fg2g+4.g+ e2 r48f24^4..f4 f.  e16^2
+3D c4..c16^2 c1    e4.ed2 d4.dd2 c4.cd2e4.e   c2    c2     c4 c.  c16^2
+4D r1        r2.fa g4.rr2 r1     r1    r1           r2     r4 r.  r16^2
+F c1< r4.fa4>c4< b2r2 r4.gb4>d4< [r1]2r2...
+G1G2G3G4G  l8
+G   r1          r1               d4rd16d16r2   c4r4.r.f16r16f16
+1G  g4rg16g16r2 a4r4.r.a16r16a16 b4rb16b16r2   a4r4.r.b16r16b16
+2G  e4re16e16r2 f4r4.r.f16r16f16 g4rg16g16r2   f4r4.r.g16r16g16
+3G  c4rc16c16r2 c4r4.r.c16r16c16 e4re16e16r2   d4r4.r.d16r16d16
+4G >r2rceg      r1               r2rf+a>c<     r1
+G  e4re16e16r2 d4 r4.r.g16r16g16 r2   e4.. r16^2
+1G a4ra16a16r2 b4 r4.r.a16r16a16 r2   a-4..g16^2
+2G f4rf16f16r2 g+4r4.r.e16r16e16 r2   f4.. e16^2
+3G c4rc16c16r2 e4 r4.r.c16r16c16 r2   c4.. c16^2
+4G r2rdgb      r1                cefa r4.. r16^2<
+E  r1r1d2c2 c2f2  e2r2d2 g2 e2e4.. r16^2
+1E g1a1b2a2 a2b2  a2b2b2 a2 a2a-4..g16^2
+2E e1f1g2f+2f2g2  f2g2g+2e2 f2f4.. e16^2
+3E c1c1e2d2 d2d2  c2d2e2 c2 c2c4.. c16^2
+I  r1        r1            d4r.d.r4. r1            e4re r2 d4rd   g2 e2e4.. r16^2
+1I g4r.g.r4. r1            b4r.b.r4. r1            a4ra b2 b4rb   a2 a2a-4..g16^2
+2I e4r.e.r4. r1            g4r.g.r4. r1            f4rf g2 g+4rg+ e2 f2f4.. e16^2
+3I c4r.c.r4. r1            e4r.e.r4. r1            c4rc d2 e4re   c2 c2c4.. c16^2
+4I r2rfeg    f>c16c16^2r4 <r2ragf+   ag16g16^2 r4  [r1]3r2
+5I r2rdce    ca16a16^2r4   r2rf+ed   fd16d16^2 r4  [r1]3r2
+
+;	[K]
+A  [r1]6 <r2.cd
+1A [r1]7
+FH1H  e8.^2efg c^2cde f^2fec d2gc+de gf4e16f16edc<b >dcdea4b>c< f^2eec16d16^2r2
+B  [r1]8
+O  [r1]6 E127 g1& [E-3r32:&]32
+C  ce2 a4.aa4e4 d4.dd2 g4.gg4a4 f4.fe2 a4.ad2 f4.ff4f.g16^ 2f4g4
+D  d2 g1    c2.c4 r2r4 g4  e4.ed2 g4.gc2  r24e48^4..^4e.f16^2e4 f4
+1D b2 a1    a2.a4 b2b-4a4  a4.ab2 a4.aa2  r32a4...  ^4a.b16^2a4 b4
+2D g2 e1    f2.f4 g2g4 e4  f4.fg+2e4.ef+2 r48f24^4..^4f.g16^2f4 g4
+3D e2 c1    d2.d4 d2d4 c+4 c4.ce2 c4.cd2     c2.      c.d16^2c4 d4
+4D r2 r2.ce a2.r4 r2r4 r4  r2  r2 r2  r2     r2.r.r16^4.g>c4 d4<
+G1G2G3G4G  r2[r1]7
+E  d2g1 c1r2r4 g4  e2d2 g2c2  e2...f16^2e4f4
+1E b2a1 a1b2b-4a4  a2b2 a2a2  a2...b16^2a4b4
+2E g2e1 f1g2g4 e4  f2g+2e2f+2 f2...g16^2f4g4
+3E e2c1 d1d2d4 c+4 c2e2 c2d2  c2...d16^2c4d4
+I1I2I3I4I5I r2[r1]7
+
+;	-#2-
+;  	[A]
+A  eeef16g.egb b>c16c16^4.<rag f4fe16f.df>c <ba16g16^2r4  rag+a16b.e4b b>c16c16^4.rr<a> eddc16c.<aa>d16d16^ 2.r4
+1A [r1]8
+;	[A']
+A  <reef16g16^4.b b.>c16^4.<rag fe16f16^4dfa>c <ba16g16^2r4  r4a4b4e12g+12b12 >dc16c16^4.r<aa> ed16c16^4r<aa>d16d16^ 2.r4
+1A [r1]8
+B  [ecgc>e<gbg ecac>c<eae fdad>c<faf gdbd >d<b-ec+
+B  fcac g+ebe ecac >d<f+af+ fcac>c<faf16 g.dbd >fc<:a-f]2 gd
+H1H  [r1]15 r4.g>c4d4
+O  [r1]15 E127 g1& [E-3r32:&]32
+C  c2e4.e a2.e4 d2..d g2g4a4 f4.fe2 a4.ad2 f4.ff4f.g16^ 2f4f4  c4.ce2 a4.aa4e4 d4.dd2 g4.gg4a4 f4.fe2 a4.ad2 f4.ff4f.g16^ 2f4g4
+D  [r2 d2 g1    c2.c4 r2r4 g4  e4.ed2 g4.gc2  r24e48^4..^4e.f16^2e4:e4 ]2 f4
+1D [g2 b2 a1    a2.a4 b2b-4a4  a4.ab2 a4.aa2  r32a4...  ^4a.b16^2a4:a-4]2 b4
+2D [e2 g2 e1    f2.f4 g2g4 e4  f4.fg+2e4.ef+2 r48f24^4..^4f.g16^2f4:f4 ]2 g4
+3D [c2 e2 c1    d2.d4 d2d4 c+4 c4.ce2 c4.cd2     c2.      c.d16^2c4:c4 ]2 d4
+4D [r2 r2 r2.ce a2.r4 r2r4 r4  r2  r2 r2  r2     r2.r.r16^4.g>c4:<a-4  ]2 d4<
+F [[r1]7:r1]2 r4.g>c4d4
+G1G2G3G4G l16
+1G2G3G    [r1]16
+G4G [r4ccgc r2 r4aaea r2 r4ddad r2 r4ggdg r2 r4ff>c<f r2 r4aaea r2 r1r1]2
+E  [r2d2g1 c1r2r4 g4  e2d2 g2c2  e2...f16^2e4:e4 ]2 f4
+1E [g2b2a1 a1b2b-4a4  a2b2 a2a2  a2...b16^2a4:a-4]2 b4
+2E [e2g2e1 f1g2g4 e4  f2g+2e2f+2 f2...g16^2f4:f4 ]2 g4
+3E [c2e2c1 d1d2d4 c+4 c2e2 c2d2  c2...d16^2c4:c4 ]2 d4
+I1I2I3I4I5I [r1]16
+
+;	[C]*2
+A  c4<b>c16<g.feg f>c16c16^2r4 <bbb>c16<b.agf+ ag16g16^2 rg  aeea16b16^4ba g+e>d<b16>c4..r <ab>cdc4<b>c16c16^ 2.r4 [r1]7
+1A [r1]6r2... >c16^4<b>c16<g.feg f>c16c16^2r4 <bbb>c16<b.agf+ ag16g16^2 rg  aeea16b16^4ba g+e>d<b16>c4..r <ab>cdc4<b>c16c16^ 2.r4
+B  [r1]16
+H1H  c1 [<f>c16c16^2<a>c <b^2agf+ ag16g16^2.  a2.ba g+4ab16>c16^2 <a2>c4r.:c16^1]2 r16^1
+O  [r1]15
+C  c4 [ rc16c16rr.c16r16c16 f4r4.f.f16r16f16 e4re16e16rd.d16r16d16 g4.gdgb4  f4rf16f16rr.g16r16g16 e4.ea4e4 f4.ff4f.:c16^4 ]2 c16^1
+D  r4.. [r16^2 r1    d4.dc2 c4.cf2 e4.er2d4.d   g2 r24e48^4..e4 e.  :r2]2 r16^1
+1D g4.. [g16^2 a1    b4.ba2 a4.ab2 a4.ab2b4.b   a2 r32a4...  a-4a-. :g2]2 g16^1
+2D e4.. [e16^2 f1    g4.gf+2f4.fg2 f4.fg2g+4.g+ e2 r48f24^4..f4 f.  :e2]2 e16^1
+3D c4.. [c16^2 c1    e4.ed2 d4.dd2 c4.cd2e4.e   c2    c2     c4 c.  :c2]2 c16^1
+4D r4.. [r16^2 r2.fa g4.rr2 r1     r1    r1           r2     r4 r.  :r2]2 r16^1
+F c1 [<r4.fa4>c4< b2r2 r4.gb4>d4< [r1]2r2...:c16^1]2 r16^1
+G1G2G3G4G  l8
+G   r4 [r2.          r1               d4rd16d16r2   c4r4.r.f16r16f16
+1G  g4 [rg16g16r2 a4r4.r.a16r16a16 b4rb16b16r2   a4r4.r.b16r16b16
+2G  e4 [re16e16r2 f4r4.r.f16r16f16 g4rg16g16r2   f4r4.r.g16r16g16
+3G  c4 [rc16c16r2 c4r4.r.c16r16c16 e4re16e16r2   d4r4.r.d16r16d16
+4G >r4 [r4rceg      r1               r2rf+a>c<     r1
+G  e4re16e16r2 d4 r4.r.g16r16g16 r2   e4.. :r16^4]2 r16^1
+1G a4ra16a16r2 b4 r4.r.a16r16a16 r2   a-4..:g16^4]2 g16^1
+2G f4rf16f16r2 g+4r4.r.e16r16e16 r2   f4.. :e16^4]2 e16^1
+3G c4rc16c16r2 e4 r4.r.c16r16c16 r2   c4.. :c16^4]2 c16^1
+4G r2rdgb      r1                cefa r4.. :r16^4]2 r16^1<
+E  r1 [r1d2c2 c2f2  e2r2d2 g2 e2e4.. r16^1]2
+1E g1 [a1b2a2 a2b2  a2b2b2 a2 a2a-4..g16^1]2
+2E e1 [f1g2f+2f2g2  f2g2g+2e2 f2f4.. e16^1]2
+3E c1 [c1e2d2 d2d2  c2d2e2 c2 c2c4.. c16^1]2
+I  r4 [r2.     r1            d4r.d.r4. r1            e4re r2 d4rd   g2 e2e4.. :r16^4]2 r16^1
+1I g4 [r.g.r4. r1            b4r.b.r4. r1            a4ra b2 b4rb   a2 a2a-4..:g16^4]2 g16^1
+2I e4 [r.e.r4. r1            g4r.g.r4. r1            f4rf g2 g+4rg+ e2 f2f4.. :e16^4]2 e16^1
+3I c4 [r.c.r4. r1            e4r.e.r4. r1            c4rc d2 e4re   c2 c2c4.. :c16^4]2 c16^1
+4I    [r2rfeg  f>c16c16^2r4 <r2ragf+   ag16g16^2 r4  [r1]3]2 r1
+5I    [r2rdce  ca16a16^2r4   r2rf+ed   fd16d16^2 r4  [r1]3]2 r1
+
+;	[E]
+A  t64<aeea16b16^4.a g+e>d<b16>t48 c4..r r4cc< t40b4.>t20c16c16^ 2.r4
+C  f2g2e2 a2 f2f4.. c16^2.r4
+D  e2r2d2 r24g48^4.. r24e48^4..e4..  r16^2.r4
+1D a2b2b2 r32a4...   r32a4...  a-4.. g16^2.r4
+2D f2g2g+2r48e24^4.. r48f24^4..f4..  e16^2.r4
+3D c2d2e2    c2         c2     c4..  c16^2.r4
+4D r1  r1               r2     r4..  r16^2.r4
+E  e2r2d2 g2 e2e4.. r16^1
+1E a2b2b2 a2 a2a-4..g16^2& [E-5r32:&]16
+2E f2g2g+2e2 f2f4.. e16^2& [E-5r32:&]16
+3E c2d2e2 c2 c2c4.. c16^2& [E-5r32:&]16

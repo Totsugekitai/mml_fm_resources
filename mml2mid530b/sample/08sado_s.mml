@@ -1,0 +1,118 @@
+#title "[folksong] Sado okesa  for XG with PLG100-SG"
+#copyright "Ni_gata Minyo,Producted by 74HC04"
+#timebase 48
+
+;--- 音源イニシャライズ
+
+A EX x7e,x7f,x09,x01,xf7                      ; GM SYSTEM ON,By COOLGS.TXT
+A EX x43,x10,x4c,x00,x00,x7e,x00,xf7    ; XG RESET,By COOLXG.txt
+
+
+;--- 調整
+
+ABCDEFVW	r2
+
+V EX x43,x10,x4c,x70,x01,x00,x07,xf7	;SG PART ASSIGN １枚目(n=CH)
+V EX x43,x10,x5d,x50,x00,x33,48,xf7	;SG ConsCompRatio By coolsg.txt
+
+$v EXx43,x10,x5d,x03,x07,
+
+;--- 初期設定
+
+A	C2 @35 v100 k127 o1 y91,90
+B	C3 @45 v100 k112 o4 y91,100
+C	C4 @74 v88 o5 y91,110 ;p+200
+D	C5 @69 v96 o3 y91,110
+E	C6 @23 v110 k110 E80 y91,127 o4
+F	C7 @49 v100 k114 y91,110 E100 o5
+V	C8 H82,0 @35 v110 k110 E120 y91,127 o4	;@35:Female Teenage
+W	C8 					;PhoneSEQ Ex part
+
+;--- ドラム用マクロ設定
+
+$b	k120  o2 _0  ;kick
+$s	k88   o2 _4  ;snare
+$h	k88   o2 _6  ;hihat
+$c	k96   o3 _1  ;cym.1
+$d	k112  o3 _4  ;cym.2
+$m	k88   o2 _2  ;snare 2
+
+;--- エンベロープマクロ設定
+
+$0f FM0
+$1f MON0 FM2,1,8,-1,8,+10,8,+20,8,-30,2,+20
+
+
+;--- 調整
+
+ABCDEFVW	r2
+A	BT6,4
+
+
+
+A	[a2^8a8 a2^8a8 a2^8a8 a2^8a8]6
+A	a2^8a8
+A	a2^8a8 a2^8a8 a2^8a8 a2^8a8
+1A	Z{z0=127}[ Z{z0=z0-1} EX x43,x10,x4c,x00,x00,x04,z0,xf7 r48]144
+A	r2 EX x43,x10,x4c,x00,x00,x04,127,xf7 r4
+1A	r2.
+
+B	l8 [[r4 d0e0a d0e0a4 d0e0a]4]6
+B	l8 r4 d0e0a d0e0a4 d0e0a
+B	[r4 d0e0a d0e0a4 d0e0a]4
+B	r2.
+
+CD	l8 a4>de4fe32f32e8.de4f<a4>de4fe32f32e8.de4f
+CD	<a8r2^8r2.r2.r2.
+CD	r2.r2.r2.r2.
+CD	r2.r2^8>fa4fe32f32e8.d<a4>de4.<
+CD	[r2.r2.r2.r2.]2
+CD	r2. 
+CD	l8 a4>de4fe32f32e8.de4f<a4>de4fe32f32e8.de4f
+CD	r2.
+
+E	r2.r2.r2.r2. E80
+E	l8 r4 d e1 f r4 de4d16f16e4d<a4.r4
+E	fa4b->d4.e4de4.f4ed4.d4<b-
+E	a4.b-a>dedfe4.r2.r2.
+E	r2.r2.r2.r2. E90
+E	<r2^8b->d4fe4d< a4b-a4ga2.>
+E	r2.
+E	r2.r2.r2.r2.
+E	r2.
+
+F	[r2.r2.r2.r2.]4
+F	l8 r4 f a1 b- >d4.e4fe4d<b-af
+F	a2^8b->d4fe4d<a4b-a4ga2.
+F	r2.
+F	r2.r2.r2.r2.
+F	r2.
+
+V	$1f r2.r2.r2.r2.
+V	WL"ハァ〜　佐渡へ" l8 r4 d e1 f r4 de4d16f16e4d<a4. WL"佐渡へと草木もなびくよ" r4
+V	fa4b->d4.e4de4.f4ed4.d4<b-
+V	a4.b-a>dedfe4.r2.r2.
+V	WL"またも行きたや　佐渡島" l8 r4 f a1 b- >d4.e4fe4d<b-af
+V	a2^8b->d4fe4d<a4b-a4ga2. 
+V	r2.
+V	r2.r2.r2.r2.
+V	r2.
+
+W	r2.r2.r2. r2. $v0,x23,x0a,x01,x00,xf7
+W	l8 r4 $v0,x01,x00,xf7 r8 $v0,x01,x00,x7e,xf7 r1 r8 $v0,x0d,x0a,x01,x00,xf7 r4 $v0,x7b,x02,x59,x03,x05,x00,xf7 r8 $v0,x05,x00,xf7 r4r16 $v0,x04,x00,xf7 r16r4< $v0,x04,x00,x7e,xf7 r8r4. $v0,x0d,x0a,x01,x00,xf7 r4
+W	$v0,x7b,x02,x59,x03,x05,x00,xf7 r8 $v0,x05,x00,xf7 r4 $v0,x04,x00,xf7 r8>$v0,x7a,x01,x17,x02,x05,x00,xf7 r4. $v0,x05,x00,xf7 r4 $v0,x7a,x01,x08,x03,x03,x00,xf7 r8 $v0,x0d,x0a,x01,x00,xf7 r4. $v0,x01,x00,xf7 r4 $v0,x7a,x01,x07,x05,x02,x00,xf7 r8 $v0,x32,x0d,x05,x00,xf7 r4. $v0,x05,x00,xf7 r4< $v0,x1c,x07,x01,x00,xf7 r8
+W	$v0,x7b,x08,x5c,x02,x02,x00,xf7 r4. $v0,x02,x00,xf7 r8r8> $v0,x7a,x01,x08,x03,x03,x00,xf7 r8 $v0,x03,x00,xf7 r8r8 $v0,x38,x09,x05,x00,xf7 r8r4.r2.r2.
+W	l8 $v0,x2e,x0d,x01,x00,xf7 r4 $v0,x7a,x01,x13,x02,x01,x00,xf7 r8 $v0,x32,x0d,x05,x00,xf7 r1 $v0,x02,x00,xf7 r8 >$v0,x7a,x01,x07,x05,x02,x00,xf7 r4.$v0,x02,x00,xf7 r4 $v0,x7a,x01,x13,x02,x01,x00,xf7 r8 $v0,x01,x00,xf7 r4 $v0,x35,x09,x01,x00 r8 $v0,x01,x00,xf7 <r8r8r8
+W	r2^8 $v0,x0d,x0a,x01,x00,xf7 r8 $v0,x01,x00,xf7>r4 $v0,x7b,x02,x59,x03,x05,x00,xf7 r8 $v0,x05,x00,xf7 r4 $v0,x7b,x03,x43,x05,x01,x00,xf7 r8<$v0,x01,x00,xf7 r4 $v0,x12,x0d,x02,x00,xf7 r8 $v0,x02,x00,xf7 r4 $v0,x2e,x0d,x01,x00,x7e,xf7 r8r2.
+W	r2.
+W	r2.r2.r2.r2.
+W	r2.
+
+;　［佐渡おけさ］　新潟県民謡
+;
+;　１：　ハァ〜　佐渡へ
+;　　　　　佐渡へと草木もなびくよ　(ア　アリャリャリャサ)
+;　　　　　　またも行きたや　佐渡島
+;
+
+;[End of MML]

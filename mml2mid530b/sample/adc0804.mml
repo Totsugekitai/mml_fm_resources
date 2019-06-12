@@ -1,0 +1,419 @@
+/**** Writen by MDR System Version2.0beta****/
+Z EX x41,x10,x42,x12,{x21,x00,x00,"ADC-0804    "},xf7
+/*** 024:CrshCym1 ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x18,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x18,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x18,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x18,x54},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x18,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x18,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x18,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x18,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x18,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x18,x31},xf7
+/*** 027:High Q   ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x1b,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x1b,x4f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x1b,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x1b,x4f},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x1b,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x1b,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x1b,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x1b,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x1b,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x1b,x1b},xf7
+/*** 028:Slap     ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x1c,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x1c,x6b},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x1c,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x1c,x4f},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x1c,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x1c,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x1c,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x1c,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x1c,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x1c,x1c},xf7
+/*** 029:909 BD   ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x1d,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x1d,x75},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x1d,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x1d,x40},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x1d,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x1d,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x1d,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x1d,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x1d,x19},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x1d,x23},xf7
+/*** 030:808 S1   ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x1e,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x1e,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x1e,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x1e,x40},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x1e,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x1e,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x1e,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x1e,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x1e,x19},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x1e,x26},xf7
+/*** 031:909 S1   ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x1f,x38},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x1f,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x1f,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x1f,x40},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x1f,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x1f,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x1f,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x1f,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x1f,x19},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x1f,x28},xf7
+/*** 032:CR-78CHH ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x20,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x20,x60},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x20,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x20,x54},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x20,x50},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x20,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x20,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x20,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x20,x1a},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x20,x2a},xf7
+/*** 033:CR-78OHH ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x21,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x21,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x21,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x21,x54},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x21,x50},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x21,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x21,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x21,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x21,x1a},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x21,x2e},xf7
+/*** 035:Room K2  ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x23,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x23,x66},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x23,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x23,x40},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x23,x1e},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x23,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x23,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x23,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x23,x08},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x23,x23},xf7
+/*** 040:Room S1  ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x28,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x28,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x28,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x28,x40},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x28,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x28,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x28,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x28,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x28,x08},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x28,x26},xf7
+;Z EX x41,x10,x42,x12,{x21,x0b,x28,x20},xf7
+;Z EX x41,x10,x42,x12,{x21,x0c,x28,x28},xf7
+;セミコロンの部分をはずせば、Jazz S2になるよん
+
+/*** 041:R.LTom 2 ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x29,x26},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x29,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x29,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x29,x5e},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x29,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x29,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x29,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x29,x02},xf7
+;Z EX x41,x10,x42,x12,{x21,x0b,x29,x1a},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x29,x08},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x29,x29},xf7
+/*** 042:C.HiHat2 ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x2a,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x2a,x55},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x2a,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x2a,x54},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x2a,x41},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x2a,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x2a,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x2a,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x2a,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x2a,x2a},xf7
+/*** 043:R.LTom 1 ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x2b,x2e},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x2b,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x2b,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x2b,x52},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x2b,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x2b,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x2b,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x2b,x02},xf7
+;Z EX x41,x10,x42,x12,{x21,x0b,x2b,x1a},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x2b,x08},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x2b,x2b},xf7
+/*** 044:P.Hi-Hat ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x2c,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x2c,x5a},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x2c,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x2c,x54},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x2c,x41},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x2c,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x2c,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x2c,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x2c,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x2c,x2c},xf7
+/*** 045:R.MTom 2 ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x2d,x34},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x2d,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x2d,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x2d,x46},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x2d,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x2d,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x2d,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x2d,x02},xf7
+;Z EX x41,x10,x42,x12,{x21,x0b,x2d,x1a},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x2d,x08},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x2d,x2d},xf7
+/*** 046:O.HiHat2 ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x2e,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x2e,x70},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x2e,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x2e,x54},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x2e,x41},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x2e,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x2e,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x2e,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x2e,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x2e,x2e},xf7
+/*** 047:R.MTom 1 ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x2f,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x2f,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x2f,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x2f,x46},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x2f,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x2f,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x2f,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x2f,x02},xf7
+;Z EX x41,x10,x42,x12,{x21,x0b,x2f,x1a},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x2f,x08},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x2f,x2f},xf7
+/*** 048:R.HTom 2 ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x30,x44},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x30,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x30,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x30,x52},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x30,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x30,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x30,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x30,x02},xf7
+;Z EX x41,x10,x42,x12,{x21,x0b,x30,x1a},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x30,x08},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x30,x30},xf7
+/*** 049:CrshCym1 ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x31,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x31,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x31,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x31,x54},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x31,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x31,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x31,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x31,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x31,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x31,x31},xf7
+/*** 050:R.HTom 1 ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x32,x4c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x32,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x32,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x32,x5e},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x32,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x32,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x32,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x32,x02},xf7
+;Z EX x41,x10,x42,x12,{x21,x0b,x32,x1a},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x32,x08},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x32,x32},xf7
+/*** 053:RideBell ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x35,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x35,x63},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x35,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x35,x54},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x35,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x35,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x35,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x35,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x35,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x35,x35},xf7
+/*** 054:Tambourn ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x36,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x36,x77},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x36,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x36,x4a},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x36,x5a},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x36,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x36,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x09,x36,x04},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x36,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x36,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x36,x36},xf7
+/*** 055:SplshCym ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x37,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x37,x55},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x37,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x37,x4a},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x37,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x37,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x37,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x37,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x37,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x37,x37},xf7
+/*** 057:CrshCym2 ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x39,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x39,x6f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x39,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x39,x54},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x39,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x39,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x39,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x39,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x39,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x39,x39},xf7
+/*** 058:808 Cym  ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x3a,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x3a,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x3a,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x3a,x54},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x3a,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x3a,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x3a,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x3a,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x3a,x19},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x3a,x31},xf7
+/*** 060:Spark    ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x3c,x25},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x3c,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x3c,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x3c,x4a},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x3c,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x3c,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x3c,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x3c,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x3c,x39},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x3c,x4b},xf7
+/*** 061:Click    ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x3d,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x3d,x75},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x3d,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x3d,x68},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x3d,x7d},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x3d,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x3d,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x3d,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x3d,x39},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x3d,x3f},xf7
+/*** 062:Pop Drop ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x3e,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x3e,x5e},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x3e,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x3e,x72},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x3e,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x3e,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x3e,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x3e,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x3e,x39},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x3e,x41},xf7
+/*** 075:Claves   ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x4b,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x4b,x6e},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x4b,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x4b,x54},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x4b,x5f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x4b,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x4b,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x4b,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x4b,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x4b,x4b},xf7
+/*** 076:808Clvs  ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x4c,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x4c,x66},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x4c,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x4c,x54},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x4c,x5f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x4c,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x4c,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x4c,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x4c,x19},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x4c,x4b},xf7
+/*** 082:Shaker   ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x52,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x52,x78},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x52,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x52,x5e},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x52,x50},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x52,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x52,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x09,x52,x03},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x52,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x52,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x52,x52},xf7
+/*** 083:Jng.Bell ***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x53,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x53,x77},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x53,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x53,x63},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x53,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x53,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x53,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x09,x53,x30},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x53,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x53,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x53,x53},xf7
+/*** 084:Jng.Bell :とある表現の為に後から書き足した(笑)***/
+Z r32
+Z EX x41,x10,x42,x12,{x21,x01,x54,x3c},xf7
+Z EX x41,x10,x42,x12,{x21,x02,x54,x77},xf7
+Z EX x41,x10,x42,x12,{x21,x03,x54,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x04,x54,x63},xf7
+Z EX x41,x10,x42,x12,{x21,x05,x54,x7f},xf7
+Z EX x41,x10,x42,x12,{x21,x07,x54,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x08,x54,x01},xf7
+Z EX x41,x10,x42,x12,{x21,x09,x54,x30},xf7
+Z EX x41,x10,x42,x12,{x21,x0a,x54,x02},xf7
+Z EX x41,x10,x42,x12,{x21,x0b,x54,x00},xf7
+Z EX x41,x10,x42,x12,{x21,x0c,x54,x53},xf7
+
+;何故か、このエクスクルーシブをまとめて送ろうとすると、SC-88VLが
+;Check sum errorを吐く。自動チェックサム演算なのに〜(;´д`)y-~~~
+;仕方がないので、32分休符を気休め程度に入れてみる。何故か上手く行く(エー
+;…だったら最初からBuffer fullとか、ちったあ気の利いたメッセージ吐けやコラ(キレ!
+
+

@@ -1,0 +1,220 @@
+#title "〜 あかいまち 〜 (GS音源)   じゅ"
+#copyright "(c) じゅ"
+#timebase 48
+
+/*
+   Use MML2MID version 5.20 (or newer) to compile this file.
+  ［注意！］５５ｍａｐでは聞かないで下さい。発狂しても当方は一切関知しません。
+
+*/
+
+$t _2             ; transpose
+$i E127 BR16 BS64 ; init expression & pitch bend
+
+T C12 BT4,4 t144       ;テンポ設定
+T EX x7e,x7f,x09,x01,xf7               r48   ; GM SYSTEM ON
+T EX x41,x10,x42,x12,{x40,0,x7f,0},xf7 r48   ; GS-RESET
+T EX x41,x10,x42,x12,{x40,1,x30,3},xf7 r48^1 ; GS-Reverb #3(Hall2)
+
+
+;  Ch.    Bank Prog.   Vol. Vel. gt.oct.ln.  pan.
+A  C1  r8 H0,0 @45  r8 v110 k115 q2  o2 l8   p64  $t $i   ; Pizzicarto
+E  C5  r8 H0,0 @40  r8 v110 k75  q2  o4 l8   p84  $t $i   ; Violin
+1E C5  r8           r8           q2  o4 l8        $t      ; 
+F  C6  r8 H0,0 @21  r8 v110 k125 q2  o4 l8   p64  $t $i   ; Accordion
+G  C7  r8 H0,0 @02  r8 v110 k90  q2  o4 l8   p114 $t $i   ; Piano
+1G C7  r8           r8           q2  o4 l8        $t      ; 
+I  C9  r8 H0,0 @71  r8 v110 k90  q2  o3 l8   p14  $t $i   ; Clarinet
+1I C9  r8           r8           q2  o3 l8        $t      ; 
+M  C10 r8 H0,0 @00  r8 v110 k60  RT  o3 l4   p64          ; Drum
+1M C10 r8           r8           RT  o3 l4                ; set
+
+
+$m EXx41,x10,x42,x12,{x40,x00,x04,
+;---FILTER---[[N1,] x20:Filter, x21:Resonance]
+;CD N1,x20,110N1,x21,80
+;E N1,x20,110N1,x21,80
+
+;---減衰防止---[N1,x64,127]
+AEFG N1,x64,127
+
+;---Vibrate---[[N1,] 8:Rate, 9:Depth, 10:Delay]
+;E N1,8,60 N1,9,80 N1,10,80
+
+;---BEND---[[FB4, Def.+-n, l, +-n, ...]
+;---EXPR.---[[FE4, Def.+-n, l, +-n, ...]
+;---Volume---[[FV4, Def.+-n, l, +-n, ...]
+$a FB2,-64,16,0,8.,64
+
+$z FB0FV0
+;---Portamento---
+;E y5,10
+;E y84,79y5,20
+
+
+;---VIB2---[[IBn, 2, Delay, %l, Delay_l]
+$1a IB3,2,10,12,12
+$1b IB1,2,0,10,12
+$1z IB0
+
+;---Drum_Pan---[Nx1c, notenumber,1~127(0:Rnd.)]
+$2a Nx1c,48,1  
+
+
+;---Drum_Pitch---[Nx18, notenumber, <64<],[c>d:63>65]
+$3a Nx18,57,64
+$3b Nx18,57,75
+
+;---EFFECT---[[y] 91:Reverb, 93:Chorus, 94:Delay]
+AEFGIM y94,00y91,70r2
+
+
+;=1
+;=0
+
+
+F >c<fefa>ce^g^^fd2.^2<b->cd<b-f+gb->df^a^^g>c2.^2<b-^
+A l4f^>cf^^<b->fb-<a>f+a<g^>dg^^cg>c<<b->gb-
+I  [a>cfcfc<]2b->dfdfd<a>dg-dg-d<
+1I [fa>c<a>c<a]2fb->d<a+>d<a+f+a>d<a>d<a
+I  [g>dgdgd<]2g>egege<g>egege<
+1I [dgb-gb-g]2eg>c<g>c<gegb-gb-g
+G l4[q0<f>q30[c0f0a]2]2q0<f>q30[d0f0b-]2q0<f+>q30[d0f+0a]2
+G l4[q0<g>q30[d0g0b-]2]2q0<g>q30[e0g0>c<]2q0<g>q30[e0g0b-]2
+1G [r2.]8
+E FM2,0,4.,0,4,10[f0>c2.<]2f0>d2.<f+0>c2.<[g0>d2.<]2g0>c2.<g0b-2.
+1E [r2.]8
+M )30_6[r:cc]4c8c8c[r:cc]4[(10c32]4[)10c32]4c
+1M >>>_-1[c(20c)10c)10]8
+
+
+F aee-efea^g^e^fdd-dfdg^f^a^gdgab>cd^<b^g^f^e2d12e12d12c^^^
+A <a^>e<a^^>d^fc^f<b^>dg^^c^^<b-^^
+I  [a>eaeae<]2>dfafafcfafaf<
+1I [ea>c+<a>c+<a]2a>dfdfd<a>cfcfc<
+I  [>dgbgbg<]2>cgb-gb-gceb-gb-g<
+1I [b>dgdgd<]2g>cecec<e>cecec<
+G l4[q0<a>q30[c+0e0a]2]2q0<a>q30[d0f0a]2q0<a>q30[c0f0a]2
+G l4[q0<g>q30[d0g0b]2]2q0<g>q30[e0g0>c<]2q0<g>q30e0g0b-)20>q0<a0>a8<b-0>b-8
+1G [r2.]8)20
+E [a0>c+2.<]2a0>d2.<f0>c2.<[g0>d2.<]2g0>c2.<g0b-2.
+1E [r2.]8
+M [r:cc]4c8c8c[r:cc]4[(10c32]4[)10c32]4c
+1M [c(20c)10c)10]8
+
+
+G1G q0l8>c<fefa>ce^g^^fd2.^2<b->cd<b-f+gb->df^a^^g>c2.^2<b-^
+A l4f^>cf^^<b->fb-<a>f+a<g^>dg^^cg>c<<b->gb-
+F (20<l4[q0<f>q30[c0f0a]2]2q0<f>q30[d0f0b-]2q0<f+>q30[d0f+0a]2
+F l4[q0<g>q30[d0g0b-]2]2q0<g>q30[e0g0>c<]2q0<g>q30[e0g0b-]2
+I  l8[a>cfcfc<]2b->dfdfd<a>dg-dg-d<
+1I l8[fa>c<a>c<a]2fb->d<a+>d<a+f+a>d<a>d<a
+I  [g>dgdgd<]2g>egege<g>egege<
+1I [dgb-gb-g]2eg>c<g>c<gegb-gb-g
+E [f0>c2.<]2f0>d2.<f+0>c2.<[g0>d2.<]2g0>c2.<g0b-2.
+1E [r2.]8
+M [r:cc]4c8c8c[r:cc]4[(10c32]4[)10c32]4c
+1M [c(20c)10c)10]8
+
+
+G1G aee-efea^g^e^fdd-dfdg^f^a^gdgab-ge^d^e^f2.r2.(20
+A <a^>e<a^^>d^fc^f<b-^>gc^cfc<afrr
+I  [a>eaeae<]2>dfafafcfafaf<
+1I [ea>c+<a>c+<a]2a>dfdfd<a>cfcfc<
+I  >dgb-gb-gcgb-gb-gcfafafarrrfg
+1I b->dgdgd<g>egege<a>cfcfcfrrrrr
+F l4[q0<a>q30[c+0e0a]2]2q0<a>q30[d0f0a]2q0<a>q30[c0f0a]2
+F l4q0<g>q30[d0g0b-]2q0<g>q30[e0g0>c<]2q0<f>q30[f0a0>c<]3r2
+1E [r2.]8
+E [a0>c+2.<]2a0>d2.<f0>c2.<g0>d2.c0e2.<a0>f2.^8r8r4l8)20fg
+M [r:cc]4c8c8c[r:cc]3c[(10c32]4[)10c32]4crr
+1M [c(20c)10c)10]7crr
+
+
+A f^>c<f^^b->fb-<a>fa
+A <a-^a-g^^>cgc<b->g<b-
+G l4<<[a0>c0e-<]6[f0b-0>d<]3[f0a0>d<]3
+G [a-0>c0e-<]3[b0>d0f<]3[g0>c0e-<]3[g0b-0>e-<]3
+M [r:cc]4c8c8c[r:cc]4[(10c32]4[)10c32]4c
+1M [c(20c)10c)10]8
+F l8q0[fa>c0e-<a>c0e-<a]2fb->d0f<b->d0f<b-fa>d0f<a>d0f<a
+F fa->c0f<a->c0f<a-gb>d0f<g>d0f<gg>ce-0gce-0gc<gb->e-0g<b->e-0g<b-
+I a^>e-^c^<b-^a^>c^<l12gagl8f2^^g^a^
+1I f^a^f^f^f^a^l12e-fe-l8d2^^e-^f^
+I a-^b-^>c^d^e-^f^e-^c^^^^^c^d^
+1I f^g^a-^b^>c^d^c^<g^^^^^g^g^
+E a^>e-^c^<b-^a^>c^<l12gagl8f2^^g^a^
+E a-^b-^>c^d^e-^f^e-^c^^^^^c^d^
+
+
+EI e-^d^f^e-^^^c^ <b-^>c^d-^c^^^<g^a-^a+^>c^<b-^a-^d^e-2.e2.
+1I >c^<b^>d^c^^^<a-^g^a-^b-^g^^^e^f^g^a-^f^d^<b-^b-2.>c2<b-4
+E (20<
+A a-^^a->ce-<g^^>ceg<f^fb-^f>e-<b-e->cg>c<<
+G [a-0>c0e-<]6[g0b-0>d<]3[g0>c0e<]3
+G [a-0>c0f<]3[b-0>d0f<]3[b-0>e-0g<]3[g0b-0>c0e<]3
+1E1G [r2.]8
+M [r:cc]4c8c8c[rcc]3[(5c32]12[)5c32]12
+1M [c(20c)10c)10]8
+F l8q0[fa->c0e-<a->c0e-<a-]2gb->d0g<b->d0g<b-g>ce0gce0ge<
+F fa->c0f<a->c0f<a-fb->d0f<b->d0f<b-gb->e-0g<b->e-0g<b-
+F eg>c0e<)10g)10ab-
+
+
+F >c<fefa>ce^g^^fd2.^2<b->cd<b-f+gb->df^a^^g>c2.^2<b-^
+A l4f^>cf^^<b->fb-<a>f+a<g^>dg^^cg>c<<b->gb-
+I  <[a>cfcfc<]2b->dfdfd<a>dg-dg-d<
+1I [fa>c<a>c<a]2fb->d<a+>d<a+f+a>d<a>d<a
+I  [g>dgdgd<]2g>egege<g>egege<
+1I [dgb-gb-g]2eg>c<g>c<gegb-gb-g
+G l4[q0<f>q30[c0f0a]2]2q0<f>q30[d0f0b-]2q0<f+>q30[d0f+0a]2
+G l4[q0<g>q30[d0g0b-]2]2q0<g>q30[e0g0>c<]2q0<g>q30[e0g0b-]2
+1E [r2.]8
+1G <[r2.]8
+E [f0>c2.<]2f0>d2.<f+0>c2.<[g0>d2.<]2g0>c2.<g0b-2.
+M [r:cc]4c8c8c[r:cc]4[(10c32]4[)10c32]4c
+1M [c(20c)10c)10]8
+
+
+F aee-efea^g^e^fdd-dfdg^f^a^gdgab>cd^<b^g^f^e2d12e12d12c^^^
+A <a^>e<a^^>d^fc^f<b^>dg^^c^^<b-^^
+I  [a>eaeae<]2>dfafafcfafaf<
+1I [ea>c+<a>c+<a]2a>dfdfd<a>cfcfc<
+I  [>dgbgbg<]2>cgb-gb-gceb-gb-g<
+1I [b>dgdgd<]2g>cecec<e>cecec<
+G l4[q0<a>q30[c+0e0a]2]2q0<a>q30[d0f0a]2q0<a>q30[c0f0a]2
+G l4[q0<g>q30[d0g0b]2]2q0<g>q30[e0g0>c<]2q0<g>q30e0g0b-)20>q0<a0>a8<b-0>b-8
+1E [r2.]8
+1G [r2.]8)20
+E [a0>c+2.<]2a0>d2.<f0>c2.<[g0>d2.<]2g0>c2.<g0b-2.
+M [r:cc]4c8c8c[r:cc]4[(10c32]4[)10c32]4c
+1M [c(20c)10c)10]8
+
+
+G1G q0l8>c<fefa>ce^g^^fd2.^2<b->cd<b-f+gb->df^a^^g>c2.^2<b-^
+A l4f^>cf^^<b->fb-<a>f+a<g^>dg^^cg>c<<b->gb-
+F (20<l4[q0<f>q30[c0f0a]2]2q0<f>q30[d0f0b-]2q0<f+>q30[d0f+0a]2
+F l4[q0<g>q30[d0g0b-]2]2q0<g>q30[e0g0>c<]2q0<g>q30[e0g0b-]2
+I  l8[a>cfcfc<]2b->dfdfd<a>dg-dg-d<
+1I l8[fa>c<a>c<a]2fb->d<a+>d<a+f+a>d<a>d<a
+I  [g>dgdgd<]2g>egege<g>egege<
+1I [dgb-gb-g]2eg>c<g>c<gegb-gb-g
+E [f0>c2.<]2f0>d2.<f+0>c2.<[g0>d2.<]2g0>c2.<g0b-2.
+1E [r2.]8
+M [r:cc]4c8c8c[r:cc]4[(10c32]4[)10c32]4c
+1M [c(20c)10c)10]8
+
+
+G1G aee-efea^g^e^fdd-dfdg^f^a^gdgab-ge^d^e^g2.frr2(20
+A <a^>e<a^^>d^fc^f<b-^>gc^cfc<afrr
+I  [a>eaeae<]2>dfafafcfafaf<
+1I [ea>c+<a>c+<a]2a>dfdfd<a>cfcfc<
+I  >dgb-gb-gcgb-gb-gcfafafarrrrr
+1I b->dgdgd<g>egege<a>cfcfcfrrrrr
+F l4[q0<a>q30[c+0e0a]2]2q0<a>q30[d0f0a]2q0<a>q30[c0f0a]2
+F l4q0<g>q30[d0g0b-]2q0<g>q30[e0g0>c<]2q0<f>q30[a0>c0f<]2<f0>a0>c0f<r2
+E [a0>c+2.<]2a0>d2.<f0>c2.<g0>d2.c0e2.<a0>g2.<a0>f8r8r2
+1E [r2.]8
+M [r:cc]4c8c8c[r:cc]3c[(10c32]4[)10c32]4crr
+1M [c(20c)10c)10]7crr
+

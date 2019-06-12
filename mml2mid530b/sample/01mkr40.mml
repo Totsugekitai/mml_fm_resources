@@ -1,0 +1,144 @@
+#title "目覚まし時計de大パニック！ (XG音源) MKR"
+#copyright "(c) MKR"
+#timebase 48
+
+Z C1 BT4,4 t154 ;EXx41,x10,x42,x12,x40,x00,x7f,x00,x41,xf7\16 ;GS RESET
+;                H   M   L  Dat
+Z EXx43,x10,x4c,x00,x00,x7e,x00,xf7 r64	;XG ON
+Z EXx43,x10,x4c,x00,x00,x7f,x00,xf7 r64 ;XG Reset
+Z EXx43,x10,x4c,x02,x01,x2e,x10,xf7 r64 ;send C->R
+Z EXx43,x10,x4c,x02,x01,x58,x2c,xf7 r64 ;send V->R
+Z EXx43,x10,x4c,x02,x01,x59,x10,xf7 r64 ;send V->C
+Z EXx43,x10,x4c,x02,x40,x00,x04,xf7 r64 ;EQ TYPE
+Z EXx43,x10,x4c,x02,x40,x01,x41,xf7 r64 ;EQ Gain 1
+Z EXx43,x10,x4c,x02,x40,x0d,x40,xf7 r64 ;EQ Gain 4
+Z EXx43,x10,x4c,x02,x40,x11,x43,xf7 r64 ;EQ Gain 5
+
+Z EXx43,x10,x4c,x02,x01,x5a,x01,xf7 r64 ;variation type System
+Z EXx43,x10,x4c,x02,x01,x40,x43,x00,xf7 r64 ;variation STAGE 2
+
+Z EXx43,x10,x4c,x02,x01,x02,x1e,xf7 r64     ;ReverbTime3.3 ( rev )
+Z EXx43,x10,x4c,x02,x01,x0c,x4c,xf7 r64     ;ReverbReturn  ( rev )
+Z EXx43,x10,x4c,x02,x01,x42,x00,x11,xf7 r64 ;ReverbTime1.9 ( var )
+Z EXx43,x10,x4c,x02,x01,x56,x48,xf7 r64     ;ReverbReturn  ( rev )
+Z r1
+
+$v v+10
+
+A C6  r8 H0,0  @12  \8 v113$v k104 q5 o4 l16  _2  p52  ; melo
+B C7  r8 H0,0  @38  \8 v66 $v k122 q3 o4 l16  _2  p64  ; melo
+C C8  r8 H0,0  @17  \8 v101$v k107 q4 o4 l16  _2  p60  ; melo
+D C10 r8       @25  \8 v99 $v      q7 o4 l16  _0  p64  ; Perc 1 (Whistle L)
+E C10 r8            \8           q2 o4 l16  _0  p64  ; Perc 2 (Gurio L)
+F C10 r8            \8           q7 o4 l16  _1 p64   ; Perc 3 (Timble )
+G C10 r8            \8           q7 o4 l16  _0 p64   ; Perc 4
+H C9  r8 H0,8  @117 \8 v107$v k96  q4 o4 l16  _0 p64   ; Tom
+I C11 r8 H0,0  @84  \8 v72 $v k82  q6 o4 l16   _2 p68  ; Lead CHord
+J C12 r8 H0,0  @92  \8 v94 $v k92  q6 o4 l16   _2 p76  ;
+
+$b o2 _0  k54
+$s o2 _4  k52
+
+
+B  y74,x3e
+I  yx63,1 yx62,x21 yx06,x48 yx26,0
+E  EXx43,x10,x4c,x30,x41,x00,x4a,xf7 ;Timbale H CoarseTune
+E  EXx43,x10,x4c,x30,x42,x00,x4b,xf7 ;Timbale L CoarseTune
+
+
+A r8 BR32  BS64 E124 \8 y91,97 y93,76  y94,127 r4
+B r8 BR32  BS64 E124 \8 y91,27 y93,36  y94,127 r4
+C r8 BR32  BS64 E124 \8 y91,77 y93,106 y94,90  r4
+D r8            E124 \8 y91,77 y93,46 y94,90   r4
+E r8            E124 \8                        r4
+F r8            E124 \8                        r4
+G r8            E124 \8                        r4
+H r8 BR32  BS64 E124 \8 y91,27 y93,36  y94,127 r4
+I r8 BR32  BS64 E124 \8 y91,27 y93,36  y94,127 M6,30 r4
+J r8 BR32  BS64 E124 \8 y91,27 y93,36  y94,127 M6,30 r4
+
+A l16 o6 c<bb-a a-gg-f ee-dd- c<bb-a gab>c dcdf g2 
+J l16 o5 c<bb-a a-gg-f ee-dd- c<bb-a gab>c dcdf g2 
+B        r1                      o1 g8 r8 d8 r8 g8 grarbr
+C        r1                      o6 r8 c0d c0d r8 c0dr c0d4.r8
+D        r1                   o5k90 r8 cc r8 cr c4^16 r8.
+E        r1   r1 o5k93
+F        r1   o4 k49          rrff,-4 frfr frfr f,-6 rrr
+G        r1 r1
+H        r1 r1
+I        r1 r2 o4 g0b0>d8.r <g0b0>d8.r
+
+A  o6 cr<gg f+r gr argrfrdr  gaga grar k59,+5 [g32]12 k119,-6[g32]4 k104
+J  o5 cr<gg f+r gr argrfrdr  gaga grar g4. r8
+B  o2 c8.r <g8.r >d8.r <d8.r g8.r >d8.r <g8 grarbr
+C  o6  r8 c0d c0d [ r8 c0dr ]3  r8 c0d c0d r8 c0dr [ c0dr ]4 
+D    r1    r8 cc r8 cr c4-192r192 c4-192r192
+E  [   c+rrrd4   ]4
+F  [   r8f8e8f8 ]4
+G  [ $b c8 $s cc $bc8 $sc8 ]4
+H    r1 r2 r8 o5 dd<g8d8
+I  [[ o4 g0>c0e ]2 o4c0e0g8   ]2 [[ o4 a0>d0f ]2 o4d0f0a8 ]2
+I  [[ o4 g0b0>d ]2 o4<b0>d0g8 ]2 o4 g0b0>d8.r <g0b0>d8.r
+
+A  o6 cr<gg f+r gr argrfrar  b>c<b>c< br>c<r k59,+5 [b32]12 k119,-6[b32]4 k104
+J  o5 cr<gg f+r gr argrfrar  b>c<b>c< br>c<r b4. r8
+B  o2 c8.r <g8.r >d8.r <d8.r g8.r >d8.r <g8 drgrbr
+C  o6  r8 c0d c0d [ r8 c0dr ]3  r8 c0d c0d r8 c0dr [ c0dr ]4 
+D    r1    r8 cc r8 cr c4-192r192 c4-192r192
+E  [   c+rrrd4   ]4
+F  [   r8f8e8f8 ]4
+G  [ $b c8 $s cc $bc8 $sc8 ]4
+H    r1 r2 r8 o5 dd<g8d8
+I  [[ o4 g0>c0e ]2 o4c0e0g8   ]2 [[ o4 a0>d0f ]2 o4d0f0a8 ]2
+I  [[ o4 g0b0>d ]2 o4<b0>d0g8 ]2 o4 g0b0>d8.r <g0b0>d8.r
+
+A  o6 cr<gg f+r gr argrfrdr  gaga grar k59,+5 [g32]12 k119,-6[g32]4 k104
+J  o5 cr<gg f+r gr argrfrdr  gaga grar g4. r8
+B  o2 c8.r <g8.r >d8.r <d8.r g8.r >d8.r <g8 grarbr
+C  o6  r8 c0d c0d [ r8 c0dr ]3  r8 c0d c0d r8 c0dr [ c0dr ]4 
+D    r1    r8 cc r8 cr c4-192r192 c4-192r192
+E  [   c+rrrd4   ]4
+F  [   r8f8e8f8 ]4
+G  [ $b c8 $s cc $bc8 $sc8 ]4
+H    r1 r2 r8 o5 dd<g8d8
+I  [[ o4 g0>c0e ]2 o4c0e0g8   ]2 [[ o4 a0>d0f ]2 o4d0f0a8 ]2
+I  [[ o4 g0b0>d ]2 o4<b0>d0g8 ]2 o4 g0b0>d8.r <g0b0>d8.r
+
+A  o6 cr<gg f+r gr argrfrar  b>c<b>c< br>d<r >cr cr crrr
+J  o5 cr<gg f+r gr argrfrar  b>c<b>c< br>d<r  cr cr c4
+B  o2 c8.r <g8.r >d8.r <d8.r g8.r >d8.r c8.r c8.r
+C  o6  r8 c0d c0d [ r8 c0dr ]3  r8 c0d c0d r8 c0dr [ c0dr ]3 r8 
+D    r1    r8 cc r8 cr c4-192r192 c4-192r192
+E  [   c+rrrd4   ]4
+F  [   r8f8e8f8 ]4
+G  [ $b c8 $s cc $bc8 $sc8 ]3 $s)14 c8c8c8 r8
+H    r1 r2 o5 d8<g8d8 r8
+I  [[ o4 g0>c0e ]2 o4c0e0g8   ]2 [[ o4 a0>d0f ]2 o4d0f0a8 ]2
+I  [[ o4 g0b0>d ]2 o4<b0>d0g8 ]2 o4 g0>c0e8.r <g0>c0e8.r
+
+A r1 r1 l16 o6 c<bb-a a-gg-f ee-dd- c<bb-a gab>c dcdf g2 
+J r1 r1 l16 o5 c<bb-a a-gg-f ee-dd- c<bb-a gab>c dcdf g2 
+B  o2 [ c8.r <g8.r> ]6 <g8.r d8.r g8.r d8.r
+C  [ o6  r8 f0g f0g [ r8 f0gr ]2 f0g8.r16 ]3
+C    o6  r8 f0g f0g r8 f0gr [ f0g8.r16 ]2
+D  [ r8 cc r8 cr r8c8 c8.r16 ]2  r8 cc r8 cr r8cr cr cr
+D   r8 cc r8 cr c4^16 r8.
+E  [   c+rrrd4   ]8
+F  [   r8f8e8f8 ]8
+H  [ o5 r4 d4 r8d8<g8>r8 ]3 r4 d4 dddd <bbbb>
+G  [ $b c8 $s cc $bc8 $sc8 ]7 $b c8 $s )16 c8 c8 c8
+I  [[ o4 g0>c0e ]2 o4c0e0g8-32r32     ]12 
+I  [[ o4 g0b0>d ]2 o4<b0>d0g8-32r32   ]4 
+
+A  o6 cr<f+f+ gr >dr c8r8 c8r8
+J  o5 cr<f+f+ gr >dr c8r8 c8r8
+B  o1 g8.r r4  >c8.r c8r8
+C  o6 c0d8 r8 r4 r8 d0er d0e8.r
+H  o4 g8 r4.    d8 (8 >dd,-8<g8
+I  o4 g0>c0e8 r4. [ o4 e0g0>c8r8]2
+E     c+8 r4.    c+8c+8 d4
+F    f8 r4.      ee e32e32,-4 e e4
+G  $b c8 r4.    $b c8 $s)14 c8c8 r8
+
+
+

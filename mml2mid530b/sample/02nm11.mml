@@ -1,0 +1,268 @@
+#title "ゆっくりしていってね (SC-55)   NYA"
+#copyright "(c) NYA"
+#timebase 48
+
+;1997/12/31
+
+;macros
+$a l8o2c4.d4cr4cd4.
+$b l8o2c4.d4cr4cd4c
+$c l8)10d4.(10cdc)5d4.)5d4.(10
+$d l8o2c4.d4.)5d4(5c)10d4.(10
+$1a l8o5r4.e4fr4.a4.
+$2a l8o2g+4(10g+)5g+4(5g+)10g+4(10g+)5g+4(5g+)10
+
+;exclusive setting
+Z C16 BT4,4 t175
+Z EXx7e,x7f,x09,x01,xf7               r16 ; GM SYSTEM ON
+Z EXx41,x10,x42,x12,{x40,0,x7f,0},xf7 r16 ; GS-RESET
+Z EXx41,x10,x42,x12,{x40,x01,x33,110},xf7 r16    ;Reverb Level 
+Z EXx41,x10,x42,x12,{x40,x01,x3a, 70},xf7 r16^2. ;Chorus Level 
+
+;channel setting
+A C10 r4 H0,1 @0   v120 k112 o2 RT BS90	;drums 5
+B C10 r4                k100 o2 RT     	;tri
+C C10 r4                k110 o2 RT  	;d-hih
+D C10 r4                k100 o3 RT	;d-tom
+E C10 r4                k67  o3 RT	;d-cym
+F C2  r4 H0,1 @35  v125 k105 q0 BS64	;bass 
+G C3  r4 H0,1 @69  v122 k120 q0 BS64	;Melo
+H C4  r4 H0,1 @69  v102 k100 q0 BS64 r8D10
+I C1  r4 H8,1 @5   v122 k115 q0 BS64 p35 ;ep
+J C1  r4                k110 q0 r192
+K C1  r4                k105 q0 r148
+L C5  r4 H0,1 @11  v112 k110 q0 BS64 p79 ;vibe
+M C6  r4 H0,1 @11  v92  k90  q0 BS64 p79 r8D8
+N C7  r4 H0,1 @24  v105 k108 q0 BS64 p95 ;guitar
+O C7  r4                k98  q0 r192
+P C8  r4 H0,1 @24  v85  k88  q0 BS64 p95r8D10
+
+ABCDEFGHIJKLMNOP r8 ;delay
+
+;expression, reverb, chorus
+A E127 y91,70  y93,15
+F E120 y91,40  y93,20
+G E125 y91,80  y93,60
+H E118 y91,127 y93,127
+I E120 y91,60  y93,50
+L E120 y91,45  y93,30
+M E118 y91,127 y93,127
+N E120 y91,50  y93,35
+P E118 y91,127 y93,127
+
+;modulation
+MH MON10
+
+;envelope
+GH FE3,0,1,-64,1,-64,1,-64,1,-64
+
+;transpose
+FGHIJKLMNOP _1
+
+ABCDEFGHIJKLMNOP r8 ;delay
+
+ABCDEFGHIJKLMNOP [
+
+;part1 
+
+A [$a]4
+B [$2a]4
+C [$1a]4
+D l1r.r.r.r.
+E l1o3a192&c+1.-192r1.r1.r2.r4.)10c+4.(10
+F  o2l8c4rr4cr4.r4<g> l8c4rr4cr4cg4>c< l8c4rr4cr4cr4<g> l8c4rr4cr4<g^4.>
+GH o5l8r4.@69e4.f4g^4a g2.d4.g4e^ 1.^ 1.
+I  o4l1e. f. g. g4.^4l8gr4 f^4.
+J  o3l1b.>c. d. e4.^4l8er4 d^4.
+K  o3l1g. a. b.>c4.^4l8cr4<b^4.
+LM l1r.r.l4r.o6c.<g.e. l8d4ef4g^2.
+NPO l1r.r.r.r.
+
+A [$a]4
+B [$2a]4
+C [$1a]4
+D l1r.r.r.r.
+E l1o3a192&c+1.-192r1.r1.r1.
+F o2l8c4rr4cr4.r4<g> l8c4rr4cr4cg4>c< l8c4rr4cr4cr4<g> l8c4rr4cr4<g^4.>
+GH o5l8r4.e4.f4g^4a g2.f4dg4e^ 1.^ 2.r4ef4g
+I o4l1e. f. g. g4.^4l8gr4 e^4.
+J o3l1b.>c. d. e4.^4l8er4 c^4.
+K o3l1g. a. b.>c4.^4l8cr4<g^4.
+LM l1r.r.l4r.o6c.<g.e. a4.r4g8^2.
+NPO l1r.r.r.r.
+
+;part 2
+
+A [$a]4
+B [$2a]4
+C [$1a]4
+D l1r.r.r.r.
+E l1o3a192&c+1.-192r1.r1.r1.
+F o2l8f4rr4fr4.r4<b> l8g4rr4gr4gf4e l8e4rr4er4er4<b l8a4rr4br4>c^4.
+GH o5l8a2.r4gf4e d4.d4.f4.a4g^ 2.r4fe4c^ 4.c4.d4.e4.
+I o4l1f. g. l2g. f. e2.^4l8e d4 e
+J o4l1c. d. l2d. d. c2.^4l8c<b4>c
+K o3l1a. b. l2b. b. a2.^4l8a a4 a
+LM l1r.r.r.r.
+NP l4o4r.c. f.a. l8g4.f4 e^4 fg4.   r4.e4.f4.e4.  d4.c4<b^4>cd4.
+O l4o3r.a.>c.f. l8d4.c4<b^4>cd4.   r4.<b4.>c4.<b4. a4.a4 g^4 ga4.
+
+A [$a]3c1.
+B [$2a]3r1.
+C [$1a]3r2.r4.a4.
+D l1r.r.r.r.
+E l1o3a192&c+1.-192r1.r1.a192&c+2.-192r4.r4.
+F o2l8d4rr4dr4.r4d l8d4rr4dr4d<b4g l8g4rr4gr4gr4g g1.
+GH o5l8f1.^ 2.r4fe4d^ 2.^4ef4g^ 1.
+I o4l1f2.^4.^4f8^ 1. g1. g1.
+J o4l1c2.^4.^4c8^ 1. d1. e-1.
+K o3l1a2.^4.^4a8^ 1. b1. b1.
+LM l8r2.r4.o6d4c^ 1.< r1. l4b.g.e-.g.&
+NP l8d4c^4.^2.^ 1. d2.r4 ef4g^ 1.
+O l8a4a^4.^2.^ 1. b2.r4>cd4e-^ 1.
+
+;part 3
+
+A [$a]4
+B [$2a]4
+C [$1a]4
+D l1r.r.r.r.
+E l1o3a192&c+1.-192r1.r1.r2.r4)10c+8^4.(10
+F o2l8c4rr4cr4.r4<g> l8c4rr4cr4cg4>c< l8c4rr4cr4cr4<g> l8c4rr4cr4<g^4.>
+GH o5l8r4.e4.f4g^4a g2.d4.g4e^ 1.^ 1.
+I o4l1e. f. g. g4.^4l8gr4 f^4.
+J o3l1b.>c. d. e4.^4l8er4 d^4.
+K o3l1g. a. b.>c4.^4l8cr4<b^4.
+LM l1r.r.l4r.o6c.<g.e. l8d4ef4g^2.
+NPO l1r.r.r.r.
+
+A [$a]4
+B [$2a]4
+C [$1a]4
+D l1r.r.r.r.
+E l1o3a192&c+1.-192r1.r1.r1.
+F o2l8c4rr4cr4.r4<g> l8c4rr4cr4cg4>c< l8c4rr4cr4cr4<g> l8c4rr4cr4<g^4.>
+GH o5l8r4.e4.f4g^4a g2.f4dg4e^ 1.^ 2.r4ef4g
+I o4l1e. f. g. g4.^4l8gr4 e^4.
+J o3l1b.>c. d. e4.^4l8er4 c^4.
+K o3l1g. a. b.>c4.^4l8cr4<g^4.
+LM l1r.r.l4r.o6c.<g.e. a4(20b8)10a4)10g8^2.
+NPO l1r.r.r.r.
+
+;part 4
+
+A [$a]4
+B [$2a]4
+C [$1a]4
+D l1r.r.r.r.
+E l1o3a192&c+1.-192r1.r1.r2.)10a4.(10r4.
+F o2l8f4rr4fr4.r4<b> l8g4rr4gr4gf4e l8e4rr4er4er4<b l8a4rr4ar4>e^4.
+GH o5l8a2.r4gf4e d4.d4.f4.a4g^ 2.r4ab4>c^ 4.c4.<b4>c^4<a&
+I o4l1f. g. l2g. f. a4.r4 a4. l8 g4.f&
+J o4l1c. d. l2d. d. e4.e4 e4. l8 d4.c&
+K o3l1a. b. l2b. b.>c4.c4 c4.<l8 b4.a&
+LM l1r.r.r.r.
+NP l4o4r.c. f.a. l8g4.f4 e^4 fg4.   r4. e4.f4.g4.  a4.g4a^4b>c4.
+O l4o3r.a.>c.f. l8d4.c4<b^4>cd4.  r4.<b4.>c4.d4.  e4.d4e^4f g4.
+
+A [$a]3$c
+B [$2a]4
+C [$1a]4
+D l1r.r.r. l8r4.o3d<bgr4.g4.
+E l1o3a192&c+1.-192 r1. r1. a192&c+2.-192 r4 )10 a8 (10 r4.
+F o2l8f4rr4fr4.r4f l8f4rr4fr4fd4<g l8g4rr4gr4gr4g g4rg4ra4b^4.
+GH r1.^ 2.r4b>c4d^ 1. @64)7<a4.g4.a4b^4.
+I  r2.^4.^4f8^ 1. g1. l4g.g.a4b8^4.
+J  r2.^4.^4c8^ 1. d1. l4e.e.f4g8^4.
+K  r2.^4.^4a8^ 1. b1. l4b.b.>c4d8^4.
+LM l8r2.r4.o6g4f^ 1.  r1. l4a.g.a4b8^4.
+NP l8<g4f^4.^2.^ 1. d1. l4e.e. f4g8^4.
+O l8 d4c^4.^2.^ 1.<b1. l4b.b.>c4d8^4.
+
+;part 5
+
+A [$a]4
+B [$2a]4
+C [$1a]4
+D l1r.r.r.r.
+E l1o3a192&c+1.-192r1.r1.r1.
+F  o2l8c4rr4cr2. c4rr4cr2.< a4rr4ar2. a4rr4ar4>g^4.
+GH l8o6c4rr4c^4.r4f^ 4.e4.d4e^4. l8c4rr4c^4.r4f^ 4.e4.d4e^4e&
+I  o4l1g. g2. f2. e. l8e4.r4fr4 g^4.
+J  o4l1e. e2. d2. c. l8c4.r4dr4 e^4.
+K  o4l1c. c2.<b2. a. l8a4.r4ar4 b^4.
+LM l4r1.o5r.c.g>c8^4.&r1. r.<c.g.b.&
+NP o3l4g.&>c. g.&>c. l4d.c.<b>c8^4. <c4.&e4. a4.&>c4. l4d.c.<b>c8^4c8&
+O o3l4e1.         >l4b.a. g a8^4. <a1.>            l4b.a. ga8^4a8&
+
+A [$a]3$d
+B [$2a]4
+C [$1a]4
+D l1r.r.r.l8o3r4.d<bgr4.r4.
+E l1a192&c+1.-192r1.r1.r2.)10a2.(10
+F  o2l8f4rr4fr2. e4rr4er2.< f4rr4fr2. g4rr4ar4b^4.
+GH r4l8rr4e^4.r4e ^4.d4.c4<b^4. a4.r4b^4.>c4d^ 4.g4.f4d^4c&
+I  l1f. e. l8f4.r4 e^2.  f4.r4g^2.
+J  l1c.<b.>l8c4.r4 c^2.  c4.r4d^2.
+K  l1a. g. l8a4.r4 a^2.  a4.r4b^2.
+LM r1. r1. r1. l4>c.<b.>cd8^4c8&
+NP  r4.^4<f8^4g8a4. g2.^4l8ag4. a4.r4b^2.> c4.r4d^2.
+O   r4.^4 d8^4e8f4. e2.^4l8fe4. f4.r4g^2.  a4.r4b^2.
+
+;part 6
+
+A [$a]4
+B [$2a]4
+C [$1a]4
+D l1r.r.r.r.
+E l1o3a192&c+1.-192r1.r1.r2.r4.r4a192&c+8-192
+F  o2l8c4rr4cr2. c4rr4cr2.< a4rr4ar2. a4rr4ar4a^4.
+GH r4l8o6rr4c^4.r4f ^4.e4.d4e^4. l8c4rr4c^4.r4f^ 4.e4.d4e^4c&
+I  o4l1g. g2. f2. e. l8e4.r4fr4 g^4.
+J  o4l1e. e2. d2. c. l8c4.r4dr4 e^4.
+K  o4l1c. c2.<b2. a. l8a4.r4ar4 b^4.
+LM l4r1.o5r.c.g4>c8^4.& r1. r.<c.g4b8^4a8&
+NP o3l4g.&>c.g.&>c. l4d.c.<b>c8^4. <c4.&e4.a4.&>c4. l4d.c.<b>c8^4c8&
+O o3l4e1.         >l4b.a. g a8^4. <a1.>            l4b.a. ga8^4a8&
+
+A [$a]2 l8c4rd-4cr2. c4rd-4cr4rd4.
+B [$2a]2 r1.r1.
+C [$1a]2 r2.r4.a4. r2.r4.a4.
+D l1r.r.r.r.
+E l1r1. r1.l8r4.r4)10c+r2. r4.r4a(10r2.
+F  o1l8f4rr4fr2. f4rr4fr2. g4rr4g^2. g4rr4g^2.
+GH r2.l8o6r4<ab4>c^ 1. d4.^4e-^2. g4.^4b^2.
+I  o4l1f2.^4.^4f8^ 1. l8g4. r4 g ^2.  g4.r4 b^2.
+J  o4l1c2.^4.^4c8^ 1. l8d4. r4 e-^2.  e4.r4 f^2.
+K  o3l1a2.^4.^4a8^ 1. l8b4. r4 b ^2.  b4.r4>d^2.
+LM r1. r1. >l8d4.r4e-^2. g4.r4b^2.
+NP  r4.^4<f8^4g8a4f8^ 1. l8 d4.r4e-^2. g4.r4 b^2.
+O  r4.^4 d8^4e8f4c8^ 1. l8<b4.r4b^2. >e4.r4 f^2.
+
+GH (7
+
+ABCDEFGHIJKLMNOP ]2
+
+;part7
+
+ABCDEFGHIJKLM [
+
+A [$a]4
+B [$2a]4
+C [$1a]4
+D l1r.r.r.r.
+E l1o3a192&c+1.-192r1.r1.r2.r4.)10c+4.(10
+F  o2l8c4rr4cr4.r4<g> l8c4rr4cr4cg4>c< l8c4rr4cr4cr4<g> l8c4rr4cr4<g^4.>
+GH o5l8r4.e4.f4g^4a g2.d4.g4e^ 1.^ 1.
+I  o4l1e. f. g. g4.^4l8gr4 f^4.
+J  o3l1b.>c. d. e4.^4l8er4 d^4.
+K  o3l1g. a. b.>c4.^4l8cr4<b^4.
+LM l1r.r.l4r.o6c.<g.e. l8d4ef4g^2.
+
+ABCDEFGHIJKLM ]4
+
+;FADE OUT
+N [r1.r1.r1.r1.]2
+N Z{z0=128} [Z{z0=z0-1} EXx41,x10,x42,x12,{x40,x00,x04,z0},xf7 r12]128
+
+

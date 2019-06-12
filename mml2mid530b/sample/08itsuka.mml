@@ -1,0 +1,335 @@
+#title "いつか歩いた道"
+#copyright "Composed by 74HC04,with SC-88VL & MML2MID"
+#timebase 48
+
+;--- 音源イニシャライズ
+Z r16
+Z EX x7e,x7f,x09,x01,xf7                      ; GM SYSTEM ON,By COOLGS.TXT
+Z r16
+Z EX x41,x10,x42,x12,{x40,x00,x7f,x00},xf7    ; GS RESET,By COOLGS.TXT
+
+;--- 調整
+
+ABCDEFGHRZ	r2
+
+;--- 初期設定
+
+A	t75
+
+A	C2  H8,2  @4   v105 k110 E127 y91,100 y94,48
+B	C3  H1,2  @98  v80  k80  E100 y91,110 y94,64
+C	C4  H2,2  @98  v80  k80  E100 y91,90  y94,64
+D	C5  H2,2  @80  v105 k90  E120 y91,80  y94,96
+D	Nx01,x64,96
+E	C6  H1,2  @38  v110 k90  E120 y91,75  y94,16
+E	Nx01,x64,72 Nx01,x66,48
+F	C7  H0,2  @50  v105 k80  E100 y91,80  y94,24
+1F	C7		    k80
+G	C8  H2,2  @80  v90  k75  E120 y91,80  y94,96
+G	BR4 BS64
+H	C9  H24,2 @5   v85  k90  E115 y91,110 y94,96
+R	C10 H0,2 @64  v100       E120 y91,100 y94,64
+1R	C10
+2R	C10
+3R	C10
+4R	C10
+5R	C10
+6R	C10
+7R	C10
+8R	C10
+R	N24,27,84 Nx18,24,62
+
+;--- ドラム用マクロ設定
+
+#include "adc0804.mml"
+
+;オリジナルドラムセット[ADC-0804]
+;某普及型Ａ／Ｄコンバータと同じ型番なのは気のせいではないです(爆
+
+;--- エンベロープマクロ設定
+
+$1f	E100 FE1,1,32,-60
+$2f	E120 MOF FE2,1,8,-10 FM2,1,16.,-1,32,+10,4.,+30,4,-20,4,-10
+$3f	E120 FE4,1,1,-90
+$4f	E100 FE4,1,4,+20
+$5f	BS32 FB2,1,32,+32
+$6f	E120 FE4,1,2,-60
+$7f	BS96 FB2,1,32,-32
+$8f	E100 FE4,1,4,+20,2,+1,4,-20
+$9f	BS64 FB2,1,32,-1,48,+64
+$1g	E100 FE4,1,1,-1,1,-1,1,-80
+
+;--- 各種エクスクルーシブ
+
+Z	r16
+Z	EX x41,x10,x42,x12,{x40,x01,x50,0},xf7      ; DELAY MACRO [*]
+Z	EX x41,x10,x42,x12,{x40,x01,x51,4},xf7      ; DELAY PRE-LPF
+Z	EX x41,x10,x42,x12,{x40,x01,x52,103},xf7      ; DELAY TIME CENTER 100
+Z	EX x41,x10,x42,x12,{x40,x01,x53,40},xf7      ; DELAY TIME RATIO LEFT
+Z	EX x41,x10,x42,x12,{x40,x01,x54,55},xf7      ; DELAY TIME RATIO RIGHT
+Z	EX x41,x10,x42,x12,{x40,x01,x55,56},xf7      ; DELAY LEVEL CENTER
+Z	EX x41,x10,x42,x12,{x40,x01,x56,48},xf7      ; DELAY LEVEL LEFT
+Z	EX x41,x10,x42,x12,{x40,x01,x57,36},xf7      ; DELAY LEVEL RIGHT
+Z	EX x41,x10,x42,x12,{x40,x01,x58,36},xf7      ; DELAY LEVEL
+Z	EX x41,x10,x42,x12,{x40,x01,x59,72},xf7      ; DELAY FEEDBACK
+Z	EX x41,x10,x42,x12,{x40,x01,x5A,96},xf7      ; DELAY SENDLEVEL TO REVERB
+Z	EX x41,x10,x42,x12,{x40,0,0,0,x03,x0d,x09},xf7 ; Master-Tune [*]
+
+
+;--- 調整
+
+ABCDEFGHR	r2r1
+
+;---ソフトエレピ低音部
+
+A	o3 l8 [XP k110,-2 cfgb-16>c16^2< XP k110,-2 <b->fgb-16>c16^2<]2
+A	o3 l8 [XP k110,-2 cfgb-16>c16^2< XP k110,-2 <b->fgb-16>c16^2<]8
+A	o3 l8 [[XP k110,-2 <a->ce-a-^2 XP k110,-2 <b->dfb-^2 XP k110,-2 cfg>c^2< XP k110,-2 : <b->dfb-^4. <b->]2 : cfg> c^4.<<b->]2 ceg>c^2
+A	o3 l8 [[XP k110,-2 <a->ce-a-^2]2 [XP k110,-2 <b->dfb-^2]2]2
+A	o3 l8 [[XP k110,-2 <a->ce-a-^2]2 [XP k110,-2 <b->dfb-^2]2]4
+A	o3 l8 [[XP k110,-2 <a->ce-a-^2]2 [XP k110,-2 <b->dfb-^2]2]2
+A	o3 l8 [[XP k110,-2 cfg>c^2< XP k110,-2 <b->fg>c^2<
+A	XP k110,-2 <a->ce- :a-^2 XP k110,-2 <b->dfb-^2 ]2 :a-4. X <b-4 P k110,-2 >cfg>c^2< o3]2 a-4.^1 X <b-4 P k110,-2 >cfg>c^2< o3
+A	;o3 l8 [XP k110,-2 <a->ce-a-^2 XP k110,-2 <b->dfb-^2 XP k110,-2 cfg>c^2< XP k110,-2 : cfg>c^4. <<b->]2 ceg>c^2
+A	X o2 k110 a-1b-2..g16b-16>c1c2.<b-4 a-1b-2..g16b-16>c1c1^1^1
+
+;---バッキング(クリスタル二重重ね合わせ)
+
+BC	o6 l12 $1f [k86,-3 [c<gf>]4 k86,-3[<b-gf>]4]2
+BC	[k86,-3 [c<gf>]4 k86,-3[<b-gf>]4]8
+BC	[[k92,-3 [c<gfb-gf>]2]2 ]7
+BC	k92,-3 [c<gfb-gf>]2 k92,-3 [c<ge>]2 c2
+BC	[k92,-3 [c<gf>]4 k92,-3[<b-gf>]4]4
+BC	[[k92,-3 [c<gfb-gf>]2]2 ]4
+BC	[k92,-3 [c<gf>]4 k92,-3[<b-gf>]4]2
+BC	[[k92,-3 [c<gfb-gf>]2]2 ]2
+BC	[[k92,-3 [c<gfb-gf>]2]2 ]4
+BC	[k92,-3 [c<gf>]4 k92,-3[<b-gf>]4]2
+BC	[k92,-3 [c<gfb-gf>]2]3 k92,-3 [c<gf>]4
+BC	[k92,-3 [c<gf>]4 k92,-3[<b-gf>]4]2
+BC	[k92,-3 [c<gfb-gf>]2]2 [k92,-3 [c<gf>]4]3
+BC	[k92,-3 [c<gf>]4 :k92,-3[<b-gf>]4]2 k92,-3 [c<gf>]4
+BC	[k92,-3 [c<gfb-gf>]2]2 k92,-3 [c<gfb-gf>]2 k92,-3 [c<ge>]12
+
+;---ボーカルパートっぽいHollow mini
+
+D	$2f r1r1r1r2. o2 y5,1 y65,127 o4 b-4
+D	o5 c4.f16g16^2..f16g16b-8.g8.f8 y65,0 c4. y65,127 f16g16^1^4 y65,0 <b-4 y65,127
+D	o5 c4.f16g16^2..f16g16b-8.g8.b-8>d4.e-16< y65,0 g16^1^4 f4
+D	o5 c4. y65,127 f16g16^1b-8.g8.f8 y65,0 c4. y65,127 f16g16^1^4 y65,0 <b-4 y65,127
+D	o5 c4.f16g16^2..f16g16b-8.g8.b-16>c16d4.e-16c16^1^4 y65,0 <<b-4 y65,127
+D	o5 c8.f8.g8 y65,0 c4 y65,127 <b-4>c8.f8.g8b-8.g8.b-8>d4.e-16<g16^8f8^1 y65,0 <b-4 y65,127
+D	o5 c8.f8.g8 y65,0 c4 y65,127 <b-4>c8.f8.g8c8.<b-8.>d16e-16d4.e-16c16^4.f16g16^2. y65,0 <b-4 y65,127
+D	o5 c8.f8.g8 y65,0 c4 y65,127 <b-4>c8.f8.g8b-8.g8.b-16>c16d4.e-16<g16^8f4c16f16g8.f8.g8 b-12g12f12 y65,0 <b-4 y65,127
+D	o5 c8.f8.g8 y65,0 c4 y65,127 <b-4>c8.f8.g8c8.<b-8.>d16e-16d4.e-16c16^4.f16g16>c1 y65,0
+D	r1r1r1r1 r1r1r1 y93,48 r2. o3 b-4 y65,127
+D	o4 c4.f16g16^2..f16g16b-8.g8.f16g16 y65,0 c4. y65,127 f16g16^1^4 y65,0 <b-4 y65,127
+D	o4 c4.f16g16^2..f16g16b-8.g8.b-8>d4.e-16< y65,0 g16^1^4 f4
+D	o4 c4. y65,127 f16g16^1b-8.g8.f8 y65,0 c4. y65,127 f16g16^1^4 y65,0 <b-4 y65,127
+D	o4 c4.f16g16^2..f16g16b-8.g8.b-16>c16d4.e-16c16^1^4 y65,0 <b-4 y65,127
+D	o5 c1^2.<b-4>c1^2.<b-4>c1^1^1^1 y93,0 y93,48 y65,0
+
+D	o4 r4 c4 y65,127 d4e-8f16g16b-4.a-16g16f4g4c4.f16g16^2c4.f16g16^4<b-4
+D	o4 c4d4e-4.f16g16b-4.a-16g16f4g4c2.<b-4>c1 y93,0
+D	o5 r4 c4d4e-8f16g16b-4.a-16g16f4g4c4.f16g16^2c4.f16g16b-12g12f12<b-4
+D	o5 c4d4e-4.f16g16b-8.g8.b-8>c8.d8.e-8d8e-16c16^2^1<b-4>c1
+D	r1r1r1r1 r1r1r1r1^1^1
+
+;---エレキベース
+
+E	[r1r1r1r1]5 $3f
+E	o1[[a-1 b-1 >c1 :<b-1]2 :c2.<b-4]2 c1
+E	o1[[a-8.a-16r8a-16a-16r2]2 [b-8.b-16r8b-16b-16r2]2 ]2
+E	o1[[a-8.a-16r8a-16a-16r2]2 [b-8.b-16r8b-16b-16r2]2 ]4
+E	o1[[a-8.a-16r8a-16a-16r2]2 [b-8.b-16r8b-16b-16r2]2 ]2
+
+E	o2 c1<b-1a-1b-1> c1<b-1a-2.b-4>c1
+E	o2 c1<b-1a-1b-1> c1<b-1a-2.^1b-4>c1
+;E	o2 l4 c<b-g2a-2b-2a-1b-1> c<b-g2a-2g2f2g2>c1
+;E	o2 l4 c<b-g2a-2b-2a-1b-1> c<b-g2a-2b-2a-2b-1^4b-4>c1
+E	[o1 a-8.a-16r8a-16a-16r2 b-8.b-16r8b-16b-16r2 >c8.c16r8c16c16r2 :c8.c16r8c16c16r8 $9f f8 FB0 f16c16<g8 ]2 c1^1^1
+
+;---シンセストリングス
+
+F	[r1r1r1r1]3 y5,1 y65,127
+F	o4 r2.$4f e-4d2f2 $6f e-2r4 $4f e-4d2f2
+1F	o4 r2.    g4f2b-2     g2r4      g4f2b-2
+F	$6f  e-2r4 $4f e-4d2f2 $6f e-2r4 $4f e-4d2f4d4
+1F	     g2r4      g4f2b-2     g2r4      g4f2b-4f4
+F	e-1d2f2e-1d2.d4
+1F	g1f2b-2g1g2.f4
+F	e-1d2f2e-1d2e-2
+1F	g1f2b-2g1g1
+F	e-1d2f2e-1d2.d4
+1F	g1f2b-2g1g2.f4
+F	e-1d2f2e-1e1
+1F	g1f2b-2g1g1
+F	[$8f e-1e-1d1 : $4f f2. $6f d4]2 f1
+1F	[    g1g1f1   :     b-2.    f4]2 b-1
+F	[$8f e-1e-1d1 : $4f f2. $6f d4]2 f1
+1F	[    g1g1f1   :     b-2.    f4]2 b-1
+F	[$8f e-1e-1d1 : $4f f2. $6f d4]2 f1
+1F	[    g1g1f1   :     b-2.    f4]2 b-1
+F	[$8f e-1e-1d1 : $4f f2. $6f d4]2 f1 $4f
+1F	[    g1g1f1   :     b-2.    f4]2 b-1
+F	[e-1f2d2e-1d1 e-1f2d2:g2f2g1]2 g2^1 f2g1
+1F	[g1b-2f2g1g2f2 g1b-2f2:e-2.d4e-4d4e-2]2 e-2.^1 d4e-4d4e-2
+;F	e-1f2d2e-1d2e-2 e-1f2d2e-1e1
+;1F	g1b-2f2g1f2g2 g1b-2f2g1g1
+F	o4 r2.$4f e-4d2f2 e-1 d2e-4d4
+1F	o4 r2.    g4f2b-2 g1  f2g4f4
+F	$6f  e-2r4 $4f e-4d2f2 e-1 $1g e1^1^1
+1F	     g2r4      g4f2b-2 g1      g1^1^1
+
+;---エレキギター風味のHollow mini(謎
+
+G	[r1r1r1: r1]5 y5,1 y65,127 $5f l8 k75 r2. o4 f4
+G	o4 g1f2.e-c16<b-16>c4c2.>c2.<f4
+G	o4 g1f4f2e-c16<b->c4c2.-16>c.c.c.c.<f4
+G	o4 g1f2.e-c16<b-16>c.c.c.c.c4>c.c.^4.<f16f.
+G	o4 g1f4.f.f.e-c16<b-16>c.c2.^16>c1<
+G	o4 [[k75,-5 g.g.g.g.g4]2 [k75,-5 b-.b-.b-.: b-.b-4]2 $7f b-.b-4 $5f]2 k75
+G	o4 [[[k75,-5 g.g.g.g.g4]2 [k75,-5 b-.b-.b-.: b-.b-4]2 $7f b-.b-4 $5f]2 k75]2
+G	o4 [[k75,-5 g.g.g.g.g4]2 [k75,-5 b-.b-.b-.: b-.b-4]2 $7f b-.b-4 $5f]2 k75
+G	o4 g1f1e-1f1 g1f1e-2.f4g1
+G	o4 g1b-1>c1<b-4.g16f8.f4. g1b-1>k75,-5 c.c.c.c.c4 k75,-5 c.c.c.c.<b-4> k75 c2.<f4
+G	o4 k75,-5 g.g.g.g.g4 k75,-5 b-.b-.b-.b-.b-4 >k75,-5 c.c.c.c.c4<k75,-5 b-.b-.b-.b-.f4
+G	o4 k75,-5 g.g.g.g.g4 k75,-5 b-.b-.b-.b-.b-4 >k75,-5 c.c.c.c.c4 k75 c1^1^2r2
+
+;---ハードＦＭピアノ
+
+H	[r1r1r1 :r1]11 Q6 r2. f4 o5
+H	l8 [g.f.gc2 g.f.gc4<b-4> g.f.gc2 g.f.gb-.>c.<f]4
+H	l8 [g.f.gc2 g.f.gc4<b-4> g.f.g :c2g.f.gb-.>c.<f]2 c4.f16g16g.f.g>e-.d.<b-
+H	c1r1r1r1 r1r1r1r1
+H	r1r1r1r1 r1r1 r1 r1r2r8 o5 l8 fgb->
+H	[c.<g.f16g16^2 >:c.<g.f16g16c4b-4> c.<g.f16g16^4b-4> c.<b-.>ce-.d.c16<b-16>]2 c.<g.f16g16c.g.b->c.<g.f16g16c4.f16g16>l24 y94,127 c4.c&f&g&>c2^1^1
+;H	r1r1r1r1 r1r1r1r1^1^1
+
+;H	o5 c8.f8.g8c4<b-4>c8.f8.g8b-8.g8.b-8>d4.e-16<g16^8f8^1<b-4
+;H	o5 c8.f8.g8c4<b-4>c8.f8.g8c8.<b-8.>d16e-16d4.e-16c16^4.f16g16^2.<b-4
+;H	o5 c8.f8.g8c4<b-4>c8.f8.g8b-8.g8.b-16>c16d4.e-16<g16^8f4c16f16g8.f8.g8 b-12g12f12<b-4
+;H	o5 c8.f8.g8c4<b-4>c8.f8.g8c8.<b-8.>d16e-16d4.e-16c16^4.f16g16>c1
+
+;---複雑奇怪なドラムパート(爆
+
+$b	k85   o2 _-1 ;kick
+$1s	k88   o2 _4  ;snare
+;$1s	k88   o1 _4  ;slap
+$h	k88   o2 _6  ;hihat
+$c	k96   o3 _1  ;cym.1
+$d	k112  o3 _4  ;cym.2
+$m	k88   o2 _2  ;snare 2
+$z	k100  o5 _3  ;Claves
+$y	k100  o1 _3  ;High Q
+$x	k85   o6 _-2 ;Shaker
+$v	k90   o4 _0  ;Spark
+$w	k110  o4 _-2 ;808 Cym.
+$u	k100  o1 _0  ;C.Cymbal(トク
+$t	k103  o3 _4  ;Chi.Cym
+$s	k45   o6 _-1 ;Jingle Bell
+$2s	k45   o6 _0  ;Jingle Bell(トク
+
+$1m	k80   o2 _5  ;L-tom 2(NN41
+$2m	k80   o3 _-1 ;M-tom 2(NN47
+$3m	k80   o3 _0  ;H-tom 2(NN48
+
+;R	t300;テスト用
+
+R	$z l8 [r8cc4c.c.:r8]4 c
+
+R	[[r8cc4c.c.:r8]4 c]2
+R	[[r8cc4c.c.:r8]4 c]2
+1R	$y l8 [[r8c.c.r8c.:r8.]4 c.]2
+2R	$u r1r1r1r1 r1r1r1r2 k10,+2 l64[c]32
+
+R	[[r8cc4c.c.:r8]4 c]2
+1R	[[r8c.c.r8c.:r8.]4 c.]2
+2R	l8 $x [cccccc16c16cc cc16c16cc : cccc]4 c16c16ccc16c16
+3R	l4 $v [r2.c]8
+4R	l8 $b [c.c.cc.c.r8]8
+5R	$w [c1r1r1r1]2
+6R	$u r1r1r1r1 r1r1r1r2 k10,+2 l64[c]32
+;※
+R	[r8cc4c.c.:r8]4 c [r8cc4c.c.r8]3 c.c.c8c4c4
+1R	[r8c.c. r8:c.r8.]4 c.c. [r8c.c. r8c.r8.]3 cc.c.c2
+2R	l8 $x [cccccc16c16cc ccc16c16c:cc16c16cc]2 c16c16ccc16c16 cccccc16c16cc ccc16c16ccc16c16cc ccccc16c16ccc ccc16c16cccc4
+3R	[r2.c]8
+4R	l8 $b [c.c.cc.c.r8]7 c.c.cc2
+5R	[c1r1r1:r1]2 $c r2c2
+6R	r1r1r1r1 r1r1r1r2 k10,+2 l64[c]32
+
+R	[[r8cc4c.c.:r8]4 c]2
+1R	[[cc.c. c :c.r8.]4 cc4]2
+2R	l8 $x [cccccc16c16cc cc16c16cc : cccc]4 c16c16ccc16c16
+3R	l4 $v [r2.c]8
+4R	l8 $b [c.c.cc.c.r8]8
+5R	$t c1r1r1r1 $w c1r1r1r1
+6R	$u r1r1r1r2 k10,+1 l64[c]32 r1r1r1r2 k10,+2 l64[c]32
+
+R	[[r8cc4c.c.:r8]4 c]2
+1R	[[cc.c. c :c.r8.]4 cc4]2
+2R	l8 $x [cccccc16c16cc cc16c16cc : cccc]4 c16c16ccc16c16
+3R	l4 $v [r2.c]8
+4R	l8 $b [c.c.cc.c.r8]8
+5R	$t c1r1r1r1 $w c1r1r1r2. $c c4
+6R	$u r1r1r1r2 k10,+1 l64[c]32 r1r1r1r2 k10,+2 l64[c]32
+7R	$1s k88 r1r1r1r1 r1r1r1r2r16c8.c8c16c16
+
+R	[[r8cc4c.c.:r8]4 c]2
+1R	[[cc.c. c :c.r8.]4 cc4]2
+2R	l8 $x [cccccc16c16cc cc16c16cc : cccc]4 c16c16ccc16c16
+3R	l4 $v [r2.c]8
+4R	l8 $b [c.c.r8c.c.:r8]8 c8
+5R	$t c1r1r1r1 $w c1r1r1 $c r2r16c8.c4
+6R	$u r1r1r1r2 k10,+1 l64[c]32 r1r1r1r2 k10,+2 l64[c]32
+7R	$s l4 [cccc]8
+8R	$1s k88[r4c4r4c4 : r4c4r4c4]4 r4 c8.c8c8.c8.c16
+
+R	[[r8cc4c.c.:r8]4 c]2
+1R	[[cc.c. c :c.r8.]4 cc4]2
+2R	l8 $x [cccccc16c16cc cc16c16cc : cccc]4 cc16c16cccr4.
+3R	l4 $v [r2.c]8
+4R	l8 $b [c.c.ccc16c.:r8]8 c8
+5R	$t c1r1r1r1 $w c1r1r1 $c r2r16c8.c4
+6R	$u r1r1r1r2 k10,+1 l64[c]32 r1r1r1r2 k10,+2 l64[c]32
+7R	$s l4 [cccc]8
+8R	$1s k88[[r4c4r4c4 : r4c4r4c8.c16]2 :r4c8.c8c8.c4 ]2 r4 c8.c8  k32,+24 c64c64c8.-32 k76,+12 c12c12c12 k88
+
+;R	t75;テスト用
+
+R	r1r1r1r1 r1r1r1r1;[[r8cc4c.c.:r8]4 c]2
+1R	r1r1r1r1 r1r1r1r1 ;[[cc.c. c :c.r8.]4 cc4]2
+2R	r1r1r1r1 r1r1r1r1
+3R	l8 r1r1r1r1 r1r1r1r1;$b [c.c.r8c.c.:r8]8 c8
+4R	$t c1r1 $w c1r1 c1r1 c1r1
+5R	$u [r1r2 k10,+1 l64[c]32 ]3 r1r2 k10,+2 l64[c]32
+6R	$s [c2c2]4
+7R	$2s [r1r2 l48 k10,+2 [c]24]4
+8R	r1r1r1r1 r1r1r1r1;$1s r1r1r1r1 r1r1r1r2r16c8.c8c16c16
+
+R	r1r1r1r1 r1r1 r1 r1 r2 c16cc.c;r8cc4c.c.c	;[r8cc4c.c.:r8]4 c [r8cc4c.c.r8]2 c1^2.c16c8. r8cc4c.c.c 
+1R	r1r1r1r1 r1r1 r1 r1 r2 c.cc16c		;[cc.c. c :c.r8.]4 cc4 [cc.c. cc.r8.]2.cc.c.c2.c4 cc.c.cc4
+2R	l8 $x r1r1r1r1 r1r1r1r1r2 c16c16ccc16c16
+3R	r1r1r1r1 r1r1 r1 r1r2 $b c.c.c16c16		;l8 $b [c.c.ccc16c.:r8]6 c.c.c^2.cc c.c.c16c16c4c4
+4R	$c c1r1 $w c1r1 c1r1 c1 $t r1 $c c2. $c c4
+5R	$u [r1r2 k10,+1 l64[c]32 ]3 r1r2 k10,+2 l64[c]32 r2 k10,+2 l64[c]32
+6R	$s l4[[ccc:c]2 r4 ]3 c1^2.c cccc
+7R	$2s [r1r2 l48 k10,+3 [c]24]3 r1 r1r2 l48 k10,+3 [c]24
+8R	r1r1r1r1 r1r1 r1 r1r2r16 $1s c8.c8c16c16	;$1s k88[[r4c4r4c4 : r4c4r4c8.c16]2 :r4c8.c8c8.c4]2 c4 k24,+16 c12c12c12 c2 k88 c4 c8.c8c8.c8c16c16
+
+;↑最後のヤマ場のドラム部分。リテイクの嵐(汗
+;結局休符だらけにしてさっぱりさせたのは、ただの手抜きという噂が有力(爆
+
+R	[r8cc4c.c.:r8]4 c [r8cc4c.c.r8]3 c.c.c8c2
+1R	[cc.c. c :c.r8.]4 cc4 [cc.c. cc.r8.]3 cc.c.c2
+2R	l8 $x [cccccc16c16cc cc16c16cc: cccc]2 c16c16ccc16c16 cccccc16c16cc cc16c16cccccc ccccc16c16ccc cc16c16ccc2
+3R	l4 $v [r2.c]7 r1
+4R	l8 $b [c.c.cc.c.r8]7 c.c.cc2
+5R	$t c1r1r1r1 $w c1r1 $c r1r2c2 
+6R	$u r1r1r1r2 k10,+1 l64[c]32 r1r1r1 k10,+2 l64[c]32 r2
+7R	$s l4 [ccc:c]8 r4
+8R	$1s k88[r4c4r4c4 :r4c4r4c8.c16]2 r4c4 r16c8.c8c16c16 [r4c4r4c4 :r4c4r4c4]2 r4 c12 $3m c12 $2m c12 $1m c2
+
+
+;[End of MML]

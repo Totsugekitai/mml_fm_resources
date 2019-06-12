@@ -1,0 +1,144 @@
+BODY
+{
+	font-family	: "ÇlÇr ÉSÉVÉbÉN", monospace;
+	font		: normal normal 1.0em;
+	background	: #efe
+	color		: black;
+	line-height	: 1.5;
+	margin-left	: 15%;
+	margin-right	: 15%;
+}
+
+
+TABLE
+{
+	line-height: 1.5;
+}
+
+B.KEYWORD
+{
+	font-family:	"FixedSys", monospace;
+	font-size:		1.0em;
+	font-weight:	bold;
+	background:		black;
+	color:			white;
+	line-height:	1.0;
+}
+
+B.COMMENT
+{
+	font-family:	"FixedSys", monospace;
+	font-weight:	normal;
+	background:		black;
+	color:			lime;
+	line-height:	1.0;
+}
+
+
+B.STRING
+{
+	font-family:	"FixedSys", monospace;
+	font-weight:	normal;
+	background:		black;
+	color:			cyan;
+	line-height:	1.0;
+}
+
+B.LINE
+{
+	font-family:	"FixedSys", monospace;
+	font-weight:	normal;
+	background:		black;
+	color:			white;
+	line-height:	1.0;
+}
+
+
+PRE
+{
+	font-family:	"FixedSys", monospace;
+	font-size:		1.0em;
+	background:		black;
+	color:			#ccc;
+	line-height:	1.0;
+	border-width:	0.3em 0.3em;
+	border-style:	solid solid;
+	border-color:	black;
+	margin-left:	2.0em;
+	margin-right:	2.0em;
+}
+
+P
+{
+	font-size  : 1.0em;
+	line-height: 1.5;
+	text-indent: 1em;
+}
+
+
+H1
+{
+	font-family	: "ÇlÇr ÉSÉVÉbÉN", monospace;
+	font		: normal normal 2.0em;
+/*	text-align	: center;*/
+}
+
+H2
+{
+	font-family	: "ÇlÇr ÉSÉVÉbÉN", monospace;
+	font-size	: normal normal 1.5em;
+/*	text-align	: center;*/
+}
+
+H3
+{
+	font-family	: "ÇlÇr ÉSÉVÉbÉN", monospace;
+	font-size	: normal normal 1.4em;
+/*	text-align	: center;*/
+}
+
+H4
+{
+	font-family	: "ÇlÇr ÉSÉVÉbÉN", monospace;
+	font-size	: normal normal 1.3em;
+/*	text-align	: center;*/
+}
+
+H5
+{
+	font-family	: "ÇlÇr ÉSÉVÉbÉN", monospace;
+	font-size	: normal normal 1.2em;
+/*	text-align	: center;*/
+}
+
+H6
+{
+	font-family	: "ÇlÇr ÉSÉVÉbÉN", monospace;
+	font-size	: normal normal 1.1em serif;
+/*	text-align	: center;*/
+}
+
+A:link{
+	color			: blue;
+	font-weight 	: bold;
+}
+A:visited{
+	color			: purple;
+	font-weight 	: bold;
+}
+A:active{
+	color			: gray;
+	font-weight 	: bold;
+}
+
+.caution
+{
+	margin-left:	1em;
+	margin-right:	1em;
+	padding:		0.1em;
+	border:			thin solid;
+	border-color:	#fff;
+	line-height:	1.4;
+}
+
+

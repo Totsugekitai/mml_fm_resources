@@ -1,0 +1,288 @@
+#title "終わりそうな予感 (SC-88)   Unira"
+#copyright "(c) Unira"
+#timebase 48
+
+;  Composed   Unira
+;  Programmed Unira
+;  Arranged   Unira
+
+$t  _-2			; transpose
+$i k127 E90  BR3 BS64	; expression & pitch bend
+
+T   C11 BT8,8 t80
+T   EX x7e,x7f,x09,x01,xf7                r16 ; GM SYSTEM ON
+T   EX x41,x10,x42,x12,{x40,0,x7f,0},xf7  r16 ; GS-RESET
+
+T   EX x41,x10,x42,x12,{x40,1,x30, 3},xf7 r96 ; REVERB MACRO
+T   EX x41,x10,x42,x12,{x40,1,x31, 4},xf7     ; REVERB CHARACTER
+T   EX x41,x10,x42,x12,{x40,1,x32, 0},xf7 r96 ; REVERB PRE-LPF
+T   EX x41,x10,x42,x12,{x40,1,x33,96},xf7     ; REVERB LEVEL
+T   EX x41,x10,x42,x12,{x40,1,x34,18},xf7 r96 ; REVERB TIME
+T   EX x41,x10,x42,x12,{x40,1,x35,10},xf7     ; REVERB DELAY FEEDBACK
+
+T   EX x41,x10,x42,x12,{x40,1,x38, 3},xf7 r96 ; CHORUS MACRO
+T   EX x41,x10,x42,x12,{x40,1,x39, 1},xf7     ; CHORUS PRE-LPF
+T   EX x41,x10,x42,x12,{x40,1,x3a,96},xf7 r96 ; CHORUS LEVEL
+T   EX x41,x10,x42,x12,{x40,1,x3b,15},xf7     ; CHORUS FEEDBACK
+T   EX x41,x10,x42,x12,{x40,1,x3c, 0},xf7 r96 ; CHORUS DELAY
+T   EX x41,x10,x42,x12,{x40,1,x3d, 6},xf7     ; CHORUS RATE
+T   EX x41,x10,x42,x12,{x40,1,x3e,19},xf7 r96 ; CHORUS DEPTH
+T   EX x41,x10,x42,x12,{x40,1,x3f,10},xf7 r1  ; CHORUS SEND LEVEL TO REVERB
+
+A   C1  r4 H0,0  @73  r4 v110 q5 o5 l8  p64 $t $i	; Melody(Vocal)
+B   C2  r4 H0,0  @0   r4 v110 q3 o6 l8  p64 $t $i	; Melody(Inst.)
+C   C3  r4 H8,0  @1   r4 v120 q4 o3 l8  p64 $t $i	; Bass
+F   C6  r4 H0,0  @42  r4 v115 q4 o2 l8  p64 $t $i	; Chello
+H   C8  r4 H1,0  @48  r4 v95  q4 o5 l8  p20 $t $i	; Strings Solo
+1H  C8                        q4 o4 l8      $t $i	;
+I   C9  r4 H0,0  @74  r4 v110 q4 o5 l8  p107$t $i	; Strings Solo(Echo)
+G   C7  r4 H0,0  @1   r4 v110 q3 o5 l8  p84 $t $i	; Piano Backing
+1G  C7                        q3 o5 l8      $t $i	;
+2G  C7                        q3 o5 l8      $t $i	;
+D   C4  r4 H8,0  @1   r4 v110 q3 o5 l8  p44 $t $i	; Piano
+1D  C4                        q3 o5 l8      $t $i	;
+2D  C4                        q3 o5 l8      $t $i	;
+3D  C4                        q3 o5 l8      $t $i	;
+4D  C4                        q4 o4 l8      $t $i	;
+E   C5  r4 H1,0  @49  r4 v80  q4 o4 l8  p64 $t $i	; Strings
+1E  C5                        q4 o4 l8      $t $i	;
+2E  C5                        q4 o4 l8      $t $i	;
+3E  C5                        q4 o5 l8      $t $i	;
+
+ABCDEFGHI r4
+
+;     REVERB   CHORUS
+AB    y91,96   y93,96
+C     y91,0    y93,32
+DFGI  y91,64   y93,64
+EH    y91,96   y93,96
+
+ABCDEFGHI r4
+
+;	[S]
+A  [r1]4
+B  [e4<a16b16>c16e16d4<b4>:c2.r4]2 <a2.r4>
+G  <[fa>ce< gb>dg< ea>ce :a4 <a16b16>c16d16< ]2 a2
+1G2G  [r1]4
+H1HI  [r1]4
+C  [f2g2a1]2
+F  [r1]4
+D  [[rr]2 rrr4 [rr]2r2]2
+1D [[ar]2 brb4 [ar]2a2]2
+2D [[fr]2 grg4 [er]2e2]2
+3D [[cr]2 drd4 [cr]2c2]2
+4D [[rf]2 rgr4 [ra]2r2]2
+E1E2E3E [r1]4
+
+;	[A]
+A  a>e16e.dc<b>cd <ba16g16^2rf16g16 a4b>c<bagb16a16^ 2.r4
+A  a>e16e.dc<b>cd <ba16g16^2r4 r4b>c<b4gb16a16^ 2.r4
+A  a>e16e.dc<b>cd <ba16g16^2rf16g16 a4b>c<bagb16a16 ^2r a>fe
+C  [a1g1 f2g2a1]3
+F  [r1]4 [a1g1 f2g2a1]2
+G    [r1]11 <a>ce4a2
+1G2G [r1]12
+BH1HI [r1]12
+D  [[rr]4 [rr]4 [rr]2 [rr]2 [rr]4]3
+1D [[ar]4 [br]4 [ar]2 [br]2 [ar]4]3
+2D [[er]4 [gr]4 [fr]2 [gr]2 [er]4]3
+3D [[cr]4 [dr]4 [cr]2 [dr]2 [cr]4]3
+4D [[ra]4 [rg]4 [rf]2 [rg]2 [ra]4]3
+E  [r1]8 r1r1 r2r2r1
+1E [r1]8 a1b1 a2b2a1
+2E [r1]8 e1g1 f2g2e1
+3E [r1]8 c1d1 c2d2c1
+
+;	[B]
+A  f4.efedc <ba16g16^ 4rg>gf e4.dedc<b16>c16^ 2r <a>fe
+A  f4.efedc <ba16g16^ 4rg>gf e4.dgfed16e16^ 1 ^2.r4
+CF  [f1g2.f4:e2.g4a2e2]2 e2d+2 e1f2e2
+BH1HI  [r1]9
+G  [r4cfa2    r4dgb4g4    :r4egb2   r4cea4e4    ]2 r2r2 r4>ed<bg+ed   b-4fd <b4g+4>
+1G [<r4a>cf2  <r4b>dg4d4  :r4deg2   <r4a>ce4c4  ]2 r2r2 >r4d<bg+ed<b> a4d<b- g+4e4>
+2G [<r4fa>c2  <r4gb>d4<b4>:<r4b>de2 <r4ea>c4<a4>]2 r2r2 r4bg+ed<bg+>  f4<b-f e4<b4>>
+D  [ rrr2rr rrr2. : drr2dr rrr2.]2 [rr]2[ar]2  drr2.  [ar]2  [dr]2
+1D [ arr2ar brr2. : brr2br arr2.]2 [br]2[br]2  brr2.  [b-r]2 [br]2
+2D [ frr2fr grr2. : grr2gr err2.]2 [gr]2[f+r]2 g+rr2. [fr]2  [g+r]2
+3D [ crr2cr drr2. : err2er crr2.]2 [dr]2[d+r]2 err2.  [dr]2  [er]2
+4D [ rfr2rf rgr2. : rer2re rar2.]2 [rg]2[rd+]2 rer2.  [rb-]2 [re]2
+E  [r1r1:d1r1]2 d2a2  d1 a2d2
+1E [a1b1:b1a1]2 b2b2  b1 b-2b2
+2E [f1g1:g1e1]2 g2f+2 g+1f2g+2
+3E [c1d1:e1c1]2 e2d+2 e1 d2e2
+
+;	[C]
+A  <e4ab4>c4. <b4>c<b4.re e4ab4>c4c d4ed4r<ab
+A  >c2r4<ab> cc4.rc<ba >c<b2..^ 2r4ab
+A  >c2r<a>dc <b4g+4e4b4 b4.aa2 r1
+B  [r1]10
+CF  a1g+1g1f+1 f1e1d+1e1  d2d+2e2.g+4
+H1H  e4.d4c<ba g+4ab4e4b >d4.c4<bag f+4.edef+a >c2.<ab> c2<g4>c4< b4.>cd+f+af+ g+2e2
+H1H  dfaf d+f+af+ bag+fedcd
+I  [r1]10
+G  [r1]7 r4eg+b4g+4    r1 b4g+e<b4g+4>
+1G [r1]7 <r4b>eg+4e4   r1 g+4e<b g+4e4>
+2G [r1]7 <r4g+b>e4<b4> r1 e4<bg+ e4<b4>>
+D  [rr]4 [rr]4  [rr]4 [rr]4  [rr]4 [rr]4 [ar]4  drr2.  [cr]2 [cr]2  [dr]2 d2
+1D [ar]4 [br]4  [br]4 [ar]4  [ar]4 [gr]4 [br]4  brr2.  [ar]2 [ar]2  [br]2 b2
+2D [er]4 [g+r]4 [gr]4 [f+r]4 [fr]4 [er]4 [f+r]4 g+rr2. [fr]2 [f+r]2 [g+r]2g+2
+3D [cr]4 [er]4  [dr]4 [dr]4  [cr]4 [cr]4 [d+r]4 err2.  [dr]2 [d+r]2 [er]2 e2
+4D [ra]4 [rg+]4 [rg]4 [rf+]4 [rf]4 [re]4 [rd+]4 rer2.  [rd]2 [rd+]2 [re]2 r2
+E  r1r1 r1r1  r1r1a1 d1  c2c2 d1
+1E a1b1 b1a1  a1g1b1 b1  a2a2 b1
+2E e1g+1g1f+1 f1e1f+1g+1 f2f+2g+1
+3E c1e1 d1d1  c1c1d+1e1  d2d+2e1
+
+;	[K]
+A  [r1]6
+CF  a1g+1g1f+1 f1e1d+1e1
+B  [r1]8
+H1HI  e4.d4c<ba g+4ab4e4b >d4.c4<bag f+4.edef+a >c2.<ab> c2<g4>c4< b4.>cd+f+af+ g+2e2
+G  [r1]7 r4eg+b4g+4
+1G [r1]7 <r4b>eg+4e4
+2G [r1]7 <r4g+b>e4<b4>
+D  [rr]4 [rr]4  [rr]4 [rr]4  [rr]4 [rr]4 [ar]4  drr2.
+1D [ar]4 [br]4  [br]4 [ar]4  [ar]4 [gr]4 [br]4  brr2.
+2D [er]4 [g+r]4 [gr]4 [f+r]4 [fr]4 [er]4 [f+r]4 g+rr2.
+3D [cr]4 [er]4  [dr]4 [dr]4  [cr]4 [cr]4 [d+r]4 err2.
+4D [ra]4 [rg+]4 [rg]4 [rf+]4 [rf]4 [re]4 [rd+]4 rer2.
+E  r1r1 r1r1  r1r1a1 d1
+1E a1b1 b1a1  a1g1b1 b1
+2E e1g+1g1f+1 f1e1f+1g+1
+3E c1e1 d1d1  c1c1d+1e1
+
+;	[S']
+A  [r1]4
+B  [e4<a16b16>c16e16d4<b4>:c2.r4]2 <a2.r4
+G  <[fa>ce< gb>dg< ea>ce :a4 <a16b16>c16d16< ]2 a2
+1G2G  [r1]4
+H1H  [e4<a16b16>c16e16d4<b4>:c2.r4]2 <a2.r4>
+I  [r1]4
+C  [f2g2a1]2
+F  [r1]4
+D  [[rr]2 rrr4 [rr]2r2]2
+1D [[ar]2 brb4 [ar]2a2]2
+2D [[fr]2 grg4 [er]2e2]2
+3D [[cr]2 drd4 [cr]2c2]2
+4D [[rf]2 rgr4 [ra]2r2]2
+E  [r2r2 r1]2
+1E [a2b2 a1]2
+2E [f2g2 e1]2
+3E [c2d2 c1]2
+
+;		#2
+
+;	[A]
+A  a>e16e.dc<b>cd <ba16g16^2rf16g16 a4b>c<bagb16a16^ 2.r4
+A  a>e16e.dc<b>cd <ba16g16^2r4 r4b>c<b4gb16a16^ 2.r4
+A  a>e16e.dc<b>cd <ba16g16^2rf16g16 a4b>c<bagb16a16 ^2r2
+CF  [a1g1 f2g2a1]3
+G    [r1]11 <a>ce4a2
+1G2G [r1]12
+BH1HI [r1]12
+D  [[rr]4 [rr]4 [rr]2 [rr]2 [rr]4]3
+1D [[ar]4 [br]4 [ar]2 [br]2 [ar]4]3
+2D [[er]4 [gr]4 [fr]2 [gr]2 [er]4]3
+3D [[cr]4 [dr]4 [cr]2 [dr]2 [cr]4]3
+4D [[ra]4 [rg]4 [rf]2 [rg]2 [ra]4]3
+E  [r1r1 r2r2r1]3
+1E [a1b1 a2b2a1]3
+2E [e1g1 f2g2e1]3
+3E [c1d1 c2d2c1]3
+
+;	[K]
+A  [r1]7  r2ra>fe
+H1HI  e4.a>c<bag f2dfa>c< b4.>cd4<g4 >e4.dd-deg  f4.d<bg+ab ab>cea2 <bg+>ed16c16<bg+ab a2.r4
+B  [r1]8
+G    [r1]7 <a>ce4a2
+1G2G [r1]8
+CF  a1f1g1e2a2 f2e2 a2f+2 d2e2a1
+D  [rr]4 [rr]4 [rr]4 [dr]2[gr]2  [rr]2[dr ]2 [rr]2c2  [dr]2 [dr]2  [rr]4
+1D [ar]4 [ar]4 [br]4 [br]2[ar]2  [ar]2[br ]2 [ar]2a2  [br]2 [br]2  [ar]4
+2D [er]4 [fr]4 [gr]4 [gr]2[er]2  [fr]2[g+r]2 [er]2f+2 [g+r]2[g+r]2 [er]4
+3D [cr]4 [cr]4 [dr]4 [er]2[c+r]2 [cr]2[er]2  [cr]2d2  [fr]2 [er]2  [cr]4
+4D [ra]4 [rf]4 [rg]4 [re]2[ra]2  [rf]2[re]2  [ra]2r2  [rd]2 [re]2  [ra]4
+E  r1r1r1d2g2  r2d2  r2c2  d2 d2 r1
+1E a1a1b1b2a2  a2b2  a2a2  b2 b2 a1
+2E e1f1g1g2e2  f2g+2 e2f+2 g+2g+2e1
+3E c1c1d1e2c+2 c2e2  c2d2  f2 e2 c1
+
+;	[B]
+A  f4.efedc <ba16g16^ 4rg>gf e4ededc<b16>c16^ 2r <a>fe
+A  f4.efedc <ba16g16^ 4rg>gf e4.rgfed16e16^ 1 ^2.r4
+CF  [f1g2.f4:e2.g4a2e2]2 e2d+2 e1f2e2
+BH1HI  [r1]9
+G  [r4cfa2    r4dgb4g4    :r4egb2   r4cea4e4    ]2 r2r2 r4>ed<bg+ed   b-4fd <b4g+4>
+1G [<r4a>cf2  <r4b>dg4d4  :r4deg2   <r4a>ce4c4  ]2 r2r2 >r4d<bg+ed<b> a4d<b- g+4e4>
+2G [<r4fa>c2  <r4gb>d4<b4>:<r4b>de2 <r4ea>c4<a4>]2 r2r2 r4bg+ed<bg+>  f4<b-f e4<b4>>
+D  [ rrr2rr rrr2. : drr2dr rrr2.]2 [rr]2[ar]2  drr2.  [ar]2  [dr]2
+1D [ arr2ar brr2. : brr2br arr2.]2 [br]2[br]2  brr2.  [b-r]2 [br]2
+2D [ frr2fr grr2. : grr2gr err2.]2 [gr]2[f+r]2 g+rr2. [fr]2  [g+r]2
+3D [ crr2cr drr2. : err2er crr2.]2 [dr]2[d+r]2 err2.  [dr]2  [er]2
+4D [ rfr2rf rgr2. : rer2re rar2.]2 [rg]2[rd+]2 rer2.  [rb-]2 [re]2
+E  [r1r1:d1r1]2 d2a2  d1 a2d2
+1E [a1b1:b1a1]2 b2b2  b1 b-2b2
+2E [f1g1:g1e1]2 g2f+2 g+1f2g+2
+3E [c1d1:e1c1]2 e2d+2 e1 d2e2
+
+;	[C']
+A  <e4ab4>c4. <b4>c<b4.re e4ab4>c4c d4ed4r<ab
+A  >c2r4<ab> cc4.rc<ba >c<b2..^ 2r4ab
+A  >c2r<a>dc <b4g+4e4b4 b4.aa2 ^2.ab
+B  [r1]12
+CF  a1g+1g1f+1 f1e1d+1e1  d2d+2e2.g+4 a1^1
+H1H  e4.d4c<ba g+4ab4e4b >d4.c4<bag f+4.edef+a >c2.<ab> c2<g4>c4< b4.>cd+f+af+ g+2e2
+H1H  dfaf d+f+af+ bag+fedcd   e4.aa2 <ab>cea2
+I  [r1]12
+G  [r1]7 r4eg+b4g+4    r1 b4g+e<b4g+4>   r1r1
+1G [r1]7 <r4b>eg+4e4   r1 g+4e<b g+4e4>  r1r1
+2G [r1]7 <r4g+b>e4<b4> r1 e4<bg+ e4<b4>> r1r1
+D  [rr]4 [rr]4  [rr]4 [rr]4  [rr]4 [rr]4 [ar]4  drr2.  [cr]2 [cr]2  [dr]2 d2  [rr]6r2
+1D [ar]4 [br]4  [br]4 [ar]4  [ar]4 [gr]4 [br]4  brr2.  [ar]2 [ar]2  [br]2 b2  [ar]6a2
+2D [er]4 [g+r]4 [gr]4 [f+r]4 [fr]4 [er]4 [f+r]4 g+rr2. [fr]2 [f+r]2 [g+r]2g+2 [er]6e2
+3D [cr]4 [er]4  [dr]4 [dr]4  [cr]4 [cr]4 [d+r]4 err2.  [dr]2 [d+r]2 [er]2 e2  [cr]6c2
+4D [ra]4 [rg+]4 [rg]4 [rf+]4 [rf]4 [re]4 [rd+]4 rer2.  [rd]2 [rd+]2 [re]2 r2  [ra]6r2
+E  r1r1 r1r1  r1r1a1 d1  c2c2 d1 r1^1
+1E a1b1 b1a1  a1g1b1 b1  a2a2 b1 a1^1
+2E e1g+1g1f+1 f1e1f+1g+1 f2f+2g+1e1^1
+3E c1e1 d1d1  c1c1d+1e1  d2d+2e1 c1^1
+
+;	[C'']
+A  >c2r<a>dc <b4g+4e4b4 b4.aa2 ^2.ab
+A  >c2r<a>dc <b4g+4e4b4 b4.aa2 r1
+B  [r1]6
+CF [d2d+2:e2.g+4 a1^1]2 e1
+H1H  dfaf d+f+af+ bag+fedcd   e4.aa2 <ab>cea2  [r1]2
+I  [r1]6
+G  r1 b4g+e<b4g+4>   r1r1 r1r1
+1G r1 g+4e<b g+4e4>  r1r1 r1r1
+2G r1 e4<bg+ e4<b4>> r1r1 r1r1
+D  [cr]2 [cr]2  [dr]2 d2  [rr]6r2 c2c2 d1
+1D [ar]2 [ar]2  [br]2 b2  [ar]6a2 a2a2 b1
+2D [fr]2 [f+r]2 [g+r]2g+2 [er]6e2 f2f+2g+1
+3D [dr]2 [d+r]2 [er]2 e2  [cr]6c2 d2d+2e1
+4D [rd]2 [rd+]2 [re]2 r2  [ra]6r2 r1   r1
+E  [c2c2 d1 :r1^1]2
+1E [a2a2 b1 :a1^1]2
+2E [f2f+2g+1:e1^1]2
+3E [d2d+2e1 :c1^1]2
+
+;	[E]
+A  [r1]5
+B  >e4<a16b16>c16e16d4<b4>c2.r4
+B  e4 t50<a16b16> t35c16e16 t28d4<b4 t40a2.r4 r1
+G  <[fa>ce< gb>dg< :ea>ce a4 <a16b16>c16d16< ]2 a1^1
+1G2G  [r1]5
+H1HI  [r1]5
+C  [f2g2:a1]2 a1^1
+F  [r1]5
+D  [[rr]2 rrr4:[rr]2r2]2 r1r1
+1D [[ar]2 brb4:[ar]2a2]2 P a48>c48e48a2... X P a48>c48e48a2... X
+2D [[fr]2 grg4:[er]2e2]2 r1r1
+3D [[cr]2 drd4:[cr]2c2]2 r1r1
+4D [[rf]2 rgr4:[ra]2r2]2 r1r1
+E  [r2r2:r1]2 r1^1
+1E [a2b2:a1]2 a1^1
+2E [f2g2:e1]2 e1^1
+3E [c2d2:c1]2 c1^1
+

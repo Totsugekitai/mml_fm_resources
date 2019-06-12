@@ -1,0 +1,55 @@
+
+  74HC04謹製　オリジナルドラムセット　"ADC-0804"
+
+
+　このドラムセットは、MDR System 2.0βの出力したMMLファイルに若干の加工を
+　施したものです。
+
+　このドラムセットは自由に使っていただいて構いません。
+　(使えるかどうかは別にして…)
+　また、自分流に改造するために書き換えても構いません。
+　(エクスクルーシブに関して、ある程度の知識を持っている事を前提とします)
+
+　…って、ほとんどMDRSで書いたから偉そうな事言えないんだけどね(笑
+
+
+　MDR System 2.0βの著作権は、おぶ氏にあります。
+
+
+---ドラムアサイン(左の数字はノートナンバーです)
+
+24  CrushCym1  ...O1 C(Roland),O0 C(YAMAHA)
+27  High Q
+28  Slap
+29  909 BD
+30  808 Snare
+31  909 Snare
+32  CR-78 C.Hihat
+33  CR-78 O.Hihat
+35  Room Kick2
+40  Room Snare1
+41  E.L.Tom2
+42  C.Hihat
+43  E.L.Tom1
+44  P.Hihat
+45  E.M.Tom1
+46  O.Hihat
+47  E.M.Tom2
+48  E.H.Tom2
+49  CrushCym1
+50  E.H.Tom1
+52  ChineseCym
+53  Ride Bell
+54  Tambourin
+55  SplashCym
+57  CrushCym2
+58  808 Cym
+60  Spark
+61  Click
+62  Pop Drop
+75  Claves
+76  808 Claves
+82  Shaker
+83  Jingle Bell
+84  Jingle Bell
+
